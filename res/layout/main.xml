@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="This app is designed to help you to grow spiritually with Christ. We ask that you provide some basic information to help you further with that."
+		android:layout_width="wrap_content"
+		android:id="@+id/lblNotification"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="Name"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/lblNotification"
+		android:id="@+id/lblName"/>
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:ems="10"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/lblNotification"
+		android:layout_toRightOf="@id/lblName"
+		android:layout_alignParentRight="true"
+		android:id="@+id/txtName"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="Age"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/txtName"
+		android:id="@+id/lblAge"/>
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:inputType="number"
+		android:ems="10"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/txtName"
+		android:layout_alignParentRight="true"
+		android:layout_toRightOf="@id/lblAge"
+		android:id="@+id/txtAge"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="Denomination"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/txtAge"
+		android:id="@+id/lblDen"/>
+
+	<EditText
+		android:layout_height="wrap_content"
+		android:ems="10"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/txtAge"
+		android:layout_alignParentRight="true"
+		android:layout_toRightOf="@id/lblDen"
+		android:id="@+id/txtDen"/>
+
+	<Button
+		android:layout_height="wrap_content"
+		style="?android:attr/buttonStyleSmall"
+		android:text="Finish"
+		android:onClick="finishClick"
+		android:layout_width="match_parent"
+		android:layout_below="@id/txtDen"
+		android:id="@+id/btnSubmit"/>
+
+</RelativeLayout>
+
+
