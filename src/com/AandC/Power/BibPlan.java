@@ -11,6 +11,7 @@ import org.w3c.dom.*;
 
 public class BibPlan
 {
+	int read = 1;
 	Time time = new Time();
 	public String currentReading() throws IOException, InvalidBibPlanException {
 		
@@ -55,14 +56,14 @@ public class BibPlan
 		}
 		return null;
 	}
-
+	String currentDate;
 	public boolean readToday() throws IOException {
 		File day = new File("/sdcard/PowerOfGod/Plans/DaysRead - " + name + ".txt");
 		if (!day.exists()) {
 			day.createNewFile();
 			return false;
 		} else {
-			String currentDate = time.month + "/" + time.monthDay + 
+			currentDate = time.month + "/" + time.monthDay + 
 				"/" + time.year;
 			for (String lines:fileContent(day)) {
 				if (lines.equals(currentDate)) {
@@ -82,12 +83,24 @@ public class BibPlan
 		}
 		return null;
 	}
-	public void writeReads(int daysRead) {
+	int loopCount;
+	public void writeReads(int daysRead) throws IOException {
 		File[] files = new File[]{
 			new File("/sdcard/PowerOfGod/Plans/reading-" + name + ".txt"),
 			new File("/sdcard/PowerOfGod/Plans/DaysRead - " + name + ".txt")
 		};
+		String[] readingText = fileContent(files[0]);
+		String[] daysText = fileContent(files[1]);
+		readingText[daysRead] = "true";
+		daysText[daysRead] = currentDate;
 		
+		String[] finalTexts = new String[1];
+		for (String x:readingText) {
+			finalTexts[0] += x + "\n";
+		}
+		for (String x:daysText) {
+			finalTexts[1] += x + "\n";
+		}
 	}
 	public int id;
 	public String name;
