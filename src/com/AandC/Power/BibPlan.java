@@ -81,7 +81,7 @@ public class BibPlan
 		for (loop = 1; loop <= dayCount; loop++) {
 			fileLines[loop - 1] = br.readLine();
 		}
-		return null;
+		return fileLines; //Originally was null... my goof
 	}
 	int loopCount;
 	public void writeReads(int daysRead) throws IOException {
@@ -101,6 +101,17 @@ public class BibPlan
 		for (String x:daysText) {
 			finalTexts[1] += x + "\n";
 		}
+		for (loopCount = 0; loopCount <= 1; loopCount++) {
+			write(files[loopCount], finalTexts[loopCount]);
+		}
+	}
+	void write(File outputFile, String finalText) throws IOException {
+		outputFile = new File(Files.appFiles[1], "userInfo.txt");
+		FileOutputStream fos = new FileOutputStream(outputFile);
+		byte[] data = new String(finalText).getBytes();
+		fos.write(data);
+		fos.flush();
+		fos.close();
 	}
 	public int id;
 	public String name;

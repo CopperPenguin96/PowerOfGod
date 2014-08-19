@@ -29,42 +29,7 @@ public class MainActivity extends Activity
 		verDialog.show();
 		MsgBox.mainActivityContext = this; //So outside classes can show Alert Dialogues
     }
-	public void parseXML() {
-		try {
-			File fXmlFile = new File("/sdcard/file.xml");
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(fXmlFile);
-
-			//optional, but recommended
-			//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-			doc.getDocumentElement().normalize();
-
-			System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
-
-			NodeList nList = doc.getElementsByTagName("BibPlan");
-
-			System.out.println("----------------------------");
-
-			for (int temp = 0; temp < nList.getLength(); temp++) {
-
-				Node nNode = nList.item(temp);
-
-				System.out.println("\nCurrent Element :" + nNode.getNodeName());
-
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-
-					Element eElement = (Element) nNode;
-
-					System.out.println("ID : " + eElement.getAttribute("id"));
-					System.out.println("Plan Name : " + eElement.getAttribute("name"));
-					System.out.println("Length of Days : " + eElement.getAttribute("days"));
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	
 	void setUp() {
 		if (!Files.checkFiles()) {
 			//Enter info screen
