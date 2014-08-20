@@ -128,14 +128,6 @@ public class BibPlan
 	public BibPlan(String fileName) throws IOException, InvalidBibPlanException {
 		if (fileName.equals(null)) throw new NullPointerException();
 		else {
-			/*
-			 TODO
-
-			 Read for BibPlan Base file
-			 And BibPlan Day Files and set to file
-			 
-			 Use temp directory for reading files
-			 */
 			ZipFile zipFile = new ZipFile(fileName);
 			Enumeration<? extends ZipEntry> entries = zipFile.entries();
 			int count = 0;
