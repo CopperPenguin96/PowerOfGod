@@ -35,50 +35,61 @@ public class BibPlan
 	String tempPath;
 	File xmlFile;
 	String tempX;
-	
+	int count = 0;
+	ZipFile zipFile;
+	Enumeration<? extends ZipEntry> entries = zipFile.entries();
 	//Constructor for the BibPlan Object
 	//Checks for missing files in BibPlan file
 	public BibPlan(String fileName) throws IOException, InvalidBibPlanException {
-		if (fileName.equals(null)) throw new NullPointerException();
-		else {
-			ZipFile zipFile = new ZipFile(fileName);
-			Enumeration<? extends ZipEntry> entries = zipFile.entries();
-			int count = 0;
-			while(entries.hasMoreElements()){
-				count++;
-			}
-			String[] en = new String[count];
-			Enumeration<? extends ZipEntry> entriesNew = zipFile.entries();
-			count = 0;
-			while(entriesNew.hasMoreElements()) {
-				en[count] = entriesNew.nextElement().toString();
-			}
-			boolean hasBaseFile = false;
-			for (String currentFile:en) {
-				if (currentFile.equals("base.xml")) {
-					hasBaseFile = true;
+		if (fileName.equals(null)) {
+			 throw new NullPointerException();
+		} else {
+			zipFile = new ZipFile(fileName);
+			try {
+				if (entries.hasMoreElements()){
+					moreEntries();
+				} //Instead of using the While loop, loop with a void
+				String[] en = new String[count];
+				Enumeration<? extends ZipEntry> entriesNew = zipFile.entries();
+				count = 0;
+				while(entriesNew.hasMoreElements()) {
+					en[count] = entriesNew.nextElement().toString();
 				}
-			}
-			if (!hasBaseFile) {
-				throw new InvalidBibPlanException("Base File is Missing from Archive");
-			}
-			parse(zipFile, "base.xml");
-			//If it has made it to this point, then the days Count has been satisfied
-			//Now time to check if all exist
-			int days = 0;
-			while (days <= dayCount) {
-				boolean hasDay = false;
-				days++;
-				for (String x:en) {
-					int num = Integer.parseInt(x.substring(0,0));
-					if (days == num) {
-						hasDay = true;
+				boolean hasBaseFile = false;
+				for (String currentFile:en) {
+					if (currentFile.equals("base.xml")) {
+						hasBaseFile = true;
 					}
 				}
-				if (!hasDay) {
-					throw new InvalidBibPlanException("Day #" + days + " is missing.");
+				if (!hasBaseFile) {
+					throw new InvalidBibPlanException("Base File is Missing from Archive");
 				}
+				parse(zipFile, "base.xml");
+				//If it has made it to this point, then the days Count has been satisfied
+				//Now time to check if all exist
+				int days = 0;
+				while (days <= dayCount) {
+					boolean hasDay = false;
+					days++;
+					for (String x:en) {
+						int num = Integer.parseInt(x.substring(0,0));
+						if (days == num) {
+							hasDay = true;
+						}
+					}
+					if (!hasDay) {
+						throw new InvalidBibPlanException("Day #" + days + " is missing.");
+					}
+				}
+			} catch (Exception ex) {
+				System.exit(0);
 			}
+		}
+	}
+	public void moreEntries() {
+		count++;
+		if (entries.hasMoreElements()) {
+			moreEntries();
 		}
 	}
 	void parse(ZipFile file, String fileName) throws InvalidBibPlanException, IOException {
