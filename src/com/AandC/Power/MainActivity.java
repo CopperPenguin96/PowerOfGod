@@ -39,6 +39,8 @@ public class MainActivity extends Activity
 			e.printStackTrace();
 		} catch (InvalidBibPlanException e) {
 			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
     }
 	

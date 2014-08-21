@@ -11,108 +11,7 @@ import org.w3c.dom.*;
 
 public class BibPlan
 {
-	int read = 1;
-	Time time = new Time();
-	public String currentReading() throws IOException, InvalidBibPlanException {
-		
-		time.setToNow();
-		File readingFile = new File("/sdcard/PowerOfGod/Plans/reading-" + name + ".txt");
-		if (!readingFile.exists()) {
-			readingFile.createNewFile();
-			writeReads(0);
-		}
-		readingFile.setReadable(true);
-		BufferedReader br = null;
-		try
-		{
-			br = new BufferedReader(new FileReader(readingFile));
-		} catch (FileNotFoundException e) { 
-			throw new InvalidBibPlanException();
-		} catch (IOException e) {
-			throw new InvalidBibPlanException();
-		} finally {
-			int loopCount;
-			hasRead = new Boolean[dayCount];
-			for (loopCount = 1; loopCount <= dayCount; loopCount++) {
-				if (br.readLine().equals("true")) {
-					hasRead[loopCount] = true;
-				} else {
-					hasRead[loopCount] = false;
-				}
-			}
-			int read = 1;
-			for (boolean readers:hasRead) {
-				if (readers == true) {
-					read++;
-				}
-			}
-			MsgBox magBox = new MsgBox("Daily Reading","Your daily reading is " + planDays[read - 1],
-				MsgBox.mainActivityContext); /*Applying this context makes it appear
-				in MainActivity */
-				magBox.show();
-			if (!readToday()) {
-				writeReads(read);
-			}
-		}
-		return null;
-	}
-	String currentDate;
-	public boolean readToday() throws IOException {
-		File day = new File("/sdcard/PowerOfGod/Plans/DaysRead - " + name + ".txt");
-		if (!day.exists()) {
-			day.createNewFile();
-			return false;
-		} else {
-			currentDate = time.month + "/" + time.monthDay + 
-				"/" + time.year;
-			for (String lines:fileContent(day)) {
-				if (lines.equals(currentDate)) {
-					return true;
-				}
-			}
-		}
-		return false;
-	}
-	String[] fileContent(File f) throws IOException {
-		if (!f.exists()) f.createNewFile();
-		String[] fileLines = new String[dayCount];
-		int loop;
-		BufferedReader br = new BufferedReader(new FileReader(f));
-		for (loop = 1; loop <= dayCount; loop++) {
-			fileLines[loop - 1] = br.readLine();
-		}
-		return fileLines; //Originally was null... my goof
-	}
-	int loopCount;
-	public void writeReads(int daysRead) throws IOException {
-		File[] files = new File[]{
-			new File("/sdcard/PowerOfGod/Plans/reading-" + name + ".txt"),
-			new File("/sdcard/PowerOfGod/Plans/DaysRead - " + name + ".txt")
-		};
-		String[] readingText = fileContent(files[0]);
-		String[] daysText = fileContent(files[1]);
-		readingText[daysRead] = "true";
-		daysText[daysRead] = currentDate;
-		
-		String[] finalTexts = new String[1];
-		for (String x:readingText) {
-			finalTexts[0] += x + "\n";
-		}
-		for (String x:daysText) {
-			finalTexts[1] += x + "\n";
-		}
-		for (loopCount = 0; loopCount <= 1; loopCount++) {
-			write(files[loopCount], finalTexts[loopCount]);
-		}
-	}
-	void write(File outputFile, String finalText) throws IOException {
-		outputFile = new File(Files.appFiles[1], "userInfo.txt");
-		FileOutputStream fos = new FileOutputStream(outputFile);
-		byte[] data = new String(finalText).getBytes();
-		fos.write(data);
-		fos.flush();
-		fos.close();
-	}
+	
 	public int id;
 	public String name;
 	public int dayCount;
@@ -242,4 +141,106 @@ public class BibPlan
 			}
 		}
 	}
+	int read = 1;
+	Time time = new Time();
+	public String currentReading() throws IOException, InvalidBibPlanException {
+		time.setToNow();
+		File readingFile = new File("/sdcard/PowerOfGod/Plans/reading-" + name + ".txt");
+		if (!readingFile.exists()) {
+			readingFile.createNewFile();
+			writeReads(0);
+		}
+		readingFile.setReadable(true);
+		BufferedReader br = null;
+		try
+		{
+			br = new BufferedReader(new FileReader(readingFile));
+		} catch (FileNotFoundException e) { 
+			throw new InvalidBibPlanException();
+		} catch (IOException e) {
+			throw new InvalidBibPlanException();
+		} finally {
+			int loopCount;
+			hasRead = new Boolean[dayCount];
+			for (loopCount = 1; loopCount <= dayCount; loopCount++) {
+				if (br.readLine().equals("true")) {
+					hasRead[loopCount] = true;
+				} else {
+					hasRead[loopCount] = false;
+				}
+			}
+			int read = 1;
+			for (boolean readers:hasRead) {
+				if (readers == true) {
+					read++;
+				}
+			}
+			MsgBox magBox = new MsgBox("Daily Reading","Your daily reading is " + planDays[read - 1],
+									   MsgBox.mainActivityContext); /*Applying this context makes it appear
+			 in MainActivity */
+			magBox.show();
+			if (!readToday()) {
+				writeReads(read);
+			}
+		}
+		return null;
+	}
+	String currentDate;
+	public boolean readToday() throws IOException {
+		File day = new File("/sdcard/PowerOfGod/Plans/DaysRead - " + name + ".txt");
+		if (!day.exists()) {
+			day.createNewFile();
+			return false;
+		} else {
+			currentDate = time.month + "/" + time.monthDay + 
+				"/" + time.year;
+			for (String lines:fileContent(day)) {
+				if (lines.equals(currentDate)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	String[] fileContent(File f) throws IOException {
+		if (!f.exists()) f.createNewFile();
+		String[] fileLines = new String[dayCount];
+		int loop;
+		BufferedReader br = new BufferedReader(new FileReader(f));
+		for (loop = 1; loop <= dayCount; loop++) {
+			fileLines[loop - 1] = br.readLine();
+		}
+		return fileLines; //Originally was null... my goof
+	}
+	int loopCount;
+	public void writeReads(int daysRead) throws IOException {
+		File[] files = new File[]{
+			new File("/sdcard/PowerOfGod/Plans/reading-" + name + ".txt"),
+			new File("/sdcard/PowerOfGod/Plans/DaysRead - " + name + ".txt")
+		};
+		String[] readingText = fileContent(files[0]);
+		String[] daysText = fileContent(files[1]);
+		readingText[daysRead] = "true";
+		daysText[daysRead] = currentDate;
+
+		String[] finalTexts = new String[1];
+		for (String x:readingText) {
+			finalTexts[0] += x + "\n";
+		}
+		for (String x:daysText) {
+			finalTexts[1] += x + "\n";
+		}
+		for (loopCount = 0; loopCount <= 1; loopCount++) {
+			write(files[loopCount], finalTexts[loopCount]);
+		}
+	}
+	void write(File outputFile, String finalText) throws IOException {
+		outputFile = new File(Files.appFiles[1], "userInfo.txt");
+		FileOutputStream fos = new FileOutputStream(outputFile);
+		byte[] data = new String(finalText).getBytes();
+		fos.write(data);
+		fos.flush();
+		fos.close();
+	}
+	
 }
