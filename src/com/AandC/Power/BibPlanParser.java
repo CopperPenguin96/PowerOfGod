@@ -63,6 +63,11 @@ public class BibPlanParser
 	}
 	public static BibPlan getBibPlan(String planName) throws InvalidBibPlanException, IOException {
 		String file = "/sdcard/PowerOfGod/Plans/" + planName + ".bibPlan";
-		return new BibPlan(file);
+		try {
+			return new BibPlan(file);
+		} catch (NullPointerException ex) {
+			ex.printStackTrace();
+			return null;
+		}
 	}
 }

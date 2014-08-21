@@ -44,8 +44,8 @@ public class BibPlan
 		if (fileName.equals(null)) {
 			 throw new NullPointerException();
 		} else {
-			zipFile = new ZipFile(fileName);
 			try {
+				zipFile = new ZipFile(fileName);
 				if (entries.hasMoreElements()){
 					moreEntries();
 				} //Instead of using the While loop, loop with a void
@@ -81,36 +81,47 @@ public class BibPlan
 						throw new InvalidBibPlanException("Day #" + days + " is missing.");
 					}
 				}
-			} catch (Exception ex) {
+			} catch (NullPointerException ex) {
 				System.exit(0);
 			}
 		}
 	}
 	public void moreEntries() {
-		count++;
-		if (entries.hasMoreElements()) {
-			moreEntries();
+		try {
+			count++;
+			if (entries.hasMoreElements()) {
+				moreEntries();
+			}
+		} catch (NullPointerException ex) {
+			System.exit(0);
 		}
 	}
 	void parse(ZipFile file, String fileName) throws InvalidBibPlanException, IOException {
-		if (!Files.appFiles[4].exists()) {
-			Files.appFiles[4].mkdirs();
+		File planDir = null;
+		String PlanName = null;
+		String directoryName = null;
+		try {
+			if (!Files.appFiles[4].exists()) {
+				Files.appFiles[4].mkdirs();
+			}
+			// length - 4
+			PlanName = fileName.substring(0, fileName.length() - 4);
+			directoryName = "/sdcard/PowerOfGod/Plans/" + PlanName;
+			tempPath = directoryName;
+			tempX = tempPath + "Base.xml";
+			xmlFile = new File(tempX);
+			planDir = new File(directoryName);
+			if (!planDir.exists()) {
+				planDir.mkdirs();
+			} else {
+				planDir.delete();
+				planDir.mkdirs(); //Prevents tampering with contents
+			}
+			ZipExtractor.unzip(fileName, directoryName);
+			parseXML();
+		} catch (NullPointerException ex) {
+			System.exit(0);
 		}
-		// length - 4
-		String PlanName = fileName.substring(0, fileName.length() - 4);
-		String directoryName = "/sdcard/PowerOfGod/Plans/" + PlanName;
-		tempPath = directoryName;
-		tempX = tempPath + "Base.xml";
-		xmlFile = new File(tempX);
-		File planDir = new File(directoryName);
-		if (!planDir.exists()) {
-			planDir.mkdirs();
-		} else {
-			planDir.delete();
-			planDir.mkdirs(); //Prevents tampering with contents
-		}
-		ZipExtractor.unzip(fileName, directoryName);
-		parseXML();
 	}
 	public void parseXML() throws InvalidBibPlanException, IOException {
 		try {
