@@ -93,8 +93,8 @@ public class BibPlan
 			if (entries.hasMoreElements()) {
 				moreEntries();
 			}
-		} catch (NullPointerException ex) {
-			System.exit(0);
+		} catch (StackOverflowError ex) {
+			System.out.println("You finishes with " + count);
 		}
 	}
 	void parse(ZipFile file, String fileName) throws InvalidBibPlanException, IOException {
@@ -166,16 +166,8 @@ public class BibPlan
 			File file = new File(tempPath + "Day" + loopCount + ".txt");
 			file.setReadable(true);
 			BufferedReader br = null;
-			try
-			{
-				br = new BufferedReader(new FileReader(file));
-			} catch (FileNotFoundException e) { 
-				throw new InvalidBibPlanException("Unable to read Day " + loopCount);
-			} catch (IOException e) {
-				throw new InvalidBibPlanException("Unable to read Day " + loopCount);
-			} finally {
-				planDays[loopCount - 1] = br.readLine();
-			}
+			br = new BufferedReader(new FileReader(file));
+			planDays[loopCount - 1] = br.readLine();
 		}
 	}
 	int read = 1;

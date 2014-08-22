@@ -33,28 +33,30 @@ public class MainActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
-        super.onCreate(savedInstanceState);
-        setUp();
-		UserInfo.setAndroidVersion();
-		UserInfo.setAppVersion(this);
-		UserInfo.setPhoneModel();
-		
-		MsgBox verDialog = new MsgBox(getResources().getString(R.string.ver), 
-			"You are running Version " + getResources().getString(R.string.ver), this);
-		verDialog.show();
-		MsgBox.mainActivityContext = this; //So outside classes can show Alert Dialogues
-		String filePath = "/sdcard/PowerOfGod/Plans/";
-		File file = new File(filePath);
-		if (!file.exists()) file.mkdirs();
-		try
-		{
-			BibPlan testPlan = BibPlanParser.getBibPlan("planName");
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InvalidBibPlanException e) {
-			e.printStackTrace();
-		} catch (Exception e) {
-			e.printStackTrace();
+		try {
+			super.onCreate(savedInstanceState);
+			setUp();
+			UserInfo.setAndroidVersion();
+			UserInfo.setAppVersion(this);
+			UserInfo.setPhoneModel();
+			MsgBox verDialog = new MsgBox(getResources().getString(R.string.ver), 
+				"You are running Version " + getResources().getString(R.string.ver), this);
+			verDialog.show();
+			MsgBox.mainActivityContext = this; //So outside classes can show Alert Dialogues
+			String filePath = "/sdcard/PowerOfGod/Plans/";
+			File file = new File(filePath);
+			if (!file.exists()) file.mkdirs();
+			try {
+				BibPlan testPlan = BibPlanParser.getBibPlan("planName");
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InvalidBibPlanException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
     }
 	
