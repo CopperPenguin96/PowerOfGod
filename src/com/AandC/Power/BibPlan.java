@@ -111,9 +111,8 @@ public class BibPlan
 			//Prevents overflowing
 		}
 	}
+	String path;
 	void parse(ZipFile file, String fileName) throws InvalidBibPlanException, IOException {
-		MsgBox msg = new MsgBox(file.getName().substring(25,file.getName().length() - 8), fileName, MsgBox.mainActivityContext);
-		msg.show();
 		try {
 			if (!Files.appFiles[4].exists()) {
 				Files.appFiles[4].mkdirs();
@@ -125,6 +124,7 @@ public class BibPlan
 			ZipExtractor.unzip(file.getName(), 
 				file.getName().substring(0, file.getName().length() - 8) + "/");
 			xmlFile = new File(file.getName().substring(0, file.getName().length() - 8) + "/base.xml");
+			path = file.getName().substring(0, file.getName().length() - 8) + "/";
 			parseXML();
 		} catch (NullPointerException ex) {
 			System.exit(0);
@@ -152,7 +152,7 @@ public class BibPlan
 					};
 					id = Integer.parseInt(attributes[0].substring(5));
 					name = attributes[1];
-					dayCount = Integer.parseInt(attributes[2]);
+					dayCount = Integer.parseInt(attributes[2].substring(17));
 					System.out.println("ID = " + id);
 					System.out.println("Name = " + name);
 					System.out.println("Days = " + dayCount);
@@ -169,7 +169,7 @@ public class BibPlan
 		int loopCount;
 		planDays = new String[dayCount];
 		for (loopCount = 1; loopCount <= dayCount; loopCount++) {
-			File file = new File(tempPath + "Day" + loopCount + ".txt");
+			File file = new File(path + "Day" + loopCount + ".txt");
 			file.setReadable(true);
 			BufferedReader br = null;
 			br = new BufferedReader(new FileReader(file));
