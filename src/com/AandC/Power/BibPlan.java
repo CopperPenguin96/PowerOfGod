@@ -49,19 +49,33 @@ public class BibPlan
 				entries = zipFile.entries();
 				if (entries.hasMoreElements()){
 					moreEntries();
-				} //Instead of using the While loop, loop with a void
+				}
 				String[] en = new String[count];
 				Enumeration<? extends ZipEntry> entriesNew = zipFile.entries();
 				count = 0;
 				while(entriesNew.hasMoreElements()) {
 					en[count] = entriesNew.nextElement().toString();
+					count++;
+				}
+				int st;
+				for (st = 0; st <= 2; st++) {
+					try {
+						System.out.println(en[st]);
+					} catch (Exception ex) {
+						System.out.println("Bad # " + st);
+					}
 				}
 				boolean hasBaseFile = false;
 				for (String currentFile:en) {
-					if (currentFile.equals("base.xml")) {
-						hasBaseFile = true;
+					try {
+						if (currentFile.equals("base.xml")) {
+							hasBaseFile = true;
+						}
+					} catch (NullPointerException ex) {
+						System.out.println(hasBaseFile);
 					}
 				}
+				System.out.println(hasBaseFile);
 				if (!hasBaseFile) {
 					throw new InvalidBibPlanException("Base File is Missing from Archive");
 				}
@@ -94,31 +108,23 @@ public class BibPlan
 				moreEntries();
 			}
 		} catch (StackOverflowError ex) {
-			System.out.println("You finishes with " + count);
+			//Prevents overflowing
 		}
 	}
 	void parse(ZipFile file, String fileName) throws InvalidBibPlanException, IOException {
-		File planDir = null;
-		String PlanName = null;
-		String directoryName = null;
+		MsgBox msg = new MsgBox(file.getName().substring(25,file.getName().length() - 8), fileName, MsgBox.mainActivityContext);
+		msg.show();
 		try {
 			if (!Files.appFiles[4].exists()) {
 				Files.appFiles[4].mkdirs();
 			}
-			// length - 4
-			PlanName = fileName.substring(0, fileName.length() - 4);
-			directoryName = "/sdcard/PowerOfGod/Plans/" + PlanName;
-			tempPath = directoryName;
-			tempX = tempPath + "Base.xml";
-			xmlFile = new File(tempX);
-			planDir = new File(directoryName);
-			if (!planDir.exists()) {
-				planDir.mkdirs();
-			} else {
-				planDir.delete();
-				planDir.mkdirs(); //Prevents tampering with contents
-			}
-			ZipExtractor.unzip(fileName, directoryName);
+			// length - 8
+			File tempDir = new File(file.getName().substring(0,25));
+			if (tempDir.exists()) tempDir.delete();
+			tempDir.mkdirs();
+			ZipExtractor.unzip(file.getName(), 
+				file.getName().substring(0, file.getName().length() - 8) + "/");
+			xmlFile = new File(file.getName().substring(0, file.getName().length() - 8) + "/base.xml");
 			parseXML();
 		} catch (NullPointerException ex) {
 			System.exit(0);
@@ -144,7 +150,7 @@ public class BibPlan
 						"Plan Name : " + eElement.getAttribute("name"),
 						"Length of Days : " + eElement.getAttribute("days")
 					};
-					id = Integer.parseInt(attributes[0]);
+					id = Integer.parseInt(attributes[0].substring(5));
 					name = attributes[1];
 					dayCount = Integer.parseInt(attributes[2]);
 					System.out.println("ID = " + id);

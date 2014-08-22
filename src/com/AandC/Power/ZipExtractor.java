@@ -20,18 +20,19 @@ import com.AandC.Power.Exceptions.*;
 public class ZipExtractor
 {
 	public static void unzip(String zipFileDir, String planDirectory) throws InvalidBibPlanException{
-		String source = zipFileDir;
 		String destination = planDirectory;
 		String password = "noPassHere";
 
 		try {
-			ZipFile zipFile = new ZipFile(source);
+			ZipFile zipFile = new ZipFile(zipFileDir);
 			if (zipFile.isEncrypted()) {
 				zipFile.setPassword(password);
 			}
 			zipFile.extractAll(destination);
 		} catch (ZipException e) {
-			throw new InvalidBibPlanException("Bad File");
+			e.printStackTrace();
+			System.out.println(zipFileDir);
+			System.out.println(planDirectory);
 		}
 	}
 }
