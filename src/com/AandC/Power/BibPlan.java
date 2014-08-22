@@ -72,7 +72,6 @@ public class BibPlan
 							hasBaseFile = true;
 						}
 					} catch (NullPointerException ex) {
-						System.out.println(hasBaseFile);
 					}
 				}
 				System.out.println(hasBaseFile);
@@ -87,13 +86,17 @@ public class BibPlan
 					boolean hasDay = false;
 					days++;
 					for (String x:en) {
-						int num = Integer.parseInt(x.substring(0,0));
-						if (days == num) {
-							hasDay = true;
-						}
-					}
-					if (!hasDay) {
-						throw new InvalidBibPlanException("Day #" + days + " is missing.");
+						try {
+							int num = Integer.parseInt(x.substring(0,1));
+							if (days == num) {
+								hasDay = true;
+							}
+							if (!hasDay) {
+								throw new InvalidBibPlanException("Day #" + days + " is missing.");
+							}
+						} catch (Exception ex) {
+							//Stops on unneeded String items
+						} 
 					}
 				}
 			} catch (Exception ex) {
@@ -151,7 +154,7 @@ public class BibPlan
 						"Length of Days : " + eElement.getAttribute("days")
 					};
 					id = Integer.parseInt(attributes[0].substring(5));
-					name = attributes[1];
+					name = attributes[1].substring(12);
 					dayCount = Integer.parseInt(attributes[2].substring(17));
 					System.out.println("ID = " + id);
 					System.out.println("Name = " + name);
