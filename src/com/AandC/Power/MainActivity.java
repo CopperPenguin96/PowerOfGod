@@ -100,6 +100,7 @@ public class MainActivity extends Activity
 			UserInfo.setDen(formBox[2].getText().toString());
 			UserInfo.setUserName(formBox[0].getText().toString());
 			UserInfo.save();
+			setUp();
 			//Show Main Menu
 		}
 	}

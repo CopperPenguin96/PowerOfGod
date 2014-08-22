@@ -63,6 +63,10 @@ public class UserInfo
 					System.exit(0);
 				}
 			}
+		} else {
+			Files.appFiles[0].delete();
+			save(); //Info might update
+			//Keeps it updated in the file
 		}
 	}
 	public static String getDen() {

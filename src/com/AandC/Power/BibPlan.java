@@ -37,15 +37,16 @@ public class BibPlan
 	String tempX;
 	int count = 0;
 	ZipFile zipFile;
-	Enumeration<? extends ZipEntry> entries = zipFile.entries();
+	Enumeration<? extends ZipEntry> entries;
 	//Constructor for the BibPlan Object
 	//Checks for missing files in BibPlan file
 	public BibPlan(String fileName) throws IOException, InvalidBibPlanException {
 		if (fileName.equals(null)) {
-			 throw new NullPointerException();
+			 throw new IllegalArgumentException();
 		} else {
 			try {
 				zipFile = new ZipFile(fileName);
+				entries = zipFile.entries();
 				if (entries.hasMoreElements()){
 					moreEntries();
 				} //Instead of using the While loop, loop with a void
@@ -81,8 +82,8 @@ public class BibPlan
 						throw new InvalidBibPlanException("Day #" + days + " is missing.");
 					}
 				}
-			} catch (NullPointerException ex) {
-				System.exit(0);
+			} catch (Exception ex) {
+				ex.printStackTrace();
 			}
 		}
 	}
