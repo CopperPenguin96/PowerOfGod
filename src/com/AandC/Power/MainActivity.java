@@ -46,15 +46,6 @@ public class MainActivity extends Activity
 			String filePath = "/sdcard/PowerOfGod/Plans/";
 			File file = new File(filePath);
 			if (!file.exists()) file.mkdirs();
-			try {
-				BibPlan testPlan = BibPlanParser.getBibPlan("planName");
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (InvalidBibPlanException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

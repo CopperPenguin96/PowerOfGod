@@ -19,6 +19,7 @@ import com.AandC.Power.Exceptions.*;
  */
 public class BibPlanParser
 {
+	public static int extLength = getExtension("temp.bibPlan").length() + 1;
 	private static String[] plans;
 	//This method gets all the valid bibPlans
 	public static String[] getInstalledPlans() {
@@ -28,38 +29,42 @@ public class BibPlanParser
 				"No installed Plans. Get some!"
 			};
 		} else {
+			int listCount = 0;
+			int totalItems = 0;
 			File[] listOfFiles = Files.appFiles[3].listFiles();
-			for (int i = 0; i < listOfFiles.length; i++) {
-				if (listOfFiles[i].isFile()) {
-					System.out.println("File " + listOfFiles[i].getName());
-				} else if (listOfFiles[i].isDirectory()) {
-					System.out.println("Directory " + listOfFiles[i].getName());
+			for (File fileList:listOfFiles) {
+				totalItems++;
+				if (fileList.isFile()) {
+					if (getExtension(fileList.getName()).equals("bibPlan")) {
+						listCount++;
+					}
 				}
 			}
-			String[] tempArray = new String[] {
-				
-			};
-			int currentCount = 0;
-			for (File f:listOfFiles) {
-				String extension = "";
-				int i = f.getName().lastIndexOf('.');
-				if (i > 0) {
-					extension = f.getName().substring(i+1);
-				}
-				if (extension.equals(".bibPlan")) {
-					tempArray[currentCount] = f.getName().substring(0,i);
-					currentCount++;
+			String[] validPlans = new String[listCount + 1];
+			for (int ir = 0; ir <= listCount; ir++) {
+				for (File f:listOfFiles) {
+					if (getExtension(f.getName()).equals("bibPlan")) {
+						validPlans[ir] = f.getName().substring(0,extLength);
+					}
 				}
 			}
 			
-			if (tempArray[0] == null) {
-				return new String[] {
-					"No installed Plans. Get some!"
-				};
+			if (!validPlans[0].equals(null)) {
+				return validPlans;
 			} else {
-				return tempArray;
+				return new String[] {
+					"No installed plans! Get some!"
+				};
 			}
 		}
+	}
+	public static String getExtension(String fileName) {
+		String extension = "";
+		int iX = fileName.lastIndexOf('.');
+		if (iX >= 0) {
+			extension = fileName.substring(iX+1);
+		}
+		return extension;
 	}
 	public static BibPlan getBibPlan(String planName) throws InvalidBibPlanException, IOException {
 		String file = "/sdcard/PowerOfGod/Plans/" + planName + ".bibPlan";
