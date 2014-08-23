@@ -1,6 +1,4 @@
-package com.AandC.Power;
-import android.app.*;
-import android.os.*;
+package com.AandC.Power.Exceptions;
 /*
  Copyright 2014 apotter96
 
@@ -16,11 +14,10 @@ import android.os.*;
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-public class Sunday extends Activity
+public class BadDayException extends Exception
 {
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.lesson);
-	}
+	public BadDayException() { super(); }
+	public BadDayException(String message) { super(message); }
+	public BadDayException(String message, Throwable cause) { super(message, cause); }
+	public BadDayException(Throwable cause) { super(cause); }
 }

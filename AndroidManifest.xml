@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+		<activity
+			android:label="Sunday Lessons"
+            android:name=".Lesson" >
+		</activity>
+		<activity
+			android:label="Thursday Lessons"
+            android:name=".Lesson" >
+		</activity>
     </application>
 
 </manifest>

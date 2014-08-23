@@ -78,10 +78,24 @@ public class MainActivity extends Activity
 	}
 	
 	public void sundayClick(View v) {
-		
+		try {
+			Lesson.setDay("Sunday");
+		}
+		catch (BadDayException e) {
+			e.printStackTrace();
+		} finally {
+			startActivity(new Intent(this, Lesson.class));
+		}
 	}
 	public void thursdayClick(View v) {
-		
+		try {
+			Lesson.setDay("Thursday");
+		}
+		catch (BadDayException e) {
+			e.printStackTrace();
+		} finally {
+			startActivity(new Intent(this, Lesson.class));
+		}
 	}
 	public void quizClick(View v) {
 		

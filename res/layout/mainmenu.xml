@@ -8,20 +8,24 @@
 	<Button
 		android:layout_height="wrap_content"
 		android:text="Sundays"
-		android:layout_width="100dp"
-		android:id="@+id/btnSunday"/>
+		android:layout_width="110dp"
+		android:id="@+id/btnSunday"
+		android:onClick="sundayClick"/>
 
 	<Button
 		android:layout_height="wrap_content"
-		android:text="Mondays"
+		android:text="Thursday"
+		android:onClick="thursdayClick"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/btnSunday"
 		android:id="@+id/btnMonday"
-		android:layout_alignRight="@id/btnSunday"/>
+		android:layout_alignRight="@id/btnSunday"
+		android:layout_alignLeft="@id/btnSunday"/>
 
 	<Button
 		android:layout_height="wrap_content"
 		android:text="Quizzes"
+		android:onClick="quizClick"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/btnMonday"
 		android:layout_alignRight="@id/btnMonday"
