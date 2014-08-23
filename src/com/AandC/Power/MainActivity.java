@@ -79,22 +79,30 @@ public class MainActivity extends Activity
 	
 	public void sundayClick(View v) {
 		try {
-			Lesson.setDay("Sunday");
+			Lesson.setDay("sunday");
 		}
 		catch (BadDayException e) {
 			e.printStackTrace();
 		} finally {
-			startActivity(new Intent(this, Lesson.class));
+			try {
+				startActivity(new Intent(this, Lesson.class));
+			} catch (NullPointerException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	public void thursdayClick(View v) {
 		try {
-			Lesson.setDay("Thursday");
+			Lesson.setDay("thursday");
 		}
 		catch (BadDayException e) {
 			e.printStackTrace();
 		} finally {
-			startActivity(new Intent(this, Lesson.class));
+			try {
+				startActivity(new Intent(this, Lesson.class));
+			} catch (NullPointerException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	public void quizClick(View v) {
