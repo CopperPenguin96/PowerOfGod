@@ -30,14 +30,23 @@ public class Lesson extends Activity
 		if (day.equals("sunday")) Sunday();
 		else if (day.equals("thursday")) Thursday();
 	}
+	String url = "http://PowerOfGod.1apps.com/";
 	public void Sunday() {
-		
+		String localUrl = url + "Sunday/";
+		String[] fileArray = new String[] {
+			localUrl + "title.html",
+			localUrl + "message.html"
+		};
 	}
 	
 	public void Thursday() {
-		
+		String localUrl = url + "Thursday/";
+		String[] fileArray = new String[] {
+			localUrl + "title.html",
+			localUrl + "message.html"
+		};
 	}
-	
+
 	public static void setDay(String strDay) throws BadDayException {
 		String[] days = new String[] {
 			"sunday", "thursday"
