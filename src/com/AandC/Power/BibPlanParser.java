@@ -19,10 +19,9 @@ import com.AandC.Power.Exceptions.*;
  */
 public class BibPlanParser
 {
-	public static int extLength = getExtension("temp.bibPlan").length() + 1;
 	private static String[] plans;
 	//This method gets all the valid bibPlans
-	public static String[] getInstalledPlans() {
+	public static String[] getInstalledPlans() throws IOException, InvalidBibPlanException {
 		if (!Files.appFiles[3].exists()) {
 			Files.appFiles[3].mkdirs();
 			return new String[] {
@@ -40,20 +39,31 @@ public class BibPlanParser
 					}
 				}
 			}
-			String[] validPlans = new String[listCount + 1];
+			int extLength = getExtension("temp.bibPlan").length() + 1;
+			String[] validPlans = null;
 			for (int ir = 0; ir <= listCount; ir++) {
 				for (File f:listOfFiles) {
+					validPlans = new String[listCount + 1];
+					MsgBox fv = new MsgBox(f.getName(), String.valueOf(ir), MsgBox.mainActivityContext);
+					fv.show();
 					if (getExtension(f.getName()).equals("bibPlan")) {
-						validPlans[ir] = f.getName().substring(0,extLength);
+						BibPlan bibPlan = getBibPlan(f.getName().substring(0,extLength));
+						validPlans[ir] = bibPlan.name;
 					}
 				}
 			}
-			
-			if (!validPlans[0].equals(null)) {
-				return validPlans;
-			} else {
-				return new String[] {
-					"No installed plans! Get some!"
+			try {
+				if (!validPlans.equals(null)) {
+					return validPlans;
+				} else {
+					return new String[] {
+						"No installed plans! Get some!"
+					};
+				}
+			} catch (NullPointerException e) {
+				return new String []{
+					"Something went wrong! :(",
+					"Yikes"
 				};
 			}
 		}

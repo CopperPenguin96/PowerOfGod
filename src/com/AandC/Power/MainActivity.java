@@ -97,7 +97,10 @@ public class MainActivity extends Activity
 		}
 	}
 	public void quizClick(View v) {
-		
+		MsgBox unavailableFeature = new MsgBox("Hang on there!",
+			"This feature is not available just yet. Sorry.",
+			MsgBox.mainActivityContext);
+		unavailableFeature.show();
 	}
 	public void finishClick(View v) {
 		EditText[] formBox = new EditText[] {
@@ -143,6 +146,10 @@ public class MainActivity extends Activity
 		} else {
 			return false;
 		}
+	}
+	
+	public void getPlans(View v) {
+		startActivity(new Intent(this, PlanList.class));
 	}
 	
 }

@@ -8,7 +8,7 @@
 	<Button
 		android:layout_height="wrap_content"
 		android:text="Sundays"
-		android:layout_width="110dp"
+		android:layout_width="115dp"
 		android:id="@+id/btnSunday"
 		android:onClick="sundayClick"/>
 
@@ -18,7 +18,7 @@
 		android:onClick="thursdayClick"
 		android:layout_width="wrap_content"
 		android:layout_below="@id/btnSunday"
-		android:id="@+id/btnMonday"
+		android:id="@+id/btnThursday"
 		android:layout_alignRight="@id/btnSunday"
 		android:layout_alignLeft="@id/btnSunday"/>
 
@@ -27,11 +27,23 @@
 		android:text="Quizzes"
 		android:onClick="quizClick"
 		android:layout_width="wrap_content"
-		android:layout_below="@id/btnMonday"
-		android:layout_alignRight="@id/btnMonday"
-		android:layout_alignLeft="@id/btnMonday"
+		android:layout_below="@id/btnThursday"
+		android:layout_alignRight="@id/btnThursday"
+		android:layout_alignLeft="@id/btnThursday"
 		android:id="@+id/btnQuizzes"/>
 
+	<Button
+		android:layout_height="wrap_content"
+		android:text="Bible Plans"
+		android:onClick="getPlans"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/btnQuizzes"
+		android:layout_alignLeft="@id/btnQuizzes"
+		android:layout_alignRight="@id/btnQuizzes"
+		android:id="@+id/btnBibPlans"/>
+
 </RelativeLayout>
+
+
 
 
