@@ -33,6 +33,7 @@ public class MainActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
+		System.out.println("=================");
 		try {
 			super.onCreate(savedInstanceState);
 			setUp();
@@ -46,6 +47,9 @@ public class MainActivity extends Activity
 			String filePath = "/sdcard/PowerOfGod/Plans/";
 			File file = new File(filePath);
 			if (!file.exists()) file.mkdirs();
+			if ((new File(filePath + "Temp/")).exists()) {
+				(new File(filePath + "Temp/")).delete();
+			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}

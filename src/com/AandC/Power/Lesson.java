@@ -27,9 +27,12 @@ public class Lesson extends Activity
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lesson);
+		//Allows for other classes to display MsgBox in this activity
 		MsgBox.lessonContext = this;
+		//Lower Case in case
 		day = day.toLowerCase();
 		try {
+			//Sets per which button was pressed
 			if (day.equals("sunday")) Sunday();
 			else if (day.equals("thursday")) Thursday();
 		} catch (IOException e) {
@@ -39,7 +42,9 @@ public class Lesson extends Activity
 			e.printStackTrace();
 		}
 	}
+	//Where we get our web content from
 	String url = "http://PowerOfGod.1apps.com/";
+	//The Sunday method presented above
 	public void Sunday() throws IOException {
 		String localUrl = url + "Sunday/";
 		String[] fileArray = new String[] {
@@ -52,7 +57,7 @@ public class Lesson extends Activity
 		};
 		setContent(c);
 	}
-	
+	//The Thursday method
 	public void Thursday() throws IOException {
 		String localUrl = url + "Thursday/";
 		String[] fileArray = new String[] {
@@ -65,12 +70,14 @@ public class Lesson extends Activity
 		};
 		setContent(c);
 	}
+	//Sets the textviews to display lesson info
 	void setContent(String[] content) {
 		TextView lblTitle = (TextView) findViewById(R.id.lblTitle);
 		TextView lblMessage = (TextView) findViewById(R.id.lblMessage);
 		lblTitle.setText(content[0]);
 		lblMessage.setText(content[1]);
 	}
+	//For when the MainActivity wants to go into this one, it sends which day first
 	public static void setDay(String strDay) throws BadDayException {
 		String[] days = new String[] {
 			"sunday", "thursday"

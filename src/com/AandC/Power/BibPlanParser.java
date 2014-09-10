@@ -43,7 +43,8 @@ public class BibPlanParser
 			String[] validPlans = null;
 			for (int ir = 0; ir <= listCount; ir++) {
 				for (File f:listOfFiles) {
-					validPlans = new String[listCount + 1];
+					validPlans = new String[listCount + 2];
+					System.out.println("x");
 					MsgBox fv = new MsgBox(f.getName(), String.valueOf(ir), MsgBox.mainActivityContext);
 					fv.show();
 					if (getExtension(f.getName()).equals("bibPlan")) {
@@ -54,13 +55,16 @@ public class BibPlanParser
 			}
 			try {
 				if (!validPlans.equals(null)) {
+					validPlans[listCount + 1] = "Copyright (c) 2014 by Alex Potter";
 					return validPlans;
 				} else {
 					return new String[] {
-						"No installed plans! Get some!"
+						"No installed plans! Get some!",
+						"Exit"
 					};
 				}
 			} catch (NullPointerException e) {
+				e.printStackTrace();
 				return new String []{
 					"Something went wrong! :(",
 					"Yikes"
