@@ -15,6 +15,22 @@ public class PlanList extends Activity
 	public void onCreate(Bundle b) {
 		super.onCreate(b);
 		setContentView(R.layout.list);
+		MsgBox.planListContext = this;
+		try
+		{
+			for (String h:BibPlanParser.getInstalledPlans())
+			{
+				try {
+					System.out.println(h);
+				} catch (Exception e) {
+					
+				}
+			}
+		} catch (IOException e) {
+			
+		} catch (InvalidBibPlanException e) {
+			
+		}
 		try
 		{
 			assignList();
@@ -46,7 +62,11 @@ public class PlanList extends Activity
 	}
 	void getPlanNames() throws IOException, InvalidBibPlanException {
 		for (String availablePlans:BibPlanParser.getInstalledPlans()) {
-			planNameList.add(availablePlans);
+			try {
+				planNameList.add(availablePlans);
+			} catch (NullPointerException e) {
+				
+			}
 		}
 		planNameList.add("Get More");
 	}

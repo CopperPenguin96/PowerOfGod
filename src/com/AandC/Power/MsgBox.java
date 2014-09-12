@@ -20,6 +20,7 @@ public class MsgBox
 {
 	public static Context mainActivityContext;
 	public static Context lessonContext;
+	public static Context planListContext;
 	AlertDialog ad;
 	public MsgBox(String title, String message, Context c) {
 		ad = new AlertDialog.Builder(c).create();

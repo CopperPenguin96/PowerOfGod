@@ -24,6 +24,7 @@ public class BibPlanParser
 	public static String[] getInstalledPlans() throws IOException, InvalidBibPlanException {
 		if (!Files.appFiles[3].exists()) {
 			Files.appFiles[3].mkdirs();
+			System.out.println("Check #1");
 			return new String[] {
 				"No installed Plans. Get some!",
 				"Sorry..."
@@ -32,6 +33,7 @@ public class BibPlanParser
 			int listCount = 0;
 			int totalItems = 0;
 			File[] listOfFiles = Files.appFiles[3].listFiles();
+			System.out.println("C2");
 			for (File fileList:listOfFiles) {
 				totalItems++;
 				if (fileList.isFile()) {
@@ -46,14 +48,24 @@ public class BibPlanParser
 				for (File f:listOfFiles) {
 					validPlans = new String[listCount + 2];
 					System.out.println("x");
-					MsgBox fv = new MsgBox(f.getName(), String.valueOf(ir), MsgBox.mainActivityContext);
-					fv.show();
 					if (getExtension(f.getName()).equals("bibPlan")) {
 						BibPlan bibPlan = getBibPlan(f.getName().substring(0,f.getName().length() - 8));
 						validPlans[ir] = bibPlan.name;
 					} else {
-						System.out.println("Invalid extension for " + f.getName());
+						if (!getExtension(f.getName()).equals("")) {
+							System.out.println("Invalid extension for " + f.getName());
+						}
 					}
+				}
+			}
+			System.out.println("C3");
+			for (String g:validPlans) {
+				try {
+					System.out.println(g);
+					MsgBox plansBox = new MsgBox(g,g, MsgBox.mainActivityContext);
+					plansBox.show();
+				} catch (NullPointerException e) {
+					
 				}
 			}
 			try {
