@@ -11,7 +11,7 @@ import android.view.*;
 public class PlanList extends Activity
 {
 	@Override
-	private ListView listView;
+	ArrayList<String> planNameList;
 	public void onCreate(Bundle b) {
 		super.onCreate(b);
 		setContentView(R.layout.list);
@@ -27,30 +27,27 @@ public class PlanList extends Activity
 		}
 	}
 	void assignList() throws IOException, InvalidBibPlanException {
-		listView = (ListView) findViewById(R.id.listPlans);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, 
-			android.R.id.text1, 
-			BibPlanParser.getInstalledPlans());
-		// Assign adapter to ListView
-		listView.setAdapter(adapter); 
-		// ListView Item Click Listener
-		listView.setOnItemClickListener(new OnItemClickListener() {
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-							int position, long id) {
-				// ListView Clicked item index
-				int itemPosition = position;
-
-				// ListView Clicked item value
-				String  itemValue = (String) listView.getItemAtPosition(position);
-
-				// Show Alert 
-				Toast.makeText(getApplicationContext(),
-								  "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-					.show();
-
-			}
-
-		}); 
+		// Get the reference of listPlans
+		ListView planList = (ListView) findViewById(R.id.listPlans);
+		planNameList = new ArrayList<String>();
+		getPlanNames();
+		// Create The Adapter with passing ArrayList as 3rd parameter
+		ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, planNameList);
+		// Set The Adapter
+		planList.setAdapter(arrayAdapter); 
+		// register onClickListener to handle click events on each item
+		planList.setOnItemClickListener(new OnItemClickListener() {
+		// argument position gives the index of item which is clicked
+				public void onItemClick(AdapterView<?> arg0, View v,int position, long arg3) {
+					String selectedAnimal= planNameList.get(position);
+					Toast.makeText(getApplicationContext(), "Animal Selected : "+selectedAnimal, Toast.LENGTH_LONG).show();
+				}
+		 });
+	}
+	void getPlanNames() throws IOException, InvalidBibPlanException {
+		for (String availablePlans:BibPlanParser.getInstalledPlans()) {
+			planNameList.add(availablePlans);
+		}
+		planNameList.add("Get More");
 	}
 }

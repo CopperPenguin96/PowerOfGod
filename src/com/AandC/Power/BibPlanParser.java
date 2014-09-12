@@ -25,7 +25,8 @@ public class BibPlanParser
 		if (!Files.appFiles[3].exists()) {
 			Files.appFiles[3].mkdirs();
 			return new String[] {
-				"No installed Plans. Get some!"
+				"No installed Plans. Get some!",
+				"Sorry..."
 			};
 		} else {
 			int listCount = 0;
@@ -48,14 +49,15 @@ public class BibPlanParser
 					MsgBox fv = new MsgBox(f.getName(), String.valueOf(ir), MsgBox.mainActivityContext);
 					fv.show();
 					if (getExtension(f.getName()).equals("bibPlan")) {
-						BibPlan bibPlan = getBibPlan(f.getName().substring(0,extLength));
+						BibPlan bibPlan = getBibPlan(f.getName().substring(0,f.getName().length() - 8));
 						validPlans[ir] = bibPlan.name;
+					} else {
+						System.out.println("Invalid extension for " + f.getName());
 					}
 				}
 			}
 			try {
 				if (!validPlans.equals(null)) {
-					validPlans[listCount + 1] = "Copyright (c) 2014 by Alex Potter";
 					return validPlans;
 				} else {
 					return new String[] {
