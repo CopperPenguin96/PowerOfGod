@@ -40,7 +40,7 @@ public class PlanList extends Activity
 		// argument position gives the index of item which is clicked
 				public void onItemClick(AdapterView<?> arg0, View v,int position, long arg3) {
 					String selectedAnimal= planNameList.get(position);
-					Toast.makeText(getApplicationContext(), "Animal Selected : "+selectedAnimal, Toast.LENGTH_LONG).show();
+					Toast.makeText(getApplicationContext(), "Plan Selected : " + selectedAnimal, Toast.LENGTH_LONG).show();
 				}
 		 });
 	}
