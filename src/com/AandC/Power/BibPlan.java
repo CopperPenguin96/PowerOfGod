@@ -25,7 +25,7 @@ import org.w3c.dom.*;
   */
 public class BibPlan
 {
-	
+	//Variables that make up the Object
 	public int id;
 	public String name;
 	public int dayCount;
@@ -36,6 +36,7 @@ public class BibPlan
 	File xmlFile;
 	String tempX;
 	int count = 0;
+	//ZipFile stuff
 	ZipFile zipFile;
 	Enumeration<? extends ZipEntry> entries;
 	//Constructor for the BibPlan Object
