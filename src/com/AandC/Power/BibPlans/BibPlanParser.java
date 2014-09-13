@@ -47,7 +47,7 @@ public class BibPlanParser
 				String[] fileArray = new String[dirCount];
 				dirCount = 0;
 				for (File plan:f) {
-					fileArray[dirCount] = getFileName(getExtension(plan.getName()).length(), plan.getName());
+					fileArray[dirCount] = getFileName(getExtension(plan.getName()).length() + 1, plan.getName());
 				}
 				return fileArray;
 			}
