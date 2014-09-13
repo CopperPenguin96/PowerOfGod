@@ -30,60 +30,8 @@ public class BibPlanParser
 				"Sorry..."
 			};
 		} else {
-			int listCount = 0;
-			int totalItems = 0;
-			File[] listOfFiles = Files.appFiles[3].listFiles();
-			System.out.println("C2");
-			for (File fileList:listOfFiles) {
-				totalItems++;
-				if (fileList.isFile()) {
-					if (getExtension(fileList.getName()).equals("bibPlan")) {
-						listCount++;
-					}
-				}
-			}
-			int extLength = getExtension("temp.bibPlan").length() + 1;
-			String[] validPlans = null;
-			for (int ir = 0; ir <= listCount; ir++) {
-				for (File f:listOfFiles) {
-					validPlans = new String[listCount + 2];
-					System.out.println("x");
-					if (getExtension(f.getName()).equals("bibPlan")) {
-						BibPlan bibPlan = getBibPlan(f.getName().substring(0,f.getName().length() - 8));
-						validPlans[ir] = bibPlan.name;
-					} else {
-						if (!getExtension(f.getName()).equals("")) {
-							System.out.println("Invalid extension for " + f.getName());
-						}
-					}
-				}
-			}
-			System.out.println("C3");
-			for (String g:validPlans) {
-				try {
-					System.out.println(g);
-					MsgBox plansBox = new MsgBox(g,g, MsgBox.mainActivityContext);
-					plansBox.show();
-				} catch (NullPointerException e) {
-					
-				}
-			}
-			try {
-				if (!validPlans.equals(null)) {
-					return validPlans;
-				} else {
-					return new String[] {
-						"No installed plans! Get some!",
-						"Exit"
-					};
-				}
-			} catch (NullPointerException e) {
-				e.printStackTrace();
-				return new String []{
-					"Something went wrong! :(",
-					"Yikes"
-				};
-			}
+			
+			return null;
 		}
 	}
 	public static String getExtension(String fileName) {

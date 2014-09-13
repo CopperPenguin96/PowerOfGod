@@ -34,6 +34,10 @@ public class ConflictingBibPlansException extends Exception {
 		}
 	}
 	static boolean isConflicted(BibPlan bp1, BibPlan bp2) {
-		return false;
+		if (bp1.id == bp2.id) { //id is the unique identifier for each BibPlan
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
