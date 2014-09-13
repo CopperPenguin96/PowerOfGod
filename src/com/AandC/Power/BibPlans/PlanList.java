@@ -8,7 +8,22 @@ import com.AandC.Power.Exceptions.*;
 import android.widget.AdapterView.*;
 import android.view.*;
 import com.AandC.Power.*;
+import com.AandC.Power.StartUp.*;
+/*
+ Copyright 2014 apotter96
 
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
 public class PlanList extends Activity
 {
 	@Override
@@ -16,7 +31,7 @@ public class PlanList extends Activity
 	public void onCreate(Bundle b) {
 		super.onCreate(b);
 		setContentView(R.layout.list);
-		MsgBox.planListContext = this;
+		AppContext.planListContext = this;
 		try
 		{
 			for (String h:BibPlanParser.getInstalledPlans())
@@ -60,7 +75,7 @@ public class PlanList extends Activity
 					if (selectedItem.equals("Get More")) {
 						MsgBox msg = new MsgBox("Feature Currently Unavailable", "This will feature a list of Power of God " +
 							"Official Endorsed BibPlans that can be downloaded at the " +
-							"click of a button! Coming soon!", MsgBox.planListContext);
+							"click of a button! Coming soon!", AppContext.planListContext);
 						msg.show();
 					} else {
 						BibPlan bx = null;
@@ -73,7 +88,7 @@ public class PlanList extends Activity
 						} finally {
 							MsgBox b = new MsgBox("Plan Information",
 								"Name: " + bx.name + "\n" +
-								"Day Count: " + bx.dayCount, MsgBox.planListContext);
+								"Day Count: " + bx.dayCount, AppContext.planListContext);
 							b.show();
 						}
 					}

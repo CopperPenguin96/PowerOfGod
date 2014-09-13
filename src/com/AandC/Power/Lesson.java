@@ -6,6 +6,7 @@ import com.AandC.Power.Exceptions.*;
 import android.widget.*;
 import java.io.*;
 import com.AandC.Power.Extractors.*;
+import com.AandC.Power.StartUp.*;
 /*
  Copyright 2014 apotter96
 
@@ -29,7 +30,7 @@ public class Lesson extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lesson);
 		//Allows for other classes to display MsgBox in this activity
-		MsgBox.lessonContext = this;
+		AppContext.lessonContext = this;
 		//Lower Case in case
 		day = day.toLowerCase();
 		try {
@@ -38,7 +39,7 @@ public class Lesson extends Activity
 			else if (day.equals("thursday")) Thursday();
 		} catch (IOException e) {
 			MsgBox msgBox = new MsgBox("Error", "Something went wrong", 
-				MsgBox.lessonContext);
+				AppContext.lessonContext);
 			msgBox.show();
 			e.printStackTrace();
 		}

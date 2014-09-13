@@ -217,7 +217,7 @@ public class BibPlan
 				}
 			}
 			MsgBox magBox = new MsgBox("Daily Reading","Your daily reading is " + planDays[read - 1],
-									   MsgBox.mainActivityContext); /*Applying this context makes it appear
+									   AppContext.mainActivityContext); /*Applying this context makes it appear
 			 in MainActivity */
 			magBox.show();
 			if (!readToday()) {

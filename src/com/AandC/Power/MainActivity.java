@@ -44,7 +44,7 @@ public class MainActivity extends Activity
 			MsgBox verDialog = new MsgBox(getResources().getString(R.string.ver), 
 				"You are running Version " + getResources().getString(R.string.ver), this);
 			verDialog.show();
-			MsgBox.mainActivityContext = this; //So outside classes can show Alert Dialogues
+			AppContext.mainActivityContext = this; //So outside classes can show Alert Dialogues
 			String filePath = "/sdcard/PowerOfGod/Plans/";
 			File file = new File(filePath);
 			if (!file.exists()) file.mkdirs();
@@ -104,7 +104,7 @@ public class MainActivity extends Activity
 	public void quizClick(View v) {
 		MsgBox unavailableFeature = new MsgBox("Hang on there!",
 			"This feature is not available just yet. Sorry.",
-			MsgBox.mainActivityContext);
+			AppContext.mainActivityContext);
 		unavailableFeature.show();
 	}
 	public void finishClick(View v) {

@@ -1,6 +1,5 @@
-package com.AandC.Power;
-import android.app.*;
-import android.os.*;
+package com.AandC.Power.StartUp;
+import android.content.*;
 /*
  Copyright 2014 apotter96
 
@@ -16,11 +15,9 @@ import android.os.*;
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-public class Thursday extends Activity
+public class AppContext
 {
-	@Override
-	public void onCreate(Bundle b) {
-		super.onCreate(b);
-		setContentView(R.layout.lesson);
-	}
+	public static Context mainActivityContext;
+	public static Context lessonContext;
+	public static Context planListContext;
 }
