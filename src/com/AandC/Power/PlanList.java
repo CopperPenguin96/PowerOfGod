@@ -55,8 +55,28 @@ public class PlanList extends Activity
 		planList.setOnItemClickListener(new OnItemClickListener() {
 		// argument position gives the index of item which is clicked
 				public void onItemClick(AdapterView<?> arg0, View v,int position, long arg3) {
-					String selectedAnimal= planNameList.get(position);
-					Toast.makeText(getApplicationContext(), "Plan Selected : " + selectedAnimal, Toast.LENGTH_LONG).show();
+					String selectedItem = planNameList.get(position);
+					if (selectedItem.equals("Get More")) {
+						MsgBox msg = new MsgBox("Feature Currently Unavailable", "This will feature a list of Power of God " +
+							"Official Endorsed BibPlans that can be downloaded at the " +
+							"click of a button! Coming soon!", MsgBox.planListContext);
+						msg.show();
+					} else {
+						BibPlan bx = null;
+						try
+						{
+							bx = BibPlanParser.getBibPlan(selectedItem);
+						} catch (Exception e) {
+							e.printStackTrace();
+							Toast.makeText(getApplicationContext(), "Unable to read BibPlan", Toast.LENGTH_LONG).show();
+						} finally {
+							MsgBox b = new MsgBox("Plan Information",
+								"Name: " + bx.name + "\n" +
+								"Day Count: " + bx.dayCount, MsgBox.planListContext);
+							b.show();
+						}
+					}
+					//Toast.makeText(getApplicationContext(), "Plan Selected : " + selectedItem, Toast.LENGTH_LONG).show();
 				}
 		 });
 	}
