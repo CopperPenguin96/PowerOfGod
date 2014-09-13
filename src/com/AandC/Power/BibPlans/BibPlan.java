@@ -1,4 +1,4 @@
-package com.AandC.Power;
+package com.AandC.Power.BibPlans;
 import android.text.format.*;
 import java.util.zip.*;
 import java.util.*;
@@ -7,6 +7,8 @@ import com.AandC.Power.Exceptions.*;
 import com.AandC.Power.StartUp.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
+import com.AandC.Power.*;
+import com.AandC.Power.Extractors.*;
 
 /*
 	Copyright 2014 apotter96

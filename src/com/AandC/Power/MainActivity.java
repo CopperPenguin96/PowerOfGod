@@ -12,6 +12,7 @@ import java.io.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import com.AandC.Power.Exceptions.*;
+import com.AandC.Power.BibPlans.*;
 /*
  Copyright 2014 apotter96
 

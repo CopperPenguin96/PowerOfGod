@@ -1,4 +1,4 @@
-package com.AandC.Power;
+package com.AandC.Power.Extractors;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.core.ZipFile;
 import com.AandC.Power.Exceptions.*;

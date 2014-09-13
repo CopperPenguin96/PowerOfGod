@@ -1,4 +1,4 @@
-package com.AandC.Power;
+package com.AandC.Power.BibPlans;
 import android.app.*;
 import android.os.*;
 import android.widget.*;
@@ -7,6 +7,7 @@ import java.io.*;
 import com.AandC.Power.Exceptions.*;
 import android.widget.AdapterView.*;
 import android.view.*;
+import com.AandC.Power.*;
 
 public class PlanList extends Activity
 {
