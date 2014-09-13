@@ -30,8 +30,27 @@ public class BibPlanParser
 				"Sorry..."
 			};
 		} else {
-			
-			return null;
+			int dirCount = 0;
+			File file = Files.appFiles[3];
+			File[] f = file.listFiles();
+			for (File plan:f) {
+				if (getExtension(plan.getName()).equals("bibPlan")) {
+					dirCount++;
+				}
+			}
+			if (dirCount < 0) {
+				return new String[] {
+					"No installed Plans. Get some!",
+					"Sorry..."
+				};
+			} else {
+				String[] fileArray = new String[dirCount];
+				dirCount = 0;
+				for (File plan:f) {
+					fileArray[dirCount] = getFileName(getExtension(plan.getName()).length(), plan.getName());
+				}
+				return fileArray;
+			}
 		}
 	}
 	public static String getExtension(String fileName) {
@@ -41,6 +60,9 @@ public class BibPlanParser
 			extension = fileName.substring(iX+1);
 		}
 		return extension;
+	}
+	public static String getFileName(int extensionLength, String fileName) {
+		return fileName.substring(0,fileName.length() - extensionLength);
 	}
 	public static BibPlan getBibPlan(String planName) throws InvalidBibPlanException, IOException {
 		String file = "/sdcard/PowerOfGod/Plans/" + planName + ".bibPlan";
