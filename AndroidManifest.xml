@@ -5,7 +5,7 @@
     android:versionName="@string/ver" >
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
-
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-sdk 
         android:minSdkVersion="8" 
         android:targetSdkVersion="11" />
@@ -21,6 +21,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+			<receiver android:name=".LocationLoggerServiceManager" 
+				android:enabled="true" 
+				android:exported="false"
+				android:label="LocationLoggerServiceManager">
+				<intent-filter>
+					<action android:name="android.intent.action.BOOT_COMPLETED" />
+				</intent-filter>
+			</receiver>
         </activity>
 		<activity
 			android:label="Lessons"
