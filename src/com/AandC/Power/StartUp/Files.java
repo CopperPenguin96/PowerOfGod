@@ -51,11 +51,23 @@ public final class Files
 		fos.flush();
 		fos.close();
 	}
-	public static String[] getLine(File f) {
-		return null;
+	public static String[] getLine(File f) throws FileNotFoundException, IOException {
+		BufferedReader br = null;
+		br = new BufferedReader(new FileReader(f));
+		int lineCount = 0;
+		while ((br.readLine()) != null) {
+			lineCount++;
+		}
+		lineCount--; //Keeps array 0 based
+		int loopCount;
+		String[] tempArray = new String[lineCount];
+		for (loopCount = 0; loopCount <= lineCount; loopCount++) {
+			tempArray[loopCount] = br.readLine();
+		}
+		return tempArray;
 	}
 	//Gets all text in file
-	public static String getAllText(File f) {
+	public static String getAllText(File f) throws FileNotFoundException, IOException {
 		int length = getLine(f).length;
 		int loop;
 		String rtnText = null;
