@@ -2,6 +2,7 @@ package com.AandC.Power.BibPlans;
 import com.AandC.Power.StartUp.*;
 import java.io.*;
 import com.AandC.Power.Exceptions.*;
+import com.AandC.Power.*;
 /*
  Copyright 2014 apotter96
 
@@ -47,7 +48,7 @@ public class BibPlanParser
 				String[] fileArray = new String[dirCount];
 				dirCount = 0;
 				for (File plan:f) {
-					fileArray[dirCount] = getFileName(getExtension(plan.getName()).length() + 1, plan.getName());
+					fileArray[dirCount] = getFileName(getExtension(plan.getName()).length(), plan.getName());
 				}
 				return fileArray;
 			}
@@ -57,7 +58,7 @@ public class BibPlanParser
 		String extension = "";
 		int iX = fileName.lastIndexOf('.');
 		if (iX >= 0) {
-			extension = fileName.substring(iX+1);
+			extension = fileName.substring(iX + 1);
 		}
 		return extension;
 	}
@@ -72,5 +73,8 @@ public class BibPlanParser
 			ex.printStackTrace();
 			return null;
 		}
+	}
+	public static void notify() {
+		PlanNotification pn = new PlanNotification();
 	}
 }

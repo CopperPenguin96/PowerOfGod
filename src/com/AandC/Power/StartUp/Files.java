@@ -43,4 +43,33 @@ public final class Files
 			return false;
 		}
 	}
+	public static void write(String finalText, File path, String name) throws IOException {
+		File outputFile = new File(path, name);
+		FileOutputStream fos = new FileOutputStream(outputFile);
+		byte[] data = new String(finalText).getBytes();
+		fos.write(data);
+		fos.flush();
+		fos.close();
+	}
+	public static String[] getLine(File f) {
+		return null;
+	}
+	//Gets all text in file
+	public static String getAllText(File f) {
+		int length = getLine(f).length;
+		int loop;
+		String rtnText = null;
+		for (loop = 0; loop <= length; loop++) {
+			if (loop < length) {
+				if (loop == 0) {
+					rtnText = getLine(f)[loop] + "\n";
+				} else {
+					rtnText += getLine(f)[loop] + "\n";
+				}
+			} else if (loop == length) {
+				rtnText += getLine(f)[loop];
+			}
+		}
+		return rtnText;
+	}
 }

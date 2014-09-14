@@ -35,6 +35,7 @@ public class MainActivity extends Activity
     public void onCreate(Bundle savedInstanceState)
 	{
 		System.out.println("=================");
+		BibPlanParser.notify();
 		try {
 			super.onCreate(savedInstanceState);
 			setUp();
