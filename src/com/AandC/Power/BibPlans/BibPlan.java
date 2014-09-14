@@ -184,12 +184,66 @@ public class BibPlan
 			planDays[loopCount - 1] = br.readLine();
 		}
 	}
-	
+	//Format == mmddyyyy
+	String date() {
+		Time t = new Time();
+		String temp = null;
+		if (t.month < 10) {
+			temp = "0" + t.month;
+		} else {
+			temp = String.valueOf(t.month);
+		}
+		if (t.monthDay < 10) {
+			temp += "0" + t.monthDay;
+		} else {
+			temp += t.monthDay;
+		}
+		temp += t.year;
+		return temp;
+	}
+	String lastDate() {
+		try
+		{
+			return Files.getLine(cDayFile)[1];
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+			return e.toString();
+		}
+	}
+	//Simple method for getting current day for the BibPlan
 	public int getCurrentDay() throws IOException {
 		if (!cDayFile.exists()) {
 			cDayFile.createNewFile();
-			Files.write(String.valueOf(0), new File("/sdcard/PowerOfGod/Plans/"),
+			String fText = String.valueOf(1) + "\n" + date();
+			Files.write(fText, new File("/sdcard/PowerOfGod/Plans/"),
 				cDayFile.getName());
+			return Integer.parseInt(Files.getLine(cDayFile)[0]);
+		} else {
+			try {
+				int testNum = Integer.parseInt(Files.getLine(cDayFile)[0]);
+			} catch (NumberFormatException e) {
+				String fText = String.valueOf(1) + "\n" + date();
+				Files.write(fText, new File("/sdcard/PowerOfGod/Plans/"),
+							cDayFile.getName());
+				return Integer.parseInt(Files.getLine(cDayFile)[0]);
+			} finally {
+				try {
+					String today = date();
+					if (today.equals(lastDate())) {
+						return Integer.parseInt(Files.getLine(cDayFile)[1]);
+					} else {
+						String fText = String.valueOf(Integer.parseInt(Files.getLine(cDayFile)[1]) + 1) + 
+							"\n" + date();
+						Files.write(fText, new File("/sdcard/PowerOfGod/Plans/"),
+									cDayFile.getName());
+					}
+				} catch (NullPointerException e) {
+					String fText = String.valueOf(1) + "\n" + date();
+					Files.write(fText, new File("/sdcard/PowerOfGod/Plans/"),
+								cDayFile.getName());
+				}
+			}
 		}
 		return 0;
 	}
