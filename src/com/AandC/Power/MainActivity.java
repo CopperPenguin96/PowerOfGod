@@ -13,6 +13,7 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import com.AandC.Power.Exceptions.*;
 import com.AandC.Power.BibPlans.*;
+import android.support.v4.app.*;
 /*
  Copyright 2014 apotter96
 
@@ -71,6 +72,22 @@ public class MainActivity extends Activity
 				+ Thursday Lessons
 				+ Quizzes
 			*/
+			//plans();
+		}
+	}
+	void plans() {
+		try {
+			NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+			Notification notification = new Notification(R.drawable.ic_launcher, "Click to Check BibPlans!", System.currentTimeMillis());
+			PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, 
+				new Intent(getApplicationContext(), MainActivity.class), 0);
+			notification.setLatestEventInfo(getApplicationContext(), "Power of God", "Your BibPlans are waiting!", contentIntent);
+			manager.notify(R.layout.mainmenu, notification);
+		} catch (Exception ex) {
+			AlertDialog x = new AlertDialog.Builder(this).create();
+			x.setTitle(ex.toString());
+			x.setMessage(ex.toString());
+			x.show();
 		}
 	}
 	

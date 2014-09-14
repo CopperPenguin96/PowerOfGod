@@ -21,6 +21,14 @@ import com.AandC.Power.*;
 public class BibPlanParser
 {
 	private static String[] plans;
+	public static BibPlan[] getPlans() throws IOException, InvalidBibPlanException {
+		BibPlan[] arr = new BibPlan[getInstalledPlans().length];
+		int c = 0;
+		for (String x:getInstalledPlans()) {
+			arr[c] = getBibPlan(x);
+		}
+		return arr;
+	}
 	//This method gets all the valid bibPlans
 	public static String[] getInstalledPlans() throws IOException, InvalidBibPlanException {
 		if (!Files.appFiles[3].exists()) {

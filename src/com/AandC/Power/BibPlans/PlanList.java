@@ -86,10 +86,18 @@ public class PlanList extends Activity
 							e.printStackTrace();
 							Toast.makeText(getApplicationContext(), "Unable to read BibPlan", Toast.LENGTH_LONG).show();
 						} finally {
-							MsgBox b = new MsgBox("Plan Information",
-								"Name: " + bx.name + "\n" +
-								"Day Count: " + bx.dayCount, AppContext.planListContext);
-							b.show();
+							try
+							{
+								MsgBox b = new MsgBox("Plan Information",
+													  "Name: " + bx.name + "\n" +
+													  "Day Count: " + bx.dayCount +
+													  "Today's Reading " + bx.planDays[bx.getCurrentDay()]
+													  , AppContext.planListContext);
+								b.show();
+							}
+							catch (IOException e) {
+								e.printStackTrace();
+							}
 						}
 					}
 					//Toast.makeText(getApplicationContext(), "Plan Selected : " + selectedItem, Toast.LENGTH_LONG).show();
