@@ -72,7 +72,7 @@ public class MainActivity extends Activity
 				+ Thursday Lessons
 				+ Quizzes
 			*/
-			//plans();
+			plans();
 		}
 	}
 	void plans() {
@@ -80,9 +80,9 @@ public class MainActivity extends Activity
 			NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 			Notification notification = new Notification(R.drawable.ic_launcher, "Click to Check BibPlans!", System.currentTimeMillis());
 			PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, 
-				new Intent(getApplicationContext(), MainActivity.class), 0);
+				new Intent(getApplicationContext(), PlanList.class), 0);
 			notification.setLatestEventInfo(getApplicationContext(), "Power of God", "Your BibPlans are waiting!", contentIntent);
-			manager.notify(R.layout.mainmenu, notification);
+			manager.notify(R.layout.list, notification);
 		} catch (Exception ex) {
 			AlertDialog x = new AlertDialog.Builder(this).create();
 			x.setTitle(ex.toString());
@@ -148,7 +148,7 @@ public class MainActivity extends Activity
 	boolean hasErrors(EditText[] editText) {
 		try {
 			for (EditText txtLoop:editText) {
-				if (isNull(txtLoop.getText().toString())) {
+				if (Checks.isNull(txtLoop.getText().toString())) {
 					return true;
 				}
 			}
@@ -163,13 +163,7 @@ public class MainActivity extends Activity
 		}
 		return false;
 	}
-	boolean isNull(String o) {
-		if (o.equals(null)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
+	
 	
 	public void getPlans(View v) {
 		startActivity(new Intent(this, PlanList.class));

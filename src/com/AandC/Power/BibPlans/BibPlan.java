@@ -33,7 +33,7 @@ public class BibPlan
 	public int dayCount;
 	public String[] planDays;
 	public Boolean[] hasRead;
-	public String currentDayFile = "/sdcard/PowerOfGod/Plans/" + id + ".txt";
+	public String currentDayFile = "/sdcard/PowerOfGod/Plans/Days/" + id + ".txt";
 	public File cDayFile = new File(currentDayFile);
 	
 	String tempPath;
@@ -216,7 +216,7 @@ public class BibPlan
 		if (!cDayFile.exists()) {
 			cDayFile.createNewFile();
 			String fText = String.valueOf(1) + "\n" + date();
-			Files.write(fText, new File("/sdcard/PowerOfGod/Plans/"),
+			Files.write(fText, new File("/sdcard/PowerOfGod/Plans/Days/"),
 				cDayFile.getName());
 			return Integer.parseInt(Files.getLine(cDayFile)[0]);
 		} else {

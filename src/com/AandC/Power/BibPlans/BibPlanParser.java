@@ -76,7 +76,14 @@ public class BibPlanParser
 	public static BibPlan getBibPlan(String planName) throws InvalidBibPlanException, IOException {
 		String file = "/sdcard/PowerOfGod/Plans/" + planName + ".bibPlan";
 		try {
-			return new BibPlan(file);
+			if (file.equals("/sdcard/PowerOfGod/Plans/" + planName + "..bibPlan")) {
+				//Sometimes the compiler acts differently with the getInstalledPlans method
+				//and adds the . at the end of the substringed file name. This fixes it
+				file = "/sdcard/PowerOfGod/Plans/" + planName + "bibPlan";
+				return new BibPlan(file);
+			} else {
+				return new BibPlan(file);
+			}
 		} catch (NullPointerException ex) {
 			ex.printStackTrace();
 			return null;
