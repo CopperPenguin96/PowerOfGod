@@ -11,6 +11,7 @@ import java.io.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import android.support.v4.app.*;
+import com.AandC.Power.User.*;
 /*
  Copyright 2014 apotter96
 
@@ -37,8 +38,9 @@ public class MainActivity extends Activity
 		if (Files.getFiles()[1].exists()) {
 			//TODO - Start Main Menu
 		} else {
-			setContentView(R.layout.main);
+			startActivity(new Intent(this, UserInfoActivity.class));
 		}
+		this.finish();
 	}
 	
 }

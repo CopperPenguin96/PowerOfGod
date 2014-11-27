@@ -32,7 +32,7 @@
         </activity>
 		<activity
 			android:label="User Setup"
-            android:name="com.AandC.Power.UserInfoActivity" >
+            android:name="com.AandC.Power.User.UserInfoActivity" >
 		</activity>
 		
     </application>
