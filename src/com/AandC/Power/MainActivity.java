@@ -4,15 +4,12 @@ import android.app.*;
 import android.os.*;
 import android.view.*;
 import android.widget.*;
-import com.AandC.Power.StartUp.*;
 import android.content.*;
 import java.util.zip.*;
 import java.util.*;
 import java.io.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
-import com.AandC.Power.Exceptions.*;
-import com.AandC.Power.BibPlans.*;
 import android.support.v4.app.*;
 /*
  Copyright 2014 apotter96
@@ -35,138 +32,13 @@ public class MainActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState)
 	{
-		System.out.println("=================");
-		BibPlanParser.notify();
-		try {
-			super.onCreate(savedInstanceState);
-			setUp();
-			UserInfo.setAndroidVersion();
-			UserInfo.setAppVersion(this);
-			UserInfo.setPhoneModel();
-			MsgBox verDialog = new MsgBox(getResources().getString(R.string.ver), 
-				"You are running Version " + getResources().getString(R.string.ver), this);
-			verDialog.show();
-			AppContext.mainActivityContext = this; //So outside classes can show Alert Dialogues
-			String filePath = "/sdcard/PowerOfGod/Plans/";
-			File file = new File(filePath);
-			if (!file.exists()) file.mkdirs();
-			if ((new File(filePath + "Temp/")).exists()) {
-				(new File(filePath + "Temp/")).delete();
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-    }
-	
-	void setUp() {
-		if (!Files.checkFiles()) {
-			//Enter info screen
+		super.onCreate(savedInstanceState);
+		//Activity serves as bridge on Application Start
+		if (Files.getFiles()[1].exists()) {
+			//TODO - Start Main Menu
+		} else {
 			setContentView(R.layout.main);
-		} else {
-			setContentView(R.layout.mainmenu);
-			/*
-			4 Options Screen
-				+ Bible Reading Plan (Read from .bibPlan file that
-				is downloaded which is seen by dowbload screen)
-				+ Sunday Lessons
-				+ Thursday Lessons
-				+ Quizzes
-			*/
-			plans();
 		}
-	}
-	void plans() {
-		try {
-			NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-			Notification notification = new Notification(R.drawable.ic_launcher, "Click to Check BibPlans!", System.currentTimeMillis());
-			PendingIntent contentIntent = PendingIntent.getActivity(getApplicationContext(), 0, 
-				new Intent(getApplicationContext(), PlanList.class), 0);
-			notification.setLatestEventInfo(getApplicationContext(), "Power of God", "Your BibPlans are waiting!", contentIntent);
-			manager.notify(R.layout.list, notification);
-		} catch (Exception ex) {
-			AlertDialog x = new AlertDialog.Builder(this).create();
-			x.setTitle(ex.toString());
-			x.setMessage(ex.toString());
-			x.show();
-		}
-	}
-	
-	public void sundayClick(View v) {
-		try {
-			Lesson.setDay("sunday");
-		}
-		catch (BadDayException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				startActivity(new Intent(this, Lesson.class));
-			} catch (NullPointerException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	public void thursdayClick(View v) {
-		try {
-			Lesson.setDay("thursday");
-		}
-		catch (BadDayException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				startActivity(new Intent(this, Lesson.class));
-			} catch (NullPointerException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	public void quizClick(View v) {
-		MsgBox unavailableFeature = new MsgBox("Hang on there!",
-			"This feature is not available just yet. Sorry.",
-			AppContext.mainActivityContext);
-		unavailableFeature.show();
-	}
-	public void finishClick(View v) {
-		EditText[] formBox = new EditText[] {
-			(EditText) findViewById(R.id.txtName),
-			(EditText) findViewById(R.id.txtAge),
-			(EditText) findViewById(R.id.txtDen)
-		};
-		if (hasErrors(formBox)) {
-			AlertDialog errorBox = new AlertDialog.Builder(this).create();
-			errorBox.setTitle("Sorry...");
-			errorBox.setMessage("There are errors in your responses. Please fix them.");
-			errorBox.show();
-		} else {
-			UserInfo.setAge((short) Integer.parseInt(formBox[1].getText().toString()));
-			UserInfo.setDen(formBox[2].getText().toString());
-			UserInfo.setUserName(formBox[0].getText().toString());
-			UserInfo.save();
-			setUp();
-			//Show Main Menu
-		}
-	}
-	boolean hasErrors(EditText[] editText) {
-		try {
-			for (EditText txtLoop:editText) {
-				if (Checks.isNull(txtLoop.getText().toString())) {
-					return true;
-				}
-			}
-			short age = (short) Integer.parseInt(editText[1].getText().toString());
-			if (age < 13) {
-				return true;
-			} else if (age > 150) {
-				return true;
-			}
-		} catch (Exception ex) {
-			return true;
-		}
-		return false;
-	}
-	
-	
-	public void getPlans(View v) {
-		startActivity(new Intent(this, PlanList.class));
 	}
 	
 }

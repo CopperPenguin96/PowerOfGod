@@ -5,45 +5,66 @@
 	android:layout_width="match_parent"
 	android:background="@drawable/jesus">
 
-	<Button
+	<HorizontalScrollView
+		android:id="@+id/scrill"
 		android:layout_height="wrap_content"
-		android:text="Sundays"
-		android:layout_width="115dp"
-		android:id="@+id/btnSunday"
-		android:onClick="sundayClick"/>
+		android:layout_width="match_parent">
 
-	<Button
-		android:layout_height="wrap_content"
-		android:text="Thursday"
-		android:onClick="thursdayClick"
-		android:layout_width="wrap_content"
-		android:layout_below="@id/btnSunday"
-		android:id="@+id/btnThursday"
-		android:layout_alignRight="@id/btnSunday"
-		android:layout_alignLeft="@id/btnSunday"/>
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal">
 
-	<Button
-		android:layout_height="wrap_content"
-		android:text="Quizzes"
-		android:onClick="quizClick"
-		android:layout_width="wrap_content"
-		android:layout_below="@id/btnThursday"
-		android:layout_alignRight="@id/btnThursday"
-		android:layout_alignLeft="@id/btnThursday"
-		android:id="@+id/btnQuizzes"/>
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Home"/>
 
-	<Button
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Sundays"/>
+
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Thursdays"/>
+
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Quizzes"/>
+
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Students"/>
+
+			<Button
+				style="?android:attr/buttonBarButtonStyle"
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:text="Bible Plans"/>
+
+		</LinearLayout>
+
+	</HorizontalScrollView>
+
+	<LinearLayout
 		android:layout_height="wrap_content"
-		android:text="Bible Plans"
-		android:onClick="getPlans"
-		android:layout_width="wrap_content"
-		android:layout_below="@id/btnQuizzes"
-		android:layout_alignLeft="@id/btnQuizzes"
-		android:layout_alignRight="@id/btnQuizzes"
-		android:id="@+id/btnBibPlans"/>
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_below="@id/scrill"
+		android:layout_alignParentBottom="true"
+		android:id="@+id/mainLayout">
+
+	</LinearLayout>
 
 </RelativeLayout>
-
-
 
 
