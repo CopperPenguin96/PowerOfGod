@@ -12,6 +12,9 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import android.support.v4.app.*;
 import com.AandC.Power.User.*;
+import org.json.simple.parser.*;
+import org.json.*;
+import MsgBox;
 /*
  Copyright 2014 apotter96
 
@@ -35,12 +38,37 @@ public class MainActivity extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		//Activity serves as bridge on Application Start
+		UserInfo.c = this;
+		ReviveJson();
+		SetupDir();
 		if (Files.getFiles()[1].exists()) {
 			//TODO - Start Main Menu
 		} else {
 			startActivity(new Intent(this, UserInfoActivity.class));
 		}
 		this.finish();
+	}
+	void SetupDir() {
+		if (!Files.getFiles()[0].exists()) {
+			Files.getFiles()[0].mkdirs();
+		}
+	}
+	void ReviveJson() {
+		if (Files.getFiles()[1].exists()) {
+			try {
+				JSONParser parser = new JSONParser();
+				Object obj = parser.parse(new FileReader(Files.FileSys[1]));
+				JSONObject jsonObject = (JSONObject) obj;
+				UserInfo.setName(jsonObject.get("name").toString());
+				UserInfo.setAge(Integer.parseInt(jsonObject.get("age").toString()));
+				UserInfo.setDen(jsonObject.get("den").toString());
+			} catch (Exception e) {
+				e.printStackTrace();
+				(new MsgBox("Problem", "There was a problem loading your information. " + 
+					"You will have to restart", this)).Show();
+				Files.getFiles()[1].delete();
+			}
+		}
 	}
 	
 }

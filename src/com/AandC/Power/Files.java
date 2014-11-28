@@ -4,7 +4,7 @@ import java.io.*;
 public class Files
 {
 	static String mainPath = "/sdcard/Android/data/com.AandC.Power/";
-	static String[] FileSys = new String[]{
+	public static String[] FileSys = new String[]{
 		mainPath,
 		mainPath + "userInfo.json",
 	};
