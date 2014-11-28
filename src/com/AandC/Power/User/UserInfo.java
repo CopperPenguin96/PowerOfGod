@@ -3,10 +3,11 @@ import java.io.*;
 import java.util.*;
 import org.apache.http.*;
 import org.json.simple.parser.*;
-import org.json.*;
+import org.json.simple.*;
 import com.AandC.Power.*;
 import android.content.*;
 import android.os.*;
+import org.json.*;
 ;
 public class UserInfo
 {
@@ -15,11 +16,11 @@ public class UserInfo
 		try {
 			JSONParser parser = new JSONParser();
 			Object obj = parser.parse(new FileReader(Files.FileSys[1]));
-			JSONObject jsonObject = (JSONObject) obj;
+			org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) obj;
 			return jsonObject.get("name").toString();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			return "Nameless";
 		}
 	}
 	public static void setName(String n) {
@@ -30,7 +31,7 @@ public class UserInfo
 		try {
 			JSONParser parser = new JSONParser();
 			Object obj = parser.parse(new FileReader(Files.FileSys[1]));
-			JSONObject jsonObject = (JSONObject) obj;
+			org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) obj;
 			return jsonObject.get("age");
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -45,7 +46,7 @@ public class UserInfo
 		try {
 			JSONParser parser = new JSONParser();
 			Object obj = parser.parse(new FileReader(Files.FileSys[1]));
-			JSONObject jsonObject = (JSONObject) obj;
+			org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) obj;
 			return jsonObject.get("den").toString();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -59,7 +60,7 @@ public class UserInfo
 	public static void Update() throws JSONException, IOException {
 		File configFile = Files.getFiles()[1];
 		//Write to JSON file
-		JSONObject configObj = new JSONObject();
+		org.json.simple.JSONObject configObj = new org.json.simple.JSONObject();
         configObj.put("name", uInfo.name);
 		configObj.put("age", uInfo.age);
         configObj.put("den", uInfo.den);

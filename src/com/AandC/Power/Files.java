@@ -3,6 +3,7 @@ import java.io.*;
 
 public class Files
 {
+	public static boolean IsNew = false;
 	static String mainPath = "/sdcard/Android/data/com.AandC.Power/";
 	public static String[] FileSys = new String[]{
 		mainPath,

@@ -42,7 +42,7 @@ public class MainActivity extends Activity
 		ReviveJson();
 		SetupDir();
 		if (Files.getFiles()[1].exists()) {
-			//TODO - Start Main Menu
+			startActivity(new Intent(this, MainMenu.class));
 		} else {
 			startActivity(new Intent(this, UserInfoActivity.class));
 		}
@@ -62,11 +62,11 @@ public class MainActivity extends Activity
 				UserInfo.setName(jsonObject.get("name").toString());
 				UserInfo.setAge(Integer.parseInt(jsonObject.get("age").toString()));
 				UserInfo.setDen(jsonObject.get("den").toString());
+				UserInfo.Update();
 			} catch (Exception e) {
 				e.printStackTrace();
 				(new MsgBox("Problem", "There was a problem loading your information. " + 
 					"You will have to restart", this)).Show();
-				Files.getFiles()[1].delete();
 			}
 		}
 	}

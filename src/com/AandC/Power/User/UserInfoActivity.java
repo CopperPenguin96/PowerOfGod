@@ -8,6 +8,7 @@ import android.widget.*;
 import MsgBox;
 import org.json.*;
 import java.io.*;
+import android.content.*;
 public class UserInfoActivity extends Activity
 {
 	@Override
@@ -59,6 +60,10 @@ public class UserInfoActivity extends Activity
 			UserInfo.Update();
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			Files.IsNew = true;
+			startActivity(new Intent(this, MainMenu.class));
+			this.finish();
 		}
 	}
 }

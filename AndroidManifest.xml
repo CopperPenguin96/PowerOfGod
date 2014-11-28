@@ -34,7 +34,10 @@
 			android:label="User Setup"
             android:name="com.AandC.Power.User.UserInfoActivity" >
 		</activity>
-		
+		<activity
+			android:label="Main Menu"
+            android:name="com.AandC.Power.MainMenu" >
+		</activity>
     </application>
 
 </manifest>
