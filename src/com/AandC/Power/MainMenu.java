@@ -3,6 +3,7 @@ import android.app.*;
 import android.os.*;
 import com.AandC.Power.User.*;
 import MsgBox;
+import com.AandC.Power.Bible.*;
 public class MainMenu extends Activity
 {
 	@Override
@@ -28,7 +29,7 @@ public class MainMenu extends Activity
 		} else {
 			return new String[] {
 				"Welcome back, " + name,
-				"I missed you!"
+				"I missed you!" + Genesis.verse(1,1)
 			};
 		}
 	}
