@@ -9,7 +9,7 @@ This application is a cross-platform application to help others grow in their fa
 >>> Windows 8.1/Phone Store
 >>> Mac/Linux devices capable of Java
 
-#License
+##License
 The MIT License (MIT)
 
 Copyright (c) 2015 apotter96
@@ -32,7 +32,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-#PRIVACY POLICY
+##PRIVACY POLICY
 This Privacy Policy governs the manner in which AT Development collects, uses, maintains and discloses information collected from users (each, a "User") of the [http://godispower.us](http://godispower.us) website ("Site"). This privacy policy applies to the Site and all products and services offered by AT Development.  
 
  **Personal identification information**  
