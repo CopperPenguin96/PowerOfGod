@@ -1,0 +1,32 @@
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.xr.xml
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.exe
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.pdb
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.build.appxrecipe
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\App.g.i.cs
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\App.g.cs
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.g.i.cs
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.g.cs
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\XamlTypeInfo.g.cs
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\App.xaml
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\App.xbf
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\XamlSaveStateFile.xml
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.xaml
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.xbf
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\Power of God.Windows.exe
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\Power of God.Windows.pdb
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\priconfig.xml
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\priconfig.xml.intermediate
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\layout.resfiles
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\layout.resfiles.intermediate
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\resources.resfiles
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\resources.resfiles.intermediate
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\pri.resfiles
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\pri.resfiles.intermediate
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\qualifiers.txt
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\qualifiers.txt.intermediate
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\ProjectArchitectures.txt

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ALEX</Machine>
+    <WindowsUser>apotter96</WindowsUser>
+    <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>e7bb3d2e-6278-4343-b107-0c7d7277bc3c</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>537B7B48BF295F9A8B596AF920F819556E28650E8464EF0FA3B7DFC339058D9A</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>e7bb3d2e-6278-4343-b107-0c7d7277bc3c_1.0.0.0_neutral__r003pc84hmj98</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>e7bb3d2e-6278-4343-b107-0c7d7277bc3c_r003pc84hmj98!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>e7bb3d2e-6278-4343-b107-0c7d7277bc3c</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=apotter96</RegisteredPackagePublisher>
+    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-04-30T18:19:53.430</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.exe">
+      <PackagePath>Power of God.Windows.exe</PackagePath>
+      <Modified>2015-04-30T19:59:12.735</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\kjv.xml">
+      <PackagePath>Assets\kjv.xml</PackagePath>
+      <Modified>2015-04-28T05:14:56.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-100.png">
+      <PackagePath>Assets\Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-08T02:15:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\main.png">
+      <PackagePath>Assets\main.png</PackagePath>
+      <Modified>2015-04-07T04:55:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-100.png">
+      <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-08T02:15:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-08T02:15:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-11-08T02:15:46.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\TextFile1.txt">
+      <PackagePath>Assets\TextFile1.txt</PackagePath>
+      <Modified>2015-04-28T05:27:24.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2015-04-27T17:08:00.571</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf">
+      <PackagePath>MainPage.xbf</PackagePath>
+      <Modified>2015-04-30T06:25:04.603</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.xr.xml">
+      <PackagePath>Power of God.Windows.xr.xml</PackagePath>
+      <Modified>2015-04-30T06:25:04.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2015-04-30T18:19:52.828</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
