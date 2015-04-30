@@ -1,6 +1,7 @@
 Power of God TODO list
 
--Scheduled BibPlan notifications
--Downloadable BibPlans
--Lessons
--Settings Activity Possible
+-Release Alpha 1.2 for all ports (Currently Working On)
+-Bible Plans (Halted Production)
+-Downloadable BibPlans (Not Started)
+-Lessons (Finished)
+-Settings Activity Possible (Not Started)
