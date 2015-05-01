@@ -62,19 +62,18 @@ namespace Power_of_God.Books
             {
                 IEnumerable<XElement> listofBooks = from country in LoadBibleXml().Result.Descendants("book")
                                                         select country;
-                XElement bElement = null;
-                int loopCount = 1;
+                
                 foreach (XElement x3 in (from x in listofBooks let currentBook = x.Attributes().First().Value
                                          where currentBook.Equals(Name) select x).SelectMany(x => (from x2 in x.Elements()
-                                         where x2.Name.ToString().Equals("chapter") let chapterNum = Convert.ToInt32(Enumerable.First<XAttribute>(x2.Attributes()).Value)
-                                         where chapterNum == chapter from x3 in (from x3 in x2.Elements() where x3.Name.ToString().Equals("verse") let verseNum = Convert.ToInt32(Enumerable.First<XAttribute>(x3.Attributes()).Value)
+                                         where x2.Name.ToString().Equals("chapter") let chapterNum = Convert.ToInt32(x2.Attributes().First().Value)
+                                         where chapterNum == chapter from x3 in (from x3 in x2.Elements() where x3.Name.ToString().Equals("verse") let verseNum = Convert.ToInt32(x3.Attributes().First().Value)
                                          where verseNum == verse select x3) select x3)))
                 {
                     //Congratulations - Verse is found!
                     foundVerse = x3.Value;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //ShowMessage("Error", e.ToString());
             }

@@ -8,10 +8,10 @@ namespace Power_of_God.Books.Old_Testament
 {
     public class Numbers : Book
     {
-        public override string Name { get; set; } = "Leviticus";
+        public override string Name { get; set; } = "Numbers";
 
-        public override int BookNum { get; set; } = 3;
+        public override int BookNum { get; set; } = 4;
 
-        public override int ChapterCount { get; set; } = 27;
+        public override int ChapterCount { get; set; } = 36;
     }
 }

@@ -30,3 +30,35 @@ c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of G
 c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\qualifiers.txt.intermediate
 c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 c:\users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.xr.xml
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.exe
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.pdb
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.build.appxrecipe
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\App.g.i.cs
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\App.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.g.i.cs
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\App.xaml
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.xaml
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\App.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\MainPage.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\XamlSaveStateFile.xml
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\Power of God.Windows.exe
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\Power of God.Windows.pdb
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\priconfig.xml
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\priconfig.xml.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\layout.resfiles
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\layout.resfiles.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\resources.resfiles
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\resources.resfiles.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\pri.resfiles
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\pri.resfiles.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\qualifiers.txt
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\qualifiers.txt.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\ProjectArchitectures.txt

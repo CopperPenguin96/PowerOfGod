@@ -108,10 +108,39 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Books\Book.cs" />
+    <Compile Include="Books\Old Testament\Amos.cs" />
+    <Compile Include="Books\Old Testament\Chronicles1.cs" />
+    <Compile Include="Books\Old Testament\Chronicles2.cs" />
+    <Compile Include="Books\Old Testament\Daniel.cs" />
+    <Compile Include="Books\Old Testament\Deuteronomy.cs" />
+    <Compile Include="Books\Old Testament\Ecclesiastes.cs" />
+    <Compile Include="Books\Old Testament\Esther.cs" />
     <Compile Include="Books\Old Testament\Exodus.cs" />
+    <Compile Include="Books\Old Testament\Ezekiel.cs" />
+    <Compile Include="Books\Old Testament\Ezra.cs" />
     <Compile Include="Books\Old Testament\Genesis.cs" />
+    <Compile Include="Books\Old Testament\Hosea.cs" />
+    <Compile Include="Books\Old Testament\Isaiah.cs" />
+    <Compile Include="Books\Old Testament\Jeremiah.cs" />
+    <Compile Include="Books\Old Testament\Job.cs" />
+    <Compile Include="Books\Old Testament\Joel.cs" />
+    <Compile Include="Books\Old Testament\Jonah.cs" />
+    <Compile Include="Books\Old Testament\Joshua.cs" />
+    <Compile Include="Books\Old Testament\Judges.cs" />
+    <Compile Include="Books\Old Testament\Kings1.cs" />
+    <Compile Include="Books\Old Testament\Kings2.cs" />
+    <Compile Include="Books\Old Testament\Lamentations.cs" />
     <Compile Include="Books\Old Testament\Leviticus.cs" />
+    <Compile Include="Books\Old Testament\Micah.cs" />
+    <Compile Include="Books\Old Testament\Nehemiah.cs" />
     <Compile Include="Books\Old Testament\Numbers.cs" />
+    <Compile Include="Books\Old Testament\Obadiah.cs" />
+    <Compile Include="Books\Old Testament\Proverbs.cs" />
+    <Compile Include="Books\Old Testament\Psalms.cs" />
+    <Compile Include="Books\Old Testament\Ruth.cs" />
+    <Compile Include="Books\Old Testament\Samuel1.cs" />
+    <Compile Include="Books\Old Testament\Samuel2.cs" />
+    <Compile Include="Books\Old Testament\SongOfSolomon.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

@@ -17,8 +17,8 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Power_of_God.Books;
 using Power_of_God.Books.Old_Testament;
+//using Power_of_God.Books.New_Testament;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -38,7 +38,7 @@ namespace Power_of_God
 
         private static async void StartApp()
         {
-            Genesis genesisBook = new Genesis();
+            Ezra genesisBook = new Ezra();
             genesisBook.ShowMessage("Scripture", genesisBook.ReadFormattedVerse(1, 1));
         }
 

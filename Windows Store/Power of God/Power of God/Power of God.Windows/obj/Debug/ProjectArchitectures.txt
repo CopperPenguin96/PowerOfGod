@@ -1,1 +1,1 @@
-C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Power of God.Windows.csproj;neutral
+C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Power of God.Windows.csproj;neutral

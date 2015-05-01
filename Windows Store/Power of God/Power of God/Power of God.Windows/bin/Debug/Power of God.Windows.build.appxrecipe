@@ -7,53 +7,53 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>e7bb3d2e-6278-4343-b107-0c7d7277bc3c</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.exe">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.exe">
       <PackagePath>Power of God.Windows.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\kjv.xml">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\kjv.xml">
       <PackagePath>Assets\kjv.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\main.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\main.png">
       <PackagePath>Assets\main.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\Assets\TextFile1.txt">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\TextFile1.txt">
       <PackagePath>Assets\TextFile1.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.xr.xml">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.xr.xml">
       <PackagePath>Power of God.Windows.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\apotter96\documents\visual studio 2015\Projects\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
