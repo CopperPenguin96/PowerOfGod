@@ -104,10 +104,36 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="Books\New Testament\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Books\Book.cs" />
+    <Compile Include="Books\New Testament\Acts.cs" />
+    <Compile Include="Books\New Testament\Colossians.cs" />
+    <Compile Include="Books\New Testament\Corinthians1.cs" />
+    <Compile Include="Books\New Testament\Corinthians2.cs" />
+    <Compile Include="Books\New Testament\Ephesians.cs" />
+    <Compile Include="Books\New Testament\Galatians.cs" />
+    <Compile Include="Books\New Testament\Hebrews.cs" />
+    <Compile Include="Books\New Testament\James.cs" />
+    <Compile Include="Books\New Testament\John.cs" />
+    <Compile Include="Books\New Testament\John1.cs" />
+    <Compile Include="Books\New Testament\John2.cs" />
+    <Compile Include="Books\New Testament\John3.cs" />
+    <Compile Include="Books\New Testament\Jude.cs" />
+    <Compile Include="Books\New Testament\Luke.cs" />
+    <Compile Include="Books\New Testament\Mark.cs" />
+    <Compile Include="Books\New Testament\Matthew.cs" />
+    <Compile Include="Books\New Testament\Peter1.cs" />
+    <Compile Include="Books\New Testament\Peter2.cs" />
+    <Compile Include="Books\New Testament\Philemon.cs" />
+    <Compile Include="Books\New Testament\Philippians.cs" />
+    <Compile Include="Books\New Testament\Revelation.cs" />
+    <Compile Include="Books\New Testament\Romans.cs" />
+    <Compile Include="Books\New Testament\Thessalonians1.cs" />
+    <Compile Include="Books\New Testament\Thessalonians2.cs" />
+    <Compile Include="Books\New Testament\Timothy1.cs" />
+    <Compile Include="Books\New Testament\Timothy2.cs" />
+    <Compile Include="Books\New Testament\Titus.cs" />
     <Compile Include="Books\Old Testament\Amos.cs" />
     <Compile Include="Books\Old Testament\Chronicles1.cs" />
     <Compile Include="Books\Old Testament\Chronicles2.cs" />
@@ -119,6 +145,8 @@
     <Compile Include="Books\Old Testament\Ezekiel.cs" />
     <Compile Include="Books\Old Testament\Ezra.cs" />
     <Compile Include="Books\Old Testament\Genesis.cs" />
+    <Compile Include="Books\Old Testament\Habakkuk.cs" />
+    <Compile Include="Books\Old Testament\Haggai.cs" />
     <Compile Include="Books\Old Testament\Hosea.cs" />
     <Compile Include="Books\Old Testament\Isaiah.cs" />
     <Compile Include="Books\Old Testament\Jeremiah.cs" />
@@ -131,7 +159,9 @@
     <Compile Include="Books\Old Testament\Kings2.cs" />
     <Compile Include="Books\Old Testament\Lamentations.cs" />
     <Compile Include="Books\Old Testament\Leviticus.cs" />
+    <Compile Include="Books\Old Testament\Malachi.cs" />
     <Compile Include="Books\Old Testament\Micah.cs" />
+    <Compile Include="Books\Old Testament\Nahum.cs" />
     <Compile Include="Books\Old Testament\Nehemiah.cs" />
     <Compile Include="Books\Old Testament\Numbers.cs" />
     <Compile Include="Books\Old Testament\Obadiah.cs" />
@@ -141,6 +171,8 @@
     <Compile Include="Books\Old Testament\Samuel1.cs" />
     <Compile Include="Books\Old Testament\Samuel2.cs" />
     <Compile Include="Books\Old Testament\SongOfSolomon.cs" />
+    <Compile Include="Books\Old Testament\Zechariah.cs" />
+    <Compile Include="Books\Old Testament\Zephaniah.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
