@@ -173,9 +173,11 @@
     <Compile Include="Books\Old Testament\SongOfSolomon.cs" />
     <Compile Include="Books\Old Testament\Zechariah.cs" />
     <Compile Include="Books\Old Testament\Zephaniah.cs" />
+    <Compile Include="Files.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MsgBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

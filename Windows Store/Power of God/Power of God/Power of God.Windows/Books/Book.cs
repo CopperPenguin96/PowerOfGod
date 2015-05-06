@@ -24,37 +24,7 @@ namespace Power_of_God.Books
             return Name + " " + chapter + ":" + verse + " (KJB) - \"" + ReadPlainVerse(chapter, verse) + "\"";
         }
 
-        public void ShowMessage(String title, String message)
-        {
-            ShowDialog(title, message);
-        }
-        Task ShowDialog(String title, String message)
-        {
-            CoreDispatcher dispatcher = Windows.ApplicationModel.Core.CoreApplication.MainView.CoreWindow.Dispatcher;
-            Func<object, Task<bool>> action = null;
-            action = async o =>
-            {
-                try
-                {
-                    if (dispatcher.HasThreadAccess)
-                        await new MessageDialog(message, title).ShowAsync();
-                    else
-                    {
-                        await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => action(o));
-                    }
-                    return true;
-                }
-                catch (UnauthorizedAccessException)
-                {
-                    if (action != null)
-                    {
-                        await Task.Delay(500).ContinueWith(async t => await action(o));
-                    }
-                }
-                return false;
-            };
-            return action(null);
-        }
+        
         public string ReadPlainVerse(int chapter, int verse)
         {
             String foundVerse = null;
