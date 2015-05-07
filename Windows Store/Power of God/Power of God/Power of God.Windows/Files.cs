@@ -39,9 +39,10 @@ namespace Power_of_God
             "power.of.god\\userInfo.json"
         };
 
-        public static async Task<bool> Exists(int loopCount)
+        //arrayIndex should equal the item in FilesStr needing to be checked
+        public static async Task<bool> Exists(int arrayIndex)
         {
-            String fileName = FilesStr[loopCount];
+            String fileName = FilesStr[arrayIndex];
             var fileExists = true;
             Stream fileStream = null;
 
