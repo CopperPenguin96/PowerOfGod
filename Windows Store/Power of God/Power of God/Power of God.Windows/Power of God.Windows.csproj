@@ -194,6 +194,7 @@
     <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
     <Content Include="Assets\TextFile1.txt" />
+    <Content Include="cooltext117627293831111.png" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml">

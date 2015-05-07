@@ -40,12 +40,17 @@ namespace Power_of_God
 
         private static void StartApp()
         {
-            if (!Files.Exists(1).Result) // 0 = power.of.god/userInfo.json
+            String messageToSend = "Nothing Yet";
+            try
             {
-                // Start User Info screen
-                MsgBox mxBox = new MsgBox("Hi", "The File does NOT exist");
-                mxBox.ShowDialog();
+                var resultedAction = Files.Exists(0).Result;
+                messageToSend = !resultedAction ? "File does NOT Exist" : "File does exist";
             }
+            catch (Exception ex)
+            {
+                new MsgBox(ex.GetBaseException().ToString(), ex.GetBaseException().ToString() + "\n" + ex.GetBaseException().StackTrace).ShowDialog();
+            }
+            //new MsgBox("File Operation", messageToSend + "\n" + Files.FilePath()).ShowDialog();
         }
 
     }

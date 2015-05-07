@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,62 +11,57 @@ namespace Power_of_God
 {
     public class Files
     {
-        private const string FilePath = "power.of.god/";
-
-        public static readonly string[] FilesStr = new string[]
+        public static string FilePath()
         {
-            FilePath,
-            "userInfo.json"
+            return ApplicationData.Current.LocalFolder.Path + "\\power.of.god\\";
+        }
+
+        private static StorageFolder FilePathStorageFolder()
+        {
+            return ApplicationData.Current.LocalFolder;
+        }
+
+        public async static void CreateMainDir()
+        {
+            try
+            {
+                await FilePathStorageFolder().CreateFolderAsync("power.of.god", CreationCollisionOption.ReplaceExisting);
+            }
+            catch (ArgumentException e)
+            {
+                var baseException = e.GetBaseException();
+                await new MsgBox(baseException.ToString(), baseException.StackTrace).ShowDialog();
+            }
+        }
+
+        public static readonly string[] FilesStr = {
+            "power.of.god\\",
+            "power.of.god\\userInfo.json"
         };
 
-        public static async Task<bool> Exists(int loop)
+        public static async Task<bool> Exists(int loopCount)
         {
-            var sFolder = GetDirectoryArrayIndex(loop);
-            var fileStr = FilesStr[loop];
-            try
-            {
-                var item = await sFolder.TryGetItemAsync(fileStr);
-                return (item != null);
-            }
-            catch (Exception)
-            {
-                // Should never get here 
-                return false;
-            }
-        }
-        public static StorageFolder GetDirectoryArrayIndex(int fileIndex)
-        {
-            switch (fileIndex)
-            {
-                case 1:
-                    return FolderPaths()[fileIndex];
-                default:
-                    return null;
-            }
-        }
+            String fileName = FilesStr[loopCount];
+            var fileExists = true;
+            Stream fileStream = null;
 
-        private static StorageFolder[] FolderPaths()
-        {
-            return new[] {
-                StorageFolder.GetFolderFromPathAsync(FilePath).GetResults(),
-                StorageFolder.GetFolderFromPathAsync("").GetResults()
-            };
-        }
-        
-        /*public static async Task<bool> Exists(int itemArray)
-        {
-            StorageFolder folder = GetDirectoryArrayIndex(itemArray);
-            String itemName = FilesStr[itemArray];
             try
             {
-                var item = await folder.TryGetItemAsync(itemName);
-                return (item != null);
+                var file = await ApplicationData.Current.LocalFolder.GetFileAsync(fileName);
+                fileStream = await file.OpenStreamForReadAsync();
+                fileStream.Dispose();
             }
-            catch (Exception)
+            catch (FileNotFoundException)
             {
-                // Should never get here 
-                return false;
+                // If the file dosn't exits it throws an exception, make fileExists false in this case 
+                fileExists = false;
             }
-        }*/
+            finally
+            {
+                fileStream?.Dispose();
+            }
+
+            return fileExists;
+        }
     }
 }

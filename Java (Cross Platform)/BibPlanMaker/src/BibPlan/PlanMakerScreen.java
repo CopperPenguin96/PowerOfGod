@@ -37,6 +37,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -419,8 +420,8 @@ public final class PlanMakerScreen extends javax.swing.JFrame {
         jButton5.setEnabled(false);
     }//GEN-LAST:event_formWindowOpened
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+    private void SaveAction()
+    {
         BibPlan bP = new BibPlan(jTextField1.getText(), 
             toArray(jList2.getModel()),
             jTextField2.getText());
@@ -430,6 +431,11 @@ public final class PlanMakerScreen extends javax.swing.JFrame {
             Logger.getLogger(PlanMakerScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
         SetUp();
+    }
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        System.out.println("!!!!!!!!!!!!JLIST1 ITEMS");
+        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

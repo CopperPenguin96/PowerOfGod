@@ -41,6 +41,9 @@
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\cooltext117627293831111.png">
+      <PackagePath>cooltext117627293831111.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\TextFile1.txt">
       <PackagePath>Assets\TextFile1.txt</PackagePath>
     </AppxPackagedFile>

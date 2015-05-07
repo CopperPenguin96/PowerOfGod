@@ -25,10 +25,23 @@
       <m2:VisualElements DisplayName="Power of God.Windows" Square150x150Logo="Assets\Logo.png" Square30x30Logo="Assets\SmallLogo.png" Description="Power of God.Windows" ForegroundText="light" BackgroundColor="#464646">
         <m2:SplashScreen Image="Assets\SplashScreen.png" />
       </m2:VisualElements>
+      <Extensions>
+        <Extension Category="windows.fileTypeAssociation">
+          <FileTypeAssociation Name="pogfiles">
+            <DisplayName>Power of God Files</DisplayName>
+            <Logo>cooltext117627293831111.png</Logo>
+            <SupportedFileTypes>
+              <FileType ContentType="text/json">.bibplan</FileType>
+              <FileType ContentType="text/json">.json</FileType>
+            </SupportedFileTypes>
+          </FileTypeAssociation>
+        </Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="documentsLibrary" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="SharedGUID" Value="1b9372b6-1357-4d53-b87a-365199da8813" />
