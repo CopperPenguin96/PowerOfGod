@@ -1,6 +1,6 @@
 ========================POWER OF GOD README
 ========================
------------------------------Alphah 1.2----------------------------
+----------------------------Alphah 1.2.0---------------------------
 ===================================================================
 > Power of God is a nondenominational Christian app that is designed
 >> to help you grow in your faith and grow in your relationship with

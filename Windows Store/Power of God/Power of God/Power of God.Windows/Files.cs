@@ -52,9 +52,10 @@ namespace Power_of_God
                 fileStream = await file.OpenStreamForReadAsync();
                 fileStream.Dispose();
             }
-            catch (FileNotFoundException)
+            catch (Exception ex)
             {
                 // If the file dosn't exits it throws an exception, make fileExists false in this case 
+                
                 fileExists = false;
             }
             finally

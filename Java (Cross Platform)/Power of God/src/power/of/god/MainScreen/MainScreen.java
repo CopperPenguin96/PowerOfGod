@@ -30,11 +30,15 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
 import javax.swing.JOptionPane;
 import power.of.god.PrivacyPolicy;
+import power.of.god.Updater;
 
 /**
  *
@@ -47,6 +51,8 @@ public class MainScreen extends javax.swing.JFrame {
      */
     public MainScreen() {
         initComponents();
+        SetDefaultContentScreen();
+        this.setTitle(Updater.LatestStable());
     }
 
     /**
@@ -212,18 +218,22 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        SetDefaultContentScreen();
         
+    }//GEN-LAST:event_jButton1ActionPerformed
+    final void SetDefaultContentScreen()
+    {
         SetCurrentContent("<html><body>Welcome to Power of God! Thank you for " +
-                        "taking the time to view this app! It could actually change your life!\nIf you are using " +
+                        "taking the time to view this app! It could actually change your life!<br><br>If you are using " +
                         "this app expecting favor for a specific denomination, you are in for a surprise! " +
-                        "This app is intended to be non-denominational! \nYou also may be wondering why such an " +
+                        "This app is intended to be non-denominational! <br><br>You also may be wondering why such an " +
                         "app exists. Well, I believe that the Holy Bible is true. " +
                         new Timothy2().readFormattedVerse(3, 16) + " With that in mind, I also believe that the " +
                         "holy power God has is beyond compare. " + new Romans().readFormattedVerse(1, 16) + " I " +
                         "live to serve Jesus Christ, who is God, and will come back to earth take all who " +
                         "believe he died and rose again, to heaven. I use this app as a way to witness, to share " +
                         "this amazing truth. God bless and I hope you learn some stuff about God.</body></html>");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }
     private static String getUrlSource(String urlF) throws IOException {
         URL url = new URL(urlF);
         URLConnection urlCon = url.openConnection();
@@ -248,30 +258,93 @@ public class MainScreen extends javax.swing.JFrame {
         return sb.toString();
     }
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        try {
-            try {
-            // TODO add your handling code here:
-                SetCurrentContent(getUrlSource("http://godispower.us/sunday.html"));
-            } catch (IOException ex) {
-            //Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        CurrentCount = 0;
+        displayedGood = false;
+        ShowLesson("sunday");
     }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        try {
-            try {
-            // TODO add your handling code here:
-                SetCurrentContent(getUrlSource("http://godispower.us/thursday.html"));
-            } catch (IOException ex) {
-            //Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        } catch (Exception ex) {
-            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+    int CurrentCount = 0;
+    boolean displayedGood = false;
+    void ShowLesson(String day)
+    {
+        String dayChosen = "http://godispower.us/";
+        switch (day) {
+            case "sunday":
+                dayChosen += "Sundays/" + theLastSunday(CurrentCount);
+                break;
+            case "thursday":
+                dayChosen += "Thursdays/" + theLastThursday(CurrentCount);
+                break;
         }
+        dayChosen += ".html";
+        final int AllowedAttemptCount = 10;
+        
+        if (!displayedGood)
+        {
+            try {
+                System.out.println("---Connecting attempt for attempt " + CurrentCount + 
+                    " of " + AllowedAttemptCount + " for");
+                SetCurrentContent(getUrlSource(dayChosen));
+                displayedGood = true;
+                if (CurrentCount > 1)
+                {
+                    MsgBox("There was a slight issue", "There was an issue trying to " +
+                            "load the current lesson. A previous lesson had to be loaded.");
+                }
+                CurrentCount = 0;
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                //Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+                if (CurrentCount < AllowedAttemptCount) 
+                {
+                    CurrentCount++;
+                    ShowLesson(day);
+                    
+                }
+                else {
+                    MsgBox("Error loading Lesson!", "No lesson could be loaded");
+                    CurrentCount = 0;
+                }
+            }
+        }
+    }
+    private String theLastSunday(int neededDay)
+    {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.DAY_OF_WEEK,Calendar.SUNDAY);
+        c.set(Calendar.HOUR_OF_DAY,0);
+        c.set(Calendar.MINUTE,0);
+        c.set(Calendar.SECOND,0);
+        DateFormat df = new SimpleDateFormat("MM.dd.yyyy");
+        if (neededDay >= 1)
+        {
+            for (int loopCount = 1; loopCount <= neededDay; loopCount++)
+            {
+                c.add(Calendar.DATE,-7 );
+            }
+        }
+        return df.format(c.getTime());
+    }
+    private String theLastThursday(int neededDay)
+    {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.DAY_OF_WEEK,Calendar.THURSDAY);
+        c.set(Calendar.HOUR_OF_DAY,0);
+        c.set(Calendar.MINUTE,0);
+        c.set(Calendar.SECOND,0);
+        DateFormat df = new SimpleDateFormat("MM.dd.yyyy");
+        if (neededDay >= 1)
+        {
+            for (int loopCount = 1; loopCount <= neededDay; loopCount++)
+            {
+                c.add(Calendar.DATE,-7 );
+            }
+        }
+        return df.format(c.getTime());
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CurrentCount = 0;
+        displayedGood = false;
+        ShowLesson("thursday");
     }//GEN-LAST:event_jButton2ActionPerformed
     public static void MsgBox(String titleBar, String infoMessage)
     {
