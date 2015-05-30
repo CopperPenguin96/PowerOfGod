@@ -6,10 +6,10 @@ android {
 
     defaultConfig {
         applicationId "apdevelopment.powerofgod"
-        minSdkVersion 16
+        minSdkVersion 8
         targetSdkVersion 21
-        versionCode 2
-        versionName "Alpha 1.2.0"
+        versionCode 3
+        versionName "Alpha 1.2.1"
     }
     buildTypes {
         release {
@@ -22,6 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
-    compile files('C:/Users/apotter96/SkyDrive/Power of God/Project/Android/PowerofGod/libsjson-simple-1.1.1.jar')
     compile files('libs/json-simple-1.1.1.jar')
+    compile files('libs/Javax.script_android.jar')
+    compile files('libs/js.jar')
 }

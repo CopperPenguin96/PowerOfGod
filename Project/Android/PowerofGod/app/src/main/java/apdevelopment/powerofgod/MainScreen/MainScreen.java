@@ -1,6 +1,8 @@
 package apdevelopment.powerofgod.MainScreen;
 
 import android.app.Activity;
+import android.os.Looper;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -25,6 +27,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import javax.script.ScriptException;
+
 import Bible.BibleConnect;
 import Books.NewTestament.*;
 import Books.OldTestament.*;
@@ -32,6 +36,8 @@ import apdevelopment.powerofgod.POGabActivity;
 import apdevelopment.powerofgod.R;
 import apdevelopment.powerofgod.TitleConnect;
 import apdevelopment.powerofgod.TitleExtractor;
+import apdevelopment.powerofgod.UpdaterConnect;
+import apdevelopment.powerofgod.UserInformation.Updater;
 
 public class MainScreen extends POGabActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -49,7 +55,6 @@ public class MainScreen extends POGabActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
@@ -59,7 +64,30 @@ public class MainScreen extends POGabActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         PlaceholderFragment.CurrentScreenID = R.layout.fragment_main_screen;
+        try {
+            UpdaterConnect uConnect = new UpdaterConnect();
+            Thread t = new Thread(new Runnable() {
 
+                @Override
+                public void run() {
+                    try {
+                        Looper.prepare();
+
+                        ShowMsgBox("Checking", Updater.UpdateNotice());
+                        Looper.loop();
+                    } catch (ScriptException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (NoSuchMethodException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            t.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -172,18 +200,9 @@ public class MainScreen extends POGabActivity
         private boolean displayedGood = false;
         void ConnectToWebPage(String day, View v)
         {
-            String dayChosen = "http://godispower.us/";
-            switch (day) {
-                case "sunday":
-                    dayChosen += "Sundays/" + theLastSunday(CurrentCount);
-                    break;
-                case "thursday":
-                    dayChosen += "Thursdays/" + theLastThursday(CurrentCount);
-                    break;
-            }
-            dayChosen += ".html";
+            String dayChosen = "http://godispower.us/Application/Lessons/" + day + ".html";
             final int AllowedAttemptCount = 10;
-            TextView lessonTitleText = (TextView) v.findViewById(R.id.lblLessonTitle);
+            final TextView lessonTitleText = (TextView) v.findViewById(R.id.lblLessonTitle);
             if (!displayedGood)
             {
                 try {
@@ -191,8 +210,15 @@ public class MainScreen extends POGabActivity
                             " of " + AllowedAttemptCount + " for");
                     lessonTitleText.setText(TitleExtractor.getPageTitle(dayChosen));
                     WebView lessonView = (WebView) v.findViewById(R.id.lessonWebPage);
-                    lessonView.setWebViewClient(new WebViewClient());
+                    lessonView.setWebViewClient(new WebViewClient() {
+                        @Override
+                        public void onPageFinished(WebView view, String url)
+                        {
+                            lessonTitleText.setText(view.getTitle());
+                        }
+                    });
                     lessonView.getSettings().setJavaScriptEnabled(true);
+
                     lessonView.loadUrl(dayChosen);
                     displayedGood = true;
                     if (CurrentCount > 1)
@@ -216,40 +242,6 @@ public class MainScreen extends POGabActivity
                     }
                 }
             }
-        }
-        private String theLastSunday(int neededDay)
-        {
-            Calendar c = Calendar.getInstance();
-            c.set(Calendar.DAY_OF_WEEK,Calendar.SUNDAY);
-            c.set(Calendar.HOUR_OF_DAY,0);
-            c.set(Calendar.MINUTE,0);
-            c.set(Calendar.SECOND,0);
-            DateFormat df = new SimpleDateFormat("MM.dd.yyyy");
-            if (neededDay >= 1)
-            {
-                for (int loopCount = 1; loopCount <= neededDay; loopCount++)
-                {
-                    c.add(Calendar.DATE,-7 );
-                }
-            }
-            return df.format(c.getTime());
-        }
-        private String theLastThursday(int neededDay)
-        {
-            Calendar c = Calendar.getInstance();
-            c.set(Calendar.DAY_OF_WEEK,Calendar.THURSDAY);
-            c.set(Calendar.HOUR_OF_DAY,0);
-            c.set(Calendar.MINUTE,0);
-            c.set(Calendar.SECOND,0);
-            DateFormat df = new SimpleDateFormat("MM.dd.yyyy");
-            if (neededDay >= 1)
-            {
-                for (int loopCount = 1; loopCount <= neededDay; loopCount++)
-                {
-                    c.add(Calendar.DATE,-7 );
-                }
-            }
-            return df.format(c.getTime());
         }
         @Override
         public void onAttach(Activity activity) {

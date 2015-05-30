@@ -36,6 +36,7 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.GZIPInputStream;
+import javax.script.ScriptException;
 import javax.swing.JOptionPane;
 import power.of.god.PrivacyPolicy;
 import power.of.god.Updater;
@@ -53,6 +54,17 @@ public class MainScreen extends javax.swing.JFrame {
         initComponents();
         SetDefaultContentScreen();
         this.setTitle(Updater.LatestStable());
+        try {
+            Updater.UpdateNotice();
+            if (Updater.ServerResponse.equals("Outdated") || 
+                    Updater.ServerResponse.equals("Unsupported"))
+            {
+                MsgBox("Your version is " + Updater.ServerResponse.toLowerCase(), Updater.UpdateNotice());
+            }
+        } catch (ScriptException | IOException | NoSuchMethodException ex) {
+            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
