@@ -11,8 +11,9 @@ public class Files {
     private static String mainPath = "power.of.god/";
     private static String[] files = new String[] {
             mainPath,
-            mainPath + "userInfo.json",
-            mainPath + "kjv.xml"
+            mainPath + "userInfo.json", //Old format file
+            mainPath + "kjv.xml",
+            mainPath + "userInfo.powerinfo" //New user format - still json
     };
     public static String[] filesStr()
     {

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>7e2e1eb1-c007-4c02-a5be-99fec93209b8</ProjectGuid>
+    <ProjectGuid>{7E2E1EB1-C007-4C02-A5BE-99FEC93209B8}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Power_of_God</RootNamespace>

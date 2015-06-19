@@ -25,7 +25,10 @@ package power.of.god;
 
 import java.io.*;
 import java.net.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import power.of.god.MainScreen.*;
 import power.of.god.User.*;
 
@@ -36,24 +39,37 @@ import power.of.god.User.*;
 public class Start {
     public static void main(String[] args)
     {
-        SignUp.main(args);
-        /*Bible.Files.SetScripturePath("power.of.god/", false, "don't do it");
-        try {
-            if (!Files.filesObj()[1].exists())
+        Login.main(args);
+        /*try {
+            boolean Obj1 = Files.filesObj()[3].exists();
+            boolean Obj2 = Files.filesObj()[1].exists();
+            if (Obj1 && Obj2)
             {
-                new UserInfoFrameForm().show();
-                
+                StartMain();
             }
-            else
+            else if (!Obj1 && Obj2)
             {
-                MainScreen mScreen = new MainScreen();
-                mScreen.pack();
-                mScreen.setSize( 710, 450); // [677, 406] 33, 44
-                mScreen.setVisible(true);
-                mScreen.setLocationRelativeTo(null);
+                SignUp.main(args, true);
             }
-        } catch (Exception ex) {
-            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+            else if (!Obj1 && !Obj2)
+            {
+                SignUp.main(args, false);
+            }
+            
+            /*
+            }*/
+       // } catch (Exception ex) {
+         //   Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+        //} 
+    }
+    static void StartMain()
+    {
+        Bible.Files.SetScripturePath("power.of.god/", false, "don't do it");
+            MainScreen mScreen = new MainScreen();
+            mScreen.pack();
+            mScreen.setSize( 710, 450); // [677, 406] 33, 44
+            mScreen.setVisible(true);
+            mScreen.setLocationRelativeTo(null);
+            
     }
 }
