@@ -10,16 +10,33 @@ public class Files
     {
         return scripturePath;
     }
-    public static void SetScripturePath(String theDesiredPath, boolean IsAndroid, String IfisAndroidAppPackage)
+    public static void SetScripturePath(String theDesiredPath, boolean IsAndroid, String IfisAndroidAppPackage, BibleVersion bVersion)
     {
+        String fileName = "kjv";
+        switch (bVersion)
+        {
+            case KJV:
+                fileName = "kjv";
+                break;
+            case ESV:
+                fileName = "esv";
+                break;
+            case NIV:
+                fileName = "niv";
+                break;
+            case NLT:
+                fileName = "nlt";
+                break;
+        }
+        fileName += ".xml";
         if (IsAndroid)
         {
             scripturePath = "/sdcard/Android/data/" + IfisAndroidAppPackage + "/" + 
-                    theDesiredPath + "/kjv.xml";
+                    theDesiredPath + "/" + fileName;
         }
         else
         {
-            scripturePath = theDesiredPath + "kjv.xml";
+            scripturePath = theDesiredPath + fileName;
         }
     }
 }
