@@ -42,32 +42,31 @@ public class Bible
         public static Book[] AllBooks()
         {
             Book[] theBible = new Book[66];
-            ArrayList<Book> theBibleList = new ArrayList<Book>();
+            ArrayList<Book> theBibleList = new ArrayList<>();
             theBibleList.addAll(ToCollection(OldTestament));
             theBibleList.addAll(ToCollection(NewTestament));
             return theBibleList.toArray(theBible);
         }
-	public static void DownloadXmlFile() throws Exception {
-                URL link = new URL("http://gemscraft.net/kjv.xml"); //The file that you want to download
-                ByteArrayOutputStream out;
-                try ( //Code to download
-                        InputStream in = new BufferedInputStream(link.openStream())) {
-                    out = new ByteArrayOutputStream();
-                    byte[] buf = new byte[1024];
-                    int n = 0;
-                    while (-1!=(n=in.read(buf)))
-		 {
-                     out.write(buf, 0, n);
-		 }
-                out.close();
-            }
-		 byte[] response = out.toByteArray();
- 
-            try (FileOutputStream fos = new FileOutputStream(Files.GetScripturePath())) {
-                fos.write(response);
-            }
-	}
-
-	
+        
+        public static String bookName(boolean IsKjv)
+        {
+            if (IsKjv) return "book";
+            else return "b";
+        }
+        public static String chapterName(boolean IsKjv)
+        {
+            if (IsKjv) return "chapter";
+            else return "c";
+        }
+        public static String verseName(boolean IsKjv)
+        {
+            if (IsKjv) return "verse";
+            else return "v";
+        }
+        public static String nameName(boolean IsKjv)
+        {
+            if (IsKjv) return "name";
+            else return "n";
+        }
 }
 

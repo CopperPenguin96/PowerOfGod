@@ -1,9 +1,11 @@
 package Books;
+import Bible.Bible;
 import Bible.Files;
 import java.io.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import java.util.*;
+import org.xml.sax.SAXException;
 
 
 //Default book class
@@ -41,6 +43,10 @@ public class Book
 		return this.getName() + " " + chapter +
 			":" + verse + " (KJB) - \"" + readPlainVerse(chapter, verse) + "\"";
 	}
+        public static boolean IsKjv()
+        {
+            return Files.needVers.equals("KJV");
+        }
 	public String readPlainVerse(int chapter, int verse) {
 		try {
 			File file = new File(Files.GetScripturePath());
@@ -49,7 +55,7 @@ public class Book
 			Document doc = db.parse(file);
 			doc.getDocumentElement().normalize();
 			System.out.println("Root element " + doc.getDocumentElement().getNodeName());
-			NodeList nodeLst = doc.getElementsByTagName("book");
+			NodeList nodeLst = doc.getElementsByTagName(Bible.bookName(IsKjv()));
 			System.out.println(nodeLst.item(0).getAttributes().item(0));
 			Node[] nL = convertToArray(nodeLst);
 			for (Node n: nL) {
@@ -60,7 +66,7 @@ public class Book
 				}
 			}
 			
-		} catch (Exception e) {
+		} catch (ParserConfigurationException | SAXException | IOException | DOMException e) {
 			e.printStackTrace();
 		}
 		return null;

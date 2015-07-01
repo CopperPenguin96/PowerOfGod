@@ -17,7 +17,10 @@ public class AppFiles {
             mainPath + "userInfo.powerinfo", //New user format - still json
             mainPath + "logins.txt",
             mainPath + "lastopen.txt",
-            mainPath + "settings.json"
+            mainPath + "settings.json",
+            mainPath + "esv.xml", // Newer Bible versions added in Alpha 1.3
+            mainPath + "niv.xml",
+            mainPath + "nlt.xml"
     };
     public static String[] filesStr()
     {

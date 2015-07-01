@@ -10,6 +10,7 @@ public class Files
     {
         return scripturePath;
     }
+    public static String needVers;
     public static void SetScripturePath(String theDesiredPath, boolean IsAndroid, String IfisAndroidAppPackage, BibleVersion bVersion)
     {
         String fileName = "kjv";
@@ -28,6 +29,7 @@ public class Files
                 fileName = "nlt";
                 break;
         }
+        needVers = fileName;
         fileName += ".xml";
         if (IsAndroid)
         {
