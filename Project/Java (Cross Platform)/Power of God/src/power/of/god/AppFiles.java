@@ -13,14 +13,14 @@ public class AppFiles {
     private static final String[] files = new String[] {
             mainPath,
             mainPath + "userInfo.json", //Old format file
-            mainPath + "kjv.xml",
+            mainPath + "KJV.xml",
             mainPath + "userInfo.powerinfo", //New user format - still json
             mainPath + "logins.txt",
             mainPath + "lastopen.txt",
             mainPath + "settings.json",
-            mainPath + "esv.xml", // Newer Bible versions added in Alpha 1.3
-            mainPath + "niv.xml",
-            mainPath + "nlt.xml"
+            mainPath + "ESV.xml", // Newer Bible versions added in Alpha 1.3
+            mainPath + "NIV.xml",
+            mainPath + "NLT.xml"
     };
     public static String[] filesStr()
     {

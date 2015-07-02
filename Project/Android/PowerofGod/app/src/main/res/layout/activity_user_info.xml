@@ -39,10 +39,10 @@
             android:layout_alignParentStart="true"
             android:layout_marginTop="32dp" />
 
-        <apdevelopment.powerofgod.POGEditText
+        <apdevelopment.powerofgod.ActivityBases.POGEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtName"
+            android:id="@+id/lblName"
             android:layout_alignTop="@+id/lblName"
             android:layout_toRightOf="@+id/lblName"
             android:layout_toEndOf="@+id/lblName" />
@@ -53,21 +53,21 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Age"
             android:id="@+id/Age"
-            android:layout_below="@+id/txtName"
+            android:layout_below="@+id/lblName"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <apdevelopment.powerofgod.POGEditText
+        <apdevelopment.powerofgod.ActivityBases.POGEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
             android:id="@+id/txtAge"
-            android:layout_below="@+id/txtName"
-            android:layout_alignLeft="@+id/txtName"
-            android:layout_alignStart="@+id/txtName"
-            android:layout_alignRight="@+id/txtName"
-            android:layout_alignEnd="@+id/txtName" />
+            android:layout_below="@+id/lblName"
+            android:layout_alignLeft="@+id/lblName"
+            android:layout_alignStart="@+id/lblName"
+            android:layout_alignRight="@+id/lblName"
+            android:layout_alignEnd="@+id/lblName" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -79,7 +79,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
-        <apdevelopment.powerofgod.POGEditText
+        <apdevelopment.powerofgod.ActivityBases.POGEditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtDen"

@@ -62,7 +62,10 @@ public class SettingsScreen extends javax.swing.JFrame {
     }
     private int SelectedItem(String ver)
     {
-        if (ver.equals("KJV")) return 0;
+        if (ver.equals("KJV")) return 0; //NIV ESV NLT
+        else if (ver.equals("NIV")) return 1;
+        else if (ver.equals("ESV")) return 2;
+        else if (ver.equals("NLT")) return 3;
         else return -1;
     }
     /**
@@ -168,8 +171,7 @@ public class SettingsScreen extends javax.swing.JFrame {
 
         jLabel7.setText("Scripture Version");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "KJV" }));
-        jComboBox1.setEnabled(false);
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "KJV", "NIV", "ESV", "NLT" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -221,7 +223,6 @@ public class SettingsScreen extends javax.swing.JFrame {
         });
 
         jButton3.setText("Save");
-        jButton3.setEnabled(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -274,6 +275,8 @@ public class SettingsScreen extends javax.swing.JFrame {
         Settings.BibPlansEnabled = jCheckBox1.isSelected();
         Settings.BibleVersion = jComboBox1.getSelectedItem().toString();
         Settings.SaveToJson();
+        MsgBox("Saved", "Application must now close for the effect to take place.");
+        System.exit(0);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

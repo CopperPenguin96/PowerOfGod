@@ -1,10 +1,9 @@
 package apdevelopment.powerofgod;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.webkit.WebView;
+
+import apdevelopment.powerofgod.ActivityBases.POGActivity;
 
 
 public class PrivacyPolicyActivity extends POGActivity {

@@ -87,8 +87,10 @@
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="js" level="project" />
+    <orderEntry type="library" exported="" name="httpcore-4.4.1" level="project" />
     <orderEntry type="library" exported="" name="json-simple-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="Javax.script_android" level="project" />
+    <orderEntry type="library" exported="" name="httpclient-4.5" level="project" />
   </component>
 </module>
 

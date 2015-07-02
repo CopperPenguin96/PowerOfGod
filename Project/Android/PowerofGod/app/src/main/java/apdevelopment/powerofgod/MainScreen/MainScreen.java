@@ -1,43 +1,31 @@
 package apdevelopment.powerofgod.MainScreen;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Looper;
-import android.os.StrictMode;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import javax.script.ScriptException;
 
-import Bible.BibleConnect;
 import Books.NewTestament.*;
-import Books.OldTestament.*;
-import apdevelopment.powerofgod.POGabActivity;
+import apdevelopment.powerofgod.ActivityBases.POGabActivity;
 import apdevelopment.powerofgod.R;
-import apdevelopment.powerofgod.TitleConnect;
 import apdevelopment.powerofgod.TitleExtractor;
 import apdevelopment.powerofgod.UpdaterConnect;
-import apdevelopment.powerofgod.UserInformation.Updater;
+import apdevelopment.powerofgod.Updater;
+import apdevelopment.powerofgod.User.RegisterActivity;
 
 public class MainScreen extends POGabActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -58,7 +46,7 @@ public class MainScreen extends POGabActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
-
+        startActivity(new Intent(this, RegisterActivity.class));
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
@@ -112,23 +100,18 @@ public class MainScreen extends POGabActivity
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_lesson;
                 break;
             case 3:
-                mTitle = getString(R.string.title_section2);
-                PlaceholderFragment.SundayOrThursday = "thursday";
-                PlaceholderFragment.CurrentScreenID = R.layout.fragment_lesson;
-                break;
-            case 4:
                 mTitle = getString(R.string.title_section3);
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
                 break;
-            case 5:
+            case 4:
                 mTitle = getString(R.string.title_section4);
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
                 break;
-            case 6:
+            case 5:
                 mTitle = getString(R.string.title_section5);
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
                 break;
-            case 7:
+            case 6:
                 mTitle = getString(R.string.title_section6);
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
                 break;

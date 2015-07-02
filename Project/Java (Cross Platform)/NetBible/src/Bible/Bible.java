@@ -4,8 +4,6 @@ package Bible;
 import Books.Book;
 import Books.OldTestament.*;
 import Books.NewTestament.*;
-import java.io.*;
-import java.net.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;

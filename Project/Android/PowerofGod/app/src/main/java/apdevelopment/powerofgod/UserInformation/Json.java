@@ -5,19 +5,20 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 
 import apdevelopment.powerofgod.Files;
-import apdevelopment.powerofgod.JsonWriteException;
+import apdevelopment.powerofgod.Exceptions.JsonWriteException;
+import apdevelopment.powerofgod.User.UserInfo;
 
 /**
  * Created by apotter96 on 4/8/2015.
  */
 public class Json {
 
-    public static void Write() throws JsonWriteException {
+    public static void Write(UserInfo uI) throws JsonWriteException {
         try {
             JSONObject obj = new JSONObject();
-            obj.put("name", UserInfo.GetName());
-            obj.put("age", UserInfo.GetAge());
-            obj.put("den", UserInfo.GetDenomination());
+            obj.put("name", uI.name);
+            obj.put("email", uI.email);
+            obj.put("username", uI.username);
             if (!Files.filesObj()[0].exists())
             {
                 System.out.println("Doesn't exist");
@@ -30,7 +31,7 @@ public class Json {
             else
             {
                 Files.filesObj()[1].delete();
-                Write();
+                Write(uI);
             }
             FileWriter file = new FileWriter(Files.filesStr()[1]);
 

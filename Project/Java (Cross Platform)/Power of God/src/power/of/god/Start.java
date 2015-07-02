@@ -107,10 +107,12 @@ public class Start {
     private static Bible.BibleVersion ConvertToEnumObject()
     {
         String bibVers = Settings.BibleVersion;
+        System.out.println("-----------> " + bibVers);
         if (bibVers.equals("KJV")) return Bible.BibleVersion.KJV;
         if (bibVers.equals("ESV")) return Bible.BibleVersion.ESV;
         if (bibVers.equals("NIV")) return Bible.BibleVersion.NIV;
         if (bibVers.equals("NLT")) return Bible.BibleVersion.NLT;
+        
         return Bible.BibleVersion.KJV;
     }
 }

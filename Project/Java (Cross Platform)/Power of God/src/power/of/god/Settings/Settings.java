@@ -66,14 +66,14 @@ public class Settings {
         }
         else
         {
-            JSONParser parser = new JSONParser();
+            
         }
     }
     public static void SaveToJson()
     {
         JSONObject obj = new JSONObject();
 	obj.put("bibplansenabled", false);
-	obj.put("scriptver", "KJV");
+	obj.put("scriptver",BibleVersion);
         try {
             File fileObj = AppFiles.filesObj()[6];
             if (fileObj.exists()) fileObj.delete();

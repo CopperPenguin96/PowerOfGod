@@ -1,7 +1,5 @@
 package apdevelopment.powerofgod;
 
-import apdevelopment.powerofgod.UserInformation.Updater;
-
 public class UpdaterConnect implements Runnable {
     public void run() {
         try {

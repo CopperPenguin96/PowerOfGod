@@ -13,20 +13,20 @@ public class Files
     public static String needVers;
     public static void SetScripturePath(String theDesiredPath, boolean IsAndroid, String IfisAndroidAppPackage, BibleVersion bVersion)
     {
-        String fileName = "kjv";
+        String fileName = "KJV";
         switch (bVersion)
         {
             case KJV:
-                fileName = "kjv";
+                fileName = "KJV";
                 break;
             case ESV:
-                fileName = "esv";
+                fileName = "ESV";
                 break;
             case NIV:
-                fileName = "niv";
+                fileName = "NIV";
                 break;
             case NLT:
-                fileName = "nlt";
+                fileName = "NLT";
                 break;
         }
         needVers = fileName;
