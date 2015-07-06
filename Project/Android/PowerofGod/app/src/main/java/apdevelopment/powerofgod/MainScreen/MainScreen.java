@@ -22,10 +22,10 @@ import javax.script.ScriptException;
 import Books.NewTestament.*;
 import apdevelopment.powerofgod.ActivityBases.POGabActivity;
 import apdevelopment.powerofgod.R;
-import apdevelopment.powerofgod.TitleExtractor;
-import apdevelopment.powerofgod.UpdaterConnect;
-import apdevelopment.powerofgod.Updater;
-import apdevelopment.powerofgod.User.RegisterActivity;
+import apdevelopment.powerofgod.Network.TitleExtractor;
+import apdevelopment.powerofgod.Network.UpdaterConnect;
+import apdevelopment.powerofgod.Network.Updater;
+import apdevelopment.powerofgod.User.Online.RegisterActivity;
 
 public class MainScreen extends POGabActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {

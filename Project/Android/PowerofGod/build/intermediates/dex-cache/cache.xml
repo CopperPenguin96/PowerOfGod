@@ -9,6 +9,13 @@
         <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\js-5ba3e4a53a3502fd58ee41cbf1d8978c577843e8.jar" />
     </item>
     <item
+        jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\libs\httpcore-4.4.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f5aa318bda4c6c8d688c9d00b90681dcd82ce636">
+        <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\httpcore-4.4.1-8cd4f96640faedcf0151f26142de8f716b4369ec.jar" />
+    </item>
+    <item
         jar="C:\Users\apotter96\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -16,18 +23,18 @@
         <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-bc0cb292e4fdfb5545a7beb0666a79b095afe34e.jar" />
     </item>
     <item
-        jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-536e749e13820a991827600ebe7695de25f7bf0f.jar" />
-    </item>
-    <item
         jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
         <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-1af4e1072caf551669dd0744c7970a840edd40a1.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\libs\httpclient-4.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a1e6cbb3cc2c5f210dd1310ff9fcb2c09c0d1438">
+        <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\httpclient-4.5-f8485ca55d70345c7703d4400876b68037799bf5.jar" />
     </item>
     <item
         jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\libs\Javax.script_android.jar"
@@ -49,6 +56,20 @@
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-d68ba0fbccc077ce93f1f9c61438cb741fe82d02.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-536e749e13820a991827600ebe7695de25f7bf0f.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\classes-86ceff3d4722f1c3cc047165d4795821b0c415ee.jar" />
     </item>
 
 </items>

@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "apdevelopment.powerofgod"
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 21
         versionCode 3
         versionName "Alpha 1.3"
@@ -17,13 +17,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
     compile files('libs/json-simple-1.1.1.jar')
     compile files('libs/Javax.script_android.jar')
     compile files('libs/js.jar')
     compile files('libs/httpclient-4.5.jar')
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.android.support:support-v4:21.0.3'
 }

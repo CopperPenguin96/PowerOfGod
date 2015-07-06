@@ -1,4 +1,6 @@
-package apdevelopment.powerofgod;
+package apdevelopment.powerofgod.Network;
+
+import apdevelopment.powerofgod.Network.Updater;
 
 public class UpdaterConnect implements Runnable {
     public void run() {

@@ -1,6 +1,4 @@
-package apdevelopment.powerofgod;
-import Bible.Bible;
-import apdevelopment.powerofgod.TitleExtractor;
+package apdevelopment.powerofgod.Network;
 
 public class TitleConnect implements Runnable {
     public String urlToLoad = "nothing";

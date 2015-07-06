@@ -21,27 +21,27 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package apdevelopment.powerofgod.User;
+package apdevelopment.powerofgod.Exceptions;
 
 /**
  *
  * @author apotter96
  */
-public class HashGenerationException extends Exception {
-
-    public HashGenerationException() {
+public class IncorrectLoginInfoException extends Exception {
+    public IncorrectLoginInfoException()
+    {
         super();
     }
-
-    public HashGenerationException(String message, Throwable throwable) {
-        super(message, throwable);
-    }
-
-    public HashGenerationException(String message) {
+    public IncorrectLoginInfoException(String message)
+    {
         super(message);
     }
-
-    public HashGenerationException(Throwable throwable) {
-        super(throwable);
+    public IncorrectLoginInfoException(String message, Throwable t)
+    {
+        super(message, t);
+    }
+    public IncorrectLoginInfoException(Throwable t)
+    {
+        super(t);
     }
 }

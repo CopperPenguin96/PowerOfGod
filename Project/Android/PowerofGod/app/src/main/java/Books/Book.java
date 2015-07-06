@@ -1,4 +1,6 @@
 package Books;
+import android.content.Context;
+
 import java.io.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
@@ -35,16 +37,17 @@ public class Book
 		this.setChapterCount(0);
 		this.setBookNum(0);
 	}
+
 	public String readFormattedVerse(int chapter, int verse) {
 		return this.getName() + " " + chapter +
 			":" + verse + " (KJB) - \"" + readPlainVerse(chapter, verse) + "\"";
 	}
     public String readPlainVerse(int chapter, int verse) {
 		try {
-            File file = apdevelopment.powerofgod.Files.filesObj()[2];
+            InputStream is = Bible.Bible.StartActivityContext.getAssets().open("KJV.xml");
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
-			Document doc = db.parse(file);
+			Document doc = db.parse(is);
 			doc.getDocumentElement().normalize();
 			System.out.println("Root element " + doc.getDocumentElement().getNodeName());
 			NodeList nodeLst = doc.getElementsByTagName("book");

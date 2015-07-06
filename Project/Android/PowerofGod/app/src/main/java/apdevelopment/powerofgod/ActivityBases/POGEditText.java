@@ -23,6 +23,12 @@ public class POGEditText extends EditText {
 
     public String toString()
     {
-        return this.getText().toString();
+        return Text();
     }
+
+    public String Text()
+    {
+        return getText().toString();
+    }
+
 }

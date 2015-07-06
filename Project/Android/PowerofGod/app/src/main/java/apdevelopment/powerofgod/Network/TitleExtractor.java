@@ -26,7 +26,7 @@
  IN THE SOFTWARE.
  */
 
-package apdevelopment.powerofgod;
+package apdevelopment.powerofgod.Network;
 import android.os.*;
 import java.io.*;
 import java.net.*;

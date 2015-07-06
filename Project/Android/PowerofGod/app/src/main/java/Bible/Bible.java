@@ -1,6 +1,8 @@
 package Bible;
 
 
+import android.content.Context;
+
 import java.io.*;
 import java.net.*;
 import java.nio.channels.Channels;
@@ -10,6 +12,7 @@ import apdevelopment.powerofgod.Files;
 
 public class Bible
 {
+    public static Context StartActivityContext; // So scripture can be read from assets
 	public static void DownloadXmlFile() throws Exception {
                 URL link = new URL("http://gemscraft.net/kjv.xml"); //The file that you want to download
 		

@@ -1,4 +1,4 @@
-package apdevelopment.powerofgod.UserInformation;
+package apdevelopment.powerofgod.User;
 
 import org.json.simple.JSONObject;
 

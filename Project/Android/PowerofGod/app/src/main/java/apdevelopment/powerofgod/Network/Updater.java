@@ -1,5 +1,5 @@
 
-package apdevelopment.powerofgod;
+package apdevelopment.powerofgod.Network;
 
 import android.webkit.WebView;
 

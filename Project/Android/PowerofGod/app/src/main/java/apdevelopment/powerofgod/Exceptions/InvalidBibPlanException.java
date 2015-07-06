@@ -1,4 +1,4 @@
-package Bible;
+package apdevelopment.powerofgod.Exceptions;
 
 /**
  * Created by apotter96 on 4/18/2015.

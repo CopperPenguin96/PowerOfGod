@@ -13,6 +13,15 @@ public final class UserInfo {
     public String name;
     public String email;
     public String username;
+    @Override
+    public String toString()
+    {
+        JSONObject jObject = new JSONObject();
+        jObject.put("name", name);
+        jObject.put("email", email);
+        jObject.put("username", username);
+        return jObject.toJSONString();
+    }
 
     public UserInfo(String localName, String localEmail, String localUser)
     {
