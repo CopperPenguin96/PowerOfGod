@@ -46,7 +46,6 @@ public class MainScreen extends POGabActivity
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
-        startActivity(new Intent(this, RegisterActivity.class));
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
@@ -60,8 +59,8 @@ public class MainScreen extends POGabActivity
                 public void run() {
                     try {
                         Looper.prepare();
-
-                        ShowMsgBox("Checking", Updater.UpdateNotice());
+                        String updateMessage = Updater.UpdateNotice();
+                        if (!Updater.myResult.equals("Updated")) ShowMsgBox("Checking", Updater.UpdateNotice());
                         Looper.loop();
                     } catch (ScriptException e) {
                         e.printStackTrace();
@@ -113,7 +112,7 @@ public class MainScreen extends POGabActivity
                 break;
             case 6:
                 mTitle = getString(R.string.title_section6);
-                PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
+                PlaceholderFragment.CurrentScreenID = R.layout.fragment_about_screen; //Released in Alpha 1.3
                 break;
         }
     }
@@ -158,7 +157,8 @@ public class MainScreen extends POGabActivity
                                  Bundle savedInstanceState) {
 
             View v = inflater.inflate(CurrentScreenID, container, false);
-            int[] idArray = new int[]{R.layout.fragment_main_screen, R.layout.fragment_lesson};
+            int[] idArray = new int[]{R.layout.fragment_main_screen, R.layout.fragment_lesson,
+                                      R.layout.fragment_about_screen};
             if (CurrentScreenID == idArray[0]) {
                 TextView tV = (TextView) v.findViewById(R.id.lblNotice);
                 tV.setText("Welcome to Power of God! Thank you for " +
@@ -175,6 +175,9 @@ public class MainScreen extends POGabActivity
                 CurrentCount = 0;
                 displayedGood = false;
                 ConnectToWebPage(SundayOrThursday, v);
+            } else if (CurrentScreenID == idArray[2]) {
+                TextView tV2 = (TextView) v.findViewById(R.id.textView3);
+                tV2.setText(Updater.LatestStable());
             }
             return v;
         }

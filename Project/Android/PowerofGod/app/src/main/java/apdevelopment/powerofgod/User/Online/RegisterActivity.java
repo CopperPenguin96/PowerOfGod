@@ -2,13 +2,12 @@ package apdevelopment.powerofgod.User.Online;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-
-import Books.OldTestament.Genesis;
+import android.view.*;
+import android.content.*;
+import Books.OldTestament.*;
 import apdevelopment.powerofgod.ActivityBases.POGActivity;
 import apdevelopment.powerofgod.ActivityBases.POGEditText;
+import apdevelopment.powerofgod.MainScreen.MainScreen;
 import apdevelopment.powerofgod.R;
 import apdevelopment.powerofgod.User.UserInfo;
 
@@ -37,10 +36,24 @@ public class RegisterActivity extends POGActivity {
             {
                 //TODO - Save and Continue!
                 this.ShowMsgBox("Success!", "Thank you using Power of God!");
+                UserInfo newCreatedObj = UserInfo.CreateObject(
+                        txtName(),
+                        txtEmail(),
+                        txtUsername()
+                );
+                newCreatedObj.WriteJson();
+                startActivity(new Intent(this, MainScreen.class));
+                this.finish();
             }
         } catch (Exception e) {
             e.printStackTrace();
             this.ShowMsgBox("Oh no!", e.toString());
         }
+    }
+
+    public void StartLogin(View v)
+    {
+        startActivity(new Intent(this, LoginActivity.class));
+        this.finish();
     }
 }

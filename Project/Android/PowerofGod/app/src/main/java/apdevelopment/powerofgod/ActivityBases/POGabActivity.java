@@ -8,6 +8,7 @@ import android.view.MenuItem;
 
 import apdevelopment.powerofgod.PrivacyPolicyActivity;
 import apdevelopment.powerofgod.R;
+import apdevelopment.powerofgod.User.Settings.SettingsActivity;
 
 /**
  * Created by apotter96 on 4/18/2015.
@@ -43,8 +44,7 @@ public class POGabActivity extends ActionBarActivity {
         }
         else if (id == R.id.action_settings)
         {
-            if (!isUserInfoActivity) ShowMsgBox("Sorry", "This feature is not ready yet");
-            else ShowMsgBox("Sorry", "Not available here");
+            startActivity(new Intent(this, SettingsActivity.class));
         }
 
         return super.onOptionsItemSelected(item);

@@ -28,9 +28,13 @@ public class StartActivity extends ActionBarActivity {
             if (UserInfoExists)
             {
                 if (!Files.filesObj()[4].exists()) Files.filesObj()[4].createNewFile();
-                if (Database.NeedsNewLogin()) startActivity(new Intent(this, LoginActivity.class));
+                if (Database.NeedsNewLogin())
+                {
+                    startActivity(new Intent(this, LoginActivity.class));
+                }
                 else {
                     CurrentUserInfo = UserInfo.ParseFromFile();
+                    Global.CurrentUserInfo = CurrentUserInfo;
                     Database.ReturningLogin();
                     StartMain();
                 }
@@ -46,6 +50,7 @@ public class StartActivity extends ActionBarActivity {
     }
     void StartMain()
     {
+        System.out.println("MAIN TEST");
         if (Files.filesObj()[6].exists())
         {
             Settings.LoadFromJson();
@@ -54,6 +59,7 @@ public class StartActivity extends ActionBarActivity {
         {
             Settings.SaveToJson(); // Will start with Default JSON values
         }
+        System.out.println("DOING THIS");
         startActivity(new Intent(this, MainScreen.class));
 
     }

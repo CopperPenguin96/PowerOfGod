@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Created by apotter96 on 4/8/2015.
  */
 public class Files {
-    private final static String mainPath = "power.of.god/";
+    private final static String mainPath = "/sdcard/Android/data/apdevelopment.powerofgod/";
     private static final String[] files = new String[] {
             mainPath,
             mainPath + "userInfo.json", //Old format file

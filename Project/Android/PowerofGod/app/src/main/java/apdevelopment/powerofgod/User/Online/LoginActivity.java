@@ -1,40 +1,45 @@
 package apdevelopment.powerofgod.User.Online;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import apdevelopment.powerofgod.ActivityBases.POGActivity;
+import apdevelopment.powerofgod.ActivityBases.POGEditText;
+import apdevelopment.powerofgod.MainScreen.MainScreen;
 import apdevelopment.powerofgod.R;
 
-public class LoginActivity extends ActionBarActivity {
+public class LoginActivity extends POGActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
     }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_login, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    String txtUsername() { return ((POGEditText) findViewById(R.id.txtUsername)).Text(); }
+    String txtPassword() { return ((POGEditText) findViewById(R.id.txtPassword)).Text(); }
+    public void LoginAction(View v)
+    {
+        if (txtUsername() == null || txtPassword() == null)
+        {
+            ShowMsgBox("Error", "Responses cannot be null. Please try again");
         }
-
-        return super.onOptionsItemSelected(item);
+        else
+        {
+            boolean LoginResult = Database.Login(txtUsername(), txtPassword());
+            if (!LoginResult)
+            {
+                ShowMsgBox("Sorry", "Either the username or password did not match");
+            }
+            else
+            {
+                ShowMsgBox("Welcome back!", "Welcome back to Power of God!");
+                startActivity(new Intent(this, MainScreen.class));
+                this.finish();
+            }
+        }
     }
 }

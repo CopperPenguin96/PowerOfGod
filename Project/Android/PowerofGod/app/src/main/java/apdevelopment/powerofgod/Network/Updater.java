@@ -94,6 +94,7 @@ public class Updater {
         } finally {
             Context.exit();
         }
+        myResult = returnValue;
         switch (returnValue) {
             case "Updated":
                 return "You are currently updated to the most recent version";
@@ -107,6 +108,7 @@ public class Updater {
                         "server: " + returnValue + ")";
         }
     }
+    public static String myResult;
     private static String getUrlSource(String urlF) throws IOException {
         URL url = new URL(urlF);
         URLConnection urlCon = url.openConnection();

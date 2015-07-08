@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <string-array name="bible_array">
+        <item>KJV</item>
+        <item>NIV</item>
+        <item>ESV</item>
+        <item>NLT</item>
+    </string-array>
     <string name="app_name">Power of God</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
