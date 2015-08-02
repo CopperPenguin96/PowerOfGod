@@ -44,6 +44,14 @@
             android:name=".Settings.SettingsActivity"
             android:label="@string/title_activity_settings" >
         </activity>
+        <activity
+            android:name=".MainScreen.MainActivity"
+            android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name=".Exceptions.yyyy"
+            android:label="@string/title_activity_yyyy" >
+        </activity>
     </application>
 
 </manifest>

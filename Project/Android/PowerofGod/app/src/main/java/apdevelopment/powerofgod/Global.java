@@ -7,4 +7,5 @@ import apdevelopment.powerofgod.User.UserInfo;
  */
 public class Global {
     public static UserInfo CurrentUserInfo;
+    public static boolean NeedsToClose = false;
 }

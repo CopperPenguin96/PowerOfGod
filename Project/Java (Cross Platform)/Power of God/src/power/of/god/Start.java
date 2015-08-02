@@ -29,6 +29,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import power.of.god.DailyScripture.DailyScripture;
 import power.of.god.MainScreen.*;
 import power.of.god.Settings.Settings;
 import power.of.god.User.*;
@@ -60,6 +61,7 @@ public class Start {
     public static void main(String[] args)
     {
         try {
+            System.out.println(DailyScripture.GetDailyScripture());
             boolean Obj1 = AppFiles.filesObj()[3].exists();
             boolean Obj2 = AppFiles.filesObj()[1].exists();
             if ((Obj1 && Obj2) || (Obj1 && !Obj2))

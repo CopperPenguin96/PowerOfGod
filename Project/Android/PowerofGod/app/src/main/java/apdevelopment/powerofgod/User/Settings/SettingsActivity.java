@@ -19,6 +19,7 @@ import apdevelopment.powerofgod.ActivityBases.POGEditText;
 import apdevelopment.powerofgod.ActivityBases.POGabActivity;
 import apdevelopment.powerofgod.Global;
 import apdevelopment.powerofgod.R;
+import apdevelopment.powerofgod.StartActivity;
 import apdevelopment.powerofgod.User.Online.Database;
 import apdevelopment.powerofgod.User.UserInfo;
 
@@ -78,9 +79,11 @@ public class SettingsActivity extends POGabActivity {
     }
     private POGEditText txtPassword()
     {
-        return (POGEditText) findViewById(R.id.txtPassword);
+        return (POGEditText) findViewById(R.id.txtSettingsPassword);
     }
-
+    //          10        20        30       40         50        60       70       80
+    //0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
+    //http://godispower.us/Application/Users/external/updateRecord.php?oldName=Alex%20Potter&password=xrxy3749&email=alex364981@gmail.com
     private Spinner bibleVersions()
     {
         return (Spinner) findViewById(R.id.spinnerBible);
@@ -95,34 +98,41 @@ public class SettingsActivity extends POGabActivity {
         Settings.BibleVersion = bibleVersions().getSelectedItem().toString();
         Settings.SaveToJson();
         this.ShowMsgBox("Saved", "Application must now close for the effect to take place.");
+        Global.NeedsToClose = true;
         System.exit(0);
+
     }
     public void SaveAccountSettings(View v)
     {
         UserInfo uInfo = UserInfo.CreateObject(txtName().Text(), txtEmail().Text(), txtUsername().Text());
-        if (!Database.Login(defaultUsername, txtPassword().Text()))
-        {
-            this.ShowMsgBox("Invalid Login", "Invalid password. Please try again.");
-        }
-        else
-        {
-            try {
-                if (!Database.Update(defaultUsername, txtPassword().Text(), uInfo)) { //Extra security
-                    this.ShowMsgBox("Failed Update", "Something went wrong when trying to update. Sorry");
-                } else {
-                    this.ShowMsgBox("Awesome Sauce!", "Your information was updated successfully! Application will now restart");
-                    UserInfo newInformation = UserInfo.CreateObject(txtName().Text(), txtEmail().Text(), txtUsername().Text());
-                    newInformation.WriteJson();
-                    Intent i = getBaseContext().getPackageManager()
-                            .getLaunchIntentForPackage( getBaseContext().getPackageName() );
-                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    this.finish();
-                    startActivity(i);
+        try {
+            String theUsername = Global.CurrentUserInfo.username;
+            String thePassword = txtPassword().Text();
+            if (!Database.Login(theUsername, thePassword)) {
+                this.ShowMsgBox("Invalid Login", "Invalid password. Please try again.");
+            } else {
+                try {
+                    if (!Database.Update(theUsername, txtPassword().Text(), uInfo)) { //Extra security
+                        this.ShowMsgBox("Failed Update", "Something went wrong when trying to update. Sorry");
+                    } else {
+                        this.ShowMsgBox("Awesome Sauce!", "Your information was updated successfully! Application will now restart");
+                        UserInfo newInformation = UserInfo.CreateObject(txtName().Text(), txtEmail().Text(), txtUsername().Text());
+                        newInformation.WriteJson();
+                        Intent i = getBaseContext().getPackageManager()
+                                .getLaunchIntentForPackage(getBaseContext().getPackageName());
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        this.finish();
+                        startActivity(i);
+                    }
+                } catch (Exception ex) {
+                    this.ShowMsgBox("Application Error", "Some internal issue happened and so your updates will not " +
+                            "take effect.");
                 }
-            } catch (Exception ex) {
-                this.ShowMsgBox("Application Error", "Some internal issue happened and so your updates will not " +
-                        "take effect.");
             }
+        }
+        catch (Exception myException)
+        {
+            myException.printStackTrace();
         }
     }
 

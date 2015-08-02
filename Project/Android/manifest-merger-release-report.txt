@@ -29,6 +29,7 @@ application
 ADDED from AndroidManifest.xml:9:5
 MERGED from com.android.support:appcompat-v7:21.0.3:16:5
 MERGED from com.android.support:support-v4:21.0.3:16:5
+MERGED from com.android.support:support-v4:21.0.3:16:5
 	android:label
 		ADDED from AndroidManifest.xml:12:9
 	android:allowBackup
@@ -37,7 +38,7 @@ MERGED from com.android.support:support-v4:21.0.3:16:5
 		ADDED from AndroidManifest.xml:11:9
 	android:theme
 		ADDED from AndroidManifest.xml:13:9
-activity#apdevelopment.powerofgod.UserInformation.UserInfoActivity
+activity#apdevelopment.powerofgod.StartActivity
 ADDED from AndroidManifest.xml:14:9
 	android:label
 		ADDED from AndroidManifest.xml:16:13
@@ -65,9 +66,46 @@ ADDED from AndroidManifest.xml:27:9
 		ADDED from AndroidManifest.xml:29:13
 	android:name
 		ADDED from AndroidManifest.xml:28:13
+activity#apdevelopment.powerofgod.User.Online.RegisterActivity
+ADDED from AndroidManifest.xml:31:9
+	android:label
+		ADDED from AndroidManifest.xml:33:13
+	android:name
+		ADDED from AndroidManifest.xml:32:13
+activity#apdevelopment.powerofgod.User.Online.LoginActivity
+ADDED from AndroidManifest.xml:35:9
+	android:label
+		ADDED from AndroidManifest.xml:37:13
+	android:name
+		ADDED from AndroidManifest.xml:36:13
+activity#apdevelopment.powerofgod.User.Settings.SettingsActivity
+ADDED from AndroidManifest.xml:39:9
+	android:label
+		ADDED from AndroidManifest.xml:41:13
+	android:name
+		ADDED from AndroidManifest.xml:40:13
+activity#apdevelopment.powerofgod.Settings.SettingsActivity
+ADDED from AndroidManifest.xml:43:9
+	android:label
+		ADDED from AndroidManifest.xml:45:13
+	android:name
+		ADDED from AndroidManifest.xml:44:13
+activity#apdevelopment.powerofgod.MainScreen.MainActivity
+ADDED from AndroidManifest.xml:47:9
+	android:label
+		ADDED from AndroidManifest.xml:49:13
+	android:name
+		ADDED from AndroidManifest.xml:48:13
+activity#apdevelopment.powerofgod.Exceptions.yyyy
+ADDED from AndroidManifest.xml:51:9
+	android:label
+		ADDED from AndroidManifest.xml:53:13
+	android:name
+		ADDED from AndroidManifest.xml:52:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5
+MERGED from com.android.support:support-v4:21.0.3:15:5
 MERGED from com.android.support:support-v4:21.0.3:15:5
 	android:targetSdkVersion
 		INJECTED from AndroidManifest.xml:0:0

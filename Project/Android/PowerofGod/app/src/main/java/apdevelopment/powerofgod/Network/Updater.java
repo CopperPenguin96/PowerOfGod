@@ -22,7 +22,7 @@ public class Updater {
     private static String VersionPrefix = "Alpha";
     private static String[] CurrentVersion = new String[]
     {
-        "1", "3",null, null
+        "1", "3", null, null
     };
     public static String LatestStable()
     {

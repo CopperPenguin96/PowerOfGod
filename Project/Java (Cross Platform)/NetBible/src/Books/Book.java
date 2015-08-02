@@ -1,10 +1,8 @@
 package Books;
-import Bible.Bible;
 import Bible.Files;
 import java.io.*;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
-import java.util.*;
 import org.xml.sax.SAXException;
 
 

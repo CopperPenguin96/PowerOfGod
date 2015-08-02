@@ -6,6 +6,8 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import java.util.*;
 
+import apdevelopment.powerofgod.User.Settings.Settings;
+
 
 //Default book class
 //Never use unless extending
@@ -40,11 +42,16 @@ public class Book
 
 	public String readFormattedVerse(int chapter, int verse) {
 		return this.getName() + " " + chapter +
-			":" + verse + " (KJB) - \"" + readPlainVerse(chapter, verse) + "\"";
+			":" + verse + " (" + GetScriptureVersion() + ") - \"" + readPlainVerse(chapter, verse) + "\"";
 	}
+    String GetScriptureVersion()
+    {
+        Settings.LoadFromJson();
+        return Settings.BibleVersion;
+    }
     public String readPlainVerse(int chapter, int verse) {
 		try {
-            InputStream is = Bible.Bible.StartActivityContext.getAssets().open("KJV.xml");
+            InputStream is = Bible.Bible.StartActivityContext.getAssets().open(GetScriptureVersion() + ".xml");
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			Document doc = db.parse(is);

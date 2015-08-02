@@ -42,8 +42,7 @@ public class StartActivity extends ActionBarActivity {
             else {
                 startActivity(new Intent(this, RegisterActivity.class));
             }
-
-
+            this.finish();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

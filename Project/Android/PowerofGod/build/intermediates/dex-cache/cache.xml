@@ -64,12 +64,5 @@
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
         <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-536e749e13820a991827600ebe7695de25f7bf0f.jar" />
     </item>
-    <item
-        jar="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.5.87\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
-        <dex dex="C:\Users\apotter96\SkyDrive\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\classes-86ceff3d4722f1c3cc047165d4795821b0c415ee.jar" />
-    </item>
 
 </items>
