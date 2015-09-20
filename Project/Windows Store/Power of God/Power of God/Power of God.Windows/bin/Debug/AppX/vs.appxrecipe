@@ -4,75 +4,209 @@
     <Machine>ALEX</Machine>
     <WindowsUser>apotter96</WindowsUser>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows 8.1</TargetOsDescription>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <PackageIdentityName>e7bb3d2e-6278-4343-b107-0c7d7277bc3c</PackageIdentityName>
-    <IntermediateOutputPath>E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\</IntermediateOutputPath>
-    <RegisteredManifestChecksum>D2BDA307990DC47DE567FAD6376CCFFD77CE3F24732034A2CF481BF2AA2ECE7F</RegisteredManifestChecksum>
+    <PackageIdentityName>12768APDevelopment.PowerofGod</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\obj\Debug\</IntermediateOutputPath>
+    <RegisteredManifestChecksum>3B6AAFB4E517EFF21AD35B929C74609A3220B3DAFFD24BBFA0D3A51CCC439482</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>12768APDevelopment.PowerofGod_1.2.0.0_neutral__1yy6fxmgj0xsp</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>12768APDevelopment.PowerofGod_1yy6fxmgj0xsp!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>12768APDevelopment.PowerofGod</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=AC52C117-E2F5-4E80-817F-F3CC44EDF029</RegisteredPackagePublisher>
+    <RegisteredVersion>1.2.0.0</RegisteredVersion>
+    <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-08T02:09:10.000</Modified>
+      <Modified>2015-08-31T12:30:56.361</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.exe">
-      <PackagePath>Power of God.Windows.exe</PackagePath>
-      <Modified>2015-05-08T02:09:04.000</Modified>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.exe">
+      <PackagePath>Power of God.exe</PackagePath>
+      <Modified>2015-08-31T12:47:40.010</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\kjv.xml">
-      <PackagePath>Assets\kjv.xml</PackagePath>
-      <Modified>2015-04-28T05:14:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-01T00:40:22.000</Modified>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\main.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-140.png">
+      <PackagePath>Assets\Logo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-180.png">
+      <PackagePath>Assets\Logo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-17T13:33:39.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Logo.scale-80.png">
+      <PackagePath>Assets\Logo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\main.png">
       <PackagePath>Assets\main.png</PackagePath>
-      <Modified>2015-04-07T04:55:36.000</Modified>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-01T00:40:22.000</Modified>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-140.png">
+      <PackagePath>Assets\SmallLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-180.png">
+      <PackagePath>Assets\SmallLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-17T13:33:39.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SmallLogo.scale-80.png">
+      <PackagePath>Assets\SmallLogo.scale-80.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-01T00:40:22.000</Modified>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-140.png">
+      <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-180.png">
+      <PackagePath>Assets\SplashScreen.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-17T13:33:39.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square310x310Logo.scale-100.png">
+      <PackagePath>Assets\Square310x310Logo.scale-100.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square310x310Logo.scale-140.png">
+      <PackagePath>Assets\Square310x310Logo.scale-140.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square310x310Logo.scale-180.png">
+      <PackagePath>Assets\Square310x310Logo.scale-180.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square310x310Logo.scale-80.png">
+      <PackagePath>Assets\Square310x310Logo.scale-80.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square70x70Logo.scale-100.png">
+      <PackagePath>Assets\Square70x70Logo.scale-100.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square70x70Logo.scale-140.png">
+      <PackagePath>Assets\Square70x70Logo.scale-140.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square70x70Logo.scale-180.png">
+      <PackagePath>Assets\Square70x70Logo.scale-180.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square70x70Logo.scale-80.png">
+      <PackagePath>Assets\Square70x70Logo.scale-80.png</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square71x71Logo.scale-100.png">
+      <PackagePath>Assets\Square71x71Logo.scale-100.png</PackagePath>
+      <Modified>2015-08-17T13:36:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square71x71Logo.scale-140.png">
+      <PackagePath>Assets\Square71x71Logo.scale-140.png</PackagePath>
+      <Modified>2015-08-17T13:36:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <Modified>2015-08-17T13:36:45.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2015-05-01T00:40:22.000</Modified>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\cooltext117627293831111.png">
-      <PackagePath>cooltext117627293831111.png</PackagePath>
-      <Modified>2015-04-27T06:43:02.000</Modified>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-140.png">
+      <PackagePath>Assets\StoreLogo.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\TextFile1.txt">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-180.png">
+      <PackagePath>Assets\StoreLogo.scale-180.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2015-08-17T13:36:45.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\WideLogo.scale-100.png">
+      <PackagePath>Assets\WideLogo.scale-100.png</PackagePath>
+      <Modified>2015-08-17T13:36:45.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\WideLogo.scale-140.png">
+      <PackagePath>Assets\WideLogo.scale-140.png</PackagePath>
+      <Modified>2015-08-17T13:36:45.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <Modified>2015-08-17T13:36:45.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\Assets\TextFile1.txt">
       <PackagePath>Assets\TextFile1.txt</PackagePath>
-      <Modified>2015-04-28T05:27:26.000</Modified>
+      <Modified>2015-08-01T22:17:18.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Shared\Assets\kjv.xml">
+      <PackagePath>Assets\kjv.xml</PackagePath>
+      <Modified>2015-08-01T22:17:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.xr.xml">
+      <PackagePath>Power of God.xr.xml</PackagePath>
+      <Modified>2015-08-31T12:30:53.457</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2015-04-27T17:08:02.000</Modified>
+      <Modified>2015-08-17T13:46:15.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2015-04-30T06:25:06.000</Modified>
+      <Modified>2015-08-17T14:57:40.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Power of God.Windows.xr.xml">
-      <PackagePath>Power of God.Windows.xr.xml</PackagePath>
-      <Modified>2015-04-30T06:25:06.000</Modified>
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\Register.xbf">
+      <PackagePath>Register.xbf</PackagePath>
+      <Modified>2015-08-31T12:30:53.493</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2015-05-08T02:09:08.000</Modified>
+      <Modified>2015-08-31T12:30:54.788</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PriInfo>
+	<ResourceMap name="12768APDevelopment.PowerofGod" version="1.0" primary="true">
+		<Qualifiers>
+			<Scale>80, 100</Scale>
+		</Qualifiers>
+		<ResourceMapSubtree name="Files">
+			<NamedResource name="App.xbf" uri="ms-resource://12768APDevelopment.PowerofGod/Files/App.xbf">
+				<Candidate type="Path">
+					<Value>App.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="MainPage.xbf" uri="ms-resource://12768APDevelopment.PowerofGod/Files/MainPage.xbf">
+				<Candidate type="Path">
+					<Value>MainPage.xbf</Value>
+				</Candidate>
+			</NamedResource>
+			<NamedResource name="Power of God.xr.xml" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Power%20of%20God.xr.xml">
+				<Candidate type="Path">
+					<Value>Power of God.xr.xml</Value>
+				</Candidate>
+			</NamedResource>
+			<ResourceMapSubtree name="Assets">
+				<NamedResource name="kjv.xml" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/kjv.xml">
+					<Candidate type="Path">
+						<Value>Assets\kjv.xml</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Logo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/Logo.png">
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\Logo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\Logo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Logo.scale-240.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/Logo.scale-240.png">
+					<Candidate type="Path">
+						<Value>Assets\Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="main.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/main.png">
+					<Candidate type="Path">
+						<Value>Assets\main.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SmallLogo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/SmallLogo.png">
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\SmallLogo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SmallLogo.scale-240.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/SmallLogo.scale-240.png">
+					<Candidate type="Path">
+						<Value>Assets\SmallLogo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/SplashScreen.png">
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\SplashScreen.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="SplashScreen.scale-240.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/SplashScreen.scale-240.png">
+					<Candidate type="Path">
+						<Value>Assets\SplashScreen.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square310x310Logo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/Square310x310Logo.png">
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\Square310x310Logo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\Square310x310Logo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square70x70Logo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/Square70x70Logo.png">
+					<Candidate qualifiers="Scale-80" isDefault="true" type="Path">
+						<Value>Assets\Square70x70Logo.scale-80.png</Value>
+					</Candidate>
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\Square70x70Logo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square71x71Logo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/Square71x71Logo.png">
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\Square71x71Logo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="Square71x71Logo.scale-240.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/Square71x71Logo.scale-240.png">
+					<Candidate type="Path">
+						<Value>Assets\Square71x71Logo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/StoreLogo.png">
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\StoreLogo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="StoreLogo.scale-240.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/StoreLogo.scale-240.png">
+					<Candidate type="Path">
+						<Value>Assets\StoreLogo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="TextFile1.txt" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/TextFile1.txt">
+					<Candidate type="Path">
+						<Value>Assets\TextFile1.txt</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="WideLogo.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/WideLogo.png">
+					<Candidate qualifiers="Scale-100" isDefault="true" type="Path">
+						<Value>Assets\WideLogo.scale-100.png</Value>
+					</Candidate>
+				</NamedResource>
+				<NamedResource name="WideLogo.scale-240.png" uri="ms-resource://12768APDevelopment.PowerofGod/Files/Assets/WideLogo.scale-240.png">
+					<Candidate type="Path">
+						<Value>Assets\WideLogo.scale-240.png</Value>
+					</Candidate>
+				</NamedResource>
+			</ResourceMapSubtree>
+		</ResourceMapSubtree>
+	</ResourceMap>
+</PriInfo>

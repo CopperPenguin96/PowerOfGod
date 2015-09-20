@@ -4,9 +4,8 @@ PowerOfGod
 This application is a cross-platform application to help others grow in their faith
 
 (Current Available Platforms)
->>> Android 4.1+
+>>> Android 2.3+
 >>> Windows Desktop Version Capable of Java
->>> Windows 8.1/Phone Store
 >>> Mac/Linux devices capable of Java
 
 ##License

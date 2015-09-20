@@ -8,8 +8,8 @@ android {
         applicationId "apdevelopment.powerofgod"
         minSdkVersion 9
         targetSdkVersion 21
-        versionCode 4
-        versionName "Alpha 1.3"
+        versionCode 5
+        versionName "Alpha 1.3.0"
     }
     buildTypes {
         release {

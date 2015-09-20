@@ -1,0 +1,68 @@
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\App.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\MainPage.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.xr.xml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.exe
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.pdb
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\resources.pri
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\AppxManifest.xml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.build.appxrecipe
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.g.i.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.g.i.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\XamlTypeInfo.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.xaml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.xaml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\XamlSaveStateFile.xml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Power of God.WindowsPhone.exe
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Power of God.WindowsPhone.pdb
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\priconfig.xml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\priconfig.xml.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\layout.resfiles
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\layout.resfiles.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\resources.resfiles
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\resources.resfiles.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\pri.resfiles
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\pri.resfiles.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\qualifiers.txt
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\qualifiers.txt.intermediate
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\ProjectArchitectures.txt
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Register.xbf
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Register.g.i.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Register.g.cs
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Register.xaml
+C:\Users\apotter96\SkyDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Register.xbf
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\App.xbf
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\MainPage.xbf
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.xr.xml
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.exe
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\Power of God.WindowsPhone.pdb
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\resources.pri
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\bin\Release\AppxManifest.xml
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.g.i.cs
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.g.cs
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.g.i.cs
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.g.cs
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\XamlTypeInfo.g.cs
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.xaml
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.xaml
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\App.xbf
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MainPage.xbf
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\XamlSaveStateFile.xml
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Power of God.WindowsPhone.exe
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\Power of God.WindowsPhone.pdb
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\priconfig.xml
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\priconfig.xml.intermediate
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\layout.resfiles
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\layout.resfiles.intermediate
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\resources.resfiles
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\resources.resfiles.intermediate
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\pri.resfiles
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\pri.resfiles.intermediate
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\qualifiers.txt
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\qualifiers.txt.intermediate
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\MultipleQualifiersPerDimensionFound.txt
+C:\Users\apotter96\OneDrive\Power of God\Project\Windows Store\Power of God\Power of God\Power of God.WindowsPhone\obj\Release\ProjectArchitectures.txt

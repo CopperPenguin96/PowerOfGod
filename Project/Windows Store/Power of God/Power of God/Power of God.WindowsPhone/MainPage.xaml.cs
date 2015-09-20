@@ -27,6 +27,7 @@ namespace Power_of_God
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
+            new MsgBox("First Me", "Now Me").ShowDialog();
         }
 
         /// <summary>
@@ -38,11 +39,12 @@ namespace Power_of_God
         {
             // TODO: Prepare page for display here.
 
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
+            /*TODO: If your application contains multiple pages, ensure that you are
+              handling the hardware Back button by registering for the
+              Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
+              If you are using the NavigationHelper provided by some templates,
+              this event is handled for you.*/
         }
+        
     }
 }

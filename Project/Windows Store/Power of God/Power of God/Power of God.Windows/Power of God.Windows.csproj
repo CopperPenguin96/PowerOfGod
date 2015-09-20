@@ -4,23 +4,27 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E62BAAB-B571-463A-B71D-4F4B995C221E}</ProjectGuid>
+    <ProjectGuid>{E03CA92B-9513-4B14-864D-7740A8D21140}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Power_of_God</RootNamespace>
-    <AssemblyName>Power of God.Windows</AssemblyName>
+    <AssemblyName>Power of God</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Power of God.Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Power of God.Windows_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>4863F89618C513DE5A23A6CBDF8F8649F3CAC878</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>pdbonly</DebugType>
+    <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_APP</DefineConstants>
@@ -106,100 +110,61 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Books\Book.cs" />
-    <Compile Include="Books\New Testament\Acts.cs" />
-    <Compile Include="Books\New Testament\Colossians.cs" />
-    <Compile Include="Books\New Testament\Corinthians1.cs" />
-    <Compile Include="Books\New Testament\Corinthians2.cs" />
-    <Compile Include="Books\New Testament\Ephesians.cs" />
-    <Compile Include="Books\New Testament\Galatians.cs" />
-    <Compile Include="Books\New Testament\Hebrews.cs" />
-    <Compile Include="Books\New Testament\James.cs" />
-    <Compile Include="Books\New Testament\John.cs" />
-    <Compile Include="Books\New Testament\John1.cs" />
-    <Compile Include="Books\New Testament\John2.cs" />
-    <Compile Include="Books\New Testament\John3.cs" />
-    <Compile Include="Books\New Testament\Jude.cs" />
-    <Compile Include="Books\New Testament\Luke.cs" />
-    <Compile Include="Books\New Testament\Mark.cs" />
-    <Compile Include="Books\New Testament\Matthew.cs" />
-    <Compile Include="Books\New Testament\Peter1.cs" />
-    <Compile Include="Books\New Testament\Peter2.cs" />
-    <Compile Include="Books\New Testament\Philemon.cs" />
-    <Compile Include="Books\New Testament\Philippians.cs" />
-    <Compile Include="Books\New Testament\Revelation.cs" />
-    <Compile Include="Books\New Testament\Romans.cs" />
-    <Compile Include="Books\New Testament\Thessalonians1.cs" />
-    <Compile Include="Books\New Testament\Thessalonians2.cs" />
-    <Compile Include="Books\New Testament\Timothy1.cs" />
-    <Compile Include="Books\New Testament\Timothy2.cs" />
-    <Compile Include="Books\New Testament\Titus.cs" />
-    <Compile Include="Books\Old Testament\Amos.cs" />
-    <Compile Include="Books\Old Testament\Chronicles1.cs" />
-    <Compile Include="Books\Old Testament\Chronicles2.cs" />
-    <Compile Include="Books\Old Testament\Daniel.cs" />
-    <Compile Include="Books\Old Testament\Deuteronomy.cs" />
-    <Compile Include="Books\Old Testament\Ecclesiastes.cs" />
-    <Compile Include="Books\Old Testament\Esther.cs" />
-    <Compile Include="Books\Old Testament\Exodus.cs" />
-    <Compile Include="Books\Old Testament\Ezekiel.cs" />
-    <Compile Include="Books\Old Testament\Ezra.cs" />
-    <Compile Include="Books\Old Testament\Genesis.cs" />
-    <Compile Include="Books\Old Testament\Habakkuk.cs" />
-    <Compile Include="Books\Old Testament\Haggai.cs" />
-    <Compile Include="Books\Old Testament\Hosea.cs" />
-    <Compile Include="Books\Old Testament\Isaiah.cs" />
-    <Compile Include="Books\Old Testament\Jeremiah.cs" />
-    <Compile Include="Books\Old Testament\Job.cs" />
-    <Compile Include="Books\Old Testament\Joel.cs" />
-    <Compile Include="Books\Old Testament\Jonah.cs" />
-    <Compile Include="Books\Old Testament\Joshua.cs" />
-    <Compile Include="Books\Old Testament\Judges.cs" />
-    <Compile Include="Books\Old Testament\Kings1.cs" />
-    <Compile Include="Books\Old Testament\Kings2.cs" />
-    <Compile Include="Books\Old Testament\Lamentations.cs" />
-    <Compile Include="Books\Old Testament\Leviticus.cs" />
-    <Compile Include="Books\Old Testament\Malachi.cs" />
-    <Compile Include="Books\Old Testament\Micah.cs" />
-    <Compile Include="Books\Old Testament\Nahum.cs" />
-    <Compile Include="Books\Old Testament\Nehemiah.cs" />
-    <Compile Include="Books\Old Testament\Numbers.cs" />
-    <Compile Include="Books\Old Testament\Obadiah.cs" />
-    <Compile Include="Books\Old Testament\Proverbs.cs" />
-    <Compile Include="Books\Old Testament\Psalms.cs" />
-    <Compile Include="Books\Old Testament\Ruth.cs" />
-    <Compile Include="Books\Old Testament\Samuel1.cs" />
-    <Compile Include="Books\Old Testament\Samuel2.cs" />
-    <Compile Include="Books\Old Testament\SongOfSolomon.cs" />
-    <Compile Include="Books\Old Testament\Zechariah.cs" />
-    <Compile Include="Books\Old Testament\Zephaniah.cs" />
-    <Compile Include="Files.cs" />
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MsgBox.cs" />
+    <Compile Include="Network\Database.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Assets\Thumbs.db" />
+    <None Include="Power of God.Windows_StoreKey.pfx" />
     <None Include="Power of God.Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\kjv.xml" />
     <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
     <Content Include="Assets\main.png" />
     <Content Include="Assets\SmallLogo.scale-100.png" />
+    <Content Include="Assets\SmallLogo.scale-140.png" />
+    <Content Include="Assets\SmallLogo.scale-180.png" />
+    <Content Include="Assets\SmallLogo.scale-240.png" />
+    <Content Include="Assets\SmallLogo.scale-80.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
+    <Content Include="Assets\SplashScreen.scale-140.png" />
+    <Content Include="Assets\SplashScreen.scale-180.png" />
+    <Content Include="Assets\SplashScreen.scale-240.png" />
+    <Content Include="Assets\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Square310x310Logo.scale-140.png" />
+    <Content Include="Assets\Square310x310Logo.scale-180.png" />
+    <Content Include="Assets\Square310x310Logo.scale-80.png" />
+    <Content Include="Assets\Square70x70Logo.scale-100.png" />
+    <Content Include="Assets\Square70x70Logo.scale-140.png" />
+    <Content Include="Assets\Square70x70Logo.scale-180.png" />
+    <Content Include="Assets\Square70x70Logo.scale-80.png" />
+    <Content Include="Assets\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Square71x71Logo.scale-140.png" />
+    <Content Include="Assets\Square71x71Logo.scale-240.png" />
     <Content Include="Assets\StoreLogo.scale-100.png" />
+    <Content Include="Assets\StoreLogo.scale-140.png" />
+    <Content Include="Assets\StoreLogo.scale-180.png" />
+    <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\TextFile1.txt" />
-    <Content Include="cooltext117627293831111.png" />
+    <Content Include="Assets\WideLogo.scale-100.png" />
+    <Content Include="Assets\WideLogo.scale-140.png" />
+    <Content Include="Assets\WideLogo.scale-240.png" />
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Register.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

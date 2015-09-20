@@ -1,6 +1,6 @@
 ========================POWER OF GOD README
 ========================
-----------------------------Alphah 1.2.0---------------------------
+----------------------------Alphah 1.3-----------------------------
 ===================================================================
 > Power of God is a nondenominational Christian app that is designed
 >> to help you grow in your faith and grow in your relationship with
@@ -8,7 +8,7 @@
 ---------
 > Files <
 ---------
-- power.of.god/ -> All files created by the application will be placed here
+- power.of.god/ -> All files created by the application will be placed here or provided in the archive
 - libs/ -> Required external java libraries placed in this folder for the app to run
 - Power_of_God.jar -> The executable jar. The application
 

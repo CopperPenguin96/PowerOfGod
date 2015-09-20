@@ -60,8 +60,21 @@ public class Start {
     public static UserInfo CurrentUserInfo;
     public static void main(String[] args)
     {
-        try {
-            System.out.println(DailyScripture.GetDailyScripture());
+        System.out.println("---Debug---");
+        Database.Login("apotter96", "xrxy3749");
+        
+        /*try {
+            try
+            {
+                System.out.println(Updater.UpdateNotice());
+            }
+            catch (Exception e)
+            {
+                StartError sError = new StartError();
+                StartError.main(args);
+                return;
+            }
+            //System.out.println(DailyScripture.GetDailyScripture());
             boolean Obj1 = AppFiles.filesObj()[3].exists();
             boolean Obj2 = AppFiles.filesObj()[1].exists();
             if ((Obj1 && Obj2) || (Obj1 && !Obj2))
@@ -86,7 +99,7 @@ public class Start {
             
         } catch (Exception ex) {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        } */
     }
     static void StartMain()
     {

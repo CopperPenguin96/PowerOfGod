@@ -23,49 +23,36 @@
  */
 package BibPlan;
 
-import java.util.ArrayList;
+import BibPlan.Exceptions.*;
+import Books.*;
+import java.util.*;
 
 /**
  *
  * @author apotter96
  */
-public final class BibPlan {
-    public BibPlan(String name, String[] daysA, String author)
+public class BibPlan {
+    public String Name;
+    public int Length() throws PlanParseException
     {
-        this.planName = name;
-        this.days = daysA;
-        this.planauthor = author;
-    }
-
-    public String planName;
-    public String[] days;
-    public String planauthor;
-    public String[] GetDays()
-    {
-        return days;
-    }
-    public String[] GetDaysX()
-    {
-        ArrayList<String> aListString = new ArrayList<>();
-        for (String s:days)
+        if (Books.size() != Chapters.size() || Books.size() != Verses.size() || Chapters.size() != Verses.size())
         {
-            if (!s.equals("null"))
-            {
-                aListString.add(s);
-            }
+            //We need to check the sizes. This is to protect against code errors
+            throw new PlanParseException("Malformated Bible Plan: Days Mismatch");
         }
-        String[] xMe = new String[aListString.size() - 1];
-        return aListString.toArray(xMe);
+        return Books.size();
     }
-    public int GetPlanDayCount()
+    public ArrayList<Book> Books;
+    public ArrayList<Integer> Chapters;
+    public ArrayList<Integer> Verses;
+    
+    public static BibPlan CreateObj(String _name, ArrayList<Book> _books, ArrayList<Integer> _chapters, ArrayList<Integer> _verses)
     {
-        return days.length + 1;
-    }
-
-    public String ReadVerseFromDay(int dayCount)
-    {
-        int newCount = dayCount - 1;
-        String todayVerse = days[newCount];
-        return null;
+        BibPlan bPlan = new BibPlan();
+        bPlan.Name = _name;
+        bPlan.Books = _books;
+        bPlan.Chapters = _chapters;
+        bPlan.Verses = _verses;
+        return bPlan;
     }
 }

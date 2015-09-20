@@ -79,14 +79,13 @@ public class MainScreen extends ActionBarActivity
                     try {
                         Looper.prepare();
                         String updateMessage = Updater.UpdateNotice();
-                        if (!Updater.myResult.equals("Updated")) ShowMsgBox("Checking", Updater.UpdateNotice());
+                        if (!Updater.UpdateWord().equals("Updated")) ShowMsgBox("Update Information", Updater.UpdateNotice());
+                        System.out.println("Updater: " + Updater.UpdateNotice());
                         Looper.loop();
-                    } catch (ScriptException e) {
+                    } catch (Exception e) {
+                        System.out.println("----------");
                         e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (NoSuchMethodException e) {
-                        e.printStackTrace();
+                        System.out.println("****");
                     }
                 }
             });
@@ -220,8 +219,8 @@ public class MainScreen extends ActionBarActivity
                         "this app expecting favor for a specific denomination, you are in for a surprise! " +
                         "This app is intended to be non-denominational! \nYou also may be wondering why such an " +
                         "app exists. Well, I believe that the Holy Bible is true. \n\n" +
-                        new Timothy2().readFormattedVerse(3, 16) + " With that in mind, I also believe that the " +
-                        "holy power God has is beyond compare. \n\n" + new Romans().readFormattedVerse(1, 16) + " I " +
+                        PurposeVerses.GetVerse(0) + " With that in mind, I also believe that the " +
+                        "holy power God has is beyond compare. \n\n" + PurposeVerses.GetVerse(1) + " I " +
                         "live to serve Jesus Christ, who is God, and will come back to earth take all who " +
                         "believe he died and rose again, to heaven. I use this app as a way to witness, to share " +
                         "this amazing truth. God bless and I hope you learn some stuff about God.");

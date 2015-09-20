@@ -23,28 +23,22 @@
  */
 package power.of.god.MainScreen;
 
-import Books.NewTestament.*;
-import Books.OldTestament.*;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import java.util.zip.GZIPInputStream;
-import javax.script.ScriptException;
-import javax.swing.JOptionPane;
-import power.of.god.AppFiles;
+//import Books.NewTestament.*;
+//import Books.OldTestament.*;
+import java.io.*;
+import java.net.*;
+import java.text.*;
+import java.util.*;
+import java.util.logging.*;
+import java.util.zip.*;
+import javax.swing.*;
 import power.of.god.PrivacyPolicy;
-import power.of.god.Settings.SettingsScreen;
+//import power.of.god.*;
+import power.of.god.Settings.*;
 import power.of.god.Start;
+import power.of.god.TitleExtractor;
 import power.of.god.Updater;
-import power.of.god.User.UserInfo;
-
+import power.of.god.User.*;
 /**
  *
  * @author apotter96
@@ -54,18 +48,18 @@ public class MainScreen extends javax.swing.JFrame {
     /**
      * Creates new form UserInfoScreen
      */
+    
     public MainScreen() {
         initComponents();
         SetDefaultContentScreen();
-        this.setTitle(Updater.LatestStable());
+        this.setTitle("Power of God " + Updater.LatestStable());
         try {
             Updater.UpdateNotice();
-            if (Updater.ServerResponse.equals("Outdated") || 
-                    Updater.ServerResponse.equals("Unsupported"))
+            if (!Updater.UpdateNotice().equals("Updated"))
             {
-                MsgBox("Your version is " + Updater.ServerResponse.toLowerCase(), Updater.UpdateNotice());
+                MsgBox("Local Version: " + Updater.ServerResponse.toLowerCase(), Updater.UpdateNotice());
             }
-        } catch (ScriptException | IOException | NoSuchMethodException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
         UserInfo uI = Start.CurrentUserInfo;
@@ -274,8 +268,8 @@ public class MainScreen extends javax.swing.JFrame {
                         "this app expecting favor for a specific denomination, you are in for a surprise! " +
                         "This app is intended to be non-denominational! <br><br>You also may be wondering why such an " +
                         "app exists. Well, I believe that the Holy Bible is true. " +
-                        new Timothy2().readFormattedVerse(3, 16) + " With that in mind, I also believe that the " +
-                        "holy power God has is beyond compare. " + new Romans().readFormattedVerse(1, 16) + " I " +
+                        PurposeVerses.GetVerse(0) + " With that in mind, I also believe that the " +
+                        "holy power God has is beyond compare. " + PurposeVerses.GetVerse(1) + " I " +
                         "live to serve Jesus Christ, who is God, and will come back to earth take all who " +
                         "believe he died and rose again, to heaven. I use this app as a way to witness, to share " +
                         "this amazing truth. God bless and I hope you learn some stuff about God.</body></html>");
@@ -312,24 +306,15 @@ public class MainScreen extends javax.swing.JFrame {
     boolean displayedGood = false;
     void ShowLesson(String day)
     {
-        String dayChosen = "http://godispower.us/";
-        switch (day) {
-            case "sunday":
-                dayChosen += "Sundays/" + theLastSunday(CurrentCount);
-                break;
-            case "thursday":
-                dayChosen += "Thursdays/" + theLastThursday(CurrentCount);
-                break;
-        }
-        dayChosen += ".html";
+        String dayChosen = "http://godispower.us/Sundays/" + theLastSunday(CurrentCount) + ".html";
         final int AllowedAttemptCount = 10;
-        
         if (!displayedGood)
         {
             try {
                 System.out.println("---Connecting attempt for attempt " + CurrentCount + 
                     " of " + AllowedAttemptCount + " for");
-                SetCurrentContent(getUrlSource(dayChosen));
+                SetCurrentContent("<h1>" + TitleExtractor.getPageTitle(dayChosen) + "</h1>" + 
+                        getUrlSource(dayChosen));
                 displayedGood = true;
                 if (CurrentCount > 1)
                 {
@@ -338,7 +323,6 @@ public class MainScreen extends javax.swing.JFrame {
                 }
                 CurrentCount = 0;
             } catch (Exception ex) {
-                ex.printStackTrace();
                 //Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
                 if (CurrentCount < AllowedAttemptCount) 
                 {
@@ -370,23 +354,6 @@ public class MainScreen extends javax.swing.JFrame {
         }
         return df.format(c.getTime());
     }
-    private String theLastThursday(int neededDay)
-    {
-        Calendar c = Calendar.getInstance();
-        c.set(Calendar.DAY_OF_WEEK,Calendar.THURSDAY);
-        c.set(Calendar.HOUR_OF_DAY,0);
-        c.set(Calendar.MINUTE,0);
-        c.set(Calendar.SECOND,0);
-        DateFormat df = new SimpleDateFormat("MM.dd.yyyy");
-        if (neededDay >= 1)
-        {
-            for (int loopCount = 1; loopCount <= neededDay; loopCount++)
-            {
-                c.add(Calendar.DATE,-7 );
-            }
-        }
-        return df.format(c.getTime());
-    }    
     public static void MsgBox(String titleBar, String infoMessage)
     {
         JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.PLAIN_MESSAGE);
@@ -411,19 +378,18 @@ public class MainScreen extends javax.swing.JFrame {
     {
         jEditorPane1.setContentType("text/html");
         jEditorPane1.setText(html);
+        jEditorPane1.setCaretPosition(0);
     }
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                MainScreen mScreen = new MainScreen();
-                mScreen.pack();
-                mScreen.setVisible(true);
-                mScreen.setLocationRelativeTo(null);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            MainScreen mScreen = new MainScreen();
+            mScreen.pack();
+            mScreen.setVisible(true);
+            mScreen.setLocationRelativeTo(null);
         });
     }
 
