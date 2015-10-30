@@ -101,5 +101,15 @@ namespace PowerOfGodUniversal
         {
 
         }
+
+        private void textBlock_SelectionChanged_2(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

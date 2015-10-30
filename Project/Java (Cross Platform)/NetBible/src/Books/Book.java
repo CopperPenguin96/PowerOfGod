@@ -44,7 +44,7 @@ public class Book
         public static boolean IsKjv()
         {
             System.out.print(Files.needVers);
-            return Files.needVers.equals("KJV");
+            return true;
         }
 	public String readPlainVerse(int chapter, int verse) {
             try {

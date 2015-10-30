@@ -37,7 +37,7 @@ public class Updater {
     private static final String VersionPrefix = "Alpha";
     private static final String[] CurrentVersion = new String[]
     {
-        "1", "3", "0", null
+        "1", "4", null, null
     };
     private static String TogetherNumbers()
     {

@@ -60,8 +60,8 @@ public class Start {
     public static UserInfo CurrentUserInfo;
     public static void main(String[] args)
     {
-        System.out.println("---Debug---");
-        Database.Login("apotter96", "xrxy3749");
+        Settings.LoadFromJson();
+        MainScreen.main(args);
         
         /*try {
             try

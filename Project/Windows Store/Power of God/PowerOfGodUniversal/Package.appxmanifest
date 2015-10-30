@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="ea852693-28c7-42ec-b697-f8c07866e9c6" Publisher="CN=apotter96" Version="1.3.0.0" />
+  <Identity Name="ea852693-28c7-42ec-b697-f8c07866e9c6" Publisher="CN=apotter96" Version="1.3.1.0" />
   <mp:PhoneIdentity PhoneProductId="ea852693-28c7-42ec-b697-f8c07866e9c6" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>PowerOfGodUniversal</DisplayName>
@@ -20,17 +20,6 @@
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
-      <Extensions>
-        <uap:Extension Category="windows.fileTypeAssociation">
-          <uap:FileTypeAssociation>
-            <uap:DisplayName>Power of God</uap:DisplayName>
-            <uap:SupportedFileTypes>
-              <uap:FileType>
-              </uap:FileType>
-            </uap:SupportedFileTypes>
-          </uap:FileTypeAssociation>
-        </uap:Extension>
-      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

@@ -1,1 +1,1 @@
-E:\Programs\Power of God\Project\Windows Store\Power of God\PowerOfGodUniversal\PowerOfGodUniversal.csproj;x86
+C:\Users\apotter96\SkyDrive\Programs\Power of God\Project\Windows Store\Power of God\PowerOfGodUniversal\PowerOfGodUniversal.csproj;x86

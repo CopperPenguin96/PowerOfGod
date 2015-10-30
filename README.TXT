@@ -10,6 +10,7 @@
 ---------
 - power.of.god/ -> All files created by the application will be placed here or provided in the archive
 - libs/ -> Required external java libraries placed in this folder for the app to run
+- Verses/ -> Required for daily verses. Do not delete
 - Power_of_God.jar -> The executable jar. The application
 
 -----------

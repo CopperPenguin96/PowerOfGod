@@ -23,102 +23,123 @@
  */
 package power.of.god.DailyScripture;
 
+import Bible.BibleVersion;
+import Bible.Files;
 import Books.Book;
-import java.io.ByteArrayInputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import jdk.internal.org.xml.sax.SAXException;
-import org.json.simple.*;
+import java.io.*;
+import java.net.*;
+import java.text.*;
+import java.time.*;
+import java.util.*;
+import java.util.logging.*;
+import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import power.of.god.AppFiles;
+import power.of.god.Settings.Settings;
 
 /**
  *
  * @author apotter96
  */
 public class DailyScripture {
-    public final static int VERSE_COUNT = 148;
-    private static final Random rnd = new Random();
+    private static String dayPath = "Verses/";
+    private static String DateString()
+    {
+        LocalDateTime ldt = LocalDateTime.now();
+        return new SimpleDateFormat("MM-dd-yyyy").format(Date.from(ldt.atZone(ZoneId.systemDefault()).toInstant()));
+    }
+    private static void WriteDay()
+    {
+        File f = new File("Verses/" + DateString() + ".txt");
+        try {
+            f.createNewFile();
+        } catch (IOException ex) {
+            Logger.getLogger(DailyScripture.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    private static int GetDay()
+    {
+        
+        boolean alreadySaw = false;
+        File f = new File(dayPath);
+        if (!f.exists())
+        {
+            f.mkdirs();
+            WriteDay();
+            return 1;
+        }
+        for (File file: f.listFiles())
+        {
+            if (file.getName().contains(DateString()))
+            {
+                alreadySaw = true;
+            }
+        }
+        int trueVar = 1;
+        if (alreadySaw) trueVar = 0;
+        else 
+        {
+            trueVar = 1;
+            WriteDay();
+        }
+        return f.listFiles().length;
+    }
     // Scripture -> Stopped at verse 148 used
     // Last # on official list: 211 (http://www.topverses.com/Bible)
+    private static String parseJson(String json) throws org.json.simple.parser.ParseException
+    {
+        JSONParser jP = new JSONParser();
+        Object obj = jP.parse(json);
+        JSONObject jsonObject = (JSONObject) obj;
+        Book foundBook = new Book();
+        for (Book b: Bible.Bible.AllBooks())
+        {
+            if (b.getName().equalsIgnoreCase((String)jsonObject.get("Book")))
+            {
+                foundBook = b;
+            }
+        }
+        Long chap = (Long) jsonObject.get("Chapter");
+        Long verse = (Long) jsonObject.get("Verse");
+        return foundBook.readFormattedVerse(chap.intValue(), verse.intValue());
+    }
+    private static BibleVersion bv()
+    {
+        switch (Settings.BibleVersion)
+        {
+            case "KJV":
+                return BibleVersion.KJV;
+            case "NIV":
+                return BibleVersion.NIV;
+            case "NLT":
+                return BibleVersion.NLT;
+            case "ESV":
+                return BibleVersion.ESV;
+            default:
+                return BibleVersion.KJV;
+        }
+    }
     public static String GetDailyScripture() throws DailyScriptureReadException
     {
-        int SetUpRnd = rnd.nextInt(VERSE_COUNT);
-        if (SetUpRnd < 0)
-        {
-            return GetDailyScripture();
-        }
-        if (SetUpRnd > VERSE_COUNT)
-        {
-            return GetDailyScripture();
-        }
-        if (SetUpRnd == YesterdayVerse())
-        {
-            return GetDailyScripture();
-        }
-        JSONParser parser = new JSONParser();
         try {
-            Object obj = parser.parse(new FileReader(AppFiles.filesObj()[10]));
-            JSONObject jsonObject = (JSONObject) obj;
-            JSONArray verses = (JSONArray) jsonObject.get("Verses");
-            Iterator<String> iterator = verses.iterator();
-            int loopCount = 0;
-            while (iterator.hasNext()) {
-                if (loopCount == SetUpRnd)
-                {
-                    return readScripture(iterator.next());
-                }
-                else
-                {
-                    loopCount++; 
-                }
-            }
-
-        } catch (IOException | ParseException | ParserConfigurationException | org.xml.sax.SAXException ex) {
-            throw new DailyScriptureReadException("Error On File Reading", ex);
-        }
-        return null;
-    }
-    private static int YesterdayVerse()
-    {
-        return 1;
-    }
-    
-    private static String readScripture(String xmlContent) throws ParserConfigurationException, 
-            org.xml.sax.SAXException, IOException
-    {
-        String foundVerse = "Scripture Not Read Yet...";
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        Document doc = db.parse(new ByteArrayInputStream(xmlContent.getBytes("UTF-8")));
-        doc.getDocumentElement().normalize();
-        String baseNode = doc.getDocumentElement().getNodeName();
-        if (baseNode.equals("book"))
-        {
-            Node bookNode = doc.getDocumentElement();
-            String book = bookNode.getAttributes().getNamedItem("name").getNodeValue();
-            int chapter = Integer.parseInt(bookNode.getAttributes().getNamedItem("chapter").getNodeValue());
-            int verse = Integer.parseInt(bookNode.getAttributes().getNamedItem("verse").getNodeValue());
-            for (Book b: Bible.Bible.AllBooks())
+            Files.SetScripturePath("power.of.god/", false, dayPath, bv());
+            URL url = new URL("http://godispower.us/DailyVerses/dv" + GetDay() + ".txt");
+            Scanner s = new Scanner(url.openStream());
+            ArrayList<String> fileLines = new ArrayList<>();
+            while (s.hasNextLine())
             {
-                if (b.getName().equals(book))
+                fileLines.add(s.nextLine());
+            }
+            String finalString = "Today's verse: ";
+            for (String files:fileLines)
+            {                       //01234567
+                if (files.startsWith("Verse"))
                 {
-                    foundVerse = b.readFormattedVerse(chapter, verse);
+                    finalString += "<b>" + parseJson(files.substring(8)) + "</b><br>";
                 }
             }
+            return finalString + fileLines.get(0);
+        } catch(Exception ex) {
+            throw new DailyScriptureReadException(ex);
         }
-        return foundVerse;
     }
 }

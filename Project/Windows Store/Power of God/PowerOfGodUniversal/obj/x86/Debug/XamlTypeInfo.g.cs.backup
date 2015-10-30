@@ -132,15 +132,19 @@ namespace PowerOfGodUniversal.PowerOfGodUniversal_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
+            _typeNameTable = new string[5];
             _typeNameTable[0] = "PowerOfGodUniversal.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "PowerOfGodUniversal.Login";
+            _typeNameTable[4] = "PowerOfGodUniversal.RegisterPage";
 
-            _typeTable = new global::System.Type[3];
+            _typeTable = new global::System.Type[5];
             _typeTable[0] = typeof(global::PowerOfGodUniversal.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::PowerOfGodUniversal.Login);
+            _typeTable[4] = typeof(global::PowerOfGodUniversal.RegisterPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -176,6 +180,8 @@ namespace PowerOfGodUniversal.PowerOfGodUniversal_XamlTypeInfo
         }
 
         private object Activate_0_MainPage() { return new global::PowerOfGodUniversal.MainPage(); }
+        private object Activate_3_Login() { return new global::PowerOfGodUniversal.Login(); }
+        private object Activate_4_RegisterPage() { return new global::PowerOfGodUniversal.RegisterPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -200,6 +206,20 @@ namespace PowerOfGodUniversal.PowerOfGodUniversal_XamlTypeInfo
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::PowerOfGodUniversal.PowerOfGodUniversal_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 3:   //  PowerOfGodUniversal.Login
+                userType = new global::PowerOfGodUniversal.PowerOfGodUniversal_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_Login;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  PowerOfGodUniversal.RegisterPage
+                userType = new global::PowerOfGodUniversal.PowerOfGodUniversal_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_RegisterPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
                 break;
             }
             return xamlType;
