@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power of God", "Power of God\Power of God.csproj", "{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ftp://christplay.ml", "ftp://christplay.ml", "{75AA86D5-F4ED-433A-81D1-50EE022D9922}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/christplay.ml"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\AppData\Local\Temp\VWDWebCache\ftp_christplay.ml_chrplay@christplay.ml\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\christplay.ml\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/christplay.ml"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\AppData\Local\Temp\VWDWebCache\ftp_christplay.ml_chrplay@christplay.ml\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\christplay.ml\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ftp://godispower.us", "ftp://godispower.us", "{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/godispower.us"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\AppData\Local\Temp\VWDWebCache\ftp_godispower.us_superBibleBoy@godispower.us\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\godispower.us\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/godispower.us"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\AppData\Local\Temp\VWDWebCache\ftp_godispower.us_superBibleBoy@godispower.us\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\godispower.us\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Power of God Installer", "Power of God Installer\Power of God Installer.aiproj", "{33C8D755-BB82-4CAA-9C92-B75178D1384D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75AA86D5-F4ED-433A-81D1-50EE022D9922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75AA86D5-F4ED-433A-81D1-50EE022D9922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75AA86D5-F4ED-433A-81D1-50EE022D9922}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{75AA86D5-F4ED-433A-81D1-50EE022D9922}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Debug|Any CPU.ActiveCfg = All
+		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Debug|Any CPU.Build.0 = All
+		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Release|Any CPU.ActiveCfg = All
+		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Release|Any CPU.Build.0 = All
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

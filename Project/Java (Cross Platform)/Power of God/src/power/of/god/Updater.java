@@ -27,6 +27,7 @@ import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 import java.util.zip.*;
 
 /**
@@ -195,28 +196,13 @@ public class Updater {
     }
     public static ArrayList<String> getUrlSource(String urlF) throws IOException {
         URL url = new URL(urlF);
-        URLConnection urlCon = url.openConnection();
-        BufferedReader in = null;
-
-        if (urlCon.getHeaderField("Content-Encoding") != null
-                && urlCon.getHeaderField("Content-Encoding").equals("gzip")) {
-            in = new BufferedReader(new InputStreamReader(new GZIPInputStream(
-                    urlCon.getInputStream())));
-        } else {
-            in = new BufferedReader(new InputStreamReader(
-                    urlCon.getInputStream()));
+        InputStream is = url.openStream();
+        Scanner s = new Scanner(is, "UTF-8");
+        ArrayList<String> fileLines = new ArrayList<>();
+        while (s.hasNextLine())
+        {
+            fileLines.add(s.nextLine());
         }
-
-        String inputLine;
-        StringBuilder sb = new StringBuilder();
-        ArrayList<String> theList = new ArrayList<>();
-        while ((inputLine = in.readLine()) != null)
-            theList.add(inputLine);
-        in.close();
-        ArrayList<String> newList = new ArrayList<>();
-        theList.stream().filter((s) -> (!"".equals(s))).forEach((s) -> {
-            newList.add(s);
-        });
-        return newList;
+        return fileLines;
     }
 }

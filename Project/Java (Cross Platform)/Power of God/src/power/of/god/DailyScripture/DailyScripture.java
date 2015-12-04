@@ -83,8 +83,6 @@ public class DailyScripture {
         }
         return f.listFiles().length;
     }
-    // Scripture -> Stopped at verse 148 used
-    // Last # on official list: 211 (http://www.topverses.com/Bible)
     private static String parseJson(String json) throws org.json.simple.parser.ParseException
     {
         JSONParser jP = new JSONParser();

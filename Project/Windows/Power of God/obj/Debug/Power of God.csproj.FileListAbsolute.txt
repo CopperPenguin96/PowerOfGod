@@ -1,0 +1,14 @@
+c:\users\apotter96\onedrive\documents\visual studio 2015\Projects\Power of God\Power of God\bin\Debug\Power of God.exe.config
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Power of God.exe.config
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Power of God.exe
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Power of God.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.MainForm.resources
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.Properties.Resources.resources
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.csproj.GenerateResource.Cache
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.exe
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.xml
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.User.SettingsForm.resources

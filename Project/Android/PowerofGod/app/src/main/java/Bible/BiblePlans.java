@@ -1,6 +1,6 @@
 package Bible;
 
-import apdevelopment.powerofgod.Exceptions.InvalidBibPlanException;
+import apdevelopment.powerofgod.alpha.Exceptions.InvalidBibPlanException;
 
 /**
  * Created by apotter96 on 4/18/2015.

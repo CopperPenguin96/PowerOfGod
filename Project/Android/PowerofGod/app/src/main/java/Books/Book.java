@@ -6,7 +6,7 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import java.util.*;
 
-import apdevelopment.powerofgod.User.Settings.Settings;
+import apdevelopment.powerofgod.alpha.User.Settings.Settings;
 
 
 //Default book class
@@ -88,4 +88,6 @@ public class Book
 		}
 		return copy;
 	}
+
+	public static boolean DSFinished = false;
 }

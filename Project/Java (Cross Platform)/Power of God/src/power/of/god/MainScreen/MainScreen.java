@@ -345,7 +345,9 @@ public class MainScreen extends javax.swing.JFrame {
             // TODO add your handling code here:
             jEditorPane1.setText(GetDailyScripture());
         } catch (DailyScriptureReadException ex) {
-            jEditorPane1.setText("Unable to read...");
+            jEditorPane1.setText("There was no verse for today. I am sorry!");
+            File fDir = new File("Verses/");
+            fDir.listFiles()[fDir.listFiles().length].delete();
             Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -370,6 +372,22 @@ public class MainScreen extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Create and display the form */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(SettingsScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(SettingsScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(SettingsScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(SettingsScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
         java.awt.EventQueue.invokeLater(() -> {
             MainScreen mScreen = new MainScreen();
             mScreen.pack();

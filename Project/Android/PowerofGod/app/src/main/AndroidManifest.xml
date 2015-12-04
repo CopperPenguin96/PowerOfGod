@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="apdevelopment.powerofgod" >
+    package="apdevelopment.powerofgod.alpha" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".StartActivity"
+            android:name=".MainScreen.MainScreen"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,33 +24,10 @@
             android:name=".PrivacyPolicyActivity"
             android:label="Privacy Policy" >
         </activity>
-        <activity
-            android:name=".MainScreen.MainScreen"
-            android:label="@string/title_activity_main_screen" >
-        </activity>
-        <activity
-            android:name=".User.Online.RegisterActivity"
-            android:label="@string/title_activity_register" >
-        </activity>
-        <activity
-            android:name=".User.Online.LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
+
         <activity
             android:name=".User.Settings.SettingsActivity"
             android:label="@string/title_activity_settings" >
-        </activity>
-        <activity
-            android:name=".Settings.SettingsActivity"
-            android:label="@string/title_activity_settings" >
-        </activity>
-        <activity
-            android:name=".MainScreen.MainActivity"
-            android:label="@string/title_activity_main" >
-        </activity>
-        <activity
-            android:name=".Exceptions.yyyy"
-            android:label="@string/title_activity_yyyy" >
         </activity>
     </application>
 

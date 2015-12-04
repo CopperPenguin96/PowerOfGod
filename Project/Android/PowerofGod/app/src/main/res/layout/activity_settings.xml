@@ -18,81 +18,7 @@
             android:layout_gravity="center_horizontal"
             android:src="@drawable/main" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Account Settings"
-            android:id="@+id/textView14"
-            android:layout_gravity="center_horizontal" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Name"
-            android:id="@+id/textView15"
-            android:layout_gravity="center_horizontal" />
-
-        <apdevelopment.powerofgod.ActivityBases.POGEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtSettingsName"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Username"
-            android:id="@+id/textView16"
-            android:layout_gravity="center_horizontal" />
-
-        <apdevelopment.powerofgod.ActivityBases.POGEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtSettingsUsername"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Email"
-            android:id="@+id/textView18"
-            android:layout_gravity="center_horizontal" />
-
-        <apdevelopment.powerofgod.ActivityBases.POGEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:ems="10"
-            android:id="@+id/txtSettingsEmail"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Password"
-            android:id="@+id/textView17"
-            android:layout_gravity="center_horizontal" />
-
-        <apdevelopment.powerofgod.ActivityBases.POGEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"
-            android:id="@+id/txtSettingsPassword"
-            android:layout_gravity="center_horizontal" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Save Account Settings"
-            android:id="@+id/button3"
-            android:onClick="SaveAccountSettings"
-            android:layout_gravity="center_horizontal" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -120,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enable Bible Plans"
+            android:enabled="false"
             android:id="@+id/checkBoxBibPlans"
             android:layout_gravity="center_horizontal"
             android:checked="false" />

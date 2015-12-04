@@ -1,4 +1,6 @@
 Power of God TODO list
-- Remove Login and Register (In Progress)
-- Add Daily Scripture (In Progress)
-- Add Bible Plans
+- Remove Login and Register (COMPLETE)
+- Add Daily Scripture (COMPLETE)
+- Add Bible Plans (Beta 1.0)
+- Switch to video lessons (Beta 1.0)
+- Radio (???) Not started. Undetermined what I'll do with this
