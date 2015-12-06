@@ -69,7 +69,7 @@ public class MainScreen extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         PlaceholderFragment.CurrentScreenID = R.layout.fragment_main_screen;
-        try {
+       /* try {
             UpdaterConnect uConnect = new UpdaterConnect();
             Thread t = new Thread(new Runnable() {
 
@@ -91,13 +91,17 @@ public class MainScreen extends ActionBarActivity
             t.start();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        } */ // Disabled for Alpha 1.4.1 because Alpha 1.4.1 is an Android-Only Release
 
         TimerTask task = new Exit();
         Timer timer = new Timer();
         timer.schedule(task, 1, 1);
     }
 
+    @Override
+    public void onBackPressed() {
+        System.exit(0);
+    }
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
