@@ -12,3 +12,8 @@ C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\b
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.xml
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.csprojResolveAssemblyReference.cache
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.User.SettingsForm.resources
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Interop.WMPLib.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.csproj.ResolveComReference.cache
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\NetBible.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\NetBible.pdb

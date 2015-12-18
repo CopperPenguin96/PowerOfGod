@@ -43,7 +43,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "ftp://godispower.us", "ftp:
 		Release.AspNetCompiler.Debug = "False"
 	EndProjectSection
 EndProject
-Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "Power of God Installer", "Power of God Installer\Power of God Installer.aiproj", "{33C8D755-BB82-4CAA-9C92-B75178D1384D}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BibPlanMaker", "BibPlanMaker\BibPlanMaker.vbproj", "{023A0316-B7B7-4E6B-A148-8A922384FBFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BibPlans", "BibPlans\BibPlans.csproj", "{6E04C8C8-C3B9-48B1-BD71-6752CEF81623}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBible", "NetBible\NetBible.csproj", "{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +67,18 @@ Global
 		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{8DBCB1AF-CD59-484B-8CFC-1200ADAB288F}.Release|Any CPU.Build.0 = Debug|Any CPU
-		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Debug|Any CPU.ActiveCfg = All
-		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Debug|Any CPU.Build.0 = All
-		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Release|Any CPU.ActiveCfg = All
-		{33C8D755-BB82-4CAA-9C92-B75178D1384D}.Release|Any CPU.Build.0 = All
+		{023A0316-B7B7-4E6B-A148-8A922384FBFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{023A0316-B7B7-4E6B-A148-8A922384FBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{023A0316-B7B7-4E6B-A148-8A922384FBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{023A0316-B7B7-4E6B-A148-8A922384FBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E04C8C8-C3B9-48B1-BD71-6752CEF81623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E04C8C8-C3B9-48B1-BD71-6752CEF81623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E04C8C8-C3B9-48B1-BD71-6752CEF81623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E04C8C8-C3B9-48B1-BD71-6752CEF81623}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

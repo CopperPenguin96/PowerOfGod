@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using NetBible.Books;
 using Newtonsoft.Json.Linq;
-using Power_of_God.Books;
 using Power_of_God.pSystem;
 using Power_of_God.User;
 
@@ -48,16 +45,15 @@ namespace Power_of_God
                 WriteDay();
                 return 1;
             }
+            // ReSharper disable once UnusedVariable
             foreach (var item in Directory.GetFiles(_dayPath).Where(item => item == DateString()))
             {
                 alreadySaw = true;
             }
 
-            var trueVar = 1;
-            if (alreadySaw) trueVar = 0;
-            else
-            {
-                trueVar = 1;
+            // ReSharper disable once RedundantAssignment
+            if (!alreadySaw)
+            { 
                 WriteDay();
             }
             return Directory.GetFiles(_dayPath).Length;
@@ -79,43 +75,17 @@ namespace Power_of_God
             return foundBook.ReadFormattedVerse(chap, verse);
         }
 
-        private static BibleVersion Bv()
-        {
-            switch (Settings.UserSettings.scriptver)
-            {
-                case "NIV":
-                    return BibleVersion.NIV;
-                case "NLT":
-                    return BibleVersion.NLT;
-                case "ESV":
-                    return BibleVersion.ESV;
-                default:
-                    return BibleVersion.KJV;
-            }
-        }
-
         public static string Verses;
         public static string GetDailyScripture()
         {
             try
             {
                 var webClient = new WebClient();
-                var _day = GetDay();
-                var url = "http://godispower.us/DailyVerses/dv" + _day + ".txt";
+                var day = GetDay();
+                var url = "http://godispower.us/DailyVerses/dv" + day + ".txt";
                 webClient.DownloadFile(url, "tempv.txt");
                 var fileLines = File.ReadAllLines("tempv.txt").ToList();
-                var finalString = "Today's Verse: ";
-                foreach (var files in fileLines)
-                {
-                    if (files.StartsWith("Verse"))
-                    {
-                        finalString += "<html><head>" +
-                            "<title>" + Verses + "</title></head>" +
-                            "<body><b>" + ParseJson(files.Substring(8)) + "</b><br>" +
-                            "</body></html>";
-                    }
-
-                }
+                var finalString = fileLines.Where(files => files.StartsWith("Verse")).Aggregate("Today's Verse: ", (current, files) => current + ("<html><head>" + "<title>" + Verses + "</title></head>" + "<body><b>" + ParseJson(files.Substring(8)) + "</b><br>" + "</body></html>"));
                 return finalString + fileLines.ElementAt(0);
             }
             catch (Exception e)

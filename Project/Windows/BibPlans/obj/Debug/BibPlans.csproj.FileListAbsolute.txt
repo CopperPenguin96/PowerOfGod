@@ -1,0 +1,5 @@
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\BibPlans.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\BibPlans.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.csprojResolveAssemblyReference.cache

@@ -34,12 +34,13 @@
             this.btnLessons = new System.Windows.Forms.Button();
             this.btnDailyVerses = new System.Windows.Forms.Button();
             this.btnBibPlans = new System.Windows.Forms.Button();
-            this.btnRadio = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.appToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pastLessonsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,16 +48,16 @@
             // picMain
             // 
             this.picMain.Image = ((System.Drawing.Image)(resources.GetObject("picMain.Image")));
-            this.picMain.Location = new System.Drawing.Point(14, 27);
+            this.picMain.Location = new System.Drawing.Point(38, 27);
             this.picMain.Name = "picMain";
-            this.picMain.Size = new System.Drawing.Size(333, 60);
+            this.picMain.Size = new System.Drawing.Size(282, 60);
             this.picMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMain.TabIndex = 0;
             this.picMain.TabStop = false;
             // 
             // btnPurpose
             // 
-            this.btnPurpose.Location = new System.Drawing.Point(14, 93);
+            this.btnPurpose.Location = new System.Drawing.Point(38, 93);
             this.btnPurpose.Name = "btnPurpose";
             this.btnPurpose.Size = new System.Drawing.Size(54, 23);
             this.btnPurpose.TabIndex = 1;
@@ -66,7 +67,7 @@
             // 
             // btnLessons
             // 
-            this.btnLessons.Location = new System.Drawing.Point(74, 93);
+            this.btnLessons.Location = new System.Drawing.Point(98, 93);
             this.btnLessons.Name = "btnLessons";
             this.btnLessons.Size = new System.Drawing.Size(56, 23);
             this.btnLessons.TabIndex = 2;
@@ -76,7 +77,7 @@
             // 
             // btnDailyVerses
             // 
-            this.btnDailyVerses.Location = new System.Drawing.Point(136, 93);
+            this.btnDailyVerses.Location = new System.Drawing.Point(160, 93);
             this.btnDailyVerses.Name = "btnDailyVerses";
             this.btnDailyVerses.Size = new System.Drawing.Size(84, 23);
             this.btnDailyVerses.TabIndex = 3;
@@ -87,22 +88,13 @@
             // btnBibPlans
             // 
             this.btnBibPlans.Enabled = false;
-            this.btnBibPlans.Location = new System.Drawing.Point(226, 93);
+            this.btnBibPlans.Location = new System.Drawing.Point(250, 93);
             this.btnBibPlans.Name = "btnBibPlans";
             this.btnBibPlans.Size = new System.Drawing.Size(70, 23);
             this.btnBibPlans.TabIndex = 4;
             this.btnBibPlans.Text = "Bible Plans";
             this.btnBibPlans.UseVisualStyleBackColor = true;
-            // 
-            // btnRadio
-            // 
-            this.btnRadio.Enabled = false;
-            this.btnRadio.Location = new System.Drawing.Point(302, 93);
-            this.btnRadio.Name = "btnRadio";
-            this.btnRadio.Size = new System.Drawing.Size(45, 23);
-            this.btnRadio.TabIndex = 5;
-            this.btnRadio.Text = "Radio";
-            this.btnRadio.UseVisualStyleBackColor = true;
+            this.btnBibPlans.Click += new System.EventHandler(this.btnBibPlans_Click);
             // 
             // webBrowser1
             // 
@@ -135,7 +127,8 @@
             // appToolStripMenuItem
             // 
             this.appToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.pastLessonsToolStripMenuItem});
             this.appToolStripMenuItem.Name = "appToolStripMenuItem";
             this.appToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.appToolStripMenuItem.Text = "App";
@@ -143,9 +136,24 @@
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // pastLessonsToolStripMenuItem
+            // 
+            this.pastLessonsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.pastLessonsToolStripMenuItem.Name = "pastLessonsToolStripMenuItem";
+            this.pastLessonsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.pastLessonsToolStripMenuItem.Text = "Past Lessons";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(98, 22);
+            this.toolStripMenuItem2.Text = "2015";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // MainForm
             // 
@@ -154,7 +162,6 @@
             this.ClientSize = new System.Drawing.Size(359, 456);
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.btnRadio);
             this.Controls.Add(this.btnBibPlans);
             this.Controls.Add(this.btnDailyVerses);
             this.Controls.Add(this.btnLessons);
@@ -181,12 +188,13 @@
         private System.Windows.Forms.Button btnLessons;
         private System.Windows.Forms.Button btnDailyVerses;
         private System.Windows.Forms.Button btnBibPlans;
-        private System.Windows.Forms.Button btnRadio;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem appToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pastLessonsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
     }
 }
 

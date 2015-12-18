@@ -35,6 +35,7 @@
     <ApplicationIcon>cooltext117627293831111.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Homework\bin\Debug\Newtonsoft.Json.dll</HintPath>
@@ -52,75 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Books\Bible.cs" />
-    <Compile Include="Books\Book.cs" />
-    <Compile Include="Books\New Testament\Acts.cs" />
-    <Compile Include="Books\New Testament\Colossians.cs" />
-    <Compile Include="Books\New Testament\Corinthians1.cs" />
-    <Compile Include="Books\New Testament\Corinthians2.cs" />
-    <Compile Include="Books\New Testament\Ephesians.cs" />
-    <Compile Include="Books\New Testament\Galatians.cs" />
-    <Compile Include="Books\New Testament\Hebrews.cs" />
-    <Compile Include="Books\New Testament\James.cs" />
-    <Compile Include="Books\New Testament\John.cs" />
-    <Compile Include="Books\New Testament\John1.cs" />
-    <Compile Include="Books\New Testament\John2.cs" />
-    <Compile Include="Books\New Testament\John3.cs" />
-    <Compile Include="Books\New Testament\Jude.cs" />
-    <Compile Include="Books\New Testament\Luke.cs" />
-    <Compile Include="Books\New Testament\Mark.cs" />
-    <Compile Include="Books\New Testament\Matthew.cs" />
-    <Compile Include="Books\New Testament\Peter1.cs" />
-    <Compile Include="Books\New Testament\Peter2.cs" />
-    <Compile Include="Books\New Testament\Philemon.cs" />
-    <Compile Include="Books\New Testament\Philippians.cs" />
-    <Compile Include="Books\New Testament\Revelation.cs" />
-    <Compile Include="Books\New Testament\Romans.cs" />
-    <Compile Include="Books\New Testament\Thessalonians1.cs" />
-    <Compile Include="Books\New Testament\Thessalonians2.cs" />
-    <Compile Include="Books\New Testament\Timothy1.cs" />
-    <Compile Include="Books\New Testament\Timothy2.cs" />
-    <Compile Include="Books\New Testament\Titus.cs" />
-    <Compile Include="Books\Old Testament\Amos.cs" />
-    <Compile Include="Books\Old Testament\Chronicles1.cs" />
-    <Compile Include="Books\Old Testament\Chronicles2.cs" />
-    <Compile Include="Books\Old Testament\Daniel.cs" />
-    <Compile Include="Books\Old Testament\Deuteronomy.cs" />
-    <Compile Include="Books\Old Testament\Ecclesiastes.cs" />
-    <Compile Include="Books\Old Testament\Esther.cs" />
-    <Compile Include="Books\Old Testament\Exodus.cs" />
-    <Compile Include="Books\Old Testament\Ezekiel.cs" />
-    <Compile Include="Books\Old Testament\Ezra.cs" />
-    <Compile Include="Books\Old Testament\Genesis.cs" />
-    <Compile Include="Books\Old Testament\Habakkuk.cs" />
-    <Compile Include="Books\Old Testament\Haggai.cs" />
-    <Compile Include="Books\Old Testament\Hosea.cs" />
-    <Compile Include="Books\Old Testament\Isaiah.cs" />
-    <Compile Include="Books\Old Testament\Jeremiah.cs" />
-    <Compile Include="Books\Old Testament\Job.cs" />
-    <Compile Include="Books\Old Testament\Joel.cs" />
-    <Compile Include="Books\Old Testament\Jonah.cs" />
-    <Compile Include="Books\Old Testament\Joshua.cs" />
-    <Compile Include="Books\Old Testament\Judges.cs" />
-    <Compile Include="Books\Old Testament\Kings1.cs" />
-    <Compile Include="Books\Old Testament\Kings2.cs" />
-    <Compile Include="Books\Old Testament\Lamentations.cs" />
-    <Compile Include="Books\Old Testament\Leviticus.cs" />
-    <Compile Include="Books\Old Testament\Malachi.cs" />
-    <Compile Include="Books\Old Testament\Micah.cs" />
-    <Compile Include="Books\Old Testament\Nahum.cs" />
-    <Compile Include="Books\Old Testament\Nehemiah.cs" />
-    <Compile Include="Books\Old Testament\Numbers.cs" />
-    <Compile Include="Books\Old Testament\Obadiah.cs" />
-    <Compile Include="Books\Old Testament\Proverbs.cs" />
-    <Compile Include="Books\Old Testament\Psalms.cs" />
-    <Compile Include="Books\Old Testament\Ruth.cs" />
-    <Compile Include="Books\Old Testament\Samuel1.cs" />
-    <Compile Include="Books\Old Testament\Samuel2.cs" />
-    <Compile Include="Books\Old Testament\SongOfSolomon.cs" />
-    <Compile Include="Books\Old Testament\Zechariah.cs" />
-    <Compile Include="Books\Old Testament\Zephaniah.cs" />
-    <Compile Include="Books\PurposeVerses.cs" />
     <Compile Include="DailyScripture.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -132,7 +64,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pSystem\AppFiles.cs" />
     <Compile Include="pSystem\ErrorLogging.cs" />
-    <Compile Include="pSystem\List.cs" />
     <Compile Include="pSystem\PurposeVerses.cs" />
     <Compile Include="pSystem\TitleExtractor.cs" />
     <Compile Include="pSystem\Updater.cs" />
@@ -173,6 +104,41 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cooltext117627293831111.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetBible\NetBible.csproj">
+      <Project>{9c6d5d4e-3faf-4a0f-905b-03d95788a3f7}</Project>
+      <Name>NetBible</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

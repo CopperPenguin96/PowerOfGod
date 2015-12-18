@@ -1,2 +1,2 @@
-﻿Description: In times like today, prosecution is on the rise for us. Stay strong in the faith and never lose hope. God has your back.
-Verse1: {"Book":"Joshua","Chapter":1,"Verse":9}
+﻿Description: Maybe you were about to disobey your parents? Maybe you were about to disobey God? Is that glorifying the Lord? Is that doing as He instructs of you today?
+Verse1: {"Book":"Proverbs","Chapter":1,"Verse":23}
