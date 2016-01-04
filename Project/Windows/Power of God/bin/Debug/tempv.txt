@@ -1,2 +1,2 @@
-﻿Description: Maybe you were about to disobey your parents? Maybe you were about to disobey God? Is that glorifying the Lord? Is that doing as He instructs of you today?
-Verse1: {"Book":"Proverbs","Chapter":1,"Verse":23}
+﻿Description: What does marriage mean to you? Are you following the Biblical meaning of marriage or man's vision of marriage?
+Verse1: {"Book":"Hebrews","Chapter":13,"Verse":4}

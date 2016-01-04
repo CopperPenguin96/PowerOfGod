@@ -93,6 +93,16 @@ namespace Power_of_God
                 throw new DailyScriptureException("DailyScripture", e);
             }
         }
+
+        public static string GetDailyScripture(int day)
+        {
+            var webClient = new WebClient();
+            var url = "http://godispower.us/DailyVerses/dv" + day + ".txt";
+            webClient.DownloadFile(url, "tempv.txt");
+            var fileLines = File.ReadAllLines("tempv.txt").ToList();
+            var finalString = fileLines.Where(files => files.StartsWith("Verse")).Aggregate("Today's Verse: ", (current, files) => current + ("<html><head>" + "<title>" + Verses + "</title></head>" + "<body><b>" + ParseJson(files.Substring(8)) + "</b><br>" + "</body></html>"));
+            return finalString + fileLines.ElementAt(0);
+        }
     }
 
     public class VerseObj

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -15,6 +16,7 @@ using System.Windows.Forms;
 using NetBible.Books;
 using NetBible.Books.Old_Testament;
 using NetBible.Books.New_Testament;
+using Power_of_God.BibPlan;
 using Power_of_God.pSystem;
 using Power_of_God.User;
 using PurposeVerses = Power_of_God.pSystem.PurposeVerses;
@@ -31,7 +33,7 @@ namespace Power_of_God
             }
             InitializeComponent();
             Text = "Power of God " + Updater.LatestStable();
-            const string settingsFile = "power.of.god/settings.json";
+            //const string settingsFile = "power.of.god/settings.json";
             Settings.LoadDefault();
             Settings.LoadFromJson();
             webBrowser1.Navigated += ChangedTitle;
@@ -41,6 +43,16 @@ namespace Power_of_God
                 MessageBox.Show(Updater.UpdateNotice(), "Update Notice for Power of God");
             }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
+            Parser.PlanDays.CollectionChanged += CheckChanged;
+        }
+
+        private void CheckChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            lboListOfItems.Items.Clear();
+            foreach (var x in Parser.PlanDays)
+            {
+                lboListOfItems.Items.Add(x);
+            }
         }
 
         private void ChangedTitle(object sender, WebBrowserNavigatedEventArgs e)
@@ -56,7 +68,10 @@ namespace Power_of_God
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            picMain.Load("http://godispower.us/images/main.png");
+            if (Updater.LatestStable() != "Alpha 1.5")
+            {
+                picMain.Load("http://godispower.us/images/main.png");
+            }
         }
 
         private void SetRichText(RichTextMode rt)
@@ -93,11 +108,13 @@ namespace Power_of_God
         private void btnPurpose_Click(object sender, EventArgs e)
         {
             SetRichText(RichTextMode.Purpose);
+            KillPlans();
         }
 
         private void btnLessons_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate("http://godispower.us/Application/Lessons/sunday.html");
+            ListItems(RichTextMode.Lessons);
         }
 
 
@@ -114,22 +131,99 @@ namespace Power_of_God
                     MessageBox.Show("Sorry, there is no verse(s) for today. Check back tomorrow!");
                 }
             }
+            ListItems(RichTextMode.DailyVerses);
         }
 
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void picExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void picMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             var settingsForm = new SettingsForm();
-            settingsForm.Show();
+            settingsForm.ShowDialog();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private BibPlanDialog _bPlanDialog = new BibPlanDialog();
+        private void KillPlans()
         {
-            GetallFilesFromHttp.ListDiractory();
+            _bPlanDialog.Hide();
         }
-
+        private RichTextMode rtmSize;
+        private void ListItems(RichTextMode rtm)
+        {
+            rtmSize = rtm;
+            if (rtm != RichTextMode.BiblePlans) KillPlans();
+            switch (rtm)
+            {
+                case RichTextMode.Lessons:
+                    GetallFilesFromHttp.ListDiractory("http://godispower.us/Sundays/");
+                    var intIndex = 0;
+                    foreach (var x in GetallFilesFromHttp.files)
+                    {
+                        if (intIndex > 1)
+                        {
+                            if (intIndex < GetallFilesFromHttp.files.Count - 2)
+                                try
+                                {
+                                    var i = x.Substring(1, x.Length - 7).Replace(".", "/");
+                                    if (!(Convert.ToDateTime(i) > DateTime.Now))
+                                    {
+                                        lboListOfItems.Items.Add(i);
+                                    }
+                                }
+                                catch (Exception)
+                                {
+                                    // Ignored - Occurs when "Lessons" button clicked twice
+                                }
+                        }
+                        intIndex++;
+                    }
+                    
+                    break;
+                case RichTextMode.DailyVerses:
+                    var currentScripture = Directory.GetFiles("Verses/").Length;
+                    for (var x = 1; x <= currentScripture; x++)
+                    {
+                        lboListOfItems.Items.Add("Day #" + x);
+                    }
+                    break;
+            }
+        }
+        
         private void btnBibPlans_Click(object sender, EventArgs e)
         {
+            _bPlanDialog.Show();
+            rtmSize = RichTextMode.BiblePlans;
+        }
 
+        private void lboListOfItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (rtmSize)
+            {
+                case RichTextMode.Lessons:
+                    var webFile = "http://godispower.us/Sundays/" +
+                                  lboListOfItems.SelectedItem.ToString().Replace("/", ".") + ".html";
+                    webBrowser1.Navigate(webFile);
+                    break;
+                case RichTextMode.DailyVerses:
+                    // D a y   # 1
+                    // 0 1 2 3 4 5
+                    webBrowser1.DocumentText =
+                        DailyScripture.GetDailyScripture(int.Parse(lboListOfItems.SelectedItem.ToString().Substring(5)));
+                    break;
+                case RichTextMode.BiblePlans:
+                    webBrowser1.DocumentText = Parser.HtmlText(BibPlanDialog.PlanFileName, lboListOfItems.SelectedIndex);
+                    break;
+
+            }
         }
     }
 
@@ -137,18 +231,15 @@ namespace Power_of_God
     {
         Purpose,
         Lessons,
-        DailyVerses
+        DailyVerses,
+        BiblePlans
     }
 
     public static class GetallFilesFromHttp
     {
         public static string GetDirectoryListingRegexForUrl(string url)
         {
-            if (url.Equals("http://ServerDirPath/"))
-            {
-                return "\\\"([^\"]*)\\\"";
-            }
-            throw new NotSupportedException();
+            return "\\\"([^\"]*)\\\"";
         }
 
         public static List<string> files = new List<string>();
@@ -161,11 +252,10 @@ namespace Power_of_God
             fw.Close();
 
         }
-        public static void ListDiractory()
+        public static void ListDiractory(string url)
         {
-            const string url = "http://godispower.us/Sundays/";
-            var request = (HttpWebRequest) WebRequest.Create(url);
-            using (var response = (HttpWebResponse) request.GetResponse())
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            using (var response = (HttpWebResponse)request.GetResponse())
             {
                 // ReSharper disable once AssignNullToNotNullAttribute
                 using (var reader = new StreamReader(response.GetResponseStream()))

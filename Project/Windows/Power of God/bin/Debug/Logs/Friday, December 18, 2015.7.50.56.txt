@@ -1,0 +1,18 @@
+-----Power of God Error Log-----
+
+Exception Message: The process cannot access the file 'C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Verses\12-18-2015.txt' because it is being used by another process.
+System.IO.IOException: The process cannot access the file 'C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Verses\12-18-2015.txt' because it is being used by another process.
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   at System.IO.File.Create(String path)
+   at Power_of_God.DailyScripture.WriteDay() in C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\DailyScripture.cs:line 30
+
+
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize)
+   at System.IO.File.Create(String path)
+   at Power_of_God.DailyScripture.WriteDay() in C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\DailyScripture.cs:line 30
+Log wrote at Friday, December 18, 2015

@@ -1,0 +1,11 @@
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\classes\release
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-bc0cb292e4fdfb5545a7beb0666a79b095afe34e.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\json-simple-1.1.1-0eecfb8aea384b222329a3b3de0d78d48bb69529.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\Javax.script_android-14fdca2a36e35cf685942d5558ea77dbae48cd63.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-abea4048319d3afdcb46fa5454d99ad93b54e963.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\httpcore-4.4.1-3671d78bc4a0ee97ef59e1c1f04b319d000fe4c3.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-1c35433ff26a5f8f0ff8c7f51a3e1e42a661d8f1.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\httpclient-4.5-6189b4573993b2d1526793c6717d8c7b14b31be4.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-dd0e255f14d8c65ab535451797b60d091cb0163d.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\joda-time-2.9-3b03acf1cbf6c5e967a397549989f81fa4f096da.jar
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\js-e20af2b83ebc79fcd19c6532448c9d3e1c377946.jar

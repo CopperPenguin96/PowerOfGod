@@ -8,8 +8,6 @@ C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\o
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.exe
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.pdb
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.dll
-C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.pdb
-C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.xml
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.csprojResolveAssemblyReference.cache
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.User.SettingsForm.resources
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Interop.MediaPlayer.dll
@@ -17,3 +15,12 @@ C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\o
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.csproj.ResolveComReference.cache
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\NetBible.dll
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\NetBible.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.BibPlan.BibPlanDialog.resources
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.BibPlan.DownloadForm.resources
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\BibPlans.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\BibPlans.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\Newtonsoft.Json.xml
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\PlanPatch.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\PlanPatch.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\Power of God\bin\Debug\PlanPatch.xml

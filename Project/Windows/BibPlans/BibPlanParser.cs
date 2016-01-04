@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BibPlans;
+﻿using Newtonsoft.Json;
 
-namespace Power_of_God.Bible_Plans
+namespace BibPlans
 {
-    class BibPlanParser
+    public class BibPlanParser
     {
-        public static List<BibPlan> BibPlanList()
+        public static BibPlan BiblicalPlan(string content)
         {
-            return null;
+            return JsonConvert.DeserializeObject<BibPlan>(content);
         }
     }
 }

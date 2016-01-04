@@ -1,6 +1,0 @@
-The BibPlan file is a json file
-
-It contains
-> Name
-> Author
-> Each Day

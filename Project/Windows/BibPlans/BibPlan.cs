@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Power_of_God.Bible_Plans;
 
 namespace BibPlans
 {
@@ -15,16 +14,16 @@ namespace BibPlans
     {
         public string Name;
         public string Id;
-        public List<VerseObj> VerseList;
+        public List<List<VerseObj>> VerseList;
         public string VerseAuthor;
 
-        public BibPlan(string name, string id, List<VerseObj> verses, string verseauthor)
+        public BibPlan(string name, string id, List<List<VerseObj>> verses, string verseauthor, bool isCreator)
         {
             Name = name;
             Id = id;
-            if (!ValidateId())
+            if (!isCreator)
             {
-                throw new Exception("The Bible Plan ID could not validated. Possible duplicate?");
+                if (!ValidateId()) throw new Exception("The Bible Plan ID could not validated. Possible duplicate?");
             }
             VerseList = verses;
             VerseAuthor = verseauthor;
@@ -32,9 +31,20 @@ namespace BibPlans
         
         private bool ValidateId()
         {
-            return (from bp in BibPlanParser.BibPlanList()
-                    let bpName = bp.Name
-                    let bpAuthor = bp.VerseAuthor select bp.Id).All(bpId => bpId != Id);
+           /* try
+            {
+                return (from bp in BibPlanParser.BibPlanList()
+                        let bpName = bp.Name
+                        let bpAuthor = bp.VerseAuthor
+                        select bp.Id).All(bpId => bpId != Id);
+            }
+            catch (Exception)
+            {
+                // Ignore if possible
+                return true;
+            }*/
+
+            return true; 
         }
     }
 }

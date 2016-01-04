@@ -1,0 +1,16 @@
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\PlanPatch.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\PlanPatch.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\PlanPatch.xml
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\BibPlans.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\NetBible.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\Newtonsoft.Json.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\BibPlans.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\NetBible.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\bin\Debug\Newtonsoft.Json.xml
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.vbprojResolveAssemblyReference.cache
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.Resources.resources
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.vbproj.GenerateResource.Cache
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.xml
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.pdb

@@ -12,7 +12,7 @@ namespace Power_of_God.pSystem
 
         private static readonly string[] CurrentVersion = new []
         {
-            "1", "4", null, null
+            "1", "5", null, null
         };
 
         public static string LatestStable()
@@ -34,6 +34,7 @@ namespace Power_of_God.pSystem
             {
                 case "Alpha":
                     return 0;
+                // ReSharper disable once HeuristicUnreachableCode
                 case "Beta":
                     return 1;
                 default:
@@ -69,7 +70,9 @@ namespace Power_of_God.pSystem
                 case "Beta": onlinePrefix = 1; break;
                 default: onlinePrefix = 2; break;
             }
-            var item1 = int.Parse(GetUrlSource(Url).ElementAt(1));
+            var x = GetUrlSource(Url);
+            var itemcontext = GetUrlSource(Url).ElementAt(1);
+            var item1 = int.Parse(itemcontext);
             var item2 = int.Parse(GetUrlSource(Url).ElementAt(2));
             int item3; // If these values stay as -1 then the app will know to not read them
             var item4 = -1;
@@ -183,7 +186,7 @@ namespace Power_of_God.pSystem
                 {
                     ErrorLogging.Write(e);
                 }
-                
+
             }
             var x = File.CreateText("texttexttext.txt");
             x.Write(temp);
