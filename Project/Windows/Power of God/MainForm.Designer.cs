@@ -99,6 +99,7 @@
             // 
             // lblName
             // 
+            this.lblName.BackColor = System.Drawing.Color.DimGray;
             this.lblName.Font = new System.Drawing.Font("Oklahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(12, 83);
             this.lblName.Name = "lblName";
@@ -119,7 +120,7 @@
             // 
             // headerpanel
             // 
-            this.headerpanel.BackColor = System.Drawing.Color.Green;
+            this.headerpanel.BackColor = System.Drawing.Color.Black;
             this.headerpanel.Controls.Add(this.picMinimize);
             this.headerpanel.Controls.Add(this.picExit);
             this.headerpanel.Controls.Add(this.picMain);
@@ -127,10 +128,11 @@
             this.headerpanel.Name = "headerpanel";
             this.headerpanel.Size = new System.Drawing.Size(410, 43);
             this.headerpanel.TabIndex = 10;
+            this.headerpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerpanel_Paint);
             // 
             // picMinimize
             // 
-            this.picMinimize.Image = global::Power_of_God.Properties.Resources.minimize;
+            this.picMinimize.Image = ((System.Drawing.Image)(resources.GetObject("picMinimize.Image")));
             this.picMinimize.Location = new System.Drawing.Point(301, 0);
             this.picMinimize.Name = "picMinimize";
             this.picMinimize.Size = new System.Drawing.Size(43, 43);
@@ -141,7 +143,7 @@
             // 
             // picExit
             // 
-            this.picExit.Image = global::Power_of_God.Properties.Resources.exit;
+            this.picExit.Image = ((System.Drawing.Image)(resources.GetObject("picExit.Image")));
             this.picExit.Location = new System.Drawing.Point(350, 0);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(43, 43);
@@ -152,7 +154,7 @@
             // 
             // picMain
             // 
-            this.picMain.Image = global::Power_of_God.Properties.Resources.logo;
+            this.picMain.Image = ((System.Drawing.Image)(resources.GetObject("picMain.Image")));
             this.picMain.Location = new System.Drawing.Point(3, 3);
             this.picMain.Name = "picMain";
             this.picMain.Size = new System.Drawing.Size(266, 37);
@@ -162,7 +164,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Power_of_God.Properties.Resources.snow;
+            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
             this.pictureBox1.Location = new System.Drawing.Point(0, 36);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(410, 425);

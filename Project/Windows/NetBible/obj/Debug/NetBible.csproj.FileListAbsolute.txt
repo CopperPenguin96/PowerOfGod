@@ -3,3 +3,8 @@ C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\bin\D
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.dll
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\bin\Debug\NetBible.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\bin\Debug\NetBible.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.pdb

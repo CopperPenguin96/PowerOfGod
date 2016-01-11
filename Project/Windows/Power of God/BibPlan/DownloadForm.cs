@@ -30,7 +30,7 @@ namespace Power_of_God.BibPlan
                 var x = txtAuthorName.Text;
                 _webdir = "http://godispower.us/BiblePlans/" + x + "/";
                 GetallFilesFromHttp.ListDiractory(_webdir);
-                var list = GetallFilesFromHttp.files;
+                var list = GetallFilesFromHttp.Files;
                 foreach (var i in list.Where(i => i.Contains(".bibplan")))
                 {
                     lboContent.Items.Add(i.Substring(1, i.Length - 2));

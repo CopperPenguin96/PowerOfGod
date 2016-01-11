@@ -6,3 +6,11 @@ C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\obj\D
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\Newtonsoft.Json.dll
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\Newtonsoft.Json.pdb
 C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\Newtonsoft.Json.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\BibPlans.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\BibPlans.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\Newtonsoft.Json.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\bin\Debug\Newtonsoft.Json.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.pdb

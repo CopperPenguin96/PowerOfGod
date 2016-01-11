@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NetBible.Books;
-using NetBible.Books.Old_Testament;
-using NetBible.Books.New_Testament;
 using Power_of_God.BibPlan;
 using Power_of_God.pSystem;
 using Power_of_God.User;
@@ -44,8 +37,36 @@ namespace Power_of_God
             }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             Parser.PlanDays.CollectionChanged += CheckChanged;
+            headerpanel.MouseDown += panel1_MouseDown;
+            headerpanel.MouseUp += panel1_MouseUp;
+            headerpanel.MouseMove += panel1_MouseMove;
+            picMain.MouseDown += panel1_MouseDown;
+            picMain.MouseUp += panel1_MouseUp;
+            picMain.MouseMove += panel1_MouseMove;
+        }
+        //Global variables;
+        private bool _dragging = false;
+        //private Point _offset;
+        private Point _startPoint = new Point(0, 0);
+
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            _dragging = true;  // _dragging is your variable flag
+            _startPoint = new Point(e.X, e.Y);
         }
 
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            _dragging = false;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!_dragging) return;
+            var p = PointToScreen(e.Location);
+            Location = new Point(p.X - this._startPoint.X, p.Y - this._startPoint.Y);
+        }
         private void CheckChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             lboListOfItems.Items.Clear();
@@ -100,11 +121,11 @@ namespace Power_of_God
                 "this amazing truth. God bless and I hope you learn some stuff about God.</body></html>";
         }
 
-        private void SetCurrentContent(string x)
+        /*private void SetCurrentContent(string x)
         {
             webBrowser1.DocumentText = "<html><body>" + x + "</body></html>";
         }
-
+        */
         private void btnPurpose_Click(object sender, EventArgs e)
         {
             SetRichText(RichTextMode.Purpose);
@@ -156,21 +177,21 @@ namespace Power_of_God
         {
             _bPlanDialog.Hide();
         }
-        private RichTextMode rtmSize;
+        private RichTextMode _rtmSize;
         private void ListItems(RichTextMode rtm)
         {
-            rtmSize = rtm;
+            _rtmSize = rtm;
             if (rtm != RichTextMode.BiblePlans) KillPlans();
             switch (rtm)
             {
                 case RichTextMode.Lessons:
                     GetallFilesFromHttp.ListDiractory("http://godispower.us/Sundays/");
                     var intIndex = 0;
-                    foreach (var x in GetallFilesFromHttp.files)
+                    foreach (var x in GetallFilesFromHttp.Files)
                     {
                         if (intIndex > 1)
                         {
-                            if (intIndex < GetallFilesFromHttp.files.Count - 2)
+                            if (intIndex < GetallFilesFromHttp.Files.Count - 2)
                                 try
                                 {
                                     var i = x.Substring(1, x.Length - 7).Replace(".", "/");
@@ -201,12 +222,12 @@ namespace Power_of_God
         private void btnBibPlans_Click(object sender, EventArgs e)
         {
             _bPlanDialog.Show();
-            rtmSize = RichTextMode.BiblePlans;
+            _rtmSize = RichTextMode.BiblePlans;
         }
 
         private void lboListOfItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (rtmSize)
+            switch (_rtmSize)
             {
                 case RichTextMode.Lessons:
                     var webFile = "http://godispower.us/Sundays/" +
@@ -225,6 +246,11 @@ namespace Power_of_God
 
             }
         }
+
+        private void headerpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
     public enum RichTextMode
@@ -242,12 +268,12 @@ namespace Power_of_God
             return "\\\"([^\"]*)\\\"";
         }
 
-        public static List<string> files = new List<string>();
+        public static List<string> Files = new List<string>();
 
         public static void Write()
         {
             var fw = File.CreateText("tempradio.txt");
-            fw.Write(files.Aggregate("", (current, f) => current + ("\n" + f)));
+            fw.Write(Files.Aggregate("", (current, f) => current + ("\n" + f)));
             fw.Flush();
             fw.Close();
 
@@ -268,7 +294,7 @@ namespace Power_of_God
                     {
                         foreach (var match in matches.Cast<Match>().Where(match => match.Success))
                         {
-                            files.Add(match.ToString());
+                            Files.Add(match.ToString());
                         }
                     }
                 }

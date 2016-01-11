@@ -125,10 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cooltext117627293831111.ico" />
-    <None Include="Resources\snow.gif" />
-    <None Include="Resources\minimize.png" />
     <None Include="Resources\logo.png" />
+    <None Include="Resources\minimize.png" />
     <None Include="Resources\exit.png" />
+    <None Include="Resources\snow.gif" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="MediaPlayer">

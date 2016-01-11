@@ -1,2 +1,0 @@
-﻿Description: What does marriage mean to you? Are you following the Biblical meaning of marriage or man's vision of marriage?
-Verse1: {"Book":"Hebrews","Chapter":13,"Verse":4}
