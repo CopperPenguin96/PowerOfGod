@@ -23,7 +23,7 @@ namespace BibPlans
             Id = id;
             if (!isCreator)
             {
-                if (!ValidateId()) throw new Exception("The Bible Plan ID could not validated. Possible duplicate?");
+                if (!ValidateId()) throw new Exception("The Bible Plan ID could not be validated. Possible duplicate?");
             }
             VerseList = verses;
             VerseAuthor = verseauthor;
