@@ -23,15 +23,16 @@
  */
 package power.of.god.BibPlans;
 
+import com.google.gson.Gson;
+
 
 /**
  *
  * @author apotter96
  */
 public class BibPlanParser {
-    public static BibPlan BiblicalPlan(String content) throws Exception
+    public static BibPlan BiblicalPlan(String content)
     {
-        //JSONObject jsonObj = new JSONObject("{\"phonetype\":\"N95\",\"cat\":\"WP\"}");
-        throw new Exception();
+        return new Gson().fromJson(content, BibPlan.class);
     }
 }

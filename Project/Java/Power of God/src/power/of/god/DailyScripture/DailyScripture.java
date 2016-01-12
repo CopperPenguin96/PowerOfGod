@@ -25,6 +25,7 @@ package power.of.god.DailyScripture;
 
 import Bible.*;
 import Books.*;
+import com.google.gson.Gson;
 import java.io.*;
 import java.net.*;
 import java.text.*;
@@ -82,21 +83,16 @@ public class DailyScripture {
     }
     private static String parseJson(String json)
     {
-        /*JSONParser jP = new JSONParser();
-        Object obj = jP.parse(json);
-        JSONObject jsonObject = (JSONObject) obj;
+        TransferObjVerses x = new Gson().fromJson(json, TransferObjVerses.class);
         Book foundBook = new Book();
-        for (Book b: Bible.Bible.AllBooks())
+        for (Book b: Bible.AllBooks())
         {
-            if (b.getName().equalsIgnoreCase((String)jsonObject.get("Book")))
+            if (b.getName().equalsIgnoreCase(x.Book))
             {
                 foundBook = b;
             }
         }
-        Long chap = (Long) jsonObject.get("Chapter");
-        Long verse = (Long) jsonObject.get("Verse");
-        return foundBook.readFormattedVerse(chap.intValue(), verse.intValue());*/
-        return "Sorry";
+        return foundBook.readFormattedVerse(x.Chapter, x.Verse);
     }
     private static BibleVersion bv()
     {
@@ -138,4 +134,11 @@ public class DailyScripture {
             throw new DailyScriptureReadException(ex);
         }
     }
+}
+
+class TransferObjVerses
+{
+    public String Book;
+    public int Chapter;
+    public int Verse;
 }

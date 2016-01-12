@@ -24,6 +24,7 @@
 package power.of.god.Settings;
 
 import com.google.gson.*;
+import com.google.gson.stream.JsonWriter;
 import java.io.*;
 import power.of.god.*;
 
@@ -44,12 +45,11 @@ public class Settings {
         if (fileObj.exists())
         {
             try {
-                BufferedReader textReader = new BufferedReader(new FileReader(fileObj));
                 Gson gson = new GsonBuilder().create();
                 TransferObj f = gson.fromJson(AppFiles.ReadAllText(fileObj), TransferObj.class);
                 BibPlansEnabled = f.bibplansenabled;
                 BibleVersion = f.scriptver;
-            } catch (Exception e) {
+            } catch (IOException | JsonSyntaxException e) {
                 e.printStackTrace();
             }
         }
@@ -60,20 +60,23 @@ public class Settings {
     }
     public static void SaveToJson()
     {
-        /*JSONObject obj = new JSONObject();
-	obj.put("bibplansenabled", false);
-	obj.put("scriptver",BibleVersion);
-        try {
-            File fileObj = AppFiles.filesObj()[6];
-            if (fileObj.exists()) fileObj.delete();
-            fileObj.createNewFile();
-            try (FileWriter file = new FileWriter(fileObj)) {
-                file.write(obj.toJSONString());
-                file.flush();
-            }
-	} catch (IOException e) {
+        JsonWriter writer;
+        try
+        {
+            writer = new JsonWriter(new FileWriter(AppFiles.filesObj()[6]));
+            writer.beginObject();
+            writer.name("bibplansenabled").value(false);
+            writer.name("scriptver").value(BibleVersion);
+            writer.endObject();
+            writer.flush();
+            writer.close();
+            System.out.println(">>> Saved settings.");
+        }
+        catch (Exception e)
+        {
             e.printStackTrace();
-	}*/
+        }
+        
     }
 }
 

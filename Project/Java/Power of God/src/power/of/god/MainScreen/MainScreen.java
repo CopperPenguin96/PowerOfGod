@@ -64,6 +64,7 @@ public class MainScreen extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
+        Settings.LoadFromJson();
         //UserInfo uI = Start.CurrentUserInfo;
         /*jLabel1.setText("Welcome, " + uI.username);
         jLabel3.setText("Real Name: " + uI.name);

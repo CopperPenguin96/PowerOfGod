@@ -41,25 +41,31 @@ public class SettingsScreen extends javax.swing.JFrame {
     //private final String defaultUsername;
     public SettingsScreen() {
         initComponents();
-        //LoadSettings();
+        LoadSettings();
         this.setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
        // defaultUsername = Start.CurrentUserInfo.username;
     }
     
-    /*private void LoadSettings()
+    private void LoadSettings()
     {
         //UserInfo uI = Start.CurrentUserInfo;
         jComboBox1.setSelectedIndex(SelectedItem(Settings.BibleVersion));
         jCheckBox1.setSelected(Settings.BibPlansEnabled);
-    }*/
+    }
     private int SelectedItem(String ver)
     {
-        if (ver.equals("KJV")) return 0; //NIV ESV NLT
-        else if (ver.equals("NIV")) return 1;
-        else if (ver.equals("ESV")) return 2;
-        else if (ver.equals("NLT")) return 3;
-        else return -1;
+        switch (ver)
+        {
+            case "NIV":
+                return 1;
+            case "ESV":
+                return 2;
+            case "NLT":
+                return 3;
+            default: // KJV
+                return 0;
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
