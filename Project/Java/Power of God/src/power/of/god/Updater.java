@@ -110,7 +110,7 @@ public class Updater {
             {
                 Item4 = Integer.parseInt(getUrlSource(url).get(4));
             }
-            catch (Exception ex)
+            catch (IOException | NumberFormatException ex)
             {
                 Item4 = -1;
             }
@@ -118,10 +118,7 @@ public class Updater {
         catch (Exception ex)
         {
             Item3 = -1;
-            System.out.println("Caught on Updater: " + ex.toString());
         }
-        System.out.println("Online Minor = " + Item2);
-        System.out.println("Local Minor = " + CurrentVersionInt().get(1));
         if (OnlinePrefix > CurrentPrefixInt()) return "Outdated";
         if (OnlinePrefix < CurrentPrefixInt()) return "Unsupported";
         if (Item1 > CurrentVersionInt().get(0)) return "Outdated";

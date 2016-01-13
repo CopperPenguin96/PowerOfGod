@@ -25,6 +25,7 @@ package power.of.god.MainScreen;
 
 //import Books.NewTestament.*;
 //import Books.OldTestament.*;
+import java.awt.Color;
 import java.io.*;
 import java.net.*;
 import java.text.*;
@@ -32,15 +33,12 @@ import java.util.*;
 import java.util.logging.*;
 import java.util.zip.*;
 import javax.swing.*;
-import static power.of.god.DailyScripture.DailyScripture.GetDailyScripture;
-import power.of.god.DailyScripture.DailyScriptureReadException;
-import power.of.god.PrivacyPolicy;
-//import power.of.god.*;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.*;
+import static power.of.god.DailyScripture.DailyScripture.*;
+import power.of.god.DailyScripture.*;
 import power.of.god.Settings.*;
-import power.of.god.Start;
-import power.of.god.TitleExtractor;
-import power.of.god.Updater;
-import power.of.god.User.*;
+import power.of.god.*;
 /**
  *
  * @author apotter96
@@ -69,8 +67,66 @@ public class MainScreen extends javax.swing.JFrame {
         /*jLabel1.setText("Welcome, " + uI.username);
         jLabel3.setText("Real Name: " + uI.name);
         jLabel4.setText("Email: " + uI.email);*/
+        clearList();
+        jList1.setPreferredSize(null);
+        getContentPane().setBackground(Color.DARK_GRAY);
+        
     }
-
+    
+    
+    private void clearList()
+    {
+        setItems(new ArrayList<>());
+    }
+    private void setItems(ArrayList<String> items)
+    {
+        DefaultListModel dm = new DefaultListModel();
+        items.stream().forEach((x) -> {
+            dm.addElement(x);
+        });
+        jList1.setModel(dm);
+    }
+    
+    private void updateListItems(String btn)
+    {
+        valueOfList = btn.toLowerCase();
+        switch (btn.toLowerCase())
+        {
+            case "lessons":
+                Document doc;
+                try {
+                    doc = Jsoup.connect("http://godispower.us/Sundays/").get();
+                    ArrayList<String> files = new ArrayList<>();
+                    doc.getAllElements().stream().map((file) 
+                            -> file.attr("href")).filter((item) 
+                                    -> (item.contains(".html"))).forEach((item) 
+                                            -> {
+                        try {
+                            SimpleDateFormat formatter = new SimpleDateFormat("MM.dd.yyyy");
+                            String subItem = item.substring(0, 10);
+                            Date date = formatter.parse(subItem);
+                            if (new Date().after(date))
+                            {
+                                files.add(subItem.replace(".", "/"));
+                            }
+                        } catch (ParseException ex) {
+                            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    });
+                    setItems(files);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            case "daily":
+                int fileCount = new File("Verses/").list().length;
+                ArrayList<String> newList = new ArrayList<>();
+                for (int x = 1; x <= fileCount; x++)
+                {
+                    newList.add("Day #" + x);
+                }
+                setItems(newList);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -92,12 +148,13 @@ public class MainScreen extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
 
         menu1.setLabel("File");
@@ -116,6 +173,7 @@ public class MainScreen extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Power of God - Alpha 1.2");
+        setBackground(new java.awt.Color(102, 102, 102));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/power/of/god/main.png"))); // NOI18N
 
@@ -137,8 +195,7 @@ public class MainScreen extends javax.swing.JFrame {
         });
 
         jButton4.setText("Bible Plans");
-        jButton4.setEnabled(false);
-        jButton4.setPreferredSize(new java.awt.Dimension(117, 26));
+        jButton4.setPreferredSize(new java.awt.Dimension(101, 26));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -152,28 +209,38 @@ public class MainScreen extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setText("Radio");
-        jButton6.setEnabled(false);
-        jButton6.setPreferredSize(new java.awt.Dimension(117, 26));
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
         jEditorPane1.setEditable(false);
         jEditorPane1.setBackground(new java.awt.Color(204, 204, 204));
         jScrollPane1.setViewportView(jEditorPane1);
 
-        jMenu2.setText("App");
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane3.setHorizontalScrollBar(null);
 
-        jMenuItem2.setText("Privacy Policy");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setAutoscrolls(true);
+        jScrollPane2.setFocusTraversalPolicyProvider(true);
+
+        jList1.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jList1.setFocusCycleRoot(true);
+        jList1.setFocusTraversalPolicyProvider(true);
+        jList1.setPreferredSize(new java.awt.Dimension(113, 80));
+        jList1.setValueIsAdjusting(true);
+        jList1.setVisibleRowCount(1);
+        jList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                jList1ValueChanged(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jScrollPane2.setViewportView(jList1);
+
+        jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
+
+        jMenu2.setText("App");
 
         jMenuItem3.setText("Settings");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
@@ -192,40 +259,44 @@ public class MainScreen extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 359, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 421, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2))
+                .addContainerGap())
         );
 
         pack();
@@ -276,9 +347,19 @@ public class MainScreen extends javax.swing.JFrame {
         CurrentCount = 0;
         displayedGood = false;
         ShowLesson("sunday");
+        updateListItems("lessons");
     }//GEN-LAST:event_jButton3ActionPerformed
     int CurrentCount = 0;
     boolean displayedGood = false;
+    void ShowOldLesson(String url)
+    {
+        try {
+            SetCurrentContent("<h1>" + TitleExtractor.getPageTitle(url) + "</h1>" +
+                    getUrlSource(url));
+        } catch (IOException ex) {
+            Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     void ShowLesson(String day)
     {
         String dayChosen = "http://godispower.us/Sundays/" + theLastSunday(CurrentCount) + ".html";
@@ -333,10 +414,6 @@ public class MainScreen extends javax.swing.JFrame {
     {
         JOptionPane.showMessageDialog(null, infoMessage, "InfoBox: " + titleBar, JOptionPane.PLAIN_MESSAGE);
     }
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        new PrivacyPolicy().show();
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
@@ -345,6 +422,8 @@ public class MainScreen extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             jEditorPane1.setText(GetDailyScripture());
+            valueOfList = "daily";
+            updateListItems("daily");
         } catch (DailyScriptureReadException ex) {
             jEditorPane1.setText("There was no verse for today. I am sorry!");
             File fDir = new File("Verses/");
@@ -353,14 +432,32 @@ public class MainScreen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
         SettingsScreen.main(new String[0]);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private String valueOfList;
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_jList1ValueChanged
+        // TODO add your handling code here:
+        switch (valueOfList.toLowerCase())
+        {
+            case "lessons":
+                String webAddress = "http://godispower.us/Sundays/" + 
+                        jList1.getSelectedValue().toString().replace("/", ".") +
+                        ".html";
+                ShowOldLesson(webAddress);
+            case "daily":
+        {
+            try {
+                jEditorPane1.setText(GetOldScripture(jList1.getSelectedIndex() + 1));
+            } catch (DailyScriptureReadException ex) {
+                //
+            }
+        }
+                
+        }
+    }//GEN-LAST:event_jList1ValueChanged
 
     private void SetCurrentContent(String html)
     {
@@ -402,15 +499,16 @@ public class MainScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JList jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private java.awt.Menu menu1;
     private java.awt.Menu menu2;
     private java.awt.Menu menu3;

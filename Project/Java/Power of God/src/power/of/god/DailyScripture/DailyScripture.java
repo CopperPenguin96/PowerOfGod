@@ -110,6 +110,30 @@ public class DailyScripture {
                 return BibleVersion.KJV;
         }
     }
+    public static String GetOldScripture(int dv) throws DailyScriptureReadException
+    {
+        try {
+            Files.SetScripturePath("power.of.god/", false, dayPath, bv());
+            URL url = new URL("http://godispower.us/DailyVerses/dv" + dv + ".txt");
+            Scanner s = new Scanner(url.openStream());
+            ArrayList<String> fileLines = new ArrayList<>();
+            while (s.hasNextLine())
+            {
+                fileLines.add(s.nextLine());
+            }
+            String finalString = "Today's verse: ";
+            for (String files:fileLines)
+            {                       //01234567
+                if (files.startsWith("Verse"))
+                {
+                    finalString += "<b>" + parseJson(files.substring(8)) + "</b><br>";
+                }
+            }
+            return finalString + fileLines.get(0);
+        } catch(Exception ex) {
+            throw new DailyScriptureReadException(ex);
+        }
+    }
     public static String GetDailyScripture() throws DailyScriptureReadException
     {
         try {
