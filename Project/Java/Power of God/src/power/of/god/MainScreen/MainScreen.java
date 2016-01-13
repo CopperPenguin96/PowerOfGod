@@ -70,6 +70,7 @@ public class MainScreen extends javax.swing.JFrame {
         clearList();
         jList1.setPreferredSize(null);
         getContentPane().setBackground(Color.DARK_GRAY);
+        System.out.println(new Date().toString());
         
     }
     
