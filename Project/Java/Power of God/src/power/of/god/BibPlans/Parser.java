@@ -24,6 +24,8 @@
 package power.of.god.BibPlans;
 
 import Books.Book;
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import power.of.god.*;
 import power.of.god.Settings.*;
@@ -34,7 +36,7 @@ import power.of.god.Settings.*;
  */
 public class Parser {
     public static ArrayList<String> PlanDays = new ArrayList<>();
-    public static String HtmlText(String bibPlanFileName, int day)
+    public static String HtmlText(String bibPlanFileName, int day) throws IOException
     {
         BibPlan bibPlan = BibPlanParser.BiblicalPlan(AppFiles.ReadAllText(new File(bibPlanFileName)));
         String html = "<html><head><title>(Bible Plan) " + bibPlan.Name + "</title></head>" +
@@ -69,6 +71,6 @@ public class Parser {
     
     private static String Body(VerseObj v1, VerseObj v2)
     {
-        // TODO - Create Patch class
+        return PatchClass.GetVerse(v1, v2);
     }
 }

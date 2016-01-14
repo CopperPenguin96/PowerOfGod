@@ -24,13 +24,15 @@
 package power.of.god.BibPlans;
 
 import Books.Book;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author apotter96
  */
-public class PatchClass {
+public class PatchClass
+{
     public static String GetVerse(VerseObj v1Obj, VerseObj v2Obj)
     {
         String book1Name = v1Obj.Book;
@@ -44,149 +46,136 @@ public class PatchClass {
         int book1Int = Parser.GetBookIndex(book1Name);
         int book2Int = Parser.GetBookIndex(book2Name);
         Book _selectedBookStart = Parser.GetBook(book1Name);
-        Book _selectedBookEnd = Parser.GetBook(book2Name);
-        int maxVerses1 = _numVerseStart.Maximum;
+        int maxVerses1 = _selectedBookStart.verseCount(chapter1);
 
-	if (book1Int > book2Int)
+        if (book1Int > book2Int)
         {
             JOptionPane.showConfirmDialog(null, "Selected Start Verse cannot be before Selected End Verse");
             return null;
         }
-		else if ((book2Int - book1Int) > 1)
-		{
-                    JOptionPane.showConfirmDialog(null, "Sorry, there cannot be that big of gap between books. Too many verses!");
+        else if ((book2Int - book1Int) > 1)
+        {
+            JOptionPane.showConfirmDialog(null, "Sorry, there cannot be that big of gap between books. Too many verses!");
+            return null;
+        }
+        else
+        {
+            if (book1Int == book2Int)
+            {
+                if (chapter1 > chapter2)
+                {
+                    JOptionPane.showConfirmDialog(null, "Selected Start Verse cannot be before Selected End Verse");
                     return null;
-		}
-		else
-		{
-                    if (book1Int == book2Int)
+                }
+                else
+                {
+                    if (chapter1 == chapter2)
                     {
-			if (chapter1 > chapter2)
+                        if (verse1 > verse2)
                         {
                             JOptionPane.showConfirmDialog(null, "Selected Start Verse cannot be before Selected End Verse");
                             return null;
-			}
-			else
-			{
-                            if (chapter1 == chapter2)
-                            {
-				if (verse1 > verse2)
-				{
-                                    JOptionPane.showConfirmDialog(null, "Selected Start Verse cannot be before Selected End Verse");
-                                    return null;
-				}
-                            }
-			}
+                        }
                     }
-		}
-		// Should only reach this point if the verses selected for a day are OK
-		String strContent = verseStartString + " - " + verseEndString + " (KJV) - ";
-		if (book1Int == book2Int) // Books are the same
-		{
-                    if (chapter1 == chapter2)
+                }
+            }
+        }
+        // Should only reach this point if the verses selected for a day are OK
+        String strContent = verseStartString + " - " + verseEndString + " (KJV) - ";
+        if (book1Int == book2Int) // Books are the same
+        {
+            if (chapter1 == chapter2)
+            {
+                for (int x = verse1; x <= verse2; x++)
+                {
+                    strContent += _selectedBookStart.readPlainVerse(chapter1, x) + " ";
+                }
+            }
+            else if (chapter1 < chapter2)
+            {
+                int y = chapter2 - chapter1;
+                for (int z = 0; z <= y; z++)
+                {
+                    if (z == 0)
                     {
-			for (int x = verse1; x <= verse2; x++)
-			{
-                            strContent += _selectedBookStart.ReadPlainVerse(_numChapterStart.Value, x) + " ";
-				}
-			}
-			else if (_numChapterStart.Value < _numChapterEnd.Value)
-			{
-				Object y = _numChapterEnd.Value - _numChapterStart.Value;
-				for (Object z = 0; z <= y; z++)
-				{
-//VB TO JAVA CONVERTER NOTE: The following VB 'Select Case' included either a non-ordinal switch expression or non-ordinal, range-type, or non-constant 'Case' expressions and was converted to Java 'if-else' logic:
-//					Select Case z
-//ORIGINAL LINE: Case 0
-					if (z == 0)
-					{
-						for (Object x = _numVerseStart.Value; x <= maxVerses1; x++)
-						{
-							strContent += _selectedBookStart.ReadPlainVerse(_numChapterStart.Value, x) + " ";
-						}
-					}
-//ORIGINAL LINE: Case _numChapterEnd.Value
-					else if (z == _numChapterEnd.Value)
-					{
-						for (Object x = 1; x <= _numVerseEnd.Value; x++)
-						{
-							strContent += _selectedBookStart.ReadPlainVerse(_numChapterEnd.Value, x) + " ";
-						}
-					}
-//ORIGINAL LINE: Case Else
-					else
-					{
-						if ((_numChapterEnd.Value - _numChapterStart.Value) > 1)
-						{
-							for (Object x = 1; x <= _selectedBookStart.VerseCount(y + z); x++)
-							{
-								strContent += _selectedBookStart.ReadPlainVerse(_numChapterEnd.Value, x) + " ";
-							}
-						}
-						else
-						{
-							for (Object x = 1; x <= _numVerseEnd.Value; x++)
-							{
-								strContent += _selectedBookStart.ReadPlainVerse(_numChapterEnd.Value, x) + " ";
-							}
-						}
-					}
-				}
-			}
-		}
-		else if (book2Int > book1Int)
-		{
-			java.util.ArrayList<Book> bookList = new java.util.ArrayList<Book>();
-			for (Object a = book1Int; a <= book2Int; a++)
-			{
-				bookList.add(Bible.AllBooks().ElementAt(a));
-			}
-			if ((book2Int - book1Int) == 1)
-			{
-				for (Object a = _numChapterStart.Value; a <= bookList.ElementAt(0).ChapterCount; a++)
-				{
-//VB TO JAVA CONVERTER NOTE: The following VB 'Select Case' included either a non-ordinal switch expression or non-ordinal, range-type, or non-constant 'Case' expressions and was converted to Java 'if-else' logic:
-//					Select Case a
-//ORIGINAL LINE: Case _numChapterStart.Value
-					if (a == _numChapterStart.Value)
-					{
-						for (Object x = _numVerseStart.Value; x <= bookList.ElementAt(0).VerseCount(a); x++)
-						{
-							strContent += bookList.ElementAt(0).ReadPlainVerse(a, x) + " ";
-						}
-					}
-//ORIGINAL LINE: Case Else
-					else
-					{
-						for (Object x = 1; x <= bookList.ElementAt(0).VerseCount(a); x++)
-						{
-							strContent += bookList.ElementAt(0).ReadPlainVerse(a, x) + " ";
-						}
-					}
-				}
-				for (Object a = 1; a <= _numChapterEnd.Value; a++)
-				{
-//VB TO JAVA CONVERTER NOTE: The following VB 'Select Case' included either a non-ordinal switch expression or non-ordinal, range-type, or non-constant 'Case' expressions and was converted to Java 'if-else' logic:
-//					Select Case a
-//ORIGINAL LINE: Case _numChapterEnd.Value
-					if (a == _numChapterEnd.Value)
-					{
-						for (Object x = 1; x <= _numVerseEnd.Value; x++)
-						{
-							strContent += bookList.ElementAt(1).ReadPlainVerse(a, x) + " ";
-						}
-					}
-//ORIGINAL LINE: Case Else
-					else
-					{
-						for (Object x = 1; x <= bookList.ElementAt(1).VerseCount(a); x++)
-						{
-							strContent += bookList.ElementAt(1).ReadPlainVerse(a, x) + " ";
-						}
-					}
-				}
-			}
-		}
+                        for (int x = verse1; x <= maxVerses1; x++)
+                        {
+                            strContent += _selectedBookStart.readPlainVerse(chapter1, x) + " ";
+                        }
+                    }
+                    else if (z == chapter2)
+                    {
+                        for (int x = 1; x <= verse2; x++)
+                        {
+                            strContent += _selectedBookStart.readPlainVerse(chapter2, x) + " ";
+                        }
+                    }
+                    else
+                    {
+                        if ((chapter2 - chapter1) > 1)
+                        {
+                            for (int x = 1; x <= _selectedBookStart.verseCount(y + z); x++)
+                            {
+                                strContent += _selectedBookStart.readPlainVerse(chapter2, x) + " ";
+                            }
+                        }
+                        else
+                        {
+                            for (int x = 1; x <= verse2; x++)
+                            {
+                                strContent += _selectedBookStart.readPlainVerse(chapter2, x) + " ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        else if (book2Int > book1Int)
+        {
+            ArrayList<Book> bookList = new ArrayList<>();
+            for (int a = book1Int; a <= book2Int; a++)
+            {
+                bookList.add(Bible.Bible.AllBooks()[a]);
+            }
+            if ((book2Int - book1Int) == 1)
+            {
+                for (int a = chapter1; a <= bookList.get(0).getChapterCount(); a++)
+                {
+                    if (a == chapter1)
+                    {
+                        for (int x = verse1; x <= bookList.get(0).verseCount(a); x++)
+                        {
+                            strContent += bookList.get(0).readPlainVerse(a, x) + " ";
+                        }
+                    }
+                    else
+                    {
+                        for (int x = 1; x <= bookList.get(0).verseCount(a); x++)
+                        {
+                            strContent += bookList.get(0).readPlainVerse(a, x) + " ";
+                        }
+                    }
+                }
+                for (int a = 1; a <= chapter2; a++)
+                {
+                    if (a == chapter2)
+                    {
+                        for (int x = 1; x <= verse2; x++)
+                        {
+                            strContent += bookList.get(1).readPlainVerse(a, x) + " ";
+                        }
+                    }
+                    else
+                    {
+                        for (int x = 1; x <= bookList.get(1).verseCount(a); x++)
+                        {
+                            strContent += bookList.get(1).readPlainVerse(a, x) + " ";
+                        }
+                    }
+                }
+            }
+        }
+        return strContent;
     }
-    
+
 }
