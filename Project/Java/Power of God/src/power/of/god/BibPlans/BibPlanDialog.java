@@ -56,6 +56,7 @@ public class BibPlanDialog extends javax.swing.JFrame {
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if (response == JOptionPane.YES_OPTION) {
                 System.out.println("Starting download screen. User would like to download Bible Plans");
+                DownloadFrame.main(new String[0]);
             } else {
                 System.out.println("User rejected offer to download plans.");
             }

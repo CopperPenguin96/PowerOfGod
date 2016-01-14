@@ -41,7 +41,26 @@ public class AppFiles {
         }
         return arrayHere;
     }
-    
+    public static void WriteToOrdinaryFile(File obj, String[] Contents) throws Exception
+    {
+        try {
+                // Assume default encoding.
+                FileWriter fileWriter = new FileWriter(obj);
+                BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+                String writeThis = "";
+                for (String s:Contents)
+                {
+                    writeThis += s + "\n";
+                }
+                bufferedWriter.write(writeThis);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+        } 
+        catch (Exception ex)
+        {
+                throw new Exception("Was not able to retrieve to save", ex);
+            }
+    }
     //THIS METHOD WILL OVERWRITE THE FILE
     public static void WriteToFile(int fileIndex, String[] Contents) throws Exception
     {

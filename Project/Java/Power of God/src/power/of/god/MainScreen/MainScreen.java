@@ -39,6 +39,7 @@ import static power.of.god.DailyScripture.DailyScripture.*;
 import power.of.god.DailyScripture.*;
 import power.of.god.Settings.*;
 import power.of.god.*;
+import power.of.god.BibPlans.BibPlanDialog;
 /**
  *
  * @author apotter96
@@ -417,6 +418,9 @@ public class MainScreen extends javax.swing.JFrame {
     }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        valueOfList = "plans";
+        updateListItems("plans");
+        BibPlanDialog.main(new String[0]); 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -449,14 +453,13 @@ public class MainScreen extends javax.swing.JFrame {
                         ".html";
                 ShowOldLesson(webAddress);
             case "daily":
-        {
-            try {
-                jEditorPane1.setText(GetOldScripture(jList1.getSelectedIndex() + 1));
-            } catch (DailyScriptureReadException ex) {
-                //
-            }
-        }
-                
+                try {
+                    jEditorPane1.setText(GetOldScripture(jList1.getSelectedIndex() + 1));
+                } catch (DailyScriptureReadException ex) {
+                    //
+                }
+            case "plans":
+                // TODO - Set up Bible Plans
         }
     }//GEN-LAST:event_jList1ValueChanged
 
@@ -517,4 +520,9 @@ public class MainScreen extends javax.swing.JFrame {
     private java.awt.MenuBar menuBar1;
     private java.awt.MenuBar menuBar2;
     // End of variables declaration//GEN-END:variables
+}
+
+class TransferBetween
+{
+    String[] argsContent;
 }
