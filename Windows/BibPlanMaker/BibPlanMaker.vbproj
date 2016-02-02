@@ -137,17 +137,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetBible\NetBible.csproj">
-      <Project>{9c6d5d4e-3faf-4a0f-905b-03d95788a3f7}</Project>
-      <Name>NetBible</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Power of God Lib\Power of God Lib.csproj">
       <Project>{977964a9-4ffd-4dee-8a00-664fbd782cbf}</Project>
       <Name>Power of God Lib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Power of God\PowerGUI.csproj">
-      <Project>{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}</Project>
-      <Name>PowerGUI</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

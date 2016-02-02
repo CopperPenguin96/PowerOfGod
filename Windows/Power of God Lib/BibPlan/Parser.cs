@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using BibPlans;
 using NetBible.Books;
-using PlanPatch;
 using Power_of_God.User;
 using Power_of_God_Lib.BibPlan;
 

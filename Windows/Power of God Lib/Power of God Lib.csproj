@@ -62,6 +62,75 @@
     </Compile>
     <Compile Include="BibPlan\Parser.cs" />
     <Compile Include="BibPlan\PatchClass.cs" />
+    <Compile Include="NetBible\Books\Bible.cs" />
+    <Compile Include="NetBible\Books\Book.cs" />
+    <Compile Include="NetBible\Books\New Testament\Acts.cs" />
+    <Compile Include="NetBible\Books\New Testament\Colossians.cs" />
+    <Compile Include="NetBible\Books\New Testament\Corinthians1.cs" />
+    <Compile Include="NetBible\Books\New Testament\Corinthians2.cs" />
+    <Compile Include="NetBible\Books\New Testament\Ephesians.cs" />
+    <Compile Include="NetBible\Books\New Testament\Galatians.cs" />
+    <Compile Include="NetBible\Books\New Testament\Hebrews.cs" />
+    <Compile Include="NetBible\Books\New Testament\James.cs" />
+    <Compile Include="NetBible\Books\New Testament\John.cs" />
+    <Compile Include="NetBible\Books\New Testament\John1.cs" />
+    <Compile Include="NetBible\Books\New Testament\John2.cs" />
+    <Compile Include="NetBible\Books\New Testament\John3.cs" />
+    <Compile Include="NetBible\Books\New Testament\Jude.cs" />
+    <Compile Include="NetBible\Books\New Testament\Luke.cs" />
+    <Compile Include="NetBible\Books\New Testament\Mark.cs" />
+    <Compile Include="NetBible\Books\New Testament\Matthew.cs" />
+    <Compile Include="NetBible\Books\New Testament\Peter1.cs" />
+    <Compile Include="NetBible\Books\New Testament\Peter2.cs" />
+    <Compile Include="NetBible\Books\New Testament\Philemon.cs" />
+    <Compile Include="NetBible\Books\New Testament\Philippians.cs" />
+    <Compile Include="NetBible\Books\New Testament\Revelation.cs" />
+    <Compile Include="NetBible\Books\New Testament\Romans.cs" />
+    <Compile Include="NetBible\Books\New Testament\Thessalonians1.cs" />
+    <Compile Include="NetBible\Books\New Testament\Thessalonians2.cs" />
+    <Compile Include="NetBible\Books\New Testament\Timothy1.cs" />
+    <Compile Include="NetBible\Books\New Testament\Timothy2.cs" />
+    <Compile Include="NetBible\Books\New Testament\Titus.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Amos.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Chronicles1.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Chronicles2.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Daniel.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Deuteronomy.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Ecclesiastes.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Esther.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Exodus.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Ezekiel.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Ezra.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Genesis.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Habakkuk.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Haggai.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Hosea.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Isaiah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Jeremiah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Job.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Joel.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Jonah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Joshua.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Judges.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Kings1.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Kings2.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Lamentations.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Leviticus.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Malachi.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Micah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Nahum.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Nehemiah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Numbers.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Obadiah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Proverbs.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Psalms.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Ruth.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Samuel1.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Samuel2.cs" />
+    <Compile Include="NetBible\Books\Old Testament\SongOfSolomon.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Zechariah.cs" />
+    <Compile Include="NetBible\Books\Old Testament\Zephaniah.cs" />
+    <Compile Include="NetBible\Books\PurposeVerses.cs" />
     <Compile Include="VerseObj.cs" />
     <Compile Include="Plugins\Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,16 +160,7 @@
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NetBible\NetBible.csproj">
-      <Project>{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}</Project>
-      <Name>NetBible</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PlanPatch\PlanPatch.vbproj">
-      <Project>{732E944A-8808-4AB6-97D3-4E2F78133F2A}</Project>
-      <Name>PlanPatch</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

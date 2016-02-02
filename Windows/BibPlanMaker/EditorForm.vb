@@ -1,9 +1,7 @@
 ﻿Imports System.IO
 Imports System.Net
-Imports BibPlans
 Imports NetBible.Books
 Imports Newtonsoft.Json
-Imports Power_of_God
 Imports Power_of_God_Lib.BibPlan
 
 Public Class EditorForm
@@ -35,8 +33,7 @@ Public Class EditorForm
     Dim _verseList As New List(Of List(Of VerseObj))
 
     Private Sub EditorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        Bible.SetLocation("bible.xml")
+        'NetBible.Books.Bible.SetLocation("bible.xml")
         For Each b In Bible.AllBooks()
             cboBookStart.Items.Add(b.Name)
             cboBookEnd.Items.Add(b.Name)
@@ -313,5 +310,4 @@ Public Class EditorForm
 
 
 End Class
-
 
