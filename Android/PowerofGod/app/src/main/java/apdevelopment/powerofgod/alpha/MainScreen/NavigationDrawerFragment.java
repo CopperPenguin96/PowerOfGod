@@ -108,7 +108,6 @@ public class NavigationDrawerFragment extends Fragment {
                         "Lessons",
                         "Bible Plans",
                         "Daily Scripture",
-                        "Radio",
                         "About"
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);

@@ -6,6 +6,7 @@ using NetBible.Books;
 using Newtonsoft.Json.Linq;
 using Power_of_God.pSystem;
 using Power_of_God.User;
+using Power_of_God_Lib.BibPlan;
 
 namespace Power_of_God
 {
@@ -104,13 +105,7 @@ namespace Power_of_God
             return finalString + fileLines.ElementAt(0);
         }
     }
-
-    public class VerseObj
-    {
-        public string Book;
-        public int Chapter;
-        public int Verse;
-    }
+    
     public class DailyScriptureException : Exception
     {
         public DailyScriptureException()

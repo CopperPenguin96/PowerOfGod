@@ -1,0 +1,13 @@
+-----Power of God Error Log-----
+
+Exception Message: DailyScripture
+Power_of_God.DailyScriptureException: DailyScripture ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.WebClient.DownloadFile(Uri address, String fileName)
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Power_of_God.DailyScripture.GetDailyScripture() in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\DailyScripture.cs:line 86
+   --- End of inner exception stack trace ---
+
+
+
+
+Log wrote at Monday, February 1, 2016

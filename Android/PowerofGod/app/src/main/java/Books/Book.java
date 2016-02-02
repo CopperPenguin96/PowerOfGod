@@ -6,6 +6,7 @@ import javax.xml.parsers.*;
 import org.w3c.dom.*;
 import java.util.*;
 
+import apdevelopment.powerofgod.alpha.Files;
 import apdevelopment.powerofgod.alpha.User.Settings.Settings;
 
 
@@ -38,6 +39,31 @@ public class Book
 		this.setName("Do Not Use");
 		this.setChapterCount(0);
 		this.setBookNum(0);
+	}
+
+	public int verseCount(int chapterLocal)
+	{
+		try {
+			InputStream is = Bible.Bible.StartActivityContext.getAssets().open(GetScriptureVersion() + ".xml");
+			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document doc = db.parse(is);
+			doc.getDocumentElement().normalize();
+			System.out.println("Root element " + doc.getDocumentElement().getNodeName());
+			NodeList nodeLst = doc.getElementsByTagName("book");
+			System.out.println(nodeLst.item(0).getAttributes().item(0));
+			Node[] nL = convertToArray(nodeLst);
+			for (Node n: nL) {
+				if (GetAttribute(n).equals(this.getName())) {
+					Node chapNode = n.getChildNodes().item(ToOdd(chapterLocal));
+					return chapNode.getChildNodes().getLength() / 2;
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // It failed :(
 	}
 
 	public String readFormattedVerse(int chapter, int verse) {

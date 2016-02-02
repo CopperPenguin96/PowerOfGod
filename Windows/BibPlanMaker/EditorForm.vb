@@ -3,6 +3,8 @@ Imports System.Net
 Imports BibPlans
 Imports NetBible.Books
 Imports Newtonsoft.Json
+Imports Power_of_God
+Imports Power_of_God_Lib.BibPlan
 
 Public Class EditorForm
     Private Sub chkSaveUnknown_CheckedChanged(sender As Object, e As EventArgs) Handles chkSaveUnknown.CheckedChanged
@@ -33,6 +35,7 @@ Public Class EditorForm
     Dim _verseList As New List(Of List(Of VerseObj))
 
     Private Sub EditorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Bible.SetLocation("bible.xml")
         For Each b In Bible.AllBooks()
             cboBookStart.Items.Add(b.Name)
@@ -44,11 +47,12 @@ Public Class EditorForm
             Dim obj = JsonConvert.DeserializeObject(Of BibPlan)(fileReader)
             txtName.Text = obj.Name
             _verseList = obj.VerseList
+            _verseList = New List(Of List(Of VerseObj))
             For Each x In obj.VerseList
                 Dim e1 = x.ElementAt(0)
                 Dim e2 = x.ElementAt(1)
                 lboVerses.Items.Add(e1.Book & " " & e1.Chapter & ":" & e1.Verse &
-                                    " to " & e2.Book & " " & e2.Chapter & ":" & e2.Verse)
+                                       " to " & e2.Book & " " & e2.Chapter & ":" & e2.Verse)
             Next
             Select Case obj.VerseAuthor
                 Case "Unknown"
@@ -257,12 +261,12 @@ Public Class EditorForm
         Else
             Try
                 obj = New BibPlan(txtName.Text,
-                                  New CMd5Hash().Md5FromString(txtName.Text & ' Unique ID system for idenitfication of Bible Plans
-                                                              _userName &
-                                                              Now.ToLongDateString() &
-                                                              Now.ToLongTimeString()),
-                                  _verseList,
-                                  _userName, True)
+                    New CMd5Hash().Md5FromString(txtName.Text & ' Unique ID system for idenitfication of Bible Plans
+                    _userName &
+                    Now.ToLongDateString() &
+                    Now.ToLongTimeString()),
+                    _verseList,
+                    _userName, True)
                 Dim jsonString = JsonConvert.SerializeObject(obj)
                 SaveFileDialog1.ShowDialog()
                 Dim fileWriter = File.CreateText(SaveFileDialog1.FileName)
@@ -309,4 +313,5 @@ Public Class EditorForm
 
 
 End Class
+
 

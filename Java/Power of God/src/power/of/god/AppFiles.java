@@ -59,7 +59,7 @@ public class AppFiles {
         catch (Exception ex)
         {
                 throw new Exception("Was not able to retrieve to save", ex);
-            }
+        }
     }
     //THIS METHOD WILL OVERWRITE THE FILE
     public static void WriteToFile(int fileIndex, String[] Contents) throws Exception

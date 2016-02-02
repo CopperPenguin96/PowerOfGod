@@ -2,7 +2,13 @@ package apdevelopment.powerofgod.alpha;
 
 import android.os.Environment;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -40,5 +46,39 @@ public class Files {
             loopCount++;
         }
         return arrayHere;
+    }
+
+    public static void WriteToOrdinaryFile(File obj, String[] Contents) throws Exception
+    {
+        try {
+            // Assume default encoding.
+            FileWriter fileWriter = new FileWriter(obj);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            String writeThis = "";
+            for (String s:Contents)
+            {
+                writeThis += s + "\n";
+            }
+            bufferedWriter.write(writeThis);
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("Was not able to retrieve to save", ex);
+        }
+    }
+
+    public static String ReadAllText(File f) throws IOException
+    {
+        FileReader fr = new FileReader(f);
+        BufferedReader textReader = new BufferedReader(fr);
+
+        String fullText = "";
+        String line;
+        while((line = textReader.readLine()) != null) {
+            fullText += line;
+        }
+        return fullText;
     }
 }

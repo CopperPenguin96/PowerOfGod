@@ -162,7 +162,6 @@ public class BibPlanDialog extends javax.swing.JFrame {
         File cText = new File(dir + new SimpleDateFormat("dd.MM.yyyy").format(currentDate));
         for (int x = 0; x <= currentDay; x++)
         {
-            
             try
             {
                 if (!dirObj.list()[x].contains(currentDate.toString()))

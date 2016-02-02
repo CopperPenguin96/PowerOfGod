@@ -23,21 +23,7 @@
  */
 package apdevelopment.powerofgod.alpha.DailyVerses;
 
-import android.app.AlertDialog;
 import android.os.Looper;
-import android.webkit.WebView;
-
-import Bible.Bible;
-import Bible.BibleVersion;
-import Books.Book;
-import apdevelopment.powerofgod.alpha.Files;
-import apdevelopment.powerofgod.alpha.User.Settings.Settings;
-
-import java.io.*;
-import java.net.*;
-import java.text.*;
-import java.util.*;
-import java.util.logging.*;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -45,9 +31,23 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.joda.time.LocalDateTime;
-import org.joda.time.format.DateTimeFormatter;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import Bible.Bible;
+import Bible.BibleVersion;
+import Books.Book;
+import apdevelopment.powerofgod.alpha.User.Settings.Settings;
 
 /**
  *
@@ -193,7 +193,7 @@ public class DailyScripture {
             t.start();
             while (!Book.DSFinished)
             {
-                System.out.println("Waiting...");
+
             }
             return finalStr() + fileLines().get(0);
         } catch(Exception ex) {

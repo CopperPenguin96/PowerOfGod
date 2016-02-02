@@ -3,13 +3,12 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
-
     defaultConfig {
         applicationId "apdevelopmenta.powerofgod"
-        minSdkVersion 9
+        minSdkVersion 11
         targetSdkVersion 21
         versionCode 6
-        versionName "Alpha 1.4"
+        versionName "Alpha 1.5"
     }
     buildTypes {
         release {
@@ -41,4 +40,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:support-v4:21.0.3'
     compile files('libs/joda-time-2.9.jar')
+    compile files('C:/Users/apotter96/Docs/Programs/Power of God/Project/Android/PowerofGod/libs/gson-2.5.jar')
 }

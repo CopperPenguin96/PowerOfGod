@@ -30,3 +30,6 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PlanPatch\obj\Debu
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.xml
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PlanPatch\obj\Debug\PlanPatch.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\PlanPatch.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\PlanPatch.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\PlanPatch.xml

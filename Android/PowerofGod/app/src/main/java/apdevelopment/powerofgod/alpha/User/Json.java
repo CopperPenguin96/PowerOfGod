@@ -6,14 +6,13 @@ import java.io.FileWriter;
 
 import apdevelopment.powerofgod.alpha.Files;
 import apdevelopment.powerofgod.alpha.Exceptions.JsonWriteException;
-import apdevelopment.powerofgod.alpha.User.UserInfo;
 
 /**
  * Created by apotter96 on 4/8/2015.
  */
 public class Json {
 
-    public static void Write(UserInfo uI) throws JsonWriteException {
+   /* public static void Write(UserInfo uI) throws JsonWriteException {
         try {
             JSONObject obj = new JSONObject();
             obj.put("name", uI.name);
@@ -41,7 +40,7 @@ public class Json {
         } catch (Exception e) {
             throw new JsonWriteException(e);
         }
-    }
+    }*/
     public static void Read()
     {
 

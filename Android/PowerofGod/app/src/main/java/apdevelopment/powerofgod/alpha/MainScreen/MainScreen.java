@@ -3,12 +3,14 @@ package apdevelopment.powerofgod.alpha.MainScreen;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Looper;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
@@ -16,22 +18,29 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.io.IOException;
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import javax.script.ScriptException;
-
-import Books.NewTestament.*;
-import apdevelopment.powerofgod.alpha.ActivityBases.*;
-import apdevelopment.powerofgod.alpha.DailyVerses.*;
-import apdevelopment.powerofgod.alpha.*;
-import apdevelopment.powerofgod.alpha.Network.*;
+import apdevelopment.powerofgod.alpha.BibPlans.Parser;
+import apdevelopment.powerofgod.alpha.DailyVerses.DailyScripture;
+import apdevelopment.powerofgod.alpha.DailyVerses.DailyScriptureReadException;
+import apdevelopment.powerofgod.alpha.Events.PowerListEvent;
+import apdevelopment.powerofgod.alpha.Events.PowerListListener;
+import apdevelopment.powerofgod.alpha.MsgBox.YesNoMsgBox;
+import apdevelopment.powerofgod.alpha.Network.TitleExtractor;
+import apdevelopment.powerofgod.alpha.Network.Updater;
+import apdevelopment.powerofgod.alpha.Network.UpdaterConnect;
+import apdevelopment.powerofgod.alpha.PrivacyPolicyActivity;
+import apdevelopment.powerofgod.alpha.R;
 import apdevelopment.powerofgod.alpha.User.Settings.Settings;
 import apdevelopment.powerofgod.alpha.User.Settings.SettingsActivity;
 
@@ -54,6 +63,111 @@ public class MainScreen extends ActionBarActivity
         aDialog.setMessage(message);
         aDialog.show();
     }
+
+    public void listPlans(View v)
+    {
+        String filePath = "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans";
+        File filePathObj = new File(filePath);
+        if (!filePathObj.exists()) filePathObj.mkdirs();
+        ArrayList<String> items = new ArrayList<>();
+        for (String listItems:filePathObj.list())
+        {
+            if (listItems.substring(listItems.length() - 7).contains("bibplan"))
+            {
+                items.add(listItems);
+            }
+        }
+        if (items.isEmpty())
+        {
+            YesNoMsgBox ynBox = new YesNoMsgBox("No Plans Available",
+                    "You don't have any plans added! Would you like to download some?", this);
+            boolean response = ynBox.Show();
+            if (response)
+            {
+                System.out.println("Starting download screen. User would like to download Bible Plans");
+                // TODO - Open Download Activity
+            }
+            else
+            {
+                System.out.println("User rejected offer to download plans.");
+            }
+        }
+        else
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
+                    this, android.R.layout.select_dialog_singlechoice);
+            for (String item:items)
+            {
+                arrayAdapter.add(item);
+            }
+            builder.setNegativeButton("Cancel",
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    }
+            );
+            builder.setAdapter(
+                    arrayAdapter,
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ChangedItem(arrayAdapter.getItem(which));
+                        }
+                    }
+            );
+        }
+    }
+
+    private void ChangedItem(String i)
+    {
+        String dir = "/sdcard/Android/data/apdevelopment.powerofgod/" + i.replace(".bibplan", "") + "/";
+        File dirObj = new File(dir);
+        if (!dirObj.exists())
+        {
+            dirObj.mkdirs();
+        }
+        Date currentDate = new Date();
+        int currentDay = dirObj.list().length;
+        File cText = new File(dir + new SimpleDateFormat("dd.MM.yyyy").format(currentDate));
+        for (int x = 0; x <= currentDay; x++)
+        {
+            try
+            {
+                if (!dirObj.list()[x].contains(currentDate.toString()))
+                {
+                    try
+                    {
+                        cText.createNewFile();
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            catch (Exception ex) {
+                try
+                {
+                    ex.printStackTrace();
+                    cText.createNewFile();
+                }
+                catch (Exception e4)
+                {
+                    ex.printStackTrace();
+                    e4.printStackTrace();
+                }
+            }
+        }
+
+    }
+    public void UpdateList()
+    {
+
+        Parser.PlanDays.add("f");
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +183,7 @@ public class MainScreen extends ActionBarActivity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
         PlaceholderFragment.CurrentScreenID = R.layout.fragment_main_screen;
-       /* try {
+        try {
             UpdaterConnect uConnect = new UpdaterConnect();
             Thread t = new Thread(new Runnable() {
 
@@ -79,23 +193,29 @@ public class MainScreen extends ActionBarActivity
                         Looper.prepare();
                         String updateMessage = Updater.UpdateNotice();
                         if (!Updater.UpdateWord().equals("Updated")) ShowMsgBox("Update Information", Updater.UpdateNotice());
-                        System.out.println("Updater: " + Updater.UpdateNotice());
                         Looper.loop();
                     } catch (Exception e) {
-                        System.out.println("----------");
                         e.printStackTrace();
-                        System.out.println("****");
                     }
                 }
             });
             t.start();
         } catch (Exception e) {
             e.printStackTrace();
-        } */ // Disabled for Alpha 1.4.1 because Alpha 1.4.1 is an Android-Only Release
-
+        }
+        Parser.PlanDays.addListListener(new PowerListListener() {
+            @Override
+            public void listReceived(PowerListEvent event) {
+                for (Object x : event.list()) {
+                    System.out.println(x);
+                }
+            }
+        });
+        UpdateList();
         TimerTask task = new Exit();
         Timer timer = new Timer();
         timer.schedule(task, 1, 1);
+
     }
 
     @Override
@@ -153,10 +273,6 @@ public class MainScreen extends ActionBarActivity
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_dailyverses;
                 break;
             case 5:
-                mTitle = getString(R.string.title_section5);
-                PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
-                break;
-            case 6:
                 mTitle = getString(R.string.title_section6);
                 PlaceholderFragment.CurrentScreenID = R.layout.fragment_about_screen; //Released in Alpha 1.3
                 break;

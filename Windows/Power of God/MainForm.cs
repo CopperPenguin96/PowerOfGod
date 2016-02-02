@@ -12,6 +12,7 @@ using NetBible.Books;
 using Power_of_God.BibPlan;
 using Power_of_God.pSystem;
 using Power_of_God.User;
+using Power_of_God_Lib.pSystem;
 using PurposeVerses = Power_of_God.pSystem.PurposeVerses;
 
 namespace Power_of_God
@@ -261,46 +262,6 @@ namespace Power_of_God
         BiblePlans
     }
 
-    public static class GetallFilesFromHttp
-    {
-        public static string GetDirectoryListingRegexForUrl(string url)
-        {
-            return "\\\"([^\"]*)\\\"";
-        }
-
-        public static List<string> Files = new List<string>();
-
-        public static void Write()
-        {
-            var fw = File.CreateText("tempradio.txt");
-            fw.Write(Files.Aggregate("", (current, f) => current + ("\n" + f)));
-            fw.Flush();
-            fw.Close();
-
-        }
-        public static void ListDiractory(string url)
-        {
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            using (var response = (HttpWebResponse)request.GetResponse())
-            {
-                // ReSharper disable once AssignNullToNotNullAttribute
-                using (var reader = new StreamReader(response.GetResponseStream()))
-                {
-                    var html = reader.ReadToEnd();
-
-                    var regex = new Regex(GetDirectoryListingRegexForUrl(url));
-                    var matches = regex.Matches(html);
-                    if (matches.Count > 0)
-                    {
-                        foreach (var match in matches.Cast<Match>().Where(match => match.Success))
-                        {
-                            Files.Add(match.ToString());
-                        }
-                    }
-                }
-                Write();
-            }
-        }
-    }
+   
 }
 

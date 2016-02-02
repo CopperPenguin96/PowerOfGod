@@ -14,3 +14,5 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\bin\Debug
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.csprojResolveAssemblyReference.cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlans\obj\Debug\BibPlans.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\BibPlans.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\BibPlans.pdb

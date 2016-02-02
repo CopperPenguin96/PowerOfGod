@@ -1,0 +1,21 @@
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\Power of God Lib.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\Power of God Lib.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\BibPlans.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\NetBible.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\PlanPatch.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\BibPlans.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\NetBible.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\PlanPatch.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\PlanPatch.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God.BibPlan.BibPlanDialog.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God.BibPlan.DownloadForm.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God.User.SettingsForm.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csproj.GenerateResource.Cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God Lib.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God Lib.pdb

@@ -42,54 +42,54 @@ public class Book
 		return this.getName() + " " + chapter +
 			":" + verse + " (" + Files.needVers + ") - \"" + readPlainVerse(chapter, verse) + "\"";
 	}
-        public static boolean IsKjv()
-        {
-            System.out.print(Files.needVers);
-            return true;
-        }
-        public int verseCount(int chapterLocal)
-        {
-            try {
-		File file = new File(Files.GetScripturePath());
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document doc = db.parse(file);
-		doc.getDocumentElement().normalize();
-		NodeList nodeLst = doc.getElementsByTagName("book");
-		Node[] nL = convertToArray(nodeLst);
-		for (Node n: nL) {
-                    if (GetAttribute(n).equals(this.getName())) {
-                        Node chapNode = n.getChildNodes().item(ToOdd(chapterLocal));
-                        return chapNode.getChildNodes().getLength() / 2;
-                    }
+    public static boolean IsKjv()
+    {
+        System.out.print(Files.needVers);
+        return true;
+    }
+    public int verseCount(int chapterLocal)
+    {
+        try {
+            File file = new File(Files.GetScripturePath());
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(file);
+            doc.getDocumentElement().normalize();
+            NodeList nodeLst = doc.getElementsByTagName("book");
+            Node[] nL = convertToArray(nodeLst);
+            for (Node n: nL) {
+                if (GetAttribute(n).equals(this.getName())) {
+                    Node chapNode = n.getChildNodes().item(ToOdd(chapterLocal));
+                    return chapNode.getChildNodes().getLength() / 2;
                 }
-            } catch (ParserConfigurationException | SAXException | IOException | DOMException | NullPointerException e) {
-                System.out.println(IsKjv());
-                e.printStackTrace();
             }
-            return -1; // It failed :(
+        } catch (ParserConfigurationException | SAXException | IOException | DOMException | NullPointerException e) {
+            System.out.println(IsKjv());
+            e.printStackTrace();
         }
+        return -1; // It failed :(
+    }
 	public String readPlainVerse(int chapter, int verse) {
-            try {
-		File file = new File(Files.GetScripturePath());
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		DocumentBuilder db = dbf.newDocumentBuilder();
-		Document doc = db.parse(file);
-		doc.getDocumentElement().normalize();
-		NodeList nodeLst = doc.getElementsByTagName("book");
-		Node[] nL = convertToArray(nodeLst);
-		for (Node n: nL) {
-                    if (GetAttribute(n).equals(this.getName())) {
-                        Node chapNode = n.getChildNodes().item(ToOdd(chapter));
-			Node versBode = chapNode.getChildNodes().item(ToOdd(verse));
-			return versBode.getTextContent();
-                    }
+        try {
+            File file = new File(Files.GetScripturePath());
+            DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+            DocumentBuilder db = dbf.newDocumentBuilder();
+            Document doc = db.parse(file);
+            doc.getDocumentElement().normalize();
+            NodeList nodeLst = doc.getElementsByTagName("book");
+            Node[] nL = convertToArray(nodeLst);
+            for (Node n: nL) {
+                if (GetAttribute(n).equals(this.getName())) {
+                    Node chapNode = n.getChildNodes().item(ToOdd(chapter));
+                    Node versBode = chapNode.getChildNodes().item(ToOdd(verse));
+                    return versBode.getTextContent();
                 }
-            } catch (ParserConfigurationException | SAXException | IOException | DOMException | NullPointerException e) {
-                System.out.println(IsKjv());
-                e.printStackTrace();
             }
-            return "Error loading verse";
+        } catch (ParserConfigurationException | SAXException | IOException | DOMException | NullPointerException e) {
+            System.out.println(IsKjv());
+            e.printStackTrace();
+        }
+        return "Error loading verse";
 	}
 	static int ToOdd(int normz) {
 		return normz + (normz - 1);
