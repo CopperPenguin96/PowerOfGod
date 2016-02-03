@@ -23,11 +23,13 @@
  */
 package apdevelopment.powerofgod.alpha.Network;
 
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.zip.*;
+import java.util.zip.GZIPInputStream;
 
 /**
  *
@@ -38,7 +40,7 @@ public class Updater {
     private static final String VersionPrefix = "Alpha";
     private static final String[] CurrentVersion = new String[]
             {
-                    "1", "3", "0", null
+                    "1", "5", null, null
             };
     private static String TogetherNumbers()
     {

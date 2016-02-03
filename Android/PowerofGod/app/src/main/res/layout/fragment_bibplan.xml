@@ -23,7 +23,7 @@
 
         <WebView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/webView"
             android:layout_below="@id/btnListPlan"
             android:layout_alignParentLeft="true"
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:text="Downoad"
             android:id="@+id/buttonDwl"
+            android:onClick="DownloadPlans"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />

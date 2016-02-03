@@ -3,7 +3,6 @@ package apdevelopment.powerofgod.alpha.MainScreen;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Looper;
@@ -20,7 +19,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.io.File;
@@ -30,13 +28,14 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import Bible.Bible;
 import apdevelopment.powerofgod.alpha.BibPlans.Parser;
 import apdevelopment.powerofgod.alpha.BibPlans.PowerList;
 import apdevelopment.powerofgod.alpha.DailyVerses.DailyScripture;
 import apdevelopment.powerofgod.alpha.DailyVerses.DailyScriptureReadException;
 import apdevelopment.powerofgod.alpha.Events.PowerListEvent;
 import apdevelopment.powerofgod.alpha.Events.PowerListListener;
-import apdevelopment.powerofgod.alpha.MsgBox.YesNoMsgBox;
+import apdevelopment.powerofgod.alpha.MsgBox.ListMsgBox;
 import apdevelopment.powerofgod.alpha.Network.TitleExtractor;
 import apdevelopment.powerofgod.alpha.Network.Updater;
 import apdevelopment.powerofgod.alpha.Network.UpdaterConnect;
@@ -67,59 +66,10 @@ public class MainScreen extends ActionBarActivity
 
     public void listPlans(View v)
     {
-        String filePath = "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans";
-        File filePathObj = new File(filePath);
-        if (!filePathObj.exists()) filePathObj.mkdirs();
-        ArrayList<String> items = new ArrayList<>();
-        for (String listItems:filePathObj.list())
-        {
-            if (listItems.substring(listItems.length() - 7).contains("bibplan"))
-            {
-                items.add(listItems);
-            }
-        }
-        if (items.isEmpty())
-        {
-            YesNoMsgBox ynBox = new YesNoMsgBox("No Plans Available",
-                    "You don't have any plans added! Would you like to download some?", this);
-            boolean response = ynBox.Show();
-            if (response)
-            {
-                System.out.println("Starting download screen. User would like to download Bible Plans");
-                // TODO - Open Download Activity
-            }
-            else
-            {
-                System.out.println("User rejected offer to download plans.");
-            }
-        }
-        else
-        {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
-                    this, android.R.layout.select_dialog_singlechoice);
-            for (String item:items)
-            {
-                arrayAdapter.add(item);
-            }
-            builder.setNegativeButton("Cancel",
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    }
-            );
-            builder.setAdapter(
-                    arrayAdapter,
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ChangedItem(arrayAdapter.getItem(which));
-                        }
-                    }
-            );
-        }
+        ListMsgBox lMsgBox = new ListMsgBox("Choose a Plan", "Select the plan that you would like " +
+                "to read from today.", Bible.StartActivityContext, plans());
+        lMsgBox.Show();
+
     }
 
     private void ChangedItem(String i)
@@ -173,7 +123,7 @@ public class MainScreen extends ActionBarActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         Settings.LoadFromJson();
-        Bible.Bible.StartActivityContext = this;
+        Bible.StartActivityContext = this;
         Parser.PlanDays = new PowerList<String>();
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -206,18 +156,31 @@ public class MainScreen extends ActionBarActivity
         Parser.PlanDays.addListListener(new PowerListListener() {
             @Override
             public void listReceived(PowerListEvent event) {
-                for (Object x : event.list()) {
-                    System.out.println(x);
-                }
+
             }
         });
-        UpdateList();
         TimerTask task = new Exit();
         Timer timer = new Timer();
         timer.schedule(task, 1, 1);
 
     }
-
+    public void DownloadPlans(View v)
+    {
+        // TODO - Create a new window for downloading plans
+        // TODO - Create a dialog that says "Please wait..... downloading" with a progress bar
+        // TODO - Downloading Dialog to be called "DownloadMsgBox" and will be used for Downloding
+        // Scripture in Beta 1.0
+    }
+    public ArrayList<String> plans()
+    {
+        File dir = new File("/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/");
+        ArrayList x = new ArrayList<>();
+        for (String x2:dir.list())
+        {
+            x.add(x2);
+        }
+        return x;
+    }
     @Override
     public void onBackPressed() {
         System.exit(0);
@@ -266,7 +229,7 @@ public class MainScreen extends ActionBarActivity
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
-                PlaceholderFragment.CurrentScreenID = R.layout.fragment_feature_notready;
+                PlaceholderFragment.CurrentScreenID = R.layout.fragment_bibplan;
                 break;
             case 4:
                 mTitle = getString(R.string.title_section4);
@@ -330,7 +293,7 @@ public class MainScreen extends ActionBarActivity
 
             View v = inflater.inflate(CurrentScreenID, container, false);
             int[] idArray = new int[]{R.layout.fragment_main_screen, R.layout.fragment_lesson,
-                                      R.layout.fragment_about_screen, 0, R.layout.fragment_dailyverses};
+                                      R.layout.fragment_about_screen, R.layout.fragment_bibplan, R.layout.fragment_dailyverses};
             DailyScripture.DateString();
             if (CurrentScreenID == idArray[0]) {
                 TextView tV = (TextView) v.findViewById(R.id.lblNotice);
@@ -348,7 +311,7 @@ public class MainScreen extends ActionBarActivity
                 CurrentCount = 0;
                 displayedGood = false;
                 ConnectToWebPage(SundayOrThursday, v);
-            } else if (CurrentScreenID == idArray[2]) { // TODO - 3 is Bible Plans! Not started yet!
+            } else if (CurrentScreenID == idArray[2]) {
                 TextView tV2 = (TextView) v.findViewById(R.id.textView3);
                 tV2.setText(Updater.LatestStable());
             } else if (CurrentScreenID == idArray[4]) {
@@ -359,6 +322,10 @@ public class MainScreen extends ActionBarActivity
                     contentText.setText(":( We were unable to retrieve your verse!");
                     e.printStackTrace();
                 }
+            } else if (CurrentScreenID == idArray[3]) {
+                //Parser.UpdateList();
+                WebView wv = (WebView) v.findViewById(R.id.webView);
+                wv.loadUrl("http://godispower.us/Application/welcome_bibplan.html");
             }
             return v;
         }

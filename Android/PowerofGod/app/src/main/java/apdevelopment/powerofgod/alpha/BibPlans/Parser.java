@@ -24,14 +24,15 @@
 package apdevelopment.powerofgod.alpha.BibPlans;
 
 
+import com.google.gson.Gson;
+
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import Books.Book;
-import apdevelopment.powerofgod.alpha.Events.PowerListEvent;
-import apdevelopment.powerofgod.alpha.Events.PowerListListener;
-import apdevelopment.powerofgod.alpha.Events.PowerListObject;
 import apdevelopment.powerofgod.alpha.Files;
 import apdevelopment.powerofgod.alpha.User.Settings.Settings;
 
@@ -55,7 +56,72 @@ public class Parser {
                 Body(v1, v2);
         return html;
     }
-    
+
+    public static void UpdateList(String plan) throws IOException {
+        String dirBase = "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/";
+        File dirBaseObj = new File(dirBase);
+        if (!dirBaseObj.exists())
+        {
+            dirBaseObj.mkdirs();
+        }
+
+        if (plan.substring(plan.lastIndexOf(".")).equals(".bibplan"))
+        {
+            File fileObj = new File(dirBase + plan);
+            BibPlan bObj = BiblicalPlan(Files.ReadAllText(fileObj));
+            String dir = dirBase + plan.replace(".bibplan", "") + "/";
+            File dirObj = new File(dir);
+            if (!dirObj.exists())
+            {
+                dirObj.mkdirs();
+            }
+            Date currentDate = new Date();
+            int currentDay = dirObj.list().length;
+            File cText = new File(dir + new SimpleDateFormat("dd.MM.yyyy").format(currentDate));
+            for (int x = 0; x <= currentDay; x++)
+            {
+                try
+                {
+                    if (!dirObj.list()[x].contains(currentDate.toString()))
+                    {
+                        try
+                        {
+                            cText.createNewFile();
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        ex.printStackTrace();
+                        cText.createNewFile();
+                    }
+                    catch (Exception e4)
+                    {
+                        ex.printStackTrace();
+                        e4.printStackTrace();
+                    }
+                }
+            }
+            Parser.PlanDays.clear();
+            for (int xitem = 0; xitem <= dirObj.list().length; xitem++)
+            {
+                System.out.println("Day #" + xitem + 1);
+                Parser.PlanDays.add("Day #" + xitem);
+            }
+            PlanFileName = "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/" + plan;
+        }
+    }
+    public static String PlanFileName;
+    public static BibPlan BiblicalPlan(String content)
+    {
+        return new Gson().fromJson(content, BibPlan.class);
+    }
     public static int GetBookIndex(String nameStr)
     {
         int loopCount = 0;
