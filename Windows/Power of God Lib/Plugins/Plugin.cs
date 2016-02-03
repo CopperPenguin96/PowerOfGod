@@ -56,6 +56,11 @@ namespace Power_of_God_Lib.Plugins
             CCategory = cat;
         }
 
+
+        public virtual void PerformStartAction()
+        {
+            // Perform the first function done when the user hit the button to enter your plugin
+        }
     }
 
     public enum Category

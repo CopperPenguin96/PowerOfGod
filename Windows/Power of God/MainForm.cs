@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using NetBible.Books;
 using Power_of_God.BibPlan;
 using Power_of_God.pSystem;
 using Power_of_God.User;
 using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.Plugins;
 using PurposeVerses = Power_of_God.pSystem.PurposeVerses;
 
 namespace Power_of_God
@@ -27,16 +23,23 @@ namespace Power_of_God
             }
             InitializeComponent();
             Text = "Power of God " + Updater.LatestStable();
+            SetEventHandlers();
             //const string settingsFile = "power.of.god/settings.json";
             Settings.LoadDefault();
             Settings.LoadFromJson();
-            webBrowser1.Navigated += ChangedTitle;
             SetDefaultContent();
             if (Updater.UpdateWord().ToLower() != "updated")
             {
                 MessageBox.Show(Updater.UpdateNotice(), "Update Notice for Power of God");
             }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
+            PluginReader.LoadPlugins();
+            // TODO - CHECK var X in Plugin Reader to see if it prints the right stuff in a messagebox.show()
+        }
+
+        private void SetEventHandlers()
+        {
+            webBrowser1.Navigated += ChangedTitle;
             Parser.PlanDays.CollectionChanged += CheckChanged;
             headerpanel.MouseDown += panel1_MouseDown;
             headerpanel.MouseUp += panel1_MouseUp;
@@ -44,7 +47,14 @@ namespace Power_of_God
             picMain.MouseDown += panel1_MouseDown;
             picMain.MouseUp += panel1_MouseUp;
             picMain.MouseMove += panel1_MouseMove;
+            UpdateWeb.XBrowser.Navigated += ActivateUrl;
         }
+
+        private void ActivateUrl(object sender, WebBrowserNavigatedEventArgs e)
+        {
+            webBrowser1.DocumentText = UpdateWeb.XBrowser.DocumentText;
+        }
+
         //Global variables;
         private bool _dragging = false;
         //private Point _offset;
@@ -108,18 +118,6 @@ namespace Power_of_God
 
         private void SetDefaultContent()
         {
-
-            webBrowser1.DocumentText =
-                "<html><head><title>Purpose</title></head><body>Welcome to Power of God! Thank you for " +
-                "taking the time to view this app! It could actually change your life!<br><br>If you are using " +
-                "this app expecting favor for a specific denomination, you are in for a surprise! " +
-                "This app is intended to be non-denominational! <br><br>You also may be wondering why such an " +
-                "app exists. Well, I believe that the Holy Bible is true. " +
-                PurposeVerses.GetVerse(0) + " With that in mind, I also believe that the " +
-                "holy power God has is beyond compare. " + PurposeVerses.GetVerse(1) + " I " +
-                "live to serve Jesus Christ, who is God, and will come back to earth take all who " +
-                "believe he died and rose again, to heaven. I use this app as a way to witness, to share " +
-                "this amazing truth. God bless and I hope you learn some stuff about God.</body></html>";
         }
 
         /*private void SetCurrentContent(string x)

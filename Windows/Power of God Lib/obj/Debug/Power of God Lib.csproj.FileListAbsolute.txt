@@ -18,3 +18,4 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\o
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God Lib.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God Lib.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csprojResolveAssemblyReference.cache

@@ -31,6 +31,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import apdevelopment.powerofgod.alpha.BibPlans.Parser;
+import apdevelopment.powerofgod.alpha.BibPlans.PowerList;
 import apdevelopment.powerofgod.alpha.DailyVerses.DailyScripture;
 import apdevelopment.powerofgod.alpha.DailyVerses.DailyScriptureReadException;
 import apdevelopment.powerofgod.alpha.Events.PowerListEvent;
@@ -165,8 +166,7 @@ public class MainScreen extends ActionBarActivity
     }
     public void UpdateList()
     {
-
-        Parser.PlanDays.add("f");
+        // TODO - Update Bible Plan list items here
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,7 +174,7 @@ public class MainScreen extends ActionBarActivity
         setContentView(R.layout.activity_main_screen);
         Settings.LoadFromJson();
         Bible.Bible.StartActivityContext = this;
-
+        Parser.PlanDays = new PowerList<String>();
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();

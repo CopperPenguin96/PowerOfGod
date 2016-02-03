@@ -131,6 +131,8 @@
     <Compile Include="NetBible\Books\Old Testament\Zechariah.cs" />
     <Compile Include="NetBible\Books\Old Testament\Zephaniah.cs" />
     <Compile Include="NetBible\Books\PurposeVerses.cs" />
+    <Compile Include="Plugins\PluginReader.cs" />
+    <Compile Include="pSystem\UpdateWeb.cs" />
     <Compile Include="VerseObj.cs" />
     <Compile Include="Plugins\Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

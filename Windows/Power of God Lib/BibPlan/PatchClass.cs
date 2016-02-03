@@ -11,6 +11,7 @@ namespace Power_of_God_Lib.BibPlan
     {
         private static Book _selectedBookStart;
         private static Book _selectedBookEnd;
+
         private void cboBook_SelectedIndexChanged(object sender, EventArgs e)
         {
             NumChapterStart.Value = 1;
@@ -143,7 +144,7 @@ namespace Power_of_God_Lib.BibPlan
         private static int GetBookIndex(string nameStr)
         {
             dynamic loopCount = 0;
-            foreach (Book b in Bible.AllBooks())
+            foreach (var b in Bible.AllBooks())
             {
                 if (b.Name == nameStr)
                 {
@@ -153,9 +154,22 @@ namespace Power_of_God_Lib.BibPlan
             }
             return -1;
         }
+
+        public void SetBooks(string b1, string b2)
+        {
+            foreach (var b in Bible.AllBooks().Where(b => b.Name == b1))
+            {
+                _selectedBookStart = b;
+            }
+            foreach (var b in Bible.AllBooks().Where(b => b.Name == b2))
+            {
+                _selectedBookEnd = b;
+            }
+        }
+
         public string GetVerse(VerseObj v1Obj, VerseObj v2Obj)
         {
-
+            SetBooks(v1Obj.Book, v2Obj.Book);
             foreach (var bookItem in Bible.AllBooks())
             {
                 CboBookStart.Items.Add(bookItem.Name);
@@ -168,8 +182,8 @@ namespace Power_of_God_Lib.BibPlan
             _numVerseStart.Value = v1Obj.Verse;
             _numVerseEnd.Value = v2Obj.Verse;
 
-            dynamic verseStartString = CboBookStart.SelectedItem + " " + NumChapterStart.Value + ":" + _numVerseStart.Value;
-            dynamic verseEndString = CboBookEnd.SelectedItem + " " + NumChapterEnd.Value + ":" + _numVerseEnd.Value;
+            var verseStartString = CboBookStart.SelectedItem + " " + NumChapterStart.Value + ":" + _numVerseStart.Value;
+            var verseEndString = CboBookEnd.SelectedItem + " " + NumChapterEnd.Value + ":" + _numVerseEnd.Value;
 
             // Dim v1 = v1Obj
             //Dim v2 = v2Obj

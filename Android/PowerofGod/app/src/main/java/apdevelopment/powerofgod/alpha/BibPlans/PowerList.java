@@ -26,19 +26,49 @@ public class PowerList<E> extends ArrayList<E> {
     }
 
     private PowerList<String> _list = PowerList.STRINGLIST;
+    private PowerList<Integer> _listInt = PowerList.INTLIST;
+    private PowerList<Boolean> _listBool = PowerList.BOOLLIST;
     private List _listeners = new ArrayList();
-    @Override
-    public boolean add(Object o)
+    public boolean addString(String o)
     {
         _list.add(o);
         receiveUpdate();
         return true;
     }
-    public synchronized void receiveUpdate(PowerList<String> f)
+    public boolean addInt(int i)
     {
-        if (!_list.equals(f))
+        _listInt.add(i);
+        receiveUpdate();
+        return true;
+    }
+    public boolean addBool(boolean b)
+    {
+        _listBool.add(b);
+        receiveUpdate();
+        return true;
+    }
+    public synchronized void receiveUpdate(PowerList<String> f, PowerType pt)
+    {
+        switch (pt)
         {
-            _fireListEvent();
+            case String:
+                if (!_list.equals(f))
+                {
+                    _fireListEvent();
+                }
+                break;
+            case Integer:
+                if (!_listInt.equals(f))
+                {
+                    _fireListEvent();
+                }
+                break;
+            case Boolean:
+                if (_listBool.equals(f))
+                {
+                    _fireListEvent();
+                }
+                break;
         }
     }
 
@@ -47,6 +77,31 @@ public class PowerList<E> extends ArrayList<E> {
         if (!_list.equals(this))
         {
             _fireListEvent();
+        }
+    }
+
+    public synchronized void receiveUpdate(PowerType pt)
+    {
+        switch (pt)
+        {
+            case String:
+                if (!_list.equals(this))
+                {
+                    _fireListEvent();
+                }
+                break;
+            case Integer:
+                if (!_listInt.equals(this))
+                {
+                    _fireListEvent();
+                }
+                break;
+            case Boolean:
+                if (_listBool.equals(this))
+                {
+                    _fireListEvent();
+                }
+                break;
         }
     }
 
