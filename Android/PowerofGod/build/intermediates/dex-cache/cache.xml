@@ -2,81 +2,88 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-3d16ae361d9e6939b4fe8323e58e70d0a993533c.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\classes-c73bfb2825e1835761785d2b0ba99cc347ed1039.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\js.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a2ce88a3ce55249cd2f0c7d12ce7ef49c14a11d1">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\js-ffaffddc89b015f7b3dad67ece0a21ae925797fa.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\Javax.script_android.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="b322dbaa6e33259c864499a936203472d8d993ba">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\Javax.script_android-916a1776e14a45e3a7146b69feea638c84ec4039.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\classes-cd4ea1b51d60fac35881f7c97076e2b6f946bdb5.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\joda-time-2.9.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="e8a58b7f5853b693b8c4795a714fe77c266c3acc">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\joda-time-2.9-3365d79e5e25a10594f8224681bcec38ea9552f4.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\json-simple-1.1.1.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\json-simple-1.1.1-32694bc84e3ca95cfae2f44220eb408939a27acf.jar" />
-    </item>
-    <item
         jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\httpcore-4.4.1.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="f5aa318bda4c6c8d688c9d00b90681dcd82ce636">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\httpcore-4.4.1-245162b4f9d5bf688c7aacc4ce0aeeb87c40a9d8.jar" />
-    </item>
-    <item
-        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\httpclient-4.5.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="a1e6cbb3cc2c5f210dd1310ff9fcb2c09c0d1438">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\httpclient-4.5-32750bc5aa3fea6a49cd5f9e93f9d6cef6441980.jar" />
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\httpcore-4.4.1-245162b4f9d5bf688c7aacc4ce0aeeb87c40a9d8.jar" />
     </item>
     <item
         jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\gson-2.5.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="686c608d1805b6d4d425ec4459e88164ffc85870">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\gson-2.5-76c349251f1541864bb623ea09814483d37d4e3d.jar" />
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\gson-2.5-76c349251f1541864bb623ea09814483d37d4e3d.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\libs\jsoup-1.8.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3a86e137575e4a45f5a9eec407f8135512e823a2">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\jsoup-1.8.3-263ec891e29eed94fae21a7d8e3c36dc598e574e.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\httpclient-4.5.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a1e6cbb3cc2c5f210dd1310ff9fcb2c09c0d1438">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\httpclient-4.5-32750bc5aa3fea6a49cd5f9e93f9d6cef6441980.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-cd4ea1b51d60fac35881f7c97076e2b6f946bdb5.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\classes-c73bfb2825e1835761785d2b0ba99cc347ed1039.jar" />
     </item>
     <item
         jar="C:\Users\apotter96\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-bc0cb292e4fdfb5545a7beb0666a79b095afe34e.jar" />
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\support-annotations-21.0.3-bc0cb292e4fdfb5545a7beb0666a79b095afe34e.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\jars\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\internal_impl-21.0.3-3d16ae361d9e6939b4fe8323e58e70d0a993533c.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\json-simple-1.1.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5d6f9b6a9ddca2a28c0216cc44efb2e20d9c23b5">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\json-simple-1.1.1-32694bc84e3ca95cfae2f44220eb408939a27acf.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\Javax.script_android.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b322dbaa6e33259c864499a936203472d8d993ba">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\Javax.script_android-916a1776e14a45e3a7146b69feea638c84ec4039.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\js.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="a2ce88a3ce55249cd2f0c7d12ce7ef49c14a11d1">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\js-ffaffddc89b015f7b3dad67ece0a21ae925797fa.jar" />
+    </item>
+    <item
+        jar="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\libs\joda-time-2.9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e8a58b7f5853b693b8c4795a714fe77c266c3acc">
+        <dex dex="C:\Users\apotter96\Docs\Programs\Power of God\Project\Android\PowerofGod\app\build\intermediates\pre-dexed\release\joda-time-2.9-3365d79e5e25a10594f8224681bcec38ea9552f4.jar" />
     </item>
 
 </items>

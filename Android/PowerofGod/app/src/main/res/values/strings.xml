@@ -27,5 +27,6 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_yyyy">yyyy</string>
+    <string name="title_activity_download">DownloadActivity</string>
 
 </resources>

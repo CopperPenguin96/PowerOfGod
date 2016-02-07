@@ -1,13 +1,14 @@
 package Books;
-import android.content.Context;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
-import java.io.*;
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
-import java.util.*;
+import java.io.InputStream;
 
-import apdevelopment.powerofgod.alpha.Files;
-import apdevelopment.powerofgod.alpha.User.Settings.Settings;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import apdevelopment.powerofgod.alphaphase.User.Settings.Settings;
 
 
 //Default book class
