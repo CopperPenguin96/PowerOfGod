@@ -40,6 +40,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.android.support:support-v4:21.0.3'
     compile files('libs/joda-time-2.9.jar')
-    compile files('C:/Users/apotter96/Docs/Programs/Power of God/Project/Android/PowerofGod/libs/gson-2.5.jar')
-    compile files('C:/Users/apotter96/Docs/Programs/Power of God/Project/Android/PowerofGod/libs/jsoup-1.8.3.jar')
+    compile files('libs/gson-2.5.jar')
+    compile files('libs/jsoup-1.8.3.jar')
 }

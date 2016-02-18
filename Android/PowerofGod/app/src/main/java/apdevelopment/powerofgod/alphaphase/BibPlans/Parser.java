@@ -46,8 +46,7 @@ public class Parser {
     public static String HtmlText(String bibPlanFileName, int day) throws IOException
     {
         BibPlan bibPlan = BibPlanParser.BiblicalPlan(Files.ReadAllText(new File(bibPlanFileName)));
-        String html = "<html><head><title>(Bible Plan) " + bibPlan.Name + "</title></head>" +
-                "<body>Today's Reading <b>";
+        String html = "Today's Reading <b>";
         ArrayList<ArrayList<VerseObj>> vs = bibPlan.VerseList;
         VerseObj v1 = vs.get(day).get(0);
         VerseObj v2 = vs.get(day).get(1);
@@ -59,6 +58,10 @@ public class Parser {
 
     public static void UpdateList(String plan) throws IOException {
         String dirBase = "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/";
+        if (plan.contains(dirBase))
+        {
+            dirBase = "";
+        }
         File dirBaseObj = new File(dirBase);
         if (!dirBaseObj.exists())
         {

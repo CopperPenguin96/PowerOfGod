@@ -29,6 +29,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import Bible.Bible;
+import apdevelopment.powerofgod.alphaphase.MsgBox.MsgBox;
+import apdevelopment.powerofgod.alphaphase.MsgBox.PlanListMsgBox;
 import apdevelopment.powerofgod.alphaphase.R;
 import apdevelopment.powerofgod.alphaphase.BibPlans.DownloadActivity;
 import apdevelopment.powerofgod.alphaphase.BibPlans.Parser;
@@ -64,9 +66,15 @@ public class MainScreen extends ActionBarActivity
 
     public void listPlans(View v)
     {
-        ListMsgBox lMsgBox = new ListMsgBox("Choose a Plan", "Select the plan that you would like " +
-                "to read from today.", Bible.StartActivityContext, plans());
-        lMsgBox.Show();
+        try {
+            PlanListMsgBox lMsgBox = new PlanListMsgBox("Choose a Plan", "Select the plan that you would like " +
+                    "to read from today.", Bible.StartActivityContext, plans());
+            lMsgBox.Show();
+        }
+        catch (Exception ex)
+        {
+            new MsgBox("Woops!", "Before you can select one, you need to download one!\n\nIf you already have, you have to restart the app before using it", this).Show();
+        }
 
     }
 
@@ -166,6 +174,7 @@ public class MainScreen extends ActionBarActivity
                 this, "http://godispower.us/Application/kjv.xml", "/sdcard/test.xml",
                 true, false, ProgressDialog.STYLE_HORIZONTAL
         ).Show();*/
+
         TimerTask task = new Exit();
         Timer timer = new Timer();
         timer.schedule(task, 1, 1);
@@ -179,13 +188,15 @@ public class MainScreen extends ActionBarActivity
         // Scripture in Beta 1.0
         startActivity(new Intent(this, DownloadActivity.class));
     }
+
     public ArrayList<String> plans()
     {
         File dir = new File("/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/");
-        ArrayList x = new ArrayList<>();
+        ArrayList<String> x = new ArrayList<>();
         for (String x2:dir.list())
         {
             x.add(x2);
+            System.out.println(x2);
         }
         return x;
     }
@@ -344,8 +355,18 @@ public class MainScreen extends ActionBarActivity
             } else if (CurrentScreenID == idArray[3]) {
                 //Parser.UpdateList();
                 WebView wv = (WebView) v.findViewById(R.id.webView);
+                PlanListMsgBox.myWebView = wv;
                 wv.loadUrl("http://godispower.us/Application/welcome_bibplan.html");
-                if (plans().size() < 1)
+                int neededItem = -1;
+                try
+                {
+                    neededItem = plans().size();
+                }
+                catch (Exception ex)
+                {
+                    // Pass. Error found
+                }
+                if (neededItem == -1)
                 {
                     YesNoMsgBox noPlansBox = new YesNoMsgBox("No Plans", "You don't have any plans downloaded yet. " +
                             "Would you like to download some now?", Bible.StartActivityContext);
@@ -355,6 +376,9 @@ public class MainScreen extends ActionBarActivity
                                 DownloadActivity.class));
                     }
                     // TODO use wv.loadData("<html></html>", "text/html", "UTF-8"); to load into webview content
+                }
+                else {
+
                 }
             }
             return v;

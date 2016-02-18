@@ -17,7 +17,7 @@ import java.net.URL;
 /**
  * Created by apotter96 on 2/4/2016.
  */
-public class ProgressBarMsgBox extends MsgBox {
+public class                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ProgressBarMsgBox extends MsgBox {
     ProgressDialog mProgressDialog;
     private class DownloadTask extends AsyncTask<String, Integer, String> {
 

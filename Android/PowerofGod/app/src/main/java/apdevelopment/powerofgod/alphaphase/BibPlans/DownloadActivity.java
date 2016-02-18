@@ -1,7 +1,9 @@
 package apdevelopment.powerofgod.alphaphase.BibPlans;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,12 +17,14 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
 import apdevelopment.powerofgod.alphaphase.ErrorLogging;
 import apdevelopment.powerofgod.alphaphase.Global;
 import apdevelopment.powerofgod.alphaphase.MsgBox.MsgBox;
+import apdevelopment.powerofgod.alphaphase.MsgBox.ProgressBarMsgBox;
 import apdevelopment.powerofgod.alphaphase.R;
 
 public class DownloadActivity extends ActionBarActivity {
@@ -39,40 +43,59 @@ public class DownloadActivity extends ActionBarActivity {
                     try {
                         new Thread() {
                             public void run() {
+                                Looper.prepare();
                                 try {
                                     String username = txtUser().getText().toString();
                                     ArrayList<String> items = new ArrayList<>();
                                     ArrayList<String> finalList = new ArrayList<>();
                                     try {
                                         Document doc = Jsoup.connect("http://godispower.us/BiblePlans/" + username + "/").get();
-                                        for (Element file : doc.select("td.right td a")) {
+                                        for (Element file: doc.getAllElements())
+                                        {
                                             items.add(file.attr("href"));
                                         }
                                     } catch (IOException e) {
                                         e.printStackTrace();
                                     }
                                     for (String x : items) {
-                                        String subValue = x.substring(x.lastIndexOf("."));
-                                        if (subValue.equals(".bibplan")) {
-                                            finalList.add(x);
+                                        try {
+                                            String subValue = x.substring(x.lastIndexOf("."));
+                                            if (subValue.contains("bibplan")) {
+                                                finalList.add(x);
+                                            }
+                                        } catch (Exception e) {
+                                            // Skip this one.
                                         }
                                     }
-                                    ArrayAdapter<String> adapter = new ArrayAdapter<>(Me, android.R.layout.simple_list_item_1, finalList);
-                                    lV().setAdapter(adapter);
-                                    lV().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    final ArrayAdapter<String> adapter = new ArrayAdapter<>(Me, android.R.layout.simple_list_item_1, finalList);
+                                    runOnUiThread(new Runnable() {
                                         @Override
-                                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                            int itemPosition = position;
-                                            String itemValue = (String) lV().getItemAtPosition(position);
-                                            Toast.makeText(Me, "Position: " + itemPosition + " ListItem: " + itemValue,
-                                                    Toast.LENGTH_LONG)
-                                                    .show();
-
+                                        public void run()
+                                        {
+                                            lV().setAdapter(adapter);
+                                            lV().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                @Override
+                                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                    int itemPosition = position;
+                                                    String itemValue = (String) lV().getItemAtPosition(position);
+                                                    String url = "http://godispower.us/BiblePlans/" + txtUser().getText().toString() + "/" + itemValue;
+                                                    String localPath = "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/";
+                                                    File lpObj = new File(localPath);
+                                                    if (!lpObj.exists()) lpObj.mkdirs();
+                                                    new ProgressBarMsgBox(
+                                                            "Downloading", "Downloading " + itemValue + " by " + txtUser().getText().toString(),
+                                                            Me, url, "/sdcard/Android/data/apdevelopment.powerofgod/BibPlans/" + itemValue,false, false, R.drawable.progressbar2
+                                                    ).Show();
+                                                }
+                                            });
                                         }
+
                                     });
+
                                 }
                                 catch (Exception ex)
                                 {
+                                    ex.printStackTrace();
                                     new MsgBox("Error", Global.GetStackTrace(ex), Me).Show();
                                 }
                             }
@@ -80,6 +103,7 @@ public class DownloadActivity extends ActionBarActivity {
                     }
                     catch (Exception ex)
                     {
+                        ex.printStackTrace();
                         new MsgBox("Error", Global.GetStackTrace(ex), Me).Show();
                         ErrorLogging.Write(ex);
                     }
@@ -89,6 +113,7 @@ public class DownloadActivity extends ActionBarActivity {
         }
         catch (Exception ex)
         {
+            ex.printStackTrace();
             new MsgBox("Error", "Something went wrong and it has been logged.", Me).Show();
             ErrorLogging.Write(ex);
         }

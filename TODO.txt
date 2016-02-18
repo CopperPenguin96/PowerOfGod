@@ -1,4 +1,9 @@
 Power of God TODO list
-- Add Bible Plans (Alpha 1.5)
+- Add Bible Plans (Alpha 1.5) (DONE!)
 - Switch to video lessons (Beta 1.0)
+- Recreate User SignUp/Login
+- Plugins
+- Start Switching over to a rich textbox based content area on Windows
+- If above point works, move Java Desktop to legacy and start using Wine or Mono for Linux and Mac
+- Start "The Rock" Youth Ministry
 
