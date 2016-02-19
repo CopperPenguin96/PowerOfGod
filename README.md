@@ -1,6 +1,6 @@
-Power of God
 ![alt text](http://godispower.us/images/main.png "http://godispower.us/")
 ==========
+Website: [http://godispower.us/](http://godispower.us/)
 
 This application is a cross-platform application to help others grow in their faith
 
