@@ -4,7 +4,7 @@ android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
     defaultConfig {
-        applicationId "apdevelopmenta.powerofgod"
+        applicationId "apdevelopment.powerofgod.alphaphase"
         minSdkVersion 11
         targetSdkVersion 21
         versionCode 6

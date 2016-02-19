@@ -1,12 +1,13 @@
-PowerOfGod
+Power of God
+![alt text](http://godispower.us/images/main.png "http://godispower.us/")
 ==========
 
 This application is a cross-platform application to help others grow in their faith
 
 (Current Available Platforms)
->>> Android 2.3+
->>> Windows Desktop Version Capable of Java
->>> Mac/Linux devices capable of Java
+>>> Android 3.0+
+>>> Windows Desktop
+>>> Java SE 1.8+
 
 ##License
 The MIT License (MIT)
