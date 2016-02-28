@@ -132,6 +132,23 @@
     <Compile Include="NetBible\Books\Old Testament\Zephaniah.cs" />
     <Compile Include="NetBible\Books\PurposeVerses.cs" />
     <Compile Include="Plugins\PluginReader.cs" />
+    <Compile Include="Plugins\Button.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugins\Button.Designer.cs">
+      <DependentUpon>Button.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="pSystem\DialogBox\DialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pSystem\DialogBox\DialogBox.Designer.cs">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="pSystem\UpdateWeb.cs" />
     <Compile Include="VerseObj.cs" />
     <Compile Include="Plugins\Plugin.cs" />
@@ -158,11 +175,32 @@
     <EmbeddedResource Include="BibPlan\DownloadForm.resx">
       <DependentUpon>DownloadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\Button.resx">
+      <DependentUpon>Button.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pSystem\DialogBox\DialogBox.resx">
+      <DependentUpon>DialogBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\button_inverted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_clicked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goldenraysabstract.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

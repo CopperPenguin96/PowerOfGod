@@ -10,9 +10,16 @@ using Power_of_God.User;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using PurposeVerses = Power_of_God.pSystem.PurposeVerses;
+using Newtonsoft.Json;
+using System.Linq;
+using System.Reflection;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Power_of_God_Lib.pSystem.DialogBox;
 
 namespace Power_of_God
 {
+    
     public partial class MainForm : Form
     {
         public MainForm()
@@ -30,11 +37,30 @@ namespace Power_of_God
             SetDefaultContent();
             if (Updater.UpdateWord().ToLower() != "updated")
             {
-                MessageBox.Show(Updater.UpdateNotice(), "Update Notice for Power of God");
+                DialogBox dBox = new DialogBox("Update Notice for Power of God", Updater.UpdateNotice());
+                dBox.Show();
             }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
+            UpdatePluginPanel();
+        }
+        
+        private void UpdatePluginPanel()
+        {
             PluginReader.LoadPlugins();
-            // TODO - CHECK var X in Plugin Reader to see if it prints the right stuff in a messagebox.show()
+            foreach (var pl in PluginReader.PluginList)
+            {
+                var myButton = new Power_of_God_Lib.Plugins.Button(pl);
+                myButton.SetText(pl.Name);
+                myButton.Width = flowLayoutPanel1.Width - 5;
+                myButton.Click += myButtonClick;
+                flowLayoutPanel1.Controls.Add(myButton);
+            }
+        }
+
+        private void myButtonClick(object sender, EventArgs e)
+        {
+            var btnObject = (Power_of_God_Lib.Plugins.Button) sender;
+            MessageBox.Show(btnObject.Text);
         }
 
         private void SetEventHandlers()
@@ -52,11 +78,20 @@ namespace Power_of_God
 
         private void ActivateUrl(object sender, WebBrowserNavigatedEventArgs e)
         {
-            webBrowser1.DocumentText = UpdateWeb.XBrowser.DocumentText;
+            webBrowser1.ScriptErrorsSuppressed = true;
+            try
+            {
+                webBrowser1.DocumentText = UpdateWeb.XBrowser.DocumentText;
+            }
+            catch (COMException)
+            {
+                //webBrowser1.Navigate(UpdateWeb.XBrowser.Url);
+            }
+            
         }
 
         //Global variables;
-        private bool _dragging = false;
+        private bool _dragging;
         //private Point _offset;
         private Point _startPoint = new Point(0, 0);
 
@@ -76,7 +111,7 @@ namespace Power_of_God
         {
             if (!_dragging) return;
             var p = PointToScreen(e.Location);
-            Location = new Point(p.X - this._startPoint.X, p.Y - this._startPoint.Y);
+            Location = new Point(p.X - _startPoint.X, p.Y - _startPoint.Y);
         }
         private void CheckChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -98,11 +133,17 @@ namespace Power_of_God
             set { base.Text = value; }
         }
 
+        private bool _isTwice;
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (Updater.LatestStable() != "Alpha 1.5")
             {
                 picMain.Load("http://godispower.us/images/main.png");
+            }
+            var x = PluginReader.PluginList;
+            foreach (var c in x)
+            {
+                PluginReader.AppLoad(c);
             }
         }
 
@@ -118,6 +159,7 @@ namespace Power_of_God
 
         private void SetDefaultContent()
         {
+
         }
 
         /*private void SetCurrentContent(string x)
@@ -127,13 +169,13 @@ namespace Power_of_God
         */
         private void btnPurpose_Click(object sender, EventArgs e)
         {
-            SetRichText(RichTextMode.Purpose);
-            KillPlans();
+            var x = PluginReader.PluginList;
+            PluginReader.StartUp(x.ElementAt(0));
+            PluginReader.StartUp(x.ElementAt(0));
         }
 
         private void btnLessons_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate("http://godispower.us/Application/Lessons/sunday.html");
             ListItems(RichTextMode.Lessons);
         }
 
@@ -179,6 +221,7 @@ namespace Power_of_God
         private RichTextMode _rtmSize;
         private void ListItems(RichTextMode rtm)
         {
+            lboListOfItems.Items.Clear();
             _rtmSize = rtm;
             if (rtm != RichTextMode.BiblePlans) KillPlans();
             switch (rtm)
@@ -247,6 +290,16 @@ namespace Power_of_God
         }
 
         private void headerpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
         {
 
         }

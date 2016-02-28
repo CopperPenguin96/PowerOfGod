@@ -7,8 +7,8 @@
     <ProjectGuid>{14A313F1-DD7A-42F2-AB13-A238BB02E534}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PurposePlugin</RootNamespace>
-    <AssemblyName>PurposePlugin</AssemblyName>
+    <RootNamespace>Purpose</RootNamespace>
+    <AssemblyName>Purpose</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

@@ -8,9 +8,28 @@ namespace Power_of_God_Lib.Plugins
 {
     public class Plugin
     {
+       /* public static Plugin GetPlugin(string name)
+        {
+
+        }*/
+        public virtual void InitPlugin()
+        {
+            // Plugin developer is to define plugin name and other information here.
+            // Also create and start up other things the plugin needs to run
+        }
+
+
         public string Name;
         public string Developer;
         public Category CCategory;
+
+        /// <summary>
+        /// Not to be used. Only here for Json Parsing
+        /// </summary>
+        public Plugin()
+        {
+
+        }
         /// <summary>
         /// Creates the plugin object. Use if you know the cateogory, but wish to be as "Unknown"
         /// </summary>
@@ -56,10 +75,22 @@ namespace Power_of_God_Lib.Plugins
             CCategory = cat;
         }
 
-
+        public bool DoAppLoadStuff = true;
+        public Plugin(string name, string dev, Category cat, bool DoAppLoad)
+        {
+            DoAppLoadStuff = DoAppLoad;
+        }
+        /// <summary>
+        /// Performs any start action defined by the plugin developer
+        /// </summary>
         public virtual void PerformStartAction()
         {
             // Perform the first function done when the user hit the button to enter your plugin
+        }
+
+        public virtual void AppLoad()
+        {
+            // Perform any action you want to do at start up of the Power of God App
         }
     }
 

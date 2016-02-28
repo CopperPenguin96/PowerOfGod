@@ -14,5 +14,10 @@ namespace Power_of_God_Lib.pSystem
         {
             XBrowser.DocumentText = html;
         }
+
+        public static void Navigate(string url)
+        {
+            XBrowser.Navigate(url);
+        }
     }
 }

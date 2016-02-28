@@ -1,2 +1,2 @@
-﻿Description: Maybe you were about to disobey your parents? Maybe you were about to disobey God? Is that glorifying the Lord? Is that doing as He instructs of you today?
-Verse1: {"Book":"Proverbs","Chapter":1,"Verse":23}
+Description: There is no other God besides our God! He is everywhere and always there!
+Verse1: {"Book":"Deuteronomy","Chapter":4,"Verse":39}

@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power of God Lib", "Power o
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurposePlugin", "PurposePlugin\PurposePlugin.csproj", "{14A313F1-DD7A-42F2-AB13-A238BB02E534}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevPlugins", "DevPlugins", "{7BC058C7-49C8-4E7F-B2DC-6D47FA4CB510}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonPlugin", "LessonPlugin\LessonPlugin.csproj", "{5A2FCAC2-64E7-4C28-9273-84577363FCE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +37,16 @@ Global
 		{14A313F1-DD7A-42F2-AB13-A238BB02E534}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14A313F1-DD7A-42F2-AB13-A238BB02E534}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14A313F1-DD7A-42F2-AB13-A238BB02E534}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2FCAC2-64E7-4C28-9273-84577363FCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2FCAC2-64E7-4C28-9273-84577363FCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2FCAC2-64E7-4C28-9273-84577363FCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2FCAC2-64E7-4C28-9273-84577363FCE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14A313F1-DD7A-42F2-AB13-A238BB02E534} = {7BC058C7-49C8-4E7F-B2DC-6D47FA4CB510}
+		{5A2FCAC2-64E7-4C28-9273-84577363FCE7} = {7BC058C7-49C8-4E7F-B2DC-6D47FA4CB510}
 	EndGlobalSection
 EndGlobal

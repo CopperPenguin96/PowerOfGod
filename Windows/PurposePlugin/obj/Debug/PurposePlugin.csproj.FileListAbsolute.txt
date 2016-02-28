@@ -1,5 +1,5 @@
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\PurposePlugin.dll
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\PurposePlugin.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Debug\PurposePlugin.csprojResolveAssemblyReference.cache
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Debug\PurposePlugin.dll
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Debug\PurposePlugin.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Purpose.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Purpose.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Debug\Purpose.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Debug\Purpose.pdb

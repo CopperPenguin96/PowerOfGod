@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 
@@ -10,15 +6,23 @@ namespace PurposePlugin
 {
     public class Plugin : Power_of_God_Lib.Plugins.Plugin
     {
-        public static Power_of_God_Lib.Plugins.Plugin Define()
+        public Plugin(string name, string dev, Category cat, bool act) : base(name, dev, cat, act)
         {
-            return new Plugin("Purpose", "apotter96", Category.Basic);
-        }
-        public Plugin(string name, string dev, Category cat) : base(name, dev, cat)
-        {
-            // Add any needed plugin start up content
+            
         }
 
+        public override void AppLoad()
+        {
+            // Add any needed plugin start up content
+            PerformStartAction(); /* If your start action trigers any events, it needs to be called 
+            * first in the constructor and 2nd in the
+            * Button click */
+        }
+        public Plugin()
+        {
+            Console.WriteLine("Default Constructor Init");
+            
+        }
         public override void PerformStartAction()
         {
             UpdateWeb.UpdateWebContent(

@@ -91,6 +91,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="cooltext117627293831111.ico" />
+    <None Include="Resources\goldenraysabstract.jpg" />
+    <None Include="Resources\button_clicked.png" />
+    <None Include="Resources\gradient.png" />
+    <None Include="Resources\button_regular.png" />
+    <None Include="Resources\button_inverted.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\minimize.png" />
     <None Include="Resources\exit.png" />
