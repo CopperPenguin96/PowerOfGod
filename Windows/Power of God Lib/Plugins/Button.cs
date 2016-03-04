@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Properties;
 
 namespace Power_of_God_Lib.Plugins
@@ -26,22 +21,25 @@ namespace Power_of_God_Lib.Plugins
         }
         public void MouseLeaveEvent(object sender, EventArgs e)
         {
-            setBack(Resources.button_regular);
+            SetBack(Resources.button_regular);
         }
 
         public void MouseClickEvent(object sender, MouseEventArgs e)
         {
-            setBack(Resources.button_clicked);
-            PluginReader.PerformMethod(Plugin, "Plugin", "PerformStartAction", new object[] {});
+            SetBack(Resources.button_clicked);
+            Content.ButtonPressed = true;
+            //PluginReader.PerformMethod(Plugin, "Plugin", "PerformStartAction", new object[] {});
+            PluginReader.SetFrame(PluginReader.GetDefaultFrame(Plugin));
+
         }
 
         public void MouseHoverEvent(object sender, EventArgs e)
         {
-            setBack(Resources.button_inverted);
+            SetBack(Resources.button_inverted);
         }
-        private void setBack(Bitmap b)
+        private void SetBack(Image b)
         {
-            this.BackgroundImage = b;
+            BackgroundImage = b;
         }
         public void SetText(string text)
         {

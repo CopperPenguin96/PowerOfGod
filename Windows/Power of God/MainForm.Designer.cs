@@ -1,4 +1,6 @@
-﻿namespace Power_of_God
+﻿using Power_of_God_Lib.Plugins;
+
+namespace Power_of_God
 {
     partial class MainForm
     {
@@ -28,11 +30,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnLessons = new System.Windows.Forms.Button();
             this.btnDailyVerses = new System.Windows.Forms.Button();
             this.btnBibPlans = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.lblName = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.lboListOfItems = new System.Windows.Forms.ListBox();
@@ -41,6 +43,9 @@
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picExit = new System.Windows.Forms.PictureBox();
             this.picMain = new System.Windows.Forms.PictureBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.PluginUpdateTimer = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -49,7 +54,7 @@
             // 
             // btnLessons
             // 
-            this.btnLessons.Location = new System.Drawing.Point(318, 49);
+            this.btnLessons.Location = new System.Drawing.Point(660, 293);
             this.btnLessons.Name = "btnLessons";
             this.btnLessons.Size = new System.Drawing.Size(56, 31);
             this.btnLessons.TabIndex = 2;
@@ -59,7 +64,7 @@
             // 
             // btnDailyVerses
             // 
-            this.btnDailyVerses.Location = new System.Drawing.Point(380, 49);
+            this.btnDailyVerses.Location = new System.Drawing.Point(649, 330);
             this.btnDailyVerses.Name = "btnDailyVerses";
             this.btnDailyVerses.Size = new System.Drawing.Size(84, 31);
             this.btnDailyVerses.TabIndex = 3;
@@ -69,21 +74,13 @@
             // 
             // btnBibPlans
             // 
-            this.btnBibPlans.Location = new System.Drawing.Point(471, 49);
+            this.btnBibPlans.Location = new System.Drawing.Point(633, 231);
             this.btnBibPlans.Name = "btnBibPlans";
             this.btnBibPlans.Size = new System.Drawing.Size(70, 31);
             this.btnBibPlans.TabIndex = 4;
             this.btnBibPlans.Text = "Bible Plans";
             this.btnBibPlans.UseVisualStyleBackColor = true;
             this.btnBibPlans.Click += new System.EventHandler(this.btnBibPlans_Click);
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(159, 86);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(457, 358);
-            this.webBrowser1.TabIndex = 6;
             // 
             // lblName
             // 
@@ -93,12 +90,12 @@
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(375, 37);
             this.lblName.TabIndex = 7;
+            this.lblName.Text = "Beta 1.0";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(546, 49);
+            this.button1.Location = new System.Drawing.Point(673, 165);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(70, 31);
             this.button1.TabIndex = 9;
@@ -109,9 +106,9 @@
             // lboListOfItems
             // 
             this.lboListOfItems.FormattingEnabled = true;
-            this.lboListOfItems.Location = new System.Drawing.Point(622, 86);
+            this.lboListOfItems.Location = new System.Drawing.Point(622, 49);
             this.lboListOfItems.Name = "lboListOfItems";
-            this.lboListOfItems.Size = new System.Drawing.Size(109, 355);
+            this.lboListOfItems.Size = new System.Drawing.Size(121, 394);
             this.lboListOfItems.TabIndex = 12;
             this.lboListOfItems.SelectedIndexChanged += new System.EventHandler(this.lboListOfItems_SelectedIndexChanged);
             // 
@@ -134,7 +131,6 @@
             this.headerpanel.Name = "headerpanel";
             this.headerpanel.Size = new System.Drawing.Size(755, 43);
             this.headerpanel.TabIndex = 10;
-            this.headerpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerpanel_Paint);
             // 
             // picMinimize
             // 
@@ -171,6 +167,29 @@
             this.picMain.TabIndex = 1;
             this.picMain.TabStop = false;
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(200, 293);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(250, 250);
+            this.webBrowser1.TabIndex = 15;
+            // 
+            // PluginUpdateTimer
+            // 
+            this.PluginUpdateTimer.Enabled = true;
+            this.PluginUpdateTimer.Interval = 1;
+            this.PluginUpdateTimer.Tick += new System.EventHandler(this.PluginUpdateTimer_Tick);
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(160, 49);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(456, 394);
+            this.flowLayoutPanel2.TabIndex = 17;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,15 +198,16 @@
             this.BackgroundImage = global::Power_of_God.Properties.Resources.goldenraysabstract;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 456);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.lboListOfItems);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnBibPlans);
             this.Controls.Add(this.btnDailyVerses);
             this.Controls.Add(this.btnLessons);
             this.Controls.Add(this.headerpanel);
+            this.Controls.Add(this.lboListOfItems);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
@@ -206,7 +226,6 @@
         private System.Windows.Forms.Button btnLessons;
         private System.Windows.Forms.Button btnDailyVerses;
         private System.Windows.Forms.Button btnBibPlans;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel headerpanel;
@@ -215,6 +234,10 @@
         private System.Windows.Forms.PictureBox picMinimize;
         public System.Windows.Forms.ListBox lboListOfItems;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private PluginFrame pluginFrame;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Timer PluginUpdateTimer;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }
 }
 

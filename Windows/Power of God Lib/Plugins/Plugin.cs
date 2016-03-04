@@ -75,6 +75,24 @@ namespace Power_of_God_Lib.Plugins
             CCategory = cat;
         }
 
+        private readonly List<PluginFrame> _frames = new List<PluginFrame>
+        {
+
+        };
+        public virtual List<PluginFrame> FrameIdList()
+        {
+            return _frames;
+        }
+
+        public virtual PluginFrame GetFrame(string idStr)
+        {
+            foreach (var frame in FrameIdList().Where(frame => frame.FrameID == idStr))
+            {
+                return frame;
+            }
+            return new PluginFrame();
+        }
+
         public bool DoAppLoadStuff = true;
         public Plugin(string name, string dev, Category cat, bool DoAppLoad)
         {

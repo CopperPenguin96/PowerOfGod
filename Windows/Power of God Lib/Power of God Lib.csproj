@@ -131,6 +131,12 @@
     <Compile Include="NetBible\Books\Old Testament\Zechariah.cs" />
     <Compile Include="NetBible\Books\Old Testament\Zephaniah.cs" />
     <Compile Include="NetBible\Books\PurposeVerses.cs" />
+    <Compile Include="Plugins\PluginFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugins\PluginFrame.Designer.cs">
+      <DependentUpon>PluginFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugins\PluginReader.cs" />
     <Compile Include="Plugins\Button.cs">
       <SubType>UserControl</SubType>
@@ -143,6 +149,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="pSystem\Content.cs" />
     <Compile Include="pSystem\DialogBox\DialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +182,9 @@
     <EmbeddedResource Include="BibPlan\DownloadForm.resx">
       <DependentUpon>DownloadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\PluginFrame.resx">
+      <DependentUpon>PluginFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugins\Button.resx">
       <DependentUpon>Button.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +210,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\goldenraysabstract.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Plugins\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -137,13 +137,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cooltext117627293831111.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Power of God Lib\Power of God Lib.csproj">
       <Project>{977964a9-4ffd-4dee-8a00-664fbd782cbf}</Project>
       <Name>Power of God Lib</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="cooltext117627293831111.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

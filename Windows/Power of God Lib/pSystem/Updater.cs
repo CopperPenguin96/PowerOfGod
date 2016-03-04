@@ -8,6 +8,7 @@ namespace Power_of_God.pSystem
 {
     public class Updater
     {
+        
         private const string VersionPrefix = "Alpha";
 
         private static readonly string[] CurrentVersion = new []
@@ -169,7 +170,7 @@ namespace Power_of_God.pSystem
             return x;
         }
 
-        public static System.Collections.Generic.List<string> GetUrlSource(string urlF)
+        public static List<string> GetUrlSource(string urlF)
         {
             var temp = "power.of.god/tempupdate.txt";
             if (File.Exists(temp))

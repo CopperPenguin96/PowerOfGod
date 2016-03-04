@@ -42,6 +42,7 @@ namespace Power_of_God
             }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();
+            lblName.Text = Updater.LatestStable();
         }
         
         private void UpdatePluginPanel()
@@ -55,6 +56,7 @@ namespace Power_of_God
                 myButton.Click += myButtonClick;
                 flowLayoutPanel1.Controls.Add(myButton);
             }
+            lblName.Text = Updater.LatestStable();
         }
 
         private void myButtonClick(object sender, EventArgs e)
@@ -65,7 +67,7 @@ namespace Power_of_God
 
         private void SetEventHandlers()
         {
-            webBrowser1.Navigated += ChangedTitle;
+            //webBrowser1.Navigated += ChangedTitle;
             Parser.PlanDays.CollectionChanged += CheckChanged;
             headerpanel.MouseDown += panel1_MouseDown;
             headerpanel.MouseUp += panel1_MouseUp;
@@ -73,22 +75,19 @@ namespace Power_of_God
             picMain.MouseDown += panel1_MouseDown;
             picMain.MouseUp += panel1_MouseUp;
             picMain.MouseMove += panel1_MouseMove;
-            UpdateWeb.XBrowser.Navigated += ActivateUrl;
+            Content.ObservedList.CollectionChanged += CollectionChanged;
         }
 
-        private void ActivateUrl(object sender, WebBrowserNavigatedEventArgs e)
+        private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            webBrowser1.ScriptErrorsSuppressed = true;
-            try
+            lboListOfItems.Items.Clear();
+            foreach (var item in Content.ObservedList)
             {
-                webBrowser1.DocumentText = UpdateWeb.XBrowser.DocumentText;
+                lboListOfItems.Items.Add(item);
             }
-            catch (COMException)
-            {
-                //webBrowser1.Navigate(UpdateWeb.XBrowser.Url);
-            }
-            
         }
+
+
 
         //Global variables;
         private bool _dragging;
@@ -124,10 +123,10 @@ namespace Power_of_God
 
         private void ChangedTitle(object sender, WebBrowserNavigatedEventArgs e)
         {
-            lblName.Text = webBrowser1.DocumentTitle;
+            //lblName.Text = webBrowser1.DocumentTitle;
         }
 
-        public override sealed string Text
+        public sealed override string Text
         {
             get { return base.Text; }
             set { base.Text = value; }
@@ -145,6 +144,7 @@ namespace Power_of_God
             {
                 PluginReader.AppLoad(c);
             }
+            lblName.Text = Updater.LatestStable();
         }
 
         private void SetRichText(RichTextMode rt)
@@ -227,28 +227,7 @@ namespace Power_of_God
             switch (rtm)
             {
                 case RichTextMode.Lessons:
-                    GetallFilesFromHttp.ListDiractory("http://godispower.us/Sundays/");
-                    var intIndex = 0;
-                    foreach (var x in GetallFilesFromHttp.Files)
-                    {
-                        if (intIndex > 1)
-                        {
-                            if (intIndex < GetallFilesFromHttp.Files.Count - 2)
-                                try
-                                {
-                                    var i = x.Substring(1, x.Length - 7).Replace(".", "/");
-                                    if (!(Convert.ToDateTime(i) > DateTime.Now))
-                                    {
-                                        lboListOfItems.Items.Add(i);
-                                    }
-                                }
-                                catch (Exception)
-                                {
-                                    // Ignored - Occurs when "Lessons" button clicked twice
-                                }
-                        }
-                        intIndex++;
-                    }
+                    
                     
                     break;
                 case RichTextMode.DailyVerses:
@@ -289,17 +268,41 @@ namespace Power_of_God
             }
         }
 
-        private void headerpanel_Paint(object sender, PaintEventArgs e)
+        private PluginFrame _alreadyClearedFrame;
+        private string _alreadyClearedTitle;
+        private void PluginUpdateTimer_Tick(object sender, EventArgs e)
         {
-
+            // Update Content
+            if (PluginReader.CurrentFrame != PluginReader.OldFrame)
+            {
+                if (_alreadyClearedFrame == null || _alreadyClearedFrame != PluginReader.CurrentFrame)
+                {
+                    flowLayoutPanel2.Controls.Clear();
+                    _alreadyClearedFrame = PluginReader.CurrentFrame;
+                    flowLayoutPanel2.Controls.Add(PluginReader.CurrentFrame);
+                }
+            }
+            if (PluginReader.CurrentFrame == PluginReader.OldFrame)
+            {
+                flowLayoutPanel2.Controls.Add(PluginReader.CurrentFrame);
+            }
+            // Update Text
+            if (Content.CurrentTitle != Content.OldTitle)
+            {
+                if (_alreadyClearedTitle == null || _alreadyClearedTitle != Content.CurrentTitle)
+                {
+                    lblName.Text = "";
+                    _alreadyClearedTitle = Content.CurrentTitle;
+                    lblName.Text = _alreadyClearedTitle;
+                }
+            }
+            if (Content.CurrentTitle == Content.OldTitle)
+            {
+                lblName.Text = Content.CurrentTitle;
+            }
         }
 
-        private void button2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblName_Click(object sender, EventArgs e)
+        private void pluginFrame1_Load(object sender, EventArgs e)
         {
 
         }
