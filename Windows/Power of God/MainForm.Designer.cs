@@ -43,7 +43,6 @@ namespace Power_of_God
             this.picMinimize = new System.Windows.Forms.PictureBox();
             this.picExit = new System.Windows.Forms.PictureBox();
             this.picMain = new System.Windows.Forms.PictureBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.PluginUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.headerpanel.SuspendLayout();
@@ -167,14 +166,6 @@ namespace Power_of_God
             this.picMain.TabIndex = 1;
             this.picMain.TabStop = false;
             // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(200, 293);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(250, 250);
-            this.webBrowser1.TabIndex = 15;
-            // 
             // PluginUpdateTimer
             // 
             this.PluginUpdateTimer.Enabled = true;
@@ -199,7 +190,6 @@ namespace Power_of_God
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 456);
             this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblName);
@@ -235,7 +225,6 @@ namespace Power_of_God
         public System.Windows.Forms.ListBox lboListOfItems;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private PluginFrame pluginFrame;
-        private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Timer PluginUpdateTimer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
     }

@@ -1,6 +1,6 @@
-﻿namespace Lesson.Frames
+﻿namespace Power_of_God_Lib.Plugins.Controls
 {
-    partial class LessonFrame
+    partial class HtmlRichTextBox
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,31 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lessonBox = new Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // lessonBox
+            // richTextBox1
             // 
-            this.lessonBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lessonBox.Location = new System.Drawing.Point(3, 0);
-            this.lessonBox.Name = "lessonBox";
-            this.lessonBox.Size = new System.Drawing.Size(449, 387);
-            this.lessonBox.TabIndex = 1;
-            this.lessonBox.Text = "";
-            // 
-            // LessonFrame
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lessonBox);
-            this.Name = "LessonFrame";
-            this.Load += new System.EventHandler(this.LessonFrame_Load);
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox lessonBox;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

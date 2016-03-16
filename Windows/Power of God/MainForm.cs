@@ -186,7 +186,7 @@ namespace Power_of_God
             {
                 try
                 {
-                    webBrowser1.DocumentText = DailyScripture.GetDailyScripture();
+                    //webBrowser1.DocumentText = DailyScripture.GetDailyScripture();
                 }
                 catch (Exception)
                 {
@@ -248,6 +248,7 @@ namespace Power_of_God
 
         private void lboListOfItems_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             switch (_rtmSize)
             {
                 case RichTextMode.Lessons:
@@ -265,7 +266,7 @@ namespace Power_of_God
                     webBrowser1.DocumentText = Parser.HtmlText(BibPlanDialog.PlanFileName, lboListOfItems.SelectedIndex);
                     break;
 
-            }
+            }*/
         }
 
         private PluginFrame _alreadyClearedFrame;

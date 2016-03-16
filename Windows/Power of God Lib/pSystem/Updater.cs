@@ -173,15 +173,13 @@ namespace Power_of_God.pSystem
         public static List<string> GetUrlSource(string urlF)
         {
             var temp = "power.of.god/tempupdate.txt";
-            if (File.Exists(temp))
-            {
-                File.Delete(temp);
-            }
+            var c = File.Create(temp);
+            c.Close();
             using (var client = new WebClient())
             {
                 try
                 {
-                    client.DownloadFile(Url, temp);
+                    client.DownloadFile(urlF, temp);
                 }
                 catch (Exception e)
                 {
@@ -189,12 +187,10 @@ namespace Power_of_God.pSystem
                 }
 
             }
-            var x = File.CreateText("texttexttext.txt");
-            x.Write(temp);
-            x.Flush();
-            x.Close();
             return File.ReadAllLines(temp).ToList();
         }
+
+
     }
 
     

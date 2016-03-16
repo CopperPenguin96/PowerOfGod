@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -131,17 +132,23 @@
     <Compile Include="NetBible\Books\Old Testament\Zechariah.cs" />
     <Compile Include="NetBible\Books\Old Testament\Zephaniah.cs" />
     <Compile Include="NetBible\Books\PurposeVerses.cs" />
-    <Compile Include="Plugins\PluginFrame.cs">
+    <Compile Include="Plugins\Controls\HtmlRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Plugins\Controls\HtmlRichTextBox.Designer.cs">
+      <DependentUpon>HtmlRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Plugins\Controls\PluginFrame.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugins\PluginFrame.Designer.cs">
+    <Compile Include="Plugins\Controls\PluginFrame.Designer.cs">
       <DependentUpon>PluginFrame.cs</DependentUpon>
     </Compile>
     <Compile Include="Plugins\PluginReader.cs" />
-    <Compile Include="Plugins\Button.cs">
+    <Compile Include="Plugins\Controls\Button.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Plugins\Button.Designer.cs">
+    <Compile Include="Plugins\Controls\Button.Designer.cs">
       <DependentUpon>Button.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -182,10 +189,13 @@
     <EmbeddedResource Include="BibPlan\DownloadForm.resx">
       <DependentUpon>DownloadForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugins\PluginFrame.resx">
+    <EmbeddedResource Include="Plugins\Controls\HtmlRichTextBox.resx">
+      <DependentUpon>HtmlRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\Controls\PluginFrame.resx">
       <DependentUpon>PluginFrame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Plugins\Button.resx">
+    <EmbeddedResource Include="Plugins\Controls\Button.resx">
       <DependentUpon>Button.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -211,9 +221,7 @@
   <ItemGroup>
     <None Include="Resources\goldenraysabstract.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Plugins\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
