@@ -36,6 +36,7 @@
             this.lessonBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lessonBox.Location = new System.Drawing.Point(3, 0);
             this.lessonBox.Name = "lessonBox";
+            this.lessonBox.ReadOnly = true;
             this.lessonBox.Size = new System.Drawing.Size(449, 387);
             this.lessonBox.TabIndex = 1;
             this.lessonBox.Text = "";

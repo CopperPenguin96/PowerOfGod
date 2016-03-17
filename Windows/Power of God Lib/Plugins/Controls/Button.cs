@@ -30,7 +30,7 @@ namespace Power_of_God_Lib.Plugins
             Content.ButtonPressed = true;
             //PluginReader.PerformMethod(Plugin, "Plugin", "PerformStartAction", new object[] {});
             PluginReader.SetFrame(PluginReader.GetDefaultFrame(Plugin));
-
+            PluginReader.CurrentPlugin = Plugin;
         }
 
         public void MouseHoverEvent(object sender, EventArgs e)

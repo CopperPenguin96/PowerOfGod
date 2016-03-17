@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Lesson.Frames;
+using Power_of_God.pSystem;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.pSystem.DialogBox;
 using Power_of_God_Lib.Plugins;
@@ -34,7 +35,7 @@ namespace LessonPlugin
             PerformStartAction();
         }
 
-        public List<string> GetList()
+        public static List<string> GetList()
         {
             var theList = new List<string>();
             GetallFilesFromHttp.ListDiractory("http://godispower.us/Sundays/");
@@ -64,7 +65,7 @@ namespace LessonPlugin
             return dtList.Select(date => date.ToString("MM/dd/yyyy")).ToList().Distinct().ToList();
         }
 
-        static List<DateTime> SortAscending(List<DateTime> list)
+        private static IEnumerable<DateTime> SortAscending(List<DateTime> list)
         {
             list.Sort((a, b) => a.CompareTo(b));
             return list;
@@ -72,8 +73,8 @@ namespace LessonPlugin
 
         public override void PerformStartAction()
         {
-            UpdateWeb.Navigate("http://godispower.us/Application/Lessons/sunday.html");
-            Content.SetListItems(GetList());
+           // UpdateWeb.Navigate("http://godispower.us/Application/Lessons/sunday.html");
+            //dContent.SetListItems(GetList());
         }
 
         private readonly List<PluginFrame> _frames = new List<PluginFrame>
@@ -96,15 +97,18 @@ namespace LessonPlugin
             return new PluginFrame();
         }
 
-        public static ObservableCollection<string> oL = new ObservableCollection<string>();
-
+        public static ObservableCollection<string> OL = new ObservableCollection<string>();
+        public static string DateString;
         public override void LboSelection(int i)
         {
-            using (var client = new WebClient()) // WebClient class inherits IDisposable
+            DateString = "http://godispower.us/Sundays/" + GetList().ElementAt(i).Replace("/", ".") + ".html";
+            var lines = Updater.GetUrlSource(DateString);
+            foreach (var line in lines)
             {
-                var htmlCode = client.DownloadString("http://godispower.us/Sundays/" + GetList().ElementAt(i).Replace("/", ".") + ".html");
-                oL.Add(htmlCode);
+                OL.Add(line);
             }
         }
+
+
     }
 }

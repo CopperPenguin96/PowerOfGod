@@ -19,7 +19,7 @@ namespace Lesson.Frames
         public LessonFrame()
         {
             InitializeComponent();
-            LessonPlugin.Plugin.oL.CollectionChanged += Update;
+            LessonPlugin.Plugin.OL.CollectionChanged += Update;
             // webBrowser1.Navigate("http://godispower.us/Application/Lessons/sunday.html");
             
         }
@@ -32,18 +32,20 @@ namespace Lesson.Frames
         {
 
         }
-
+        private readonly string _lastDate = "http://godispower.us/Sundays/" + LessonPlugin.Plugin.GetList().Last().Replace("/", ".") + ".html";
         private void LessonFrame_Load(object sender, EventArgs e)
         {
-            var lastDate = "http://godispower.us/Sundays/" + new LessonPlugin.Plugin().GetList().Last().Replace("/", ".") + ".html";
-            var daList = Updater.GetUrlSource(lastDate);
+            LessonPlugin.Plugin.OL.CollectionChanged += SavedChange;
+            Content.SetListItems(LessonPlugin.Plugin.GetList().Distinct().ToList());
+            
+            var daList = Updater.GetUrlSource(_lastDate);
             lessonBox.Text = "";
             var fullText = "";
             for (var x = 0; x <= daList.Count; x++)
             {
                 try
                 {
-                    var text = "\n" + Updater.GetUrlSource(lastDate).ElementAt(x);
+                    var text = "\n" + Updater.GetUrlSource(_lastDate).ElementAt(x);
                     fullText += text;
                 }
                 catch (Exception)
@@ -52,7 +54,14 @@ namespace Lesson.Frames
                 }
             }
             lessonBox.SetHtmlText(fullText);
-            Content.SetTitle(TitleExtractor.pageTitle(lastDate));
+            Content.SetTitle(TitleExtractor.pageTitle(_lastDate));
+        }
+
+        private void SavedChange(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            var textLines = LessonPlugin.Plugin.OL.Aggregate("", (current, t) => current + t);
+            lessonBox.SetHtmlText(textLines);
+            Content.SetTitle(LessonPlugin.Plugin.DateString);
         }
     }
 }

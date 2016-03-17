@@ -11,6 +11,7 @@ namespace Power_of_God_Lib.Plugins
 {
     public class PluginReader
     {
+        public static Plugin CurrentPlugin;
         public static T GetObject<T>(Plugin pl, object[] constructArgs)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
@@ -173,6 +174,11 @@ namespace Power_of_God_Lib.Plugins
             var text = "power.of.god/Plugins/" + baseName + ".pogplugin";
             var jsonContent = JsonConvert.DeserializeObject<Plugin>(File.ReadAllText(text));
             return jsonContent;
+        }
+
+        public static void ActivatePluginListMethod(int index)
+        {
+            PerformMethod(CurrentPlugin, "Plugin", "LboSelection", new object[] { index });
         }
     }
 }

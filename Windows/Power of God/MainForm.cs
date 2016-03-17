@@ -2,6 +2,7 @@
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using NetBible.Books;
 using Power_of_God.BibPlan;
@@ -9,12 +10,6 @@ using Power_of_God.pSystem;
 using Power_of_God.User;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
-using PurposeVerses = Power_of_God.pSystem.PurposeVerses;
-using Newtonsoft.Json;
-using System.Linq;
-using System.Reflection;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Power_of_God_Lib.pSystem.DialogBox;
 
 namespace Power_of_God
@@ -34,15 +29,15 @@ namespace Power_of_God
             //const string settingsFile = "power.of.god/settings.json";
             Settings.LoadDefault();
             Settings.LoadFromJson();
-            SetDefaultContent();
             if (Updater.UpdateWord().ToLower() != "updated")
             {
-                DialogBox dBox = new DialogBox("Update Notice for Power of God", Updater.UpdateNotice());
+                var dBox = new DialogBox("Update Notice for Power of God", Updater.UpdateNotice());
                 dBox.Show();
             }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();
             lblName.Text = Updater.LatestStable();
+            MessageBox.Show(Content.GenerateMd5("xrxy3749"));
         }
         
         private void UpdatePluginPanel()
@@ -120,19 +115,13 @@ namespace Power_of_God
                 lboListOfItems.Items.Add(x);
             }
         }
-
-        private void ChangedTitle(object sender, WebBrowserNavigatedEventArgs e)
-        {
-            //lblName.Text = webBrowser1.DocumentTitle;
-        }
+        
 
         public sealed override string Text
         {
             get { return base.Text; }
             set { base.Text = value; }
         }
-
-        private bool _isTwice;
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (Updater.LatestStable() != "Alpha 1.5")
@@ -146,33 +135,7 @@ namespace Power_of_God
             }
             lblName.Text = Updater.LatestStable();
         }
-
-        private void SetRichText(RichTextMode rt)
-        {
-            switch (rt)
-            {
-                case RichTextMode.Purpose:
-                    SetDefaultContent();
-                    break;
-            }
-        }
-
-        private void SetDefaultContent()
-        {
-
-        }
-
-        /*private void SetCurrentContent(string x)
-        {
-            webBrowser1.DocumentText = "<html><body>" + x + "</body></html>";
-        }
-        */
-        private void btnPurpose_Click(object sender, EventArgs e)
-        {
-            var x = PluginReader.PluginList;
-            PluginReader.StartUp(x.ElementAt(0));
-            PluginReader.StartUp(x.ElementAt(0));
-        }
+        
 
         private void btnLessons_Click(object sender, EventArgs e)
         {
@@ -213,11 +176,12 @@ namespace Power_of_God
             settingsForm.ShowDialog();
         }
 
-        private BibPlanDialog _bPlanDialog = new BibPlanDialog();
+        private readonly BibPlanDialog _bPlanDialog = new BibPlanDialog();
         private void KillPlans()
         {
             _bPlanDialog.Hide();
         }
+        // ReSharper disable once NotAccessedField.Local
         private RichTextMode _rtmSize;
         private void ListItems(RichTextMode rtm)
         {
@@ -237,9 +201,15 @@ namespace Power_of_God
                         lboListOfItems.Items.Add("Day #" + x);
                     }
                     break;
+                case RichTextMode.Purpose:
+                    break;
+                case RichTextMode.BiblePlans:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(rtm), rtm, null);
             }
         }
-        
+
         private void btnBibPlans_Click(object sender, EventArgs e)
         {
             _bPlanDialog.Show();
@@ -248,29 +218,12 @@ namespace Power_of_God
 
         private void lboListOfItems_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            switch (_rtmSize)
-            {
-                case RichTextMode.Lessons:
-                    var webFile = "http://godispower.us/Sundays/" +
-                                  lboListOfItems.SelectedItem.ToString().Replace("/", ".") + ".html";
-                    webBrowser1.Navigate(webFile);
-                    break;
-                case RichTextMode.DailyVerses:
-                    // D a y   # 1
-                    // 0 1 2 3 4 5
-                    webBrowser1.DocumentText =
-                        DailyScripture.GetDailyScripture(int.Parse(lboListOfItems.SelectedItem.ToString().Substring(5)));
-                    break;
-                case RichTextMode.BiblePlans:
-                    webBrowser1.DocumentText = Parser.HtmlText(BibPlanDialog.PlanFileName, lboListOfItems.SelectedIndex);
-                    break;
-
-            }*/
+            PluginReader.ActivatePluginListMethod(lboListOfItems.SelectedIndex);
         }
 
         private PluginFrame _alreadyClearedFrame;
         private string _alreadyClearedTitle;
+
         private void PluginUpdateTimer_Tick(object sender, EventArgs e)
         {
             // Update Content
@@ -302,11 +255,7 @@ namespace Power_of_God
                 lblName.Text = Content.CurrentTitle;
             }
         }
-
-        private void pluginFrame1_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 
     public enum RichTextMode
@@ -316,7 +265,5 @@ namespace Power_of_God
         DailyVerses,
         BiblePlans
     }
-
-   
 }
 
