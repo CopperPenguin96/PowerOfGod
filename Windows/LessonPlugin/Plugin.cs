@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Globalization;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Lesson.Frames;
 using Power_of_God.pSystem;
 using Power_of_God_Lib.pSystem;
-using Power_of_God_Lib.pSystem.DialogBox;
 using Power_of_God_Lib.Plugins;
+using Power_of_God_Lib.Plugins.Controls;
 
-namespace LessonPlugin
+namespace Lesson
 {
     public class Plugin : Power_of_God_Lib.Plugins.Plugin
     {
@@ -97,15 +91,16 @@ namespace LessonPlugin
             return new PluginFrame();
         }
 
-        public static ObservableCollection<string> OL = new ObservableCollection<string>();
+        public static ObservableCollection<string> Ol = new ObservableCollection<string>();
         public static string DateString;
         public override void LboSelection(int i)
         {
+            Ol.Clear();
             DateString = "http://godispower.us/Sundays/" + GetList().ElementAt(i).Replace("/", ".") + ".html";
             var lines = Updater.GetUrlSource(DateString);
             foreach (var line in lines)
             {
-                OL.Add(line);
+                Ol.Add(line);
             }
         }
 

@@ -47,6 +47,7 @@ namespace Power_of_God_Lib.pSystem
         public static ObservableCollection<string> ObservedList = new ObservableCollection<string>();
         public static void SetListItems(List<string> items)
         {
+            ObservedList.Clear();
             var newList = items.Distinct().ToList();
            
             if (!ButtonPressed) return;

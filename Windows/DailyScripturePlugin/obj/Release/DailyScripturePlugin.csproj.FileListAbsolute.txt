@@ -1,0 +1,10 @@
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\DailyScripture.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\DailyScripture.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Power of God Lib.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Newtonsoft.Json.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Power of God Lib.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Newtonsoft.Json.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Newtonsoft.Json.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripturePlugin.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripture.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripture.pdb

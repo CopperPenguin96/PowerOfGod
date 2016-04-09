@@ -1,2 +1,2 @@
-Description: There is no other God besides our God! He is everywhere and always there!
-Verse1: {"Book":"Deuteronomy","Chapter":4,"Verse":39}
+Description: Many consider it a sin to spank your kids or even tell your kids when they are wrong, but God permits it and even does it Himself to Israel and the Body Church!
+Verse1: {"Book":"Deuteronomy","Chapter":8,"Verse":5}

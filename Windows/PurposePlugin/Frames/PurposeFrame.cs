@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
+using Power_of_God_Lib.Plugins.Controls;
 using PurposePlugin;
 
 namespace Purpose.Frames

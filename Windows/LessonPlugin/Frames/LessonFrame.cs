@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Power_of_God.pSystem;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
+using Power_of_God_Lib.Plugins.Controls;
 
 namespace Lesson.Frames
 {
@@ -19,7 +20,7 @@ namespace Lesson.Frames
         public LessonFrame()
         {
             InitializeComponent();
-            LessonPlugin.Plugin.OL.CollectionChanged += Update;
+            Plugin.Ol.CollectionChanged += Update;
             // webBrowser1.Navigate("http://godispower.us/Application/Lessons/sunday.html");
             
         }
@@ -32,11 +33,11 @@ namespace Lesson.Frames
         {
 
         }
-        private readonly string _lastDate = "http://godispower.us/Sundays/" + LessonPlugin.Plugin.GetList().Last().Replace("/", ".") + ".html";
+        private readonly string _lastDate = "http://godispower.us/Sundays/" + Plugin.GetList().Last().Replace("/", ".") + ".html";
         private void LessonFrame_Load(object sender, EventArgs e)
         {
-            LessonPlugin.Plugin.OL.CollectionChanged += SavedChange;
-            Content.SetListItems(LessonPlugin.Plugin.GetList().Distinct().ToList());
+            Plugin.Ol.CollectionChanged += SavedChange;
+            Content.SetListItems(Plugin.GetList().Distinct().ToList());
             
             var daList = Updater.GetUrlSource(_lastDate);
             lessonBox.Text = "";
@@ -59,9 +60,9 @@ namespace Lesson.Frames
 
         private void SavedChange(object sender, NotifyCollectionChangedEventArgs e)
         {
-            var textLines = LessonPlugin.Plugin.OL.Aggregate("", (current, t) => current + t);
+            var textLines = Plugin.Ol.Aggregate("", (current, t) => current + t);
             lessonBox.SetHtmlText(textLines);
-            Content.SetTitle(LessonPlugin.Plugin.DateString);
+            Content.SetTitle(Plugin.DateString);
         }
     }
 }

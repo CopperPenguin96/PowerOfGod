@@ -11,6 +11,7 @@ using Power_of_God.User;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.pSystem.DialogBox;
+using Power_of_God_Lib.Plugins.Controls;
 
 namespace Power_of_God
 {
@@ -37,15 +38,26 @@ namespace Power_of_God
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();
             lblName.Text = Updater.LatestStable();
-            MessageBox.Show(Content.GenerateMd5("xrxy3749"));
         }
-        
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            if (Updater.LatestStable() != "Alpha 1.5")
+            {
+                picMain.Load("http://godispower.us/images/main.png");
+            }
+            var x = PluginReader.PluginList;
+            foreach (var c in x)
+            {
+                PluginReader.AppLoad(c);
+            }
+            lblName.Text = Updater.LatestStable();
+        }
         private void UpdatePluginPanel()
         {
             PluginReader.LoadPlugins();
             foreach (var pl in PluginReader.PluginList)
             {
-                var myButton = new Power_of_God_Lib.Plugins.Button(pl);
+                var myButton = new Power_of_God_Lib.Plugins.Button(pl, true);
                 myButton.SetText(pl.Name);
                 myButton.Width = flowLayoutPanel1.Width - 5;
                 myButton.Click += myButtonClick;
@@ -81,9 +93,7 @@ namespace Power_of_God
                 lboListOfItems.Items.Add(item);
             }
         }
-
-
-
+        
         //Global variables;
         private bool _dragging;
         //private Point _offset;
@@ -122,25 +132,6 @@ namespace Power_of_God
             get { return base.Text; }
             set { base.Text = value; }
         }
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            if (Updater.LatestStable() != "Alpha 1.5")
-            {
-                picMain.Load("http://godispower.us/images/main.png");
-            }
-            var x = PluginReader.PluginList;
-            foreach (var c in x)
-            {
-                PluginReader.AppLoad(c);
-            }
-            lblName.Text = Updater.LatestStable();
-        }
-        
-
-        private void btnLessons_Click(object sender, EventArgs e)
-        {
-            ListItems(RichTextMode.Lessons);
-        }
 
 
         private void btnDailyVerses_Click(object sender, EventArgs e)
@@ -168,12 +159,6 @@ namespace Power_of_God
         private void picMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var settingsForm = new SettingsForm();
-            settingsForm.ShowDialog();
         }
 
         private readonly BibPlanDialog _bPlanDialog = new BibPlanDialog();
@@ -255,7 +240,23 @@ namespace Power_of_God
                 lblName.Text = Content.CurrentTitle;
             }
         }
-        
+
+        private void button2_Load(object sender, EventArgs e)
+        {
+            button2.SetText("Settings");
+            button2.Click += SettingsButtonClick;
+        }
+
+        private void SettingsButtonClick(object sender, EventArgs e)
+        {
+            var settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public enum RichTextMode

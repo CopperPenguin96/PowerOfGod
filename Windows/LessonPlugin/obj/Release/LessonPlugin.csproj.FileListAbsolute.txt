@@ -1,0 +1,6 @@
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugin (Debug)\Lesson.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugin (Debug)\Lesson.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\Release\Lesson.Frames.LessonFrame.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\Release\LessonPlugin.csproj.GenerateResource.Cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\Release\Lesson.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\Release\Lesson.pdb

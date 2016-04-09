@@ -1,4 +1,5 @@
 ﻿using Power_of_God_Lib.Plugins;
+using Power_of_God_Lib.Plugins.Controls;
 
 namespace Power_of_God
 {
@@ -32,11 +33,8 @@ namespace Power_of_God
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.btnLessons = new System.Windows.Forms.Button();
-            this.btnDailyVerses = new System.Windows.Forms.Button();
             this.btnBibPlans = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lboListOfItems = new System.Windows.Forms.ListBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.headerpanel = new System.Windows.Forms.Panel();
@@ -45,35 +43,16 @@ namespace Power_of_God
             this.picMain = new System.Windows.Forms.PictureBox();
             this.PluginUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new Power_of_God_Lib.Plugins.Button();
             this.headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnLessons
-            // 
-            this.btnLessons.Location = new System.Drawing.Point(660, 293);
-            this.btnLessons.Name = "btnLessons";
-            this.btnLessons.Size = new System.Drawing.Size(56, 31);
-            this.btnLessons.TabIndex = 2;
-            this.btnLessons.Text = "Lessons";
-            this.btnLessons.UseVisualStyleBackColor = true;
-            this.btnLessons.Click += new System.EventHandler(this.btnLessons_Click);
-            // 
-            // btnDailyVerses
-            // 
-            this.btnDailyVerses.Location = new System.Drawing.Point(649, 330);
-            this.btnDailyVerses.Name = "btnDailyVerses";
-            this.btnDailyVerses.Size = new System.Drawing.Size(84, 31);
-            this.btnDailyVerses.TabIndex = 3;
-            this.btnDailyVerses.Text = "Daily Scripture";
-            this.btnDailyVerses.UseVisualStyleBackColor = true;
-            this.btnDailyVerses.Click += new System.EventHandler(this.btnDailyVerses_Click);
-            // 
             // btnBibPlans
             // 
-            this.btnBibPlans.Location = new System.Drawing.Point(633, 231);
+            this.btnBibPlans.Location = new System.Drawing.Point(633, 383);
             this.btnBibPlans.Name = "btnBibPlans";
             this.btnBibPlans.Size = new System.Drawing.Size(70, 31);
             this.btnBibPlans.TabIndex = 4;
@@ -85,29 +64,19 @@ namespace Power_of_God
             // 
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Oklahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(275, 3);
+            this.lblName.Location = new System.Drawing.Point(284, 3);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(375, 37);
+            this.lblName.Size = new System.Drawing.Size(366, 37);
             this.lblName.TabIndex = 7;
             this.lblName.Text = "Beta 1.0";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(673, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 31);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Settings";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // lboListOfItems
             // 
             this.lboListOfItems.FormattingEnabled = true;
-            this.lboListOfItems.Location = new System.Drawing.Point(622, 49);
+            this.lboListOfItems.Location = new System.Drawing.Point(622, 88);
             this.lboListOfItems.Name = "lboListOfItems";
-            this.lboListOfItems.Size = new System.Drawing.Size(121, 394);
+            this.lboListOfItems.Size = new System.Drawing.Size(121, 355);
             this.lboListOfItems.TabIndex = 12;
             this.lboListOfItems.SelectedIndexChanged += new System.EventHandler(this.lboListOfItems_SelectedIndexChanged);
             // 
@@ -159,7 +128,7 @@ namespace Power_of_God
             // 
             this.picMain.BackColor = System.Drawing.Color.Transparent;
             this.picMain.Image = ((System.Drawing.Image)(resources.GetObject("picMain.Image")));
-            this.picMain.Location = new System.Drawing.Point(3, 3);
+            this.picMain.Location = new System.Drawing.Point(12, 3);
             this.picMain.Name = "picMain";
             this.picMain.Size = new System.Drawing.Size(266, 37);
             this.picMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -181,6 +150,17 @@ namespace Power_of_God
             this.flowLayoutPanel2.Size = new System.Drawing.Size(456, 394);
             this.flowLayoutPanel2.TabIndex = 17;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(622, 49);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(121, 33);
+            this.button2.TabIndex = 18;
+            this.button2.Load += new System.EventHandler(this.button2_Load);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,13 +169,11 @@ namespace Power_of_God
             this.BackgroundImage = global::Power_of_God.Properties.Resources.goldenraysabstract;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 456);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnBibPlans);
-            this.Controls.Add(this.btnDailyVerses);
-            this.Controls.Add(this.btnLessons);
             this.Controls.Add(this.headerpanel);
             this.Controls.Add(this.lboListOfItems);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -213,11 +191,8 @@ namespace Power_of_God
         }
 
         #endregion
-        private System.Windows.Forms.Button btnLessons;
-        private System.Windows.Forms.Button btnDailyVerses;
         private System.Windows.Forms.Button btnBibPlans;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel headerpanel;
         private System.Windows.Forms.PictureBox picMain;
         private System.Windows.Forms.PictureBox picExit;
@@ -227,6 +202,7 @@ namespace Power_of_God
         private PluginFrame pluginFrame;
         private System.Windows.Forms.Timer PluginUpdateTimer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private Button button2;
     }
 }
 

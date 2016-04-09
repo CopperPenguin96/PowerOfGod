@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Versioning;
 using System.Windows.Forms.VisualStyles;
+using Power_of_God_Lib.Plugins.Controls;
 
 namespace Power_of_God_Lib.Plugins
 {

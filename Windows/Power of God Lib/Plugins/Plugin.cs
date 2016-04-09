@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Power_of_God_Lib.Plugins.Controls;
 
 namespace Power_of_God_Lib.Plugins
 {

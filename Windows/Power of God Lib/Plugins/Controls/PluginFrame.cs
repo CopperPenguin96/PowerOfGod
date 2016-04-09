@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Power_of_God_Lib.Plugins
+namespace Power_of_God_Lib.Plugins.Controls
 {
     public partial class PluginFrame : UserControl
     {
