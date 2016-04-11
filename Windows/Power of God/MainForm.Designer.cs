@@ -43,7 +43,7 @@ namespace Power_of_God
             this.picMain = new System.Windows.Forms.PictureBox();
             this.PluginUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new Power_of_God_Lib.Plugins.Button();
+            this.settingsBtn = new System.Windows.Forms.Button();
             this.headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -150,16 +150,17 @@ namespace Power_of_God
             this.flowLayoutPanel2.Size = new System.Drawing.Size(456, 394);
             this.flowLayoutPanel2.TabIndex = 17;
             // 
-            // button2
+            // settingsBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(622, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 33);
-            this.button2.TabIndex = 18;
-            this.button2.Load += new System.EventHandler(this.button2_Load);
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.Image = global::Power_of_God.Properties.Resources.button_regular;
+            this.settingsBtn.Location = new System.Drawing.Point(622, 49);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(121, 33);
+            this.settingsBtn.TabIndex = 18;
+            this.settingsBtn.Text = "Settings";
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
             // MainForm
             // 
@@ -169,7 +170,7 @@ namespace Power_of_God
             this.BackgroundImage = global::Power_of_God.Properties.Resources.goldenraysabstract;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 456);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.settingsBtn);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblName);
@@ -202,7 +203,7 @@ namespace Power_of_God
         private PluginFrame pluginFrame;
         private System.Windows.Forms.Timer PluginUpdateTimer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Button button2;
+        private System.Windows.Forms.Button settingsBtn;
     }
 }
 

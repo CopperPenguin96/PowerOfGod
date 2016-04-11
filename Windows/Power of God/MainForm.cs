@@ -7,11 +7,13 @@ using System.Windows.Forms;
 using NetBible.Books;
 using Power_of_God.BibPlan;
 using Power_of_God.pSystem;
+using Power_of_God.Properties;
 using Power_of_God.User;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.pSystem.DialogBox;
 using Power_of_God_Lib.Plugins.Controls;
+using Settings = Power_of_God.User.Settings;
 
 namespace Power_of_God
 {
@@ -83,6 +85,18 @@ namespace Power_of_God
             picMain.MouseUp += panel1_MouseUp;
             picMain.MouseMove += panel1_MouseMove;
             Content.ObservedList.CollectionChanged += CollectionChanged;
+            settingsBtn.MouseHover += Hovered;
+            settingsBtn.MouseLeave += LeftButton;
+        }
+
+        private void LeftButton(object sender, EventArgs e)
+        {
+            settingsBtn.Image = Resources.button_regular;
+        }
+
+        private void Hovered(object sender, EventArgs e)
+        {
+            settingsBtn.Image = Resources.button_inverted;
         }
 
         private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -131,23 +145,6 @@ namespace Power_of_God
         {
             get { return base.Text; }
             set { base.Text = value; }
-        }
-
-
-        private void btnDailyVerses_Click(object sender, EventArgs e)
-        {
-            for (var x = 1; x <= 2; x++)
-            {
-                try
-                {
-                    //webBrowser1.DocumentText = DailyScripture.GetDailyScripture();
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Sorry, there is no verse(s) for today. Check back tomorrow!");
-                }
-            }
-            ListItems(RichTextMode.DailyVerses);
         }
 
 
@@ -241,21 +238,16 @@ namespace Power_of_God
             }
         }
 
-        private void button2_Load(object sender, EventArgs e)
-        {
-            button2.SetText("Settings");
-            button2.Click += SettingsButtonClick;
-        }
-
         private void SettingsButtonClick(object sender, EventArgs e)
         {
             var settingsForm = new SettingsForm();
             settingsForm.ShowDialog();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        
+        private void settingsBtn_Click(object sender, EventArgs e)
         {
-
+            settingsBtn.Image = Resources.button_clicked;
+            SettingsButtonClick(sender, e);
         }
     }
 

@@ -78,6 +78,7 @@ namespace Power_of_God_Lib.Plugins
         }
         public static void StartUp(Plugin pl)
         {
+            PluginLoaded(pl); // Tells the system the plugin is loaded
             PerformMethod(pl, "Plugin", "PerformStartAction", new object[] { });
         }
 
@@ -146,6 +147,21 @@ namespace Power_of_God_Lib.Plugins
         public static string[] Files()
         {
             return System.IO.Directory.GetFiles(Directory);
+        }
+
+        private static readonly List<string> PluginsLoaded = new List<string>();
+
+        public static void PluginLoaded(Plugin pl)
+        {
+            foreach (var p in PluginsLoaded.Where(p => p != pl.GetName()))
+            {
+                PluginsLoaded.Add(pl.GetName());
+            }
+        }
+
+        public static bool GetPluginLoaded(string name)
+        {
+            return PluginsLoaded.Contains(name);
         }
 
         public static void DeleteBaddies(string baseName)

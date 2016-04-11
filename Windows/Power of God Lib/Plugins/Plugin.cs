@@ -22,6 +22,11 @@ namespace Power_of_God_Lib.Plugins
         /// The name of the plugin
         /// </summary>
         public string Name;
+        
+        public virtual string GetName()
+        {
+            return Name;
+        }
         /// <summary>
         /// The developer of the plugin
         /// </summary>
