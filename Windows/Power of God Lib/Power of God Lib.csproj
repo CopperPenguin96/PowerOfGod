@@ -63,6 +63,12 @@
     </Compile>
     <Compile Include="BibPlan\Parser.cs" />
     <Compile Include="BibPlan\PatchClass.cs" />
+    <Compile Include="NetBible\BibleReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NetBible\BibleReaderForm.Designer.cs">
+      <DependentUpon>BibleReaderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NetBible\Books\Bible.cs" />
     <Compile Include="NetBible\Books\Book.cs" />
     <Compile Include="NetBible\Books\New Testament\Acts.cs" />
@@ -156,12 +162,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="pSystem\BiblePane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="pSystem\BiblePane.Designer.cs">
+      <DependentUpon>BiblePane.cs</DependentUpon>
+    </Compile>
     <Compile Include="pSystem\Content.cs" />
     <Compile Include="pSystem\DialogBox\DialogBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pSystem\DialogBox\DialogBox.Designer.cs">
       <DependentUpon>DialogBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pSystem\TransparentTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="pSystem\TransparentTextBox.Designer.cs">
+      <DependentUpon>TransparentTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="pSystem\UpdateWeb.cs" />
     <Compile Include="VerseObj.cs" />
@@ -189,6 +207,9 @@
     <EmbeddedResource Include="BibPlan\DownloadForm.resx">
       <DependentUpon>DownloadForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NetBible\BibleReaderForm.resx">
+      <DependentUpon>BibleReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Plugins\Controls\HtmlRichTextBox.resx">
       <DependentUpon>HtmlRichTextBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +223,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="pSystem\BiblePane.resx">
+      <DependentUpon>BiblePane.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="pSystem\DialogBox\DialogBox.resx">
       <DependentUpon>DialogBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +234,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\bible_reader_logo.pdn" />
     <None Include="Resources\button_inverted.png" />
   </ItemGroup>
   <ItemGroup>
@@ -221,7 +246,15 @@
   <ItemGroup>
     <None Include="Resources\goldenraysabstract.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\scroll_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bible_reader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bible_reader_logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

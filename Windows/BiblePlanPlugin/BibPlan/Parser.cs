@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using NetBible.Books;
+using Newtonsoft.Json;
 using Power_of_God.User;
 using Power_of_God_Lib.BibPlan;
 
@@ -9,6 +10,16 @@ namespace BiblePlanPlugin.BibPlan
 {
     public class Parser
     {
+        /// <summary>
+        /// Converts JSON string object to a Bible Plan
+        /// </summary>
+        /// <param name="content">the BibPlan object that represents the JSON string</param>
+        /// <returns></returns>
+        public static BibPlan BiblicalPlan(string content)
+        {
+            return JsonConvert.DeserializeObject<BibPlan>(content);
+        }
+        public static BibPlan CurrentPlan;
         public static ObservableCollection<string> PlanDays = new ObservableCollection<string>();
         /// <summary>
         /// Returns the html of the Bible Plan 
@@ -18,7 +29,7 @@ namespace BiblePlanPlugin.BibPlan
         /// <returns></returns>
         public static string HtmlText(string bibplanFileName, int day)
         {
-            var bibPlan = BibPlanParser.BiblicalPlan(File.ReadAllText(bibplanFileName));
+            var bibPlan = BiblicalPlan(File.ReadAllText(bibplanFileName));
             var html = "<html><head><title>(BiblePlan) " + bibPlan.Name + "</title></head>" +
                             "<body>Today's Reading: <b>";
             var vs = bibPlan.VerseList;

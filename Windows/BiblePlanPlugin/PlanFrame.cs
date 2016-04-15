@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using BiblePlanPlugin.BibPlan;
 using Power_of_God.pSystem;
 using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.pSystem.DialogBox;
 using Power_of_God_Lib.Plugins.Controls;
 
 namespace BiblePlanPlugin
@@ -17,10 +18,7 @@ namespace BiblePlanPlugin
             InitializeComponent();
             Parser.PlanDays.CollectionChanged += CollectionChanged;
             Plugin.WBrowser.DocumentCompleted += ParseChange;
-            if (Plugin.AlreadyStarted) return;
-            var bPlanDialog = new BibPlanDialog();
-            bPlanDialog.Show();
-            Plugin.AlreadyStarted = true;
+            
         }
 
         private void ParseChange(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -30,12 +28,30 @@ namespace BiblePlanPlugin
 
         private void CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            Content.SetListItems(Parser.PlanDays.ToList());
+            var newList = new List<string>();
+            var items = Parser.PlanDays.ToList();
+            var intCount = 1;
+            foreach (var i in items)
+            {
+                if (intCount <= Parser.CurrentPlan.VerseList.Count)
+                {
+                    newList.Add(i);
+                }
+                intCount++;
+            }
+            Content.SetListItems(newList);
         }
 
         private void PlanFrame_Load(object sender, EventArgs e)
         {
             
         }
+
+        public override void FrameLoad()
+        {
+            var bPlanDialog = new BibPlanDialog();
+            bPlanDialog.Show();
+        }
+
     }
 }

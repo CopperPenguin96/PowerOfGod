@@ -63,6 +63,36 @@ namespace Power_of_God_Lib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bible_reader {
+            get {
+                object obj = ResourceManager.GetObject("bible_reader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] bible_reader_logo {
+            get {
+                object obj = ResourceManager.GetObject("bible_reader_logo", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bible_reader_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("bible_reader_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_clicked {
             get {
                 object obj = ResourceManager.GetObject("button_clicked", resourceCulture);
@@ -96,6 +126,16 @@ namespace Power_of_God_Lib.Properties {
         internal static System.Drawing.Bitmap goldenraysabstract {
             get {
                 object obj = ResourceManager.GetObject("goldenraysabstract", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap scroll_image {
+            get {
+                object obj = ResourceManager.GetObject("scroll_image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

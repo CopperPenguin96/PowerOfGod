@@ -1,0 +1,18 @@
+-----Power of God Error Log-----
+
+Exception Message: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
+   at Power_of_God.pSystem.Updater.UpdateWord() in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\pSystem\Updater.cs:line 72
+
+
+
+   at System.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument, ExceptionResource resource)
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
+   at Power_of_God.pSystem.Updater.UpdateWord() in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\pSystem\Updater.cs:line 72
+Log wrote at Thursday, April 14, 2016

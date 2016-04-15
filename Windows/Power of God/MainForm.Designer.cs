@@ -33,7 +33,6 @@ namespace Power_of_God
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.btnBibPlans = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.lboListOfItems = new System.Windows.Forms.ListBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -44,21 +43,12 @@ namespace Power_of_God
             this.PluginUpdateTimer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.settingsBtn = new System.Windows.Forms.Button();
+            this.btnReadBible = new System.Windows.Forms.Button();
             this.headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnBibPlans
-            // 
-            this.btnBibPlans.Location = new System.Drawing.Point(633, 383);
-            this.btnBibPlans.Name = "btnBibPlans";
-            this.btnBibPlans.Size = new System.Drawing.Size(70, 31);
-            this.btnBibPlans.TabIndex = 4;
-            this.btnBibPlans.Text = "Bible Plans";
-            this.btnBibPlans.UseVisualStyleBackColor = true;
-            this.btnBibPlans.Click += new System.EventHandler(this.btnBibPlans_Click);
             // 
             // lblName
             // 
@@ -74,9 +64,9 @@ namespace Power_of_God
             // lboListOfItems
             // 
             this.lboListOfItems.FormattingEnabled = true;
-            this.lboListOfItems.Location = new System.Drawing.Point(622, 88);
+            this.lboListOfItems.Location = new System.Drawing.Point(622, 127);
             this.lboListOfItems.Name = "lboListOfItems";
-            this.lboListOfItems.Size = new System.Drawing.Size(121, 355);
+            this.lboListOfItems.Size = new System.Drawing.Size(121, 316);
             this.lboListOfItems.TabIndex = 12;
             this.lboListOfItems.SelectedIndexChanged += new System.EventHandler(this.lboListOfItems_SelectedIndexChanged);
             // 
@@ -154,13 +144,26 @@ namespace Power_of_God
             // 
             this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsBtn.Image = global::Power_of_God.Properties.Resources.button_regular;
-            this.settingsBtn.Location = new System.Drawing.Point(622, 49);
+            this.settingsBtn.Location = new System.Drawing.Point(619, 49);
             this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Size = new System.Drawing.Size(121, 33);
+            this.settingsBtn.Size = new System.Drawing.Size(124, 33);
             this.settingsBtn.TabIndex = 18;
             this.settingsBtn.Text = "Settings";
             this.settingsBtn.UseVisualStyleBackColor = true;
             this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
+            // 
+            // btnReadBible
+            // 
+            this.btnReadBible.BackColor = System.Drawing.Color.Transparent;
+            this.btnReadBible.BackgroundImage = global::Power_of_God.Properties.Resources.bible_reader;
+            this.btnReadBible.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReadBible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReadBible.Location = new System.Drawing.Point(622, 88);
+            this.btnReadBible.Name = "btnReadBible";
+            this.btnReadBible.Size = new System.Drawing.Size(121, 33);
+            this.btnReadBible.TabIndex = 19;
+            this.btnReadBible.UseVisualStyleBackColor = false;
+            this.btnReadBible.Click += new System.EventHandler(this.btnReadBible_Click);
             // 
             // MainForm
             // 
@@ -170,11 +173,11 @@ namespace Power_of_God
             this.BackgroundImage = global::Power_of_God.Properties.Resources.goldenraysabstract;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 456);
+            this.Controls.Add(this.btnReadBible);
             this.Controls.Add(this.settingsBtn);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.btnBibPlans);
             this.Controls.Add(this.headerpanel);
             this.Controls.Add(this.lboListOfItems);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -192,7 +195,6 @@ namespace Power_of_God
         }
 
         #endregion
-        private System.Windows.Forms.Button btnBibPlans;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel headerpanel;
         private System.Windows.Forms.PictureBox picMain;
@@ -204,6 +206,7 @@ namespace Power_of_God
         private System.Windows.Forms.Timer PluginUpdateTimer;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button settingsBtn;
+        private System.Windows.Forms.Button btnReadBible;
     }
 }
 

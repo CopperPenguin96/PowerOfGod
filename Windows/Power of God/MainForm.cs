@@ -9,6 +9,7 @@ using Power_of_God.BibPlan;
 using Power_of_God.pSystem;
 using Power_of_God.Properties;
 using Power_of_God.User;
+using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.pSystem.DialogBox;
@@ -248,6 +249,11 @@ namespace Power_of_God
         {
             settingsBtn.Image = Resources.button_clicked;
             SettingsButtonClick(sender, e);
+        }
+
+        private void btnReadBible_Click(object sender, EventArgs e)
+        {
+            new BibleReaderForm().Show();
         }
     }
 

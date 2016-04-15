@@ -30,7 +30,7 @@ namespace BiblePlanPlugin
 
         public override void AppLoad()
         {
-            PerformStartAction();
+            //PerformStartAction();
         }
         
         /// <summary>

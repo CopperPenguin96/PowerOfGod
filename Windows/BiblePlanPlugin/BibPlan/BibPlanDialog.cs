@@ -37,10 +37,11 @@ namespace BiblePlanPlugin.BibPlan
                 }
             }
         }
-
+        
         private void lboPlanList_SelectedIndexChanged(object sender, EventArgs e)
         {
             var dir = "power.of.god/BibPlans/" + lboPlanList.SelectedItem.ToString().Replace(".bibplan", "") + "/";
+            Parser.CurrentPlan = Parser.BiblicalPlan(File.ReadAllText("power.of.god/BibPlans/" + lboPlanList.SelectedItem));
             if (!Directory.Exists(dir))
             {
                 Directory.CreateDirectory(dir);

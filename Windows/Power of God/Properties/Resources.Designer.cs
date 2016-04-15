@@ -63,6 +63,16 @@ namespace Power_of_God.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bible_reader {
+            get {
+                object obj = ResourceManager.GetObject("bible_reader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_clicked {
             get {
                 object obj = ResourceManager.GetObject("button_clicked", resourceCulture);

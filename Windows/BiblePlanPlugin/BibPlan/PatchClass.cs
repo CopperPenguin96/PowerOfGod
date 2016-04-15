@@ -260,7 +260,7 @@ namespace Power_of_God_Lib.BibPlan
                         {
                             if ((NumChapterEnd.Value - NumChapterStart.Value) > 1)
                             {
-                                for (var x = 1; x <= _selectedBookStart.VerseCount(y + z); x++)
+                                for (var x = 1; x <= _selectedBookStart.VerseCount((int) (y + z)); x++)
                                 {
                                     strContent += _selectedBookStart.ReadPlainVerse((int)NumChapterEnd.Value, x) + " ";
                                 }

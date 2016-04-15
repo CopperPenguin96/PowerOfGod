@@ -42,7 +42,7 @@ namespace BiblePlanPlugin.BibPlan
                 txtAuthorName.Text + 
                 "/" + lboContent.SelectedItem).Aggregate("", (current, x) => current +
                 x);
-            var tempbib = BibPlanParser.BiblicalPlan(texta);
+            var tempbib = Parser.BiblicalPlan(texta);
             var text = $"Name: {tempbib.Name}\nDays: {tempbib.VerseList.Count}";
             lblInfoContent.Text = text;
         }
