@@ -73,7 +73,7 @@ namespace Lesson
 
         private readonly List<PluginFrame> _frames = new List<PluginFrame>
         {
-            new LessonFrame(),
+            new VideoScreenFrame(),
             null
         };
 

@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\power.of.god\Plugin %28Debug%29\</OutputPath>
+    <OutputPath>..\bin\Debug\power.of.god\Plugins\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -24,7 +24,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\power.of.god\Plugin %28Debug%29\</OutputPath>
+    <OutputPath>..\bin\Release\power.of.god\Plugins\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frames\VideoScreenFrame.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\VideoScreenFrame.Designer.cs">
+      <DependentUpon>VideoScreenFrame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frames\LessonFrame.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -58,6 +64,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Frames\VideoScreenFrame.resx">
+      <DependentUpon>VideoScreenFrame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frames\LessonFrame.resx">
       <DependentUpon>LessonFrame.cs</DependentUpon>
     </EmbeddedResource>

@@ -133,9 +133,39 @@ namespace Power_of_God_Lib.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pause_btn {
+            get {
+                object obj = ResourceManager.GetObject("pause_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap scroll_image {
             get {
                 object obj = ResourceManager.GetObject("scroll_image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stop_btn {
+            get {
+                object obj = ResourceManager.GetObject("stop_btn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap video_player {
+            get {
+                object obj = ResourceManager.GetObject("video_player", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

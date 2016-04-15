@@ -150,6 +150,12 @@
     <Compile Include="Plugins\Controls\PluginFrame.Designer.cs">
       <DependentUpon>PluginFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="Plugins\Controls\VideoPlayer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Plugins\Controls\VideoPlayer.Designer.cs">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plugins\PluginReader.cs" />
     <Compile Include="Plugins\Controls\Button.cs">
       <SubType>UserControl</SubType>
@@ -219,6 +225,9 @@
     <EmbeddedResource Include="Plugins\Controls\Button.resx">
       <DependentUpon>Button.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Plugins\Controls\VideoPlayer.resx">
+      <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -254,6 +263,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bible_reader_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\video_player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop_btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

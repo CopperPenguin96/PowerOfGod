@@ -7,3 +7,4 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\D
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugin (Debug)\Lesson.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugin (Debug)\Lesson.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\Debug\LessonPlugin.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\LessonPlugin\obj\Debug\Lesson.Frames.VideoScreenFrame.resources
