@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace Power_of_God.pSystem
+namespace Power_of_God_Lib.pSystem
 {
     public class ErrorLogging
     {

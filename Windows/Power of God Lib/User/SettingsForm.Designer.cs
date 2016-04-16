@@ -1,4 +1,4 @@
-﻿namespace Power_of_God.User
+﻿namespace Power_of_God_Lib.User
 {
     partial class SettingsForm
     {
@@ -32,9 +32,8 @@
             this.picMain = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cboBibleVersion = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.chkBibPlans = new System.Windows.Forms.CheckBox();
+            this.cboBibleVersion = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picMain)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +61,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.chkBibPlans);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cboBibleVersion);
             this.groupBox1.Location = new System.Drawing.Point(17, 152);
@@ -71,6 +69,15 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Settings";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Bible Version";
             // 
             // cboBibleVersion
             // 
@@ -85,25 +92,6 @@
             this.cboBibleVersion.Name = "cboBibleVersion";
             this.cboBibleVersion.Size = new System.Drawing.Size(64, 21);
             this.cboBibleVersion.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Bible Version";
-            // 
-            // chkBibPlans
-            // 
-            this.chkBibPlans.AutoSize = true;
-            this.chkBibPlans.Location = new System.Drawing.Point(16, 43);
-            this.chkBibPlans.Name = "chkBibPlans";
-            this.chkBibPlans.Size = new System.Drawing.Size(78, 17);
-            this.chkBibPlans.TabIndex = 3;
-            this.chkBibPlans.Text = "Bible Plans";
-            this.chkBibPlans.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
@@ -141,7 +129,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboBibleVersion;
-        private System.Windows.Forms.CheckBox chkBibPlans;
         private System.Windows.Forms.Button btnSave;
     }
 }

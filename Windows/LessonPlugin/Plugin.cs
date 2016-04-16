@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography;
 using Lesson.Frames;
-using Power_of_God.pSystem;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Plugins.Controls;
+using Power_of_God_Lib.Utilities;
 
 namespace Lesson
 {
@@ -20,8 +21,8 @@ namespace Lesson
         public Plugin()
         {
             Console.WriteLine("Default Constructor Init");
-            
-            
+
+
         }
 
         public override void AppLoad()
@@ -29,36 +30,53 @@ namespace Lesson
             PerformStartAction();
         }
 
-        public static List<string> GetList()
+        public static List<string> GetList(bool isWritten)
         {
-            var theList = new List<string>();
-            GetallFilesFromHttp.ListDiractory("http://godispower.us/Sundays/");
-            var intIndex = 0;
-            foreach (var x in GetallFilesFromHttp.Files)
+            if (isWritten)
             {
-                if (intIndex > 1)
+                var theList = new List<string>();
+                GetallFilesFromHttp.ListDiractory("http://godispower.us/Sundays/");
+                var intIndex = 0;
+                foreach (var x in GetallFilesFromHttp.Files)
                 {
-                    if (intIndex < GetallFilesFromHttp.Files.Count - 2)
-                        try
+                    if (intIndex > 1)
+                    {
+                        if (intIndex < GetallFilesFromHttp.Files.Count - 2)
                         {
-                            var i = x.Substring(1, x.Length - 7).Replace(".", "/");
-                            if (!(Convert.ToDateTime(i) > DateTime.Now))
+                            try
                             {
-                                theList.Add(i);
+                                var i = x.Substring(1, x.Length - 7).Replace(".", "/");
+                                if (!(Convert.ToDateTime(i) > DateTime.Now))
+                                {
+                                    theList.Add(i);
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                // Ignored - Occurs when "Lessons" button clicked twice
+
                             }
                         }
-                        catch (Exception)
-                        {
-                            // Ignored - Occurs when "Lessons" button clicked twice
-
-                        }
+                    }
+                    intIndex++;
                 }
-                intIndex++;
+                var dtList = SortAscending(theList.Select(DateTime.Parse).ToList());
+                return dtList.Select(date => date.ToString("MM/dd/yyyy")).ToList().Distinct().ToList();
             }
-            var dtList = SortAscending(theList.Select(DateTime.Parse).ToList());
-            return dtList.Select(date => date.ToString("MM/dd/yyyy")).ToList().Distinct().ToList();
+            else
+            {
+                var dir2016 = "http://pogvids.x10hosting.com/2016/";
+                GetallFilesFromHttp.ListDiractory(dir2016);
+                return GetallFilesFromHttp.Files;
+            }
         }
+        /*
+        using (MD5 md5Hash = MD5.Create())
+                    {
+                        string hash = Md5Hasher.GetMd5Hash(md5Hash, source);
 
+                    }
+    */
         private static IEnumerable<DateTime> SortAscending(List<DateTime> list)
         {
             list.Sort((a, b) => a.CompareTo(b));
@@ -67,7 +85,7 @@ namespace Lesson
 
         public override void PerformStartAction()
         {
-           // UpdateWeb.Navigate("http://godispower.us/Application/Lessons/sunday.html");
+            // UpdateWeb.Navigate("http://godispower.us/Application/Lessons/sunday.html");
             //dContent.SetListItems(GetList());
         }
 
@@ -96,7 +114,7 @@ namespace Lesson
         public override void LboSelection(int i)
         {
             Ol.Clear();
-            DateString = "http://godispower.us/Sundays/" + GetList().ElementAt(i).Replace("/", ".") + ".html";
+            DateString = "http://godispower.us/Sundays/" + GetList(true).ElementAt(i).Replace("/", ".") + ".html";
             var lines = Updater.GetUrlSource(DateString);
             foreach (var line in lines)
             {

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using Power_of_God_Lib.Plugins;
 
-namespace Power_of_God_Lib.pSystem
+namespace Power_of_God_Lib.Utilities
 {
     public class Content
     {

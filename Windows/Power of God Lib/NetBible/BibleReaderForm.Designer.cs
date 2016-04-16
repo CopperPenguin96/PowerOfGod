@@ -1,4 +1,6 @@
-﻿namespace Power_of_God_Lib.NetBible
+﻿using Power_of_God_Lib.Utilities;
+
+namespace Power_of_God_Lib.NetBible
 {
     partial class BibleReaderForm
     {
@@ -34,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.numChapter = new System.Windows.Forms.NumericUpDown();
             this.picBibLogo = new System.Windows.Forms.PictureBox();
-            this.biblePane1 = new Power_of_God_Lib.pSystem.BiblePane();
+            this.biblePane1 = new Power_of_God_Lib.Utilities.BiblePane();
             this.version = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numChapter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBibLogo)).BeginInit();
@@ -139,7 +141,7 @@
         }
 
         #endregion
-        private pSystem.BiblePane biblePane1;
+        private BiblePane biblePane1;
         private System.Windows.Forms.PictureBox picBibLogo;
         private System.Windows.Forms.ComboBox cboBook;
         private System.Windows.Forms.Label label1;

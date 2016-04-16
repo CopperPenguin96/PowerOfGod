@@ -1,4 +1,4 @@
-﻿namespace Power_of_God_Lib.pSystem
+﻿namespace Power_of_God_Lib.Utilities
 {
     partial class TransparentTextBox
     {

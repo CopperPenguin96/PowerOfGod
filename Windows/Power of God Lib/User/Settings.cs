@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Power_of_God.pSystem;
+using Power_of_God_Lib.pSystem;
 
-namespace Power_of_God.User
+namespace Power_of_God_Lib.User
 {
     public enum BibleVersion { KJV, ESV, NIV, NLT }
     public class Settings

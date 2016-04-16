@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace Power_of_God_Lib.pSystem
+namespace Power_of_God_Lib.Utilities
 {
     public partial class TransparentTextBox : TextBox
     {

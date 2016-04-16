@@ -34,9 +34,9 @@
             // videoPlayer1
             // 
             this.videoPlayer1.BackColor = System.Drawing.Color.White;
-            this.videoPlayer1.Location = new System.Drawing.Point(26, 16);
+            this.videoPlayer1.Location = new System.Drawing.Point(43, 62);
             this.videoPlayer1.Name = "videoPlayer1";
-            this.videoPlayer1.Size = new System.Drawing.Size(365, 267);
+            this.videoPlayer1.Size = new System.Drawing.Size(366, 267);
             this.videoPlayer1.TabIndex = 0;
             // 
             // VideoScreenFrame

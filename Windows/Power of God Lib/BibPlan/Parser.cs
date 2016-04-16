@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using BibPlans;
-using NetBible.Books;
-using Power_of_God.User;
-using Power_of_God_Lib.BibPlan;
+using Power_of_God_Lib.NetBible.Books;
+using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.User;
 
-namespace Power_of_God.BibPlan
+namespace Power_of_God_Lib.BibPlan
 {
     public class Parser
     {

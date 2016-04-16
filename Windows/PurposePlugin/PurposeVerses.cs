@@ -1,4 +1,4 @@
-﻿using Power_of_God.User;
+﻿using Power_of_God_Lib.User;
 
 namespace PurposePlugin
 {

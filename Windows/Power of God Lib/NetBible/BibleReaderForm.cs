@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using NetBible.Books;
-using NetBible.Books.New_Testament;
-using NetBible.Books.Old_Testament;
-using Power_of_God.User;
-using Power_of_God_Lib.BibPlan;
+using Power_of_God_Lib.NetBible.Books;
+using Power_of_God_Lib.NetBible.Books.New_Testament;
+using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Properties;
+using Power_of_God_Lib.User;
 
 namespace Power_of_God_Lib.NetBible
 {

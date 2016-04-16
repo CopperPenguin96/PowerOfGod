@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Power_of_God_Lib.BibPlan;
 
 namespace Power_of_God.BibPlan
 {

@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
-using NetBible.Books;
-using Power_of_God_Lib.BibPlan;
+using Power_of_God_Lib.NetBible.Books;
+using Power_of_God_Lib.pSystem;
 
-namespace Power_of_God_Lib.pSystem
+namespace Power_of_God_Lib.Utilities
 {
     public partial class BiblePane : UserControl
     {

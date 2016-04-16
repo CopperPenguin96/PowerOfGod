@@ -4,17 +4,19 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using NetBible.Books;
 using Power_of_God.BibPlan;
-using Power_of_God.pSystem;
 using Power_of_God.Properties;
-using Power_of_God.User;
+using Power_of_God_Lib.BibPlan;
 using Power_of_God_Lib.NetBible;
+using Power_of_God_Lib.NetBible.Books;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.pSystem.DialogBox;
 using Power_of_God_Lib.Plugins.Controls;
-using Settings = Power_of_God.User.Settings;
+using Power_of_God_Lib.User;
+using Power_of_God_Lib.Utilities;
+using Button = Power_of_God_Lib.Plugins.Controls.Button;
+using Settings = Power_of_God_Lib.User.Settings;
 
 namespace Power_of_God
 {
@@ -60,7 +62,7 @@ namespace Power_of_God
             PluginReader.LoadPlugins();
             foreach (var pl in PluginReader.PluginList)
             {
-                var myButton = new Power_of_God_Lib.Plugins.Button(pl, true);
+                var myButton = new Button(pl, true);
                 myButton.SetText(pl.Name);
                 myButton.Width = flowLayoutPanel1.Width - 5;
                 myButton.Click += myButtonClick;
@@ -71,7 +73,7 @@ namespace Power_of_God
 
         private void myButtonClick(object sender, EventArgs e)
         {
-            var btnObject = (Power_of_God_Lib.Plugins.Button) sender;
+            var btnObject = (Button) sender;
             MessageBox.Show(btnObject.Text);
         }
 

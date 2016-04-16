@@ -1,4 +1,4 @@
-﻿namespace Power_of_God_Lib.Plugins
+﻿namespace Power_of_God_Lib.Plugins.Controls
 {
     partial class Button
     {

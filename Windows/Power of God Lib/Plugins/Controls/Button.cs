@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Properties;
+using Power_of_God_Lib.Utilities;
 
-namespace Power_of_God_Lib.Plugins
+namespace Power_of_God_Lib.Plugins.Controls
 {
     public partial class Button : UserControl
     {

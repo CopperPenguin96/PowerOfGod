@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Power_of_God_Lib.Properties;
 
 namespace Power_of_God_Lib.Plugins.Controls
 {
@@ -21,5 +22,7 @@ namespace Power_of_God_Lib.Plugins.Controls
         {
             axWindowsMediaPlayer1.URL = @path;
         }
+        
     }
+
 }

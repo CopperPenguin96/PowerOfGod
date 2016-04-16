@@ -14,18 +14,19 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God Lib.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God.BibPlan.BibPlanDialog.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God.BibPlan.DownloadForm.resources
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Plugins.Button.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Properties.Resources.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.pSystem.DialogBox.DialogBox.resources
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God.User.SettingsForm.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csproj.GenerateResource.Cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Plugins.Controls.PluginFrame.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.NetBible.BibleReaderForm.resources
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.pSystem.BiblePane.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Interop.WMPLib.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csproj.ResolveComReference.cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Plugins.Controls.VideoPlayer.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Plugins.Controls.Button.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.Utilities.BiblePane.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.User.SettingsForm.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csprojResolveAssemblyReference.cache

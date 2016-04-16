@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NetBible.Books;
-
-namespace NetBible.Books.Old_Testament
+﻿namespace Power_of_God_Lib.NetBible.Books.Old_Testament
 {
     public class Samuel2: Book
     {

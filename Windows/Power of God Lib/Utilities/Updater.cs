@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using Power_of_God_Lib.pSystem;
 
-namespace Power_of_God.pSystem
+namespace Power_of_God_Lib.Utilities
 {
     public class Updater
     {
         
-        private const string VersionPrefix = "Alpha";
+        private const string VersionPrefix = "Beta";
 
         private static readonly string[] CurrentVersion = new []
         {
-            "1", "5", null, null
+            "1", "0", null, null
         };
 
         public static string LatestStable()

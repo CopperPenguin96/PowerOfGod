@@ -2,11 +2,11 @@
 using System.IO;
 using System.Linq;
 using System.Net;
-using NetBible.Books;
 using Newtonsoft.Json.Linq;
-using Power_of_God.pSystem;
-using Power_of_God.User;
 using Power_of_God_Lib.BibPlan;
+using Power_of_God_Lib.NetBible.Books;
+using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.User;
 
 namespace DailyScripture
 {

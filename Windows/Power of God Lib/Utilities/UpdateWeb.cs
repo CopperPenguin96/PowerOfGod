@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-namespace Power_of_God_Lib.pSystem
+namespace Power_of_God_Lib.Utilities
 {
     public class UpdateWeb
     {

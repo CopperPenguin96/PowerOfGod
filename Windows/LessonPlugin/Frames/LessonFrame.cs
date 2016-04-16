@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Power_of_God.pSystem;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Plugins.Controls;
+using Power_of_God_Lib.Utilities;
 
 namespace Lesson.Frames
 {
@@ -33,11 +33,11 @@ namespace Lesson.Frames
         {
 
         }
-        private readonly string _lastDate = "http://godispower.us/Sundays/" + Plugin.GetList().Last().Replace("/", ".") + ".html";
+        private readonly string _lastDate = "http://godispower.us/Sundays/" + Plugin.GetList(true).Last().Replace("/", ".") + ".html";
         private void LessonFrame_Load(object sender, EventArgs e)
         {
             Plugin.Ol.CollectionChanged += SavedChange;
-            Content.SetListItems(Plugin.GetList().Distinct().ToList());
+            Content.SetListItems(Plugin.GetList(true).Distinct().ToList());
             
             var daList = Updater.GetUrlSource(_lastDate);
             lessonBox.Text = "";
@@ -55,7 +55,7 @@ namespace Lesson.Frames
                 }
             }
             lessonBox.SetHtmlText(fullText);
-            Content.SetTitle(TitleExtractor.pageTitle(_lastDate));
+            Content.SetTitle(TitleExtractor.PageTitle(_lastDate));
         }
 
         private void SavedChange(object sender, NotifyCollectionChangedEventArgs e)

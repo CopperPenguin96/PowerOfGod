@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace NetBible.Books
+namespace Power_of_God_Lib.NetBible.Books
 {
     //Default book class
     //Never use unless extending

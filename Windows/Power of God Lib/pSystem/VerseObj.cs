@@ -1,4 +1,4 @@
-﻿namespace Power_of_God_Lib.BibPlan
+﻿namespace Power_of_God_Lib.pSystem
 {
     public class VerseObj
     {

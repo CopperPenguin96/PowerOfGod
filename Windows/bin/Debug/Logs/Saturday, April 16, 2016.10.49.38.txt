@@ -1,0 +1,14 @@
+-----Power of God Error Log-----
+
+Exception Message: Value cannot be null.
+Parameter name: address
+System.ArgumentNullException: Value cannot be null.
+Parameter name: address
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Power_of_God_Lib.Utilities.Updater.GetUrlSource(String urlF) in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\Utilities\Updater.cs:line 199
+
+
+
+   at System.Net.WebClient.DownloadFile(String address, String fileName)
+   at Power_of_God_Lib.Utilities.Updater.GetUrlSource(String urlF) in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\Utilities\Updater.cs:line 199
+Log wrote at Saturday, April 16, 2016

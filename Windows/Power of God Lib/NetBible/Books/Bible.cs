@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NetBible.Books.New_Testament;
-using NetBible.Books.Old_Testament;
+using Power_of_God_Lib.NetBible.Books.New_Testament;
+using Power_of_God_Lib.NetBible.Books.Old_Testament;
 
-namespace NetBible.Books
+namespace Power_of_God_Lib.NetBible.Books
 {
     public class Bible
     {
