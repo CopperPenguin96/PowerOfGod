@@ -4,9 +4,8 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows.Forms;
 using BiblePlanPlugin.BibPlan;
+using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.pSystem;
-using Power_of_God_Lib.pSystem.DialogBox;
-using Power_of_God_Lib.Plugins.Controls;
 using Power_of_God_Lib.Utilities;
 
 namespace BiblePlanPlugin

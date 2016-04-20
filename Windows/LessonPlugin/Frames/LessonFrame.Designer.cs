@@ -1,4 +1,6 @@
-﻿namespace Lesson.Frames
+﻿using Power_of_God_Lib.GUI.Controls;
+
+namespace Lesson.Frames
 {
     partial class LessonFrame
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lessonBox = new Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox();
+            this.lessonBox = new HtmlRichTextBox();
             this.SuspendLayout();
             // 
             // lessonBox
@@ -54,6 +56,6 @@
 
         #endregion
 
-        private Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox lessonBox;
+        private HtmlRichTextBox lessonBox;
     }
 }

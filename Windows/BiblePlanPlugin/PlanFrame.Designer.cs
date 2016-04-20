@@ -1,4 +1,6 @@
-﻿namespace BiblePlanPlugin
+﻿using Power_of_God_Lib.GUI.Controls;
+
+namespace BiblePlanPlugin
 {
     partial class PlanFrame
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lessonBox = new Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox();
+            this.lessonBox = new HtmlRichTextBox();
             this.planView = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
 
         #endregion
 
-        private Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox lessonBox;
+        private HtmlRichTextBox lessonBox;
         private System.Windows.Forms.WebBrowser planView;
     }
 }

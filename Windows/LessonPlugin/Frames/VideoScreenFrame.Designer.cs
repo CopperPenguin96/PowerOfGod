@@ -1,4 +1,6 @@
-﻿namespace Lesson.Frames
+﻿using Power_of_God_Lib.GUI.Controls;
+
+namespace Lesson.Frames
 {
     partial class VideoScreenFrame
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.videoPlayer1 = new Power_of_God_Lib.Plugins.Controls.VideoPlayer();
+            this.videoPlayer1 = new VideoPlayer();
             this.SuspendLayout();
             // 
             // videoPlayer1
@@ -52,6 +54,6 @@
 
         #endregion
 
-        private Power_of_God_Lib.Plugins.Controls.VideoPlayer videoPlayer1;
+        private VideoPlayer videoPlayer1;
     }
 }

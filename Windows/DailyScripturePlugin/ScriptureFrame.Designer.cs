@@ -1,4 +1,6 @@
-﻿namespace DailyScripture
+﻿using Power_of_God_Lib.GUI.Controls;
+
+namespace DailyScripture
 {
     partial class ScriptureFrame
     {
@@ -28,8 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lessonBox = new Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox();
-            this.htmlRichTextBox1 = new Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox();
+            this.lessonBox = new HtmlRichTextBox();
+            this.htmlRichTextBox1 = new HtmlRichTextBox();
             this.SuspendLayout();
             // 
             // lessonBox
@@ -64,7 +66,7 @@
 
         #endregion
 
-        private Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox lessonBox;
-        private Power_of_God_Lib.Plugins.Controls.HtmlRichTextBox htmlRichTextBox1;
+        private HtmlRichTextBox lessonBox;
+        private HtmlRichTextBox htmlRichTextBox1;
     }
 }

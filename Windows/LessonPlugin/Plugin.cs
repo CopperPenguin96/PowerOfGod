@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Cryptography;
 using Lesson.Frames;
+using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
-using Power_of_God_Lib.Plugins.Controls;
 using Power_of_God_Lib.Utilities;
 
 namespace Lesson
@@ -30,8 +30,10 @@ namespace Lesson
             PerformStartAction();
         }
 
+        private static bool _isWritten;
         public static List<string> GetList(bool isWritten)
         {
+            _isWritten = isWritten;
             if (isWritten)
             {
                 var theList = new List<string>();
@@ -65,9 +67,31 @@ namespace Lesson
             }
             else
             {
-                var dir2016 = "http://pogvids.x10hosting.com/2016/";
+
+                GetallFilesFromHttp.Files.Clear();
+                var theNewList = new List<string>();
+                const string dir2016 = "http://pogvids.x10host.com/2016/";
+                                      //0123456789012345678901234567890123456789
                 GetallFilesFromHttp.ListDiractory(dir2016);
-                return GetallFilesFromHttp.Files;
+                GetallFilesFromHttp.Files = GetallFilesFromHttp.Files.Distinct().ToList(); // 35
+                foreach (var x in GetallFilesFromHttp.Files)
+                {
+                    try
+                    {
+                        var subStr = x.Substring(1);
+                        var i = subStr.Substring(0, x.LastIndexOf(".") - 1).Replace(".", "/");
+                    
+                        if (!(Convert.ToDateTime(i) > DateTime.Now))
+                        {
+                            theNewList.Add(i);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        
+                    }
+                }
+                return theNewList;
             }
         }
         /*
@@ -110,18 +134,40 @@ namespace Lesson
         }
 
         public static ObservableCollection<string> Ol = new ObservableCollection<string>();
+        public static ObservableCollection<string> VidOl = new ObservableCollection<string>(); 
         public static string DateString;
+        
         public override void LboSelection(int i)
         {
-            Ol.Clear();
-            DateString = "http://godispower.us/Sundays/" + GetList(true).ElementAt(i).Replace("/", ".") + ".html";
-            var lines = Updater.GetUrlSource(DateString);
-            foreach (var line in lines)
+            var actionStartedId = PluginReader.AssignNewAction(this, new LessonFrame());
+            if (_isWritten)
             {
-                Ol.Add(line);
+                Ol.Clear();
+                DateString = "http://godispower.us/Sundays/" + GetList(true).ElementAt(i).Replace("/", ".") + ".html";
+                var lines = Updater.GetUrlSource(DateString);
+                foreach (var line in lines)
+                {
+                    Ol.Add(line);
+                }
+            }
+            else
+            {
+                if (PluginReader.CheckIfStarted(actionStartedId)) return;
+                VidOl.Clear();
+                var daList =
+                    Updater.GetUrlSource("http://pogvids.x10host.com/2016/" +
+                                         GetVidTxt(GetList(false).ElementAt(i)).Replace("/", ".") + ".txt");
+                var title = daList.ElementAt(0);
+                var url = daList.ElementAt(1);
+                VidOl.Add(title);
+                VidOl.Add(url);
+                PluginReader.AssignActionFinished(actionStartedId);
             }
         }
 
-
+        private static string GetVidTxt(string dtStr)
+        {
+            return dtStr.Replace("mp4", "txt");
+        }
     }
 }

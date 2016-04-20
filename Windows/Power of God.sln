@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerGUI", "Power of God\PowerGUI.csproj", "{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerStart", "Power of God\PowerStart.csproj", "{7B40EF8B-48CE-4D17-9291-DE54F45FD8FF}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BibPlanMaker", "BibPlanMaker\BibPlanMaker.vbproj", "{023A0316-B7B7-4E6B-A148-8A922384FBFD}"
 EndProject

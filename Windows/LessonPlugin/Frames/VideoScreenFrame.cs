@@ -9,10 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.pSystem;
-using Power_of_God_Lib.pSystem.DialogBox;
 using Power_of_God_Lib.Plugins;
-using Power_of_God_Lib.Plugins.Controls;
 using Power_of_God_Lib.Utilities;
 
 namespace Lesson.Frames
@@ -22,24 +21,36 @@ namespace Lesson.Frames
         public VideoScreenFrame()
         {
             InitializeComponent();
+            Plugin.VidOl.CollectionChanged += SavedChange;
         }
 
-        private readonly string _lastDate = null; //"http://godispower.us/Sundays/" + Plugin.GetList(false).Last().Replace("/", ".") + ".txt";
+        private readonly string _lastDate = "http://pogvids.x10host.com/2016/" + Plugin.GetList(false).Last().Replace("/", ".") + ".mp4";
         private void VideoScreenFrame_Load(object sender, EventArgs e)
         {
-            Plugin.Ol.CollectionChanged += SavedChange;
             Content.SetListItems(Plugin.GetList(false).Distinct().ToList());
 
-            var daList = Updater.GetUrlSource(_lastDate);
-            //var title = daList.ElementAt(0);
-            //var url = daList.ElementAt(1);
-            //Content.SetTitle(title);
-            videoPlayer1.SetVideo("http://pogvids.x10host.com/2016/%233.1.mp4");
+            var daList = Updater.GetUrlSource(GetVidTxt(_lastDate));
+            var title = daList.ElementAt(0);
+            var url = daList.ElementAt(1);
+            videoPlayer1.SetVideo(url);
+            Content.SetTitle(title);
         }
 
+        private string GetVidTxt(string dtStr)
+        {
+            return dtStr.Replace("mp4", "txt");
+        }
         private void SavedChange(object sender, NotifyCollectionChangedEventArgs e)
         {
-            //throw new NotImplementedException();
+            try
+            {
+                Content.SetTitle(Plugin.VidOl.ElementAt(0));
+                videoPlayer1.SetVideo(Plugin.VidOl.ElementAt(1));
+            }
+            catch (Exception)
+            {
+                // Ignored -> From the .Clear() method
+            }
         }
     }
 

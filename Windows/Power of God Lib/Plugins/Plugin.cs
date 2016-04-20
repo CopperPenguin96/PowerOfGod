@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Power_of_God_Lib.Plugins.Controls;
+using Power_of_God_Lib.GUI.Controls;
 
 namespace Power_of_God_Lib.Plugins
 {
@@ -152,6 +152,22 @@ namespace Power_of_God_Lib.Plugins
         public virtual void LboSelection(int index)
         {
             
+        }
+        /// <summary>
+        /// Use this if you ever need to clear your current Frame.
+        /// </summary>
+        public void ClearFrame()
+        {
+            PluginReader.CurrentFrame = new PluginFrame();
+        }
+        /// <summary>
+        /// Does the same as ClearFrame(), but also replaces the current Frame
+        /// </summary>
+        /// <param name="plFrame">The frame you are replacing the old frame with</param>
+        public void ReplaceFrame(PluginFrame plFrame)
+        {
+            ClearFrame();
+            PluginReader.SetFrame(plFrame);
         }
     }
 

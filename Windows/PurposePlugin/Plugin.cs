@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
-using Power_of_God_Lib.Plugins.Controls;
 using Purpose.Frames;
 
 namespace PurposePlugin

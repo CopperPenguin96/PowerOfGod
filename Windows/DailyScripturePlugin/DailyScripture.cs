@@ -6,7 +6,6 @@ using Newtonsoft.Json.Linq;
 using Power_of_God_Lib.BibPlan;
 using Power_of_God_Lib.NetBible.Books;
 using Power_of_God_Lib.pSystem;
-using Power_of_God_Lib.User;
 
 namespace DailyScripture
 {

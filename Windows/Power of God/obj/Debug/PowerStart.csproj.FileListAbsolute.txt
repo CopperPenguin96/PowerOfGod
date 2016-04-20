@@ -1,0 +1,11 @@
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God.exe.config
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God.exe
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\Power of God.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\PowerStart.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Interop.MediaPlayer.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Interop.WMPLib.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\PowerStart.csproj.ResolveComReference.cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.Properties.Resources.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\PowerStart.csproj.GenerateResource.Cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.exe
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.pdb

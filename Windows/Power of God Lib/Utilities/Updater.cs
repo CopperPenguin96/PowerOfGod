@@ -10,7 +10,10 @@ namespace Power_of_God_Lib.Utilities
     public class Updater
     {
         
-        private const string VersionPrefix = "Beta";
+        private const string VersionPrefix = "Pre-Release";
+        private const string CurrentPreRelease = "b1a001";
+
+        
 
         private static readonly string[] CurrentVersion = new []
         {
@@ -19,15 +22,23 @@ namespace Power_of_God_Lib.Utilities
 
         public static string LatestStable()
         {
-            var returnValue = VersionPrefix + " " + CurrentVersion[0] + "." +
-                CurrentVersion[1];
-            if (CurrentVersion[2] == null) return returnValue;
-            returnValue += "." + CurrentVersion[2];
-            if (CurrentVersion[3] != null)
+            if (CurrentPrefixInt() != 5000)
             {
-                returnValue += "." + CurrentVersion[3];
+                var returnValue = VersionPrefix + " " + CurrentVersion[0] + "." +
+                 CurrentVersion[1];
+                if (CurrentVersion[2] == null) return returnValue;
+                returnValue += "." + CurrentVersion[2];
+                if (CurrentVersion[3] != null)
+                {
+                    returnValue += "." + CurrentVersion[3];
+                }
+                return returnValue;
             }
-            return returnValue;
+            else
+            {
+                return "Pre-Release " + CurrentPreRelease;
+            }
+            
         }
 
         private static int CurrentPrefixInt()
@@ -39,6 +50,8 @@ namespace Power_of_God_Lib.Utilities
                 // ReSharper disable once HeuristicUnreachableCode
                 case "Beta":
                     return 1;
+                case "Pre-Release":
+                    return 5000;
                 default:
                     return 2;
             }
@@ -56,10 +69,18 @@ namespace Power_of_God_Lib.Utilities
                     return "You do not have the most recent version. Consider updating to " +
                            LatestOnline();
                 default:
-                    return "You are using an unsupported version of Power of God. \nPlease consider " +
-                      "using the current version, " + LatestOnline() +
-                      ", \nbecause your version could possibly be unstable.";
-
+                    if (CurrentPrefixInt() == 5000)
+                    {
+                        return
+                            "You are using a Pre-Release. Please note that not all features will be functional.\n\n" +
+                            "(" + LatestStable() + ")";
+                    }
+                    else
+                    {
+                        return "You are using an unsupported version of Power of God. \nPlease consider " +
+                            "using the current version, " + LatestOnline() +
+                            ", \nbecause your version could possibly be unstable.";
+                    }
             }
         }
 
@@ -103,10 +124,7 @@ namespace Power_of_God_Lib.Utilities
                 catch (Exception ex)
                 {
                     item3 = -1;
-                    Console.WriteLine("Caught on Updater: " + ex);
                 }
-                Console.WriteLine("Online Minor = " + item2);
-                Console.WriteLine("Local Minor = " + CurrentVersionInt().ElementAt(1));
                 if (onlinePrefix > CurrentPrefixInt()) return "Outdated";
                 if (onlinePrefix < CurrentPrefixInt()) return "Unsupported";
                 if (item1 > CurrentVersionInt().ElementAt(0)) return "Outdated";
@@ -189,8 +207,13 @@ namespace Power_of_God_Lib.Utilities
 
         public static List<string> GetUrlSource(string urlF)
         {
-            var temp = "power.of.god/tempupdate.txt";
-            var c = File.Create(temp);
+            if (urlF.Contains("0201"))
+            {
+                urlF = urlF.Replace("0201", "2016");
+            }
+            var temp = "power.of.god/check_file.txt";
+            var c = File.CreateText(temp);
+
             c.Close();
             using (var client = new WebClient())
             {

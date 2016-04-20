@@ -5,13 +5,78 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Versioning;
+using System.Security.Cryptography;
 using System.Windows.Forms.VisualStyles;
-using Power_of_God_Lib.Plugins.Controls;
+using Power_of_God_Lib.GUI.Controls;
+using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.Utilities;
 
 namespace Power_of_God_Lib.Plugins
 {
     public class PluginReader
     {
+
+        #region ActionStarted System
+        
+        private static List<bool> ActionStartedList = new List<bool>();
+        private static List<string> ActionStartedIdList = new List<string>();
+
+        /// <summary>
+        /// Check if your item in the ActionStartedList is started
+        /// </summary>
+        /// <param name="id">The ID you received when you called the AssignNewAction() function</param>
+        /// <returns>Returns true if Started</returns>
+        public static bool CheckIfStarted(string id)
+        {
+            var index = -1 + ActionStartedIdList.Count(str => str == id);
+            return ActionStartedList.ElementAt(index);
+        }
+        /// <summary>
+        /// Assigns a new action
+        /// </summary>
+        /// <returns>Returns the ID for this action</returns>
+        public static string AssignNewAction(Plugin plugin, PluginFrame plFrame)
+        {
+            var newMd5Hash = Md5Hasher.GetMd5Hash(MD5.Create(), plugin.Name + plugin.Developer + plugin + plFrame.FrameID);
+            ActionStartedIdList.Add(newMd5Hash);
+            ActionStartedList.Add(false);
+            return newMd5Hash;
+        }
+        /// <summary>
+        /// Tells the system that your action is finished
+        /// </summary>
+        /// <param name="id">The ID your received when you called the AssignNewAction() function</param>
+        /// <returns>Returns true if successful. False if something went wrong</returns>
+        public static bool AssignActionFinished(string id)
+        {
+            try
+            {
+                if (!ActionStartedIdList.Contains(id)) return true;
+                if (CheckIfStarted(id)) return true;
+                var oldList = ActionStartedList.ToArray();
+                var index = -1 + ActionStartedIdList.Count(str => str == id);
+                oldList[index] = true;
+                ActionStartedList = oldList.ToList();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging.Write(ex);
+                return false;
+            }
+        }
+
+        private static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+        #endregion
+
         public static Plugin CurrentPlugin;
         public static T GetObject<T>(Plugin pl, object[] constructArgs)
         {
@@ -119,12 +184,20 @@ namespace Power_of_God_Lib.Plugins
             var strFileName = "";
             foreach (var files in Files())
             {
-                var pl = GetPlugin(files);
-                if (strName == pl.Name) continue;
-                if (strFileName == files.Substring(files.LastIndexOf("/", StringComparison.Ordinal))) continue;
-                strName = pl.Name;
-                strFileName = files;
-                PluginList.Add(GetPlugin(files));
+                try
+                {
+                    var pl = GetPlugin(files);
+                    if (strName == pl.Name) continue;
+                    if (strFileName == files.Substring(files.LastIndexOf("/", StringComparison.Ordinal))) continue;
+                    strName = pl.Name;
+                    strFileName = files;
+                    PluginList.Add(GetPlugin(files));
+                }
+                catch (Exception e)
+                {
+                    ErrorLogging.Write(e);
+                }
+                
             }
 
         }
@@ -166,7 +239,7 @@ namespace Power_of_God_Lib.Plugins
 
         public static void DeleteBaddies(string baseName)
         {
-            var arrayOfBadFiles = new[]
+            /*var arrayOfBadFiles = new[]
                        {
                             "Newtonsoft.Json.dll", "Newtonsoft.Json.pdb", "Newtonsoft.Json.xml", "Power of God Lib.dll",
                             "Power of God Lib.pdb", baseName + ".pdb"
@@ -174,28 +247,55 @@ namespace Power_of_God_Lib.Plugins
             foreach (var z in arrayOfBadFiles)
             {
                 File.Delete("power.of.god/Plugins/" + z);
-            }
+            }*/
         }
         public static Plugin GetPlugin(string name)
         {
             var fArray = Files();
-            if (!fArray.Any(file => file.Contains(name))) throw new Exception("Failed to read plugin.");
-            var baseName = name.Substring(21, name.LastIndexOf(".", StringComparison.Ordinal) - 21);
-            if (!File.Exists("power.of.god/Plugins/" + baseName + ".pogplugin"))
+
+            if (fArray.Any(f => Path.GetExtension(f) == ".dll" /*|| Path.GetExtension(f) == ".pogplugin"*/))
             {
-                DeleteBaddies(baseName);
-                // ReSharper disable once TailRecursiveCall
-                return GetPlugin(name);
+                var baseName = name.Substring(21, name.LastIndexOf(".", StringComparison.Ordinal) - 21);
+                if (!fArray.Any(file => file.Contains(name))) throw new Exception("Failed to read plugin.");
+                
+                if (!File.Exists("power.of.god/Plugins/" + baseName + ".pogplugin"))
+                {
+                    throw new PluginParseException(name + " is missing the .pogplugin file");
+                }
+                var text = "power.of.god/Plugins/" + baseName + ".pogplugin";
+                var jsonContent = JsonConvert.DeserializeObject<Plugin>(File.ReadAllText(text));
+                return jsonContent;
             }
-            DeleteBaddies(baseName);
-            var text = "power.of.god/Plugins/" + baseName + ".pogplugin";
-            var jsonContent = JsonConvert.DeserializeObject<Plugin>(File.ReadAllText(text));
-            return jsonContent;
+            else
+            {
+                throw new PluginParseException("Not a plugin");
+            }
+
         }
 
         public static void ActivatePluginListMethod(int index)
         {
             PerformMethod(CurrentPlugin, "Plugin", "LboSelection", new object[] { index });
+        }
+
+        
+    }
+
+    public class PluginParseException : Exception
+    {
+        public PluginParseException()
+        {
+            
+        }
+
+        public PluginParseException(string message) : base(message)
+        {
+            
+        }
+
+        public PluginParseException(string message, Exception e) : base(message, e)
+        {
+            
         }
     }
 }
