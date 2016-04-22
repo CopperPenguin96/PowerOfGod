@@ -27,9 +27,8 @@ namespace Lesson.Frames
         private readonly string _lastDate = "http://pogvids.x10host.com/2016/" + Plugin.GetList(false).Last().Replace("/", ".") + ".mp4";
         private void VideoScreenFrame_Load(object sender, EventArgs e)
         {
-            Content.SetListItems(Plugin.GetList(false).Distinct().ToList());
-
-            var daList = Updater.GetUrlSource(GetVidTxt(_lastDate));
+            //Content.SetListItems(Plugin.GetList(false).Distinct().ToList());
+            var daList = Network.GetUrlSource(GetVidTxt(_lastDate));
             var title = daList.ElementAt(0);
             var url = daList.ElementAt(1);
             videoPlayer1.SetVideo(url);
@@ -51,6 +50,11 @@ namespace Lesson.Frames
             {
                 // Ignored -> From the .Clear() method
             }
+        }
+
+        private void btnRegularLessons_Click(object sender, EventArgs e)
+        {
+            PluginReader.SetFrame(new LessonFrame());
         }
     }
 

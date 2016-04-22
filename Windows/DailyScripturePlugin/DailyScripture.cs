@@ -11,6 +11,8 @@ namespace DailyScripture
 {
     public class DailyScripture
     {
+
+        
         private static string _dayPath = "Verses/";
 
         private static string DateString()

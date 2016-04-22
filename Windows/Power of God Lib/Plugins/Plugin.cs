@@ -75,17 +75,20 @@ namespace Power_of_God_Lib.Plugins
             Developer = dev;
             CCategory = Category.Basic;
         }
+
         /// <summary>
         /// Creates the plugin object.
         /// </summary>
         /// <param name="name">The name of the plugin</param>
         /// <param name="dev">Your username</param>
         /// <param name="cat">The category the plugin is under. Use "other" if you don't know</param>
-        public Plugin(string name, string dev, Category cat)
+        /// <param name="iPriority">Priority in Plugin Lists</param>
+        public Plugin(string name, string dev, Category cat, int iPriority)
         {
             Name = name;
             Developer = dev;
             CCategory = cat;
+            Priority = iPriority;
         }
 
         /// <summary>
@@ -169,6 +172,13 @@ namespace Power_of_God_Lib.Plugins
             ClearFrame();
             PluginReader.SetFrame(plFrame);
         }
+
+        /// <summary>
+        /// Determines how high up in the plugin list the plugin is. It is advisable to keep your plugin above 50, so that it does not clash with
+        /// the app developer's plugins.
+        /// </summary>
+        /// <returns>Devloper Priority. 1 being the most priority. Cannot clash with other plugins.</returns>
+        public int Priority = -1;
     }
 
     public enum Category

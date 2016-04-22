@@ -57,7 +57,6 @@ namespace Power_of_God_Lib.GUI
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(366, 37);
             this.lblName.TabIndex = 7;
-            this.lblName.Text = "Beta 1.0";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lboListOfItems

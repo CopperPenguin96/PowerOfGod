@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using Power_of_God_Lib.GUI.Controls;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Purpose.Frames;
 
-namespace PurposePlugin
+namespace Purpose
 {
     public class Plugin : Power_of_God_Lib.Plugins.Plugin
     {
+        public new int Priority = 5;
+        
+
         public Plugin(string name, string dev, Category cat, bool act) : base(name, dev, cat, act)
         {
-            
-        }
 
+        }
         public override void AppLoad()
         {
             // Add any needed plugin start up content

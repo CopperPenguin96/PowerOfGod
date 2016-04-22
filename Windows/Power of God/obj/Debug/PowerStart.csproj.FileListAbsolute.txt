@@ -9,3 +9,4 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\D
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\PowerStart.csproj.GenerateResource.Cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.exe
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power of God.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Debug\Power_of_God.UpdaterForm.resources

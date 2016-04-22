@@ -5,3 +5,5 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Release\PurposePlugin.csproj.GenerateResource.Cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Release\Purpose.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\PurposePlugin\obj\Release\Purpose.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugins\Purpose.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugins\Purpose.pdb

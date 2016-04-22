@@ -11,13 +11,17 @@ namespace DailyScripture
 {
     public class Plugin : Power_of_God_Lib.Plugins.Plugin
     {
+
+        public new int Priority = 3;
+        
+
         public Plugin(string name, string dev, Category cat, bool act) : base(name, dev, cat, act)
         {
-            
-        }
 
+        }
         public override void AppLoad()
         {
+            Directory.CreateDirectory("Verses/");
             // Add any needed plugin start up content
             PerformStartAction(); /* If your start action trigers any events, it needs to be called 
             * first in the constructor and 2nd in the

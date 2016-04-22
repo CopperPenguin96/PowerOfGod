@@ -12,6 +12,8 @@ namespace BiblePlanPlugin
 {
     public class Plugin: Power_of_God_Lib.Plugins.Plugin
     {
+        public new int Priority = 4;
+        
         public new string Name = "Bible Plans";
 
         public override string GetName()

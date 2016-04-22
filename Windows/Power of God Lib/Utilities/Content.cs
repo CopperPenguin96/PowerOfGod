@@ -13,18 +13,12 @@ namespace Power_of_God_Lib.Utilities
         public static bool ButtonPressed;
         public static void SetTitle(string text)
         {
-            if (!ButtonPressed)
+            if (OldTitle != null)
             {
-                CurrentTitle = "Beta 1.0";
+                OldTitle = CurrentTitle;
             }
-            else
-            {
-                if (OldTitle != null)
-                {
-                    OldTitle = CurrentTitle;
-                }
-                CurrentTitle = text;
-            }
+            CurrentTitle = text;
+
         }
 
         public static string CurrentListId = "";

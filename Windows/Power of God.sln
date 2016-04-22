@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DailyScripturePlugin", "Dai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiblePlanPlugin", "BiblePlanPlugin\BiblePlanPlugin.csproj", "{ED3D34FE-8EBF-427B-BC43-9F4AC6829962}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Updater", "Updater\Updater.vbproj", "{C4B3F23B-EF01-4C4B-9952-BC415A53C6A8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{ED3D34FE-8EBF-427B-BC43-9F4AC6829962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED3D34FE-8EBF-427B-BC43-9F4AC6829962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED3D34FE-8EBF-427B-BC43-9F4AC6829962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B3F23B-EF01-4C4B-9952-BC415A53C6A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B3F23B-EF01-4C4B-9952-BC415A53C6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B3F23B-EF01-4C4B-9952-BC415A53C6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B3F23B-EF01-4C4B-9952-BC415A53C6A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

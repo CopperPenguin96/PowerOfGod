@@ -6,5 +6,9 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlug
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Newtonsoft.Json.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\bin\Release\Newtonsoft.Json.xml
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripturePlugin.csprojResolveAssemblyReference.cache
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripture.dll
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripture.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugins\Daily Scripture.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugins\Daily Scripture.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripture.ScriptureFrame.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\DailyScripturePlugin.csproj.GenerateResource.Cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\Daily Scripture.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\obj\Release\Daily Scripture.pdb

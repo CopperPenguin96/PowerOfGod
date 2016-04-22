@@ -1,0 +1,9 @@
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugins\Bible Plans.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\power.of.god\Plugins\Bible Plans.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\BiblePlanPlugin.BibPlan.BibPlanDialog.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\BiblePlanPlugin.BibPlan.DownloadForm.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\BiblePlanPlugin.PlanFrame.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\BiblePlanPlugin.csproj.GenerateResource.Cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\Bible Plans.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\Bible Plans.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BiblePlanPlugin\obj\Release\BiblePlanPlugin.csprojResolveAssemblyReference.cache

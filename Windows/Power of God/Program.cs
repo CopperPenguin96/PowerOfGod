@@ -20,24 +20,49 @@ namespace Power_of_God
         [STAThread]
         static void Main()
         {
+            bool safeToRun = false;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (Updater.LatestStable().Contains("Pre-Release"))
+            if (Network.LatestStable().Contains("Pre-Release"))
             {
                 AllocConsole();
                 Console.WriteLine("Power of God Debug Console");
                 Console.WriteLine("Thank you for choosing to test on of our Pre-Releases.");
-                Console.WriteLine("The program will load in just a second. You will be using Power of God " + Updater.LatestStable());
+                Console.WriteLine("The program will load in just a second. You will be using Power of God " +
+                                  Network.LatestStable());
                 for (var x = 1; x <= 20001; x++)
                 {
-                   
+
                     if (x == 3000 || x == 6000 || x == 9000)
                     {
                         Console.Write(" . ");
                     }
                 }
+                safeToRun = true;
             }
-            Application.Run(new MainForm());
+            else if (Network.UpdateWord() != "Updated")
+            {
+                var choice =
+                    MessageBox.Show(
+                        "It is recommended that you get Power of God " + Network.LatestOnline() +
+                        ", because you have now " +
+                        Network.LatestStable() +
+                        ". \n\nWould you like us to update it for you? This is the recommended option.", "Updater",
+                        MessageBoxButtons.YesNo);
+                switch (choice)
+                {
+                    case DialogResult.Yes:
+                        // TODO - Download current verison
+                        new UpdaterForm().ShowDialog();
+                        break;
+                    default:
+                        MessageBox.Show(
+                            "You have chosen not to update. Some features might not work or you will not get access to new things.");
+                        safeToRun = true;
+                        break;
+                }
+            }
+            if (safeToRun) Application.Run(new MainForm());
         }
     }
 }

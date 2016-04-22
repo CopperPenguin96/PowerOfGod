@@ -39,14 +39,14 @@ namespace Lesson.Frames
             Plugin.Ol.CollectionChanged += SavedChange;
             Content.SetListItems(Plugin.GetList(true).Distinct().ToList());
             
-            var daList = Updater.GetUrlSource(_lastDate);
+            var daList = Network.GetUrlSource(_lastDate);
             lessonBox.Text = "";
             var fullText = "";
             for (var x = 0; x <= daList.Count; x++)
             {
                 try
                 {
-                    var text = "\n" + Updater.GetUrlSource(_lastDate).ElementAt(x);
+                    var text = "\n" + Network.GetUrlSource(_lastDate).ElementAt(x);
                     fullText += text;
                 }
                 catch (Exception)

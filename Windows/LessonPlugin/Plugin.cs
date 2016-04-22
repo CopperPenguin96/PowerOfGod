@@ -13,15 +13,15 @@ namespace Lesson
 {
     public class Plugin : Power_of_God_Lib.Plugins.Plugin
     {
+        public new int Priority = 2;
+      
+
         public Plugin(string name, string dev, Category cat, bool act) : base(name, dev, cat, act)
         {
 
         }
-
         public Plugin()
         {
-            Console.WriteLine("Default Constructor Init");
-
 
         }
 
@@ -144,7 +144,7 @@ namespace Lesson
             {
                 Ol.Clear();
                 DateString = "http://godispower.us/Sundays/" + GetList(true).ElementAt(i).Replace("/", ".") + ".html";
-                var lines = Updater.GetUrlSource(DateString);
+                var lines = Network.GetUrlSource(DateString);
                 foreach (var line in lines)
                 {
                     Ol.Add(line);
@@ -155,7 +155,7 @@ namespace Lesson
                 if (PluginReader.CheckIfStarted(actionStartedId)) return;
                 VidOl.Clear();
                 var daList =
-                    Updater.GetUrlSource("http://pogvids.x10host.com/2016/" +
+                    Network.GetUrlSource("http://pogvids.x10host.com/2016/" +
                                          GetVidTxt(GetList(false).ElementAt(i)).Replace("/", ".") + ".txt");
                 var title = daList.ElementAt(0);
                 var url = daList.ElementAt(1);

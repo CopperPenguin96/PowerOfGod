@@ -18,8 +18,8 @@ namespace Power_of_God_Lib.Plugins
 
         #region ActionStarted System
         
-        private static List<bool> ActionStartedList = new List<bool>();
-        private static List<string> ActionStartedIdList = new List<string>();
+        private static List<bool> _actionStartedList = new List<bool>();
+        private static readonly List<string> ActionStartedIdList = new List<string>();
 
         /// <summary>
         /// Check if your item in the ActionStartedList is started
@@ -29,7 +29,7 @@ namespace Power_of_God_Lib.Plugins
         public static bool CheckIfStarted(string id)
         {
             var index = -1 + ActionStartedIdList.Count(str => str == id);
-            return ActionStartedList.ElementAt(index);
+            return _actionStartedList.ElementAt(index);
         }
         /// <summary>
         /// Assigns a new action
@@ -39,7 +39,7 @@ namespace Power_of_God_Lib.Plugins
         {
             var newMd5Hash = Md5Hasher.GetMd5Hash(MD5.Create(), plugin.Name + plugin.Developer + plugin + plFrame.FrameID);
             ActionStartedIdList.Add(newMd5Hash);
-            ActionStartedList.Add(false);
+            _actionStartedList.Add(false);
             return newMd5Hash;
         }
         /// <summary>
@@ -53,10 +53,10 @@ namespace Power_of_God_Lib.Plugins
             {
                 if (!ActionStartedIdList.Contains(id)) return true;
                 if (CheckIfStarted(id)) return true;
-                var oldList = ActionStartedList.ToArray();
+                var oldList = _actionStartedList.ToArray();
                 var index = -1 + ActionStartedIdList.Count(str => str == id);
                 oldList[index] = true;
-                ActionStartedList = oldList.ToList();
+                _actionStartedList = oldList.ToList();
 
                 return true;
             }
@@ -172,7 +172,9 @@ namespace Power_of_God_Lib.Plugins
             var theMethod = thisType.GetMethod(methodStr);
             theMethod.Invoke(m, parems);
         }
+
         public static List<Plugin> PluginList;
+
         public static string X = " ";
         public const string Directory = "power.of.god/Plugins/";
         public static void LoadPlugins()
@@ -182,6 +184,7 @@ namespace Power_of_God_Lib.Plugins
             if (!System.IO.Directory.Exists(dir)) System.IO.Directory.CreateDirectory(dir);
             var strName = "";
             var strFileName = "";
+            var tempList = new List<Plugin>();
             foreach (var files in Files())
             {
                 try
@@ -191,7 +194,7 @@ namespace Power_of_God_Lib.Plugins
                     if (strFileName == files.Substring(files.LastIndexOf("/", StringComparison.Ordinal))) continue;
                     strName = pl.Name;
                     strFileName = files;
-                    PluginList.Add(GetPlugin(files));
+                    tempList.Add(pl);
                 }
                 catch (Exception e)
                 {
@@ -199,9 +202,18 @@ namespace Power_of_God_Lib.Plugins
                 }
                 
             }
-
+            
+            tempList.Sort(SortByPriority);
+            foreach (var t in tempList)
+            {
+                PluginList.Add(t);
+            }
         }
 
+        static int SortByPriority(Plugin pl1, Plugin pl2)
+        {
+            return pl1.Priority.CompareTo(pl2.Priority);
+        }
         /*
         foreach (var b in from file in Directory.GetFiles(dir)
                               let extension = Path.GetExtension(file)
@@ -299,3 +311,6 @@ namespace Power_of_God_Lib.Plugins
         }
     }
 }
+
+
+

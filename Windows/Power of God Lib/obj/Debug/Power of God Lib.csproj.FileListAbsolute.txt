@@ -19,7 +19,6 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\o
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Interop.WMPLib.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\AxInterop.WMPLib.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csproj.ResolveComReference.cache
-C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csprojResolveAssemblyReference.cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.Controls.HtmlRichTextBox.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.Controls.PluginFrame.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.Controls.Button.resources
@@ -31,3 +30,4 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\o
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.MainForm.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.BibleReaderForm.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.SettingsForm.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Debug\Power of God Lib.csprojResolveAssemblyReference.cache

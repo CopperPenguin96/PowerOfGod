@@ -26,19 +26,11 @@ namespace Power_of_God_Lib.GUI
             }
             InitializeComponent();
             _fdefault = flowLayoutPanel2;
-            Text = "Power of God " + Updater.LatestStable();
             SetEventHandlers();
-            //const string settingsFile = "power.of.god/settings.json";
             Settings.LoadDefault();
             Settings.LoadFromJson();
-            if (Updater.UpdateWord().ToLower() != "updated")
-            {
-                var dBox = new DialogBox.DialogBox("Update Notice for Power of God", Updater.UpdateNotice());
-                dBox.Show();
-            }
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();
-            Content.SetTitle(Updater.LatestStable());
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -47,7 +39,7 @@ namespace Power_of_God_Lib.GUI
             {
                 PluginReader.AppLoad(c);
             }
-            lblName.Text = Updater.LatestStable();
+            Content.SetTitle(Network.LatestStable());
         }
         private void UpdatePluginPanel()
         {
@@ -60,7 +52,6 @@ namespace Power_of_God_Lib.GUI
                 myButton.Click += myButtonClick;
                 flowLayoutPanel1.Controls.Add(myButton);
             }
-            Content.SetTitle(Updater.LatestStable());
         }
 
         private void myButtonClick(object sender, EventArgs e)
