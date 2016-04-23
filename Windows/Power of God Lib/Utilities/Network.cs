@@ -11,8 +11,8 @@ namespace Power_of_God_Lib.Utilities
     public class Network
     {
         
-        private const string VersionPrefix = "Beta";
-        private const string CurrentPreRelease = "b1a002";
+        private const string VersionPrefix = "Pre-Release";
+        private const string CurrentPreRelease = "b1a003";
 
         
 
@@ -47,7 +47,6 @@ namespace Power_of_God_Lib.Utilities
             {
                 case "Alpha":
                     return 0;
-                // ReSharper disable once HeuristicUnreachableCode
                 case "Beta":
                     return 1;
                 case "Pre-Release":
@@ -103,7 +102,7 @@ namespace Power_of_God_Lib.Utilities
                         onlinePrefix = 2;
                         break;
                 }
-                var x = GetUrlSource(Url);
+                GetUrlSource(Url);
                 var itemcontext = GetUrlSource(Url).ElementAt(1);
                 var item1 = int.Parse(itemcontext);
                 var item2 = int.Parse(GetUrlSource(Url).ElementAt(2));
@@ -121,7 +120,7 @@ namespace Power_of_God_Lib.Utilities
                         item4 = -1;
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     item3 = -1;
                 }
@@ -164,7 +163,7 @@ namespace Power_of_God_Lib.Utilities
 
         private static IEnumerable<int> CurrentVersionInt()
         {
-            var xList = new System.Collections.Generic.List<int>();
+            var xList = new List<int>();
             foreach (var x in CurrentVersion)
             {
                 try
@@ -243,11 +242,10 @@ namespace Power_of_God_Lib.Utilities
 
         public static string Mediafire(string download)
         {
-            var str = "";
             var req = (HttpWebRequest)WebRequest.Create(download);
             var res = (HttpWebResponse)req.GetResponse();
             // ReSharper disable once AssignNullToNotNullAttribute
-            str = new StreamReader(res.GetResponseStream()).ReadToEnd();
+            var str = new StreamReader(res.GetResponseStream()).ReadToEnd();
             var indexurl = str.IndexOf("http://download", StringComparison.Ordinal);
             var indexend = GetNextIndexOf('"', str, indexurl);
             var direct = str.Substring(indexurl, indexend - indexurl);

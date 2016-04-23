@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Reflection;
 
 namespace Power_of_God_Lib.Utilities
 {
@@ -11,7 +12,13 @@ namespace Power_of_God_Lib.Utilities
             Main + "settings.json"
         };
 
-        public static void DeleteDirectory(string targetDir)
+        public static string BaseDir()
+        {
+            var directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            return directoryName?.Replace("\\", "/");
+        }
+
+        public static void DeleteAllFilesInDirectory(string targetDir)
         {
             var files = Directory.GetFiles(targetDir);
             var dirs = Directory.GetDirectories(targetDir);
@@ -24,10 +31,10 @@ namespace Power_of_God_Lib.Utilities
 
             foreach (string dir in dirs)
             {
-                DeleteDirectory(dir);
+               // DeleteAllFilesInDirectory(dir);
             }
 
-            Directory.Delete(targetDir, false);
+            //Directory.Delete(targetDir, false);
         }
     }
 }

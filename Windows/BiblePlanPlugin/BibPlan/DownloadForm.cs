@@ -81,13 +81,13 @@ namespace BiblePlanPlugin.BibPlan
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     File.Delete(desPath);
-                    if (Directory.Exists("power.of.god/BibPlans/" + lboContent.SelectedItem + "/"))
+                    if (Directory.Exists("power.of.god/BibPlans/" + lboContent.SelectedItem + "Dir/"))
                     {
-                        Directory.Delete("power.of.god/BibPlans/" + lboContent.SelectedItem + "/");
+                        Directory.Delete("power.of.god/BibPlans/" + lboContent.SelectedItem + "Dir/");
                     }
                 }
             }
-            Directory.CreateDirectory("power.of.god/BibPlans/" + lboContent.SelectedItem + "/");
+            Directory.CreateDirectory("power.of.god/BibPlans/" + lboContent.SelectedItem + "Dir/");
             var texta = GetUrlSource("http://godispower.us/BiblePlans/" +
                 txtAuthorName.Text +
                 "/" + lboContent.SelectedItem).Aggregate("", (current, x) => current +

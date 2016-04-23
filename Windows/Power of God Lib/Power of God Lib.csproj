@@ -55,6 +55,12 @@
       <DependentUpon>BibPlanDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="BibPlan\BibPlanParser.cs" />
+    <Compile Include="GUI\DialogBox\DownloadDialogBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DialogBox\DownloadDialogBox.Designer.cs">
+      <DependentUpon>DownloadDialogBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\DownloadForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\BibPlanDialog.resx">
       <DependentUpon>BibPlanDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DialogBox\DownloadDialogBox.resx">
+      <DependentUpon>DownloadDialogBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DownloadForm.resx">
       <DependentUpon>DownloadForm.cs</DependentUpon>

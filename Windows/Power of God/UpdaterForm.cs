@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Power_of_God_Lib.GUI.DialogBox;
 using Power_of_God_Lib.Utilities;
 
 namespace Power_of_God
@@ -70,6 +71,7 @@ namespace Power_of_God
             if (safeToDownload) Download();
         }
 
+        private DownloadDialogBox _box;
         private void Download()
         {
             var temp_updates = "power.of.god/temp_updates/";
@@ -78,54 +80,20 @@ namespace Power_of_God
             {
                 Directory.CreateDirectory(temp_updates);
             }
-            var client = new WebClient();
-            client.DownloadProgressChanged += client_DownloadProgressChanged;
-            client.DownloadFileCompleted += client_DownloadFileCompleted;
-            var uri =
-                new Uri(
-                    Network.Mediafire(
-                        Network.GetUrlSource("http://godispower.us/Application/launcher_subside.txt")
-                        .ElementAt(comboBox1.SelectedIndex)));
-            client.DownloadFileAsync(uri, download_name);
-        }
-
-        void client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
-        {
-            progressBar1.Maximum = (int)e.TotalBytesToReceive / 100;
-            progressBar1.Value = (int)e.BytesReceived / 100;
-        }
-
-        private string BaseDir()
-        {
-            return Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace("\\", "/");
-        }
-        void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-        {
-            var result = MessageBox.Show(
-                "The Update has finished downloading. Would you like for us to complete the update for you?",
-                "Download finished", MessageBoxButtons.YesNo
-                );
-            if (result == DialogResult.Yes)
-            {
-                var newFolder = "power.of.god/temp_updates/UpdateFolder/";
-                if (Directory.Exists(newFolder)) FileSystem.DeleteDirectory(newFolder);
-                Directory.CreateDirectory(newFolder);
-                ZipFile.ExtractToDirectory("power.of.god/temp_updates/update.zip", newFolder);
-                Closed += OperateExe;
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("To complete the installation, you will need to unzip the .zip file (" +
-                                 BaseDir() +
-                                "/power.of.god/temp_updates/update.zip) and then " +
-                                "copy and paste into the main folder.");
-            }
+            var dl = Network.Mediafire(
+                Network.GetUrlSource("http://godispower.us/Application/launcher_subside.txt")
+                    .ElementAt(comboBox1.SelectedIndex));
+            _box = new DownloadDialogBox("Downloading " + comboBox1.SelectedText,
+                "The installation will be complete here shortly. Thank you for choosing Power of God!",
+                dl, download_name);
+            _box.Closed += OperateExe;
+            _box.Show();
         }
 
         private void OperateExe(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(BaseDir() + "/Updater.exe");
+            System.Diagnostics.Process.Start(FileSystem.BaseDir() + "/Updater.exe");
+            Application.Exit();
         }
     }
 }

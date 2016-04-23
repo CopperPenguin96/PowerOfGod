@@ -53,9 +53,9 @@
             // 
             this.picMain.BackColor = System.Drawing.Color.Transparent;
             this.picMain.Image = ((System.Drawing.Image)(resources.GetObject("picMain.Image")));
-            this.picMain.Location = new System.Drawing.Point(0, 1);
+            this.picMain.Location = new System.Drawing.Point(12, 1);
             this.picMain.Name = "picMain";
-            this.picMain.Size = new System.Drawing.Size(173, 37);
+            this.picMain.Size = new System.Drawing.Size(161, 37);
             this.picMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMain.TabIndex = 1;
             this.picMain.TabStop = false;
