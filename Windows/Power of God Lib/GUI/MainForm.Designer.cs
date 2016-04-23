@@ -58,6 +58,7 @@ namespace Power_of_God_Lib.GUI
             this.lblName.Size = new System.Drawing.Size(366, 37);
             this.lblName.TabIndex = 7;
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // lboListOfItems
             // 

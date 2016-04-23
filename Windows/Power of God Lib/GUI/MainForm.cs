@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Power_of_God_Lib.BibPlan;
 using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.NetBible.Books;
+using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Properties;
 using Power_of_God_Lib.Utilities;
@@ -31,6 +32,7 @@ namespace Power_of_God_Lib.GUI
             Settings.LoadFromJson();
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();
+            
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -44,13 +46,20 @@ namespace Power_of_God_Lib.GUI
         private void UpdatePluginPanel()
         {
             PluginReader.LoadPlugins();
-            foreach (var pl in PluginReader.PluginList)
+            try
             {
-                var myButton = new Button(pl, true);
-                myButton.SetText(pl.Name);
-                myButton.Width = flowLayoutPanel1.Width - 5;
-                myButton.Click += myButtonClick;
-                flowLayoutPanel1.Controls.Add(myButton);
+                foreach (var pl in PluginReader.PluginList)
+                {
+                    var myButton = new Button(pl, true);
+                    myButton.SetText(pl.Name);
+                    myButton.Width = flowLayoutPanel1.Width - 5;
+                    myButton.Click += myButtonClick;
+                    flowLayoutPanel1.Controls.Add(myButton);
+                }
+            }
+            catch (Exception ex)
+            {
+                ErrorLogging.Write(ex);
             }
         }
 
@@ -208,6 +217,11 @@ namespace Power_of_God_Lib.GUI
         private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
             
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

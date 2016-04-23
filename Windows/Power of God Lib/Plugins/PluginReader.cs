@@ -97,6 +97,14 @@ namespace Power_of_God_Lib.Plugins
         public static PluginFrame OldFrame;
         public static void SetFrame(PluginFrame plFrame)
         {
+            try
+            {
+                CurrentFrame.Dispose();
+            }
+            catch (Exception)
+            {
+                // Ignored -> First time a plugin button is pressed
+            }
             if (OldFrame != null)
             {
                 OldFrame = CurrentFrame;
@@ -200,7 +208,7 @@ namespace Power_of_God_Lib.Plugins
                 {
                     ErrorLogging.Write(e);
                 }
-                
+
             }
             
             tempList.Sort(SortByPriority);

@@ -1,9 +1,0 @@
-
-"-//W3C//DTD HTML 3.2 Final//EN"
-"/"
-"04.10.2016.mp4"
-"04.10.2016.txt"
-"-//W3C//DTD HTML 3.2 Final//EN"
-"/BiblePlans/"
-"Genesis.bibplan"
-"something.bibplan"

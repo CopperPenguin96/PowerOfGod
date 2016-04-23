@@ -1,0 +1,9 @@
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\Updater.exe.config
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\Updater.exe
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\Updater.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\Updater.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Updater\obj\Release\Updater.Resources.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Updater\obj\Release\Updater.vbproj.GenerateResource.Cache
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Updater\obj\Release\Updater.exe
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Updater\obj\Release\Updater.xml
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Updater\obj\Release\Updater.pdb

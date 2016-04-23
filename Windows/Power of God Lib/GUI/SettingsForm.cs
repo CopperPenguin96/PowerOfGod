@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.Plugins;
 
 namespace Power_of_God_Lib.GUI
 {
@@ -43,6 +45,7 @@ namespace Power_of_God_Lib.GUI
                     cboBibleVersion.SelectedIndex = 0;
                     break;
             }
+            
         }
     }
 }

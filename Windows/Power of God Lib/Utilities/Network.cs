@@ -11,7 +11,7 @@ namespace Power_of_God_Lib.Utilities
     public class Network
     {
         
-        private const string VersionPrefix = "Pre-Release";
+        private const string VersionPrefix = "Beta 1.0";
         private const string CurrentPreRelease = "b1a003";
 
         

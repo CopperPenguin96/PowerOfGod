@@ -41,6 +41,7 @@
             // 
             // picMain
             // 
+            this.picMain.BackColor = System.Drawing.Color.Transparent;
             this.picMain.Image = ((System.Drawing.Image)(resources.GetObject("picMain.Image")));
             this.picMain.Location = new System.Drawing.Point(17, 12);
             this.picMain.Name = "picMain";
@@ -51,21 +52,23 @@
             // 
             // lblName
             // 
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.Font = new System.Drawing.Font("Oklahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(17, 75);
+            this.lblName.Location = new System.Drawing.Point(186, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(145, 74);
+            this.lblName.Size = new System.Drawing.Size(103, 60);
             this.lblName.TabIndex = 8;
             this.lblName.Text = "Settings";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cboBibleVersion);
-            this.groupBox1.Location = new System.Drawing.Point(17, 152);
+            this.groupBox1.Location = new System.Drawing.Point(12, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(163, 68);
+            this.groupBox1.Size = new System.Drawing.Size(277, 68);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Settings";
@@ -73,7 +76,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 19);
+            this.label1.Location = new System.Drawing.Point(13, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 1;
@@ -87,7 +90,7 @@
             "ESV",
             "NIV",
             "NLT"});
-            this.cboBibleVersion.Location = new System.Drawing.Point(87, 16);
+            this.cboBibleVersion.Location = new System.Drawing.Point(87, 13);
             this.cboBibleVersion.MaxDropDownItems = 4;
             this.cboBibleVersion.Name = "cboBibleVersion";
             this.cboBibleVersion.Size = new System.Drawing.Size(64, 21);
@@ -95,9 +98,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(17, 219);
+            this.btnSave.Location = new System.Drawing.Point(12, 152);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(163, 23);
+            this.btnSave.Size = new System.Drawing.Size(277, 23);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -107,7 +110,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(192, 252);
+            this.BackgroundImage = global::Power_of_God_Lib.Properties.Resources.goldenraysabstract;
+            this.ClientSize = new System.Drawing.Size(301, 188);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblName);

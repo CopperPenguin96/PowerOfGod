@@ -9,6 +9,7 @@ namespace Power_of_God_Lib.Plugins
 {
     public class Plugin
     {
+        
         /// <summary>
         /// Initializes the plugin
         /// </summary>

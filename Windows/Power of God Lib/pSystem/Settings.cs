@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
+using Power_of_God_Lib.Plugins;
 
 namespace Power_of_God_Lib.pSystem
 {
@@ -19,19 +22,17 @@ namespace Power_of_God_Lib.pSystem
         public static void LoadFromJson()
         {
             const string file = "power.of.god/settings.json";
-            if (File.Exists(file))
+            if (!File.Exists(file)) return;
+            try
             {
-                try
-                {
-                    var text = File.ReadAllText(file);
-                    var settings = JsonConvert.DeserializeObject<Settings>(text);
-                    UserSettings = settings;
-                }
-                catch (Exception e)
-                {
-                    ErrorLogging.Write(e);
-                }
-             }
+                var text = File.ReadAllText(file);
+                var settings = JsonConvert.DeserializeObject<Settings>(text);
+                UserSettings = settings;
+            }
+            catch (Exception e)
+            {
+                ErrorLogging.Write(e);
+            }
         }
 
         public static void LoadDefault()
