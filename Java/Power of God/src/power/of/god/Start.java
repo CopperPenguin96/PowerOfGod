@@ -23,16 +23,12 @@
  */
 package power.of.god;
 
+import GUI.MainScreen;
 import java.io.*;
 import java.net.*;
-import java.security.NoSuchAlgorithmException;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import power.of.god.DailyScripture.DailyScripture;
-import power.of.god.MainScreen.*;
-import power.of.god.Settings.Settings;
-import power.of.god.User.*;
+import pSystem.Settings;
+import power.of.god.*;
 
 /**
  *
@@ -60,7 +56,6 @@ public class Start {
     //public static UserInfo CurrentUserInfo; -> Outdated
     public static void main(String[] args)
     {
-        Settings.LoadFromJson();
         MainScreen.main(args);
         
         /*try {
@@ -103,7 +98,7 @@ public class Start {
     }
     static void StartMain()
     {
-        if (AppFiles.filesObj()[6].exists())
+        if (Utilities.FileSystem.filesObj()[6].exists())
         {
             Settings.LoadFromJson();
         }
@@ -111,7 +106,7 @@ public class Start {
         {
             Settings.SaveToJson(); // Will start with Default JSON values
         }
-        Bible.Files.SetScripturePath("power.of.god/", false, "don't do it", ConvertToEnumObject());
+        NetBible.Bible.Files.SetScripturePath("power.of.god/", false, "don't do it", ConvertToEnumObject());
             MainScreen mScreen = new MainScreen();
             mScreen.pack();
             mScreen.setSize( 710, 450); // [677, 406] 33, 44
@@ -119,15 +114,15 @@ public class Start {
             mScreen.setLocationRelativeTo(null);
             
     }
-    private static Bible.BibleVersion ConvertToEnumObject()
+    private static NetBible.Bible.BibleVersion ConvertToEnumObject()
     {
         String bibVers = Settings.BibleVersion;
         System.out.println("-----------> " + bibVers);
-        if (bibVers.equals("KJV")) return Bible.BibleVersion.KJV;
-        if (bibVers.equals("ESV")) return Bible.BibleVersion.ESV;
-        if (bibVers.equals("NIV")) return Bible.BibleVersion.NIV;
-        if (bibVers.equals("NLT")) return Bible.BibleVersion.NLT;
+        if (bibVers.equals("KJV")) return NetBible.Bible.BibleVersion.KJV;
+        if (bibVers.equals("ESV")) return NetBible.Bible.BibleVersion.ESV;
+        if (bibVers.equals("NIV")) return NetBible.Bible.BibleVersion.NIV;
+        if (bibVers.equals("NLT")) return NetBible.Bible.BibleVersion.NLT;
         
-        return Bible.BibleVersion.KJV;
+        return NetBible.Bible.BibleVersion.KJV;
     }
 }
