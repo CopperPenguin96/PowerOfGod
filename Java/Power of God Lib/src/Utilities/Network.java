@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2015 apotter96.
+ * Copyright 2015-16 apotter96.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -35,10 +35,11 @@ import java.util.zip.*;
  * @author apotter96
  */
 public class Network {
-    private static final String VersionPrefix = "Alpha";
+    private static final String VersionPrefix = "Pre-Release";
+    private static final String CurrentPreRelease = "b1b001";
     private static final String[] CurrentVersion = new String[]
     {
-        "1", "5", null, null
+        "1", "0", null, null
     };
     private static String TogetherNumbers()
     {
@@ -47,17 +48,24 @@ public class Network {
     }
     public static String LatestStable()
     {
-        String returnValue = VersionPrefix + " " + CurrentVersion[0] + "." + 
-                CurrentVersion[1];
-        if (CurrentVersion[2] != null)
+        if (CurrentPrefixInt() != 5000)
         {
-            returnValue += "." + CurrentVersion[2];
-            if (CurrentVersion[3] != null)
+            String returnValue = VersionPrefix + " " + CurrentVersion[0] + "." + 
+                CurrentVersion[1];
+            if (CurrentVersion[2] != null)
             {
-                returnValue += "." + CurrentVersion[3];
+                returnValue += "." + CurrentVersion[2];
+                if (CurrentVersion[3] != null)
+                {
+                    returnValue += "." + CurrentVersion[3];
+                }
             }
+            return returnValue;
         }
-        return returnValue;
+        else
+        {
+            return "Pre-Release " + CurrentPreRelease;
+        }
     }
     private static int CurrentPrefixInt()
     {
@@ -67,6 +75,8 @@ public class Network {
                 return 0;
             case "Beta":
                 return 1;
+            case "Pre-Release":
+                return 5000;
             default:
                 return 2;
         }
@@ -83,6 +93,11 @@ public class Network {
             case "Outdated":
                 return "You do not have the most recent version. \nYou should consider " + 
                         "updating to " + LatestOnline();
+            case "-pre-":
+                return
+                    "You are using a Pre-Release. Please note that not all features " +
+                    "will be functional.\n\n" +
+                    "(" + LatestStable() + ")";
             default:
                 return "You are using an unsupported version of Power of God. \nPlease consider " + 
                       "using the current version, " + LatestOnline() + 
@@ -92,6 +107,10 @@ public class Network {
     }
     private static String UpdateWord() throws IOException
     {
+        if (CurrentPrefixInt() == 5000)
+        {
+            return "-pre-";
+        }
         int OnlinePrefix;
         switch (getUrlSource(url).get(0).substring(1)) 
         {
