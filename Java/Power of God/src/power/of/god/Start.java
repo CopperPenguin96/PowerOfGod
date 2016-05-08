@@ -23,106 +23,46 @@
  */
 package power.of.god;
 
-import GUI.MainScreen;
+import GUI.*;
+import Plugins.Plugin;
 import java.io.*;
-import java.net.*;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.*;
-import pSystem.Settings;
-import power.of.god.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author apotter96
  */
 public class Start {
-    public static void RestartApplication(int exitCode) throws URISyntaxException, IOException
-    {
-        final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
-        final File currentJar = new File(Start.class.getProtectionDomain().getCodeSource().getLocation().toURI());
-        /* is it a jar file? */
-        if(!currentJar.getName().endsWith(".jar"))
-            return;
-
-        /* Build command: java -jar application.jar */
-        final ArrayList<String> command = new ArrayList<>();
-        command.add(javaBin);
-        command.add("-jar");
-        command.add(currentJar.getPath());
-
-        final ProcessBuilder builder = new ProcessBuilder(command);
-        builder.start();
-        System.exit(exitCode);
-    }
-    //public static UserInfo CurrentUserInfo; -> Outdated
+    
     public static void main(String[] args)
     {
-        MainScreen.main(args);
-        
-        /*try {
-            try
-            {
-                System.out.println(Updater.UpdateNotice());
-            }
-            catch (Exception e)
-            {
-                StartError sError = new StartError();
-                StartError.main(args);
-                return;
-            }
-            //System.out.println(DailyScripture.GetDailyScripture());
-            boolean Obj1 = AppFiles.filesObj()[3].exists();
-            boolean Obj2 = AppFiles.filesObj()[1].exists();
-            if ((Obj1 && Obj2) || (Obj1 && !Obj2))
-            {
-                if (!AppFiles.filesObj()[4].exists()) AppFiles.filesObj()[4].createNewFile();
-                if (Database.NeedsNewLogin()) Login.main(args);
-                else {
-                    CurrentUserInfo = UserInfo.ParseFromFile();
-                    Database.ReturningLogin();
-                    StartMain();
-                }
-            }
-            else if (!Obj1 && Obj2)
-            {
-                SignUp.main(args, true);
-            }
-            else if (!Obj1 && !Obj2)
-            {
-                SignUp.main(args, false);
-            }
+        try {
+        //MainScreen.main(args);
+            MainScreen mS = new MainScreen();
+            File f = new File("lessons.jar");
+            URL[] f2 = new URL[] {f.toURL()};
+            URLClassLoader child = new URLClassLoader (f2, mS.getClass().getClassLoader());
+            Class classToLoad = Class.forName ("Lessons.Plugin", true, child);
+            //Method method = classToLoad.getDeclaredMethod ("myMethod");
+            Object instance = classToLoad.newInstance ();
+            //Object result = method.invoke (instance);
+            Plugin p = (Plugin) instance;
+            System.out.println("Found this plugin: " + p.GetName());
+        }
+        catch (ClassNotFoundException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException e)
+        {
             
-            
-        } catch (Exception ex) {
+            System.out.println(e);
+        } catch (MalformedURLException ex) {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
-        } */
-    }
-    static void StartMain()
-    {
-        if (Utilities.FileSystem.filesObj()[6].exists())
-        {
-            Settings.LoadFromJson();
         }
-        else
-        {
-            Settings.SaveToJson(); // Will start with Default JSON values
-        }
-        NetBible.Bible.Files.SetScripturePath("power.of.god/", false, "don't do it", ConvertToEnumObject());
-            MainScreen mScreen = new MainScreen();
-            mScreen.pack();
-            mScreen.setSize( 710, 450); // [677, 406] 33, 44
-            mScreen.setVisible(true);
-            mScreen.setLocationRelativeTo(null);
-            
     }
-    private static NetBible.Bible.BibleVersion ConvertToEnumObject()
-    {
-        String bibVers = Settings.BibleVersion;
-        System.out.println("-----------> " + bibVers);
-        if (bibVers.equals("KJV")) return NetBible.Bible.BibleVersion.KJV;
-        if (bibVers.equals("ESV")) return NetBible.Bible.BibleVersion.ESV;
-        if (bibVers.equals("NIV")) return NetBible.Bible.BibleVersion.NIV;
-        if (bibVers.equals("NLT")) return NetBible.Bible.BibleVersion.NLT;
-        
-        return NetBible.Bible.BibleVersion.KJV;
-    }
+    
 }

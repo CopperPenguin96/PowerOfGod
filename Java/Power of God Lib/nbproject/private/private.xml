@@ -3,7 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Utilities/Network.java</file>
+            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Plugins/Plugin.java</file>
+            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/Controls/PluginFrame.java</file>
+            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Plugins/PluginReader.java</file>
+            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/pSystem/PowerException.java</file>
         </group>
     </open-files>
 </project-private>
