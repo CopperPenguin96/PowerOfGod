@@ -69,7 +69,7 @@ namespace Power_of_God
             }
             catch (Exception)
             {
-
+                // ignored
             }
         }
     }

@@ -81,7 +81,7 @@ namespace Power_of_God_Lib.Plugins
         public static T GetObject<T>(Plugin pl, object[] constructArgs)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
-            var y = (xlocal + "\\power.of.god\\Plugins\\" + pl.Name + ".dll");
+            var y = (xlocal + "/power.of.god/Plugins/" + pl.Name + ".dll");
             var myLibrary = Assembly.LoadFile(y);
             if (myLibrary == null) throw new Exception("Could not get requested object type " + typeof(T).Name + " from plugin " + pl.Name);
             var z = myLibrary.GetTypes();
@@ -114,7 +114,7 @@ namespace Power_of_God_Lib.Plugins
         public static PluginFrame GetFrame(Plugin pl, string frameid)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
-            var y = (xlocal + "\\power.of.god\\Plugins\\" + pl.Name + ".dll");
+            var y = (xlocal + "/power.of.god/Plugins/" + pl.Name + ".dll");
             var myLibrary = Assembly.LoadFile(y);
             if (myLibrary == null) return null;
             myLibrary.GetType("Plugin");
@@ -133,7 +133,7 @@ namespace Power_of_God_Lib.Plugins
         public static PluginFrame GetDefaultFrame(Plugin pl)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
-            var y = (xlocal + "\\power.of.god\\Plugins\\" + pl.Name + ".dll");
+            var y = (xlocal + "/power.of.god/Plugins/" + pl.Name + ".dll");
             var myLibrary = Assembly.LoadFile(y);
             if (myLibrary == null) return null;
             myLibrary.GetType("Plugin");
@@ -163,7 +163,7 @@ namespace Power_of_God_Lib.Plugins
         public static void PerformMethod(Plugin pl, string classStr, string methodStr, object[] parems)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
-            var y = (xlocal + "\\power.of.god\\Plugins\\" + pl.Name + ".dll");
+            var y = (xlocal + "/power.of.god/Plugins/" + pl.Name + ".dll");
             var myLibrary = Assembly.LoadFile(y);
             if (myLibrary == null) return;
             myLibrary.GetType(classStr);

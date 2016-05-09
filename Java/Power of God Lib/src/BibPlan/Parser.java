@@ -38,7 +38,7 @@ import pSystem.Settings;
  * @author apotter96
  */
 public class Parser {
-    public static ObservableList<String> PlanDays = FXCollections.observableList(new ArrayList<String>());;
+    public static ObservableList<String> PlanDays = FXCollections.observableList(new ArrayList<String>());
     public static String HtmlText(String bibPlanFileName, int day) throws IOException
     {
         BibPlan bibPlan = BibPlanParser.BiblicalPlan(FileSystem.ReadAllText(new File(bibPlanFileName)));

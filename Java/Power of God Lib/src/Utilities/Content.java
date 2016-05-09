@@ -25,7 +25,18 @@ package Utilities;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javax.swing.*;
+import pSystem.ErrorLogging;
 
 /**
  *
@@ -66,6 +77,49 @@ public class Content
             g.dispose();
             return image;
         }
+    }
+    
+    public static String OldTitle;
+    public static String CurrentTitle;
+    public static boolean ButtonPressed;
+    public static void SetTitle(String text)
+    {
+        if (OldTitle != null)
+        {
+            OldTitle = CurrentTitle;
+        }
+        CurrentTitle = text;
+    }
+    
+    public static String CurrentListId = "";
+    
+    public static String GenerateMd5(String original)
+    {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(original.getBytes());
+            byte[] digest = md.digest();
+            StringBuilder sb = new StringBuilder();
+            for (byte b: digest)
+            {
+                sb.append(String.format("%02x", b & 0xff));
+            }
+            return sb.toString();
+        } catch (Exception ex) {
+            ErrorLogging.Write(ex);
+            Logger.getLogger(Content.class.getName()).log(Level.SEVERE, null, ex);
+            return "Failed to generate md5 hash";
+        }
+        
+    }
+    public static ObservableList<String> ObservedList = FXCollections.observableList(new ArrayList<String>());
+    public static void SetListItems(ArrayList<String> items)
+    {
+        ObservedList.clear();
+        Set<String> uniqueItems = new HashSet<>(items);
+        uniqueItems.stream().forEach((value) -> {
+            if (!ButtonPressed) ObservedList.add(value);
+        });
     }
 }
 

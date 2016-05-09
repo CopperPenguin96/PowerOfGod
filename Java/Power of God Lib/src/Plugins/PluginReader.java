@@ -25,6 +25,7 @@ package Plugins;
 
 import GUI.*;
 import GUI.Controls.*;
+import com.google.gson.Gson;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -220,7 +221,7 @@ public class PluginReader {
         return PluginsLoaded.contains(name);
     }
     
-    public static Plugin(String name)
+    public static Plugin GetPluginPerJson(String name) throws Exception
     {
         String[] fArray = Files();
         for (String f : fArray)
@@ -229,8 +230,25 @@ public class PluginReader {
             if (fObj.getAbsolutePath().substring(f.lastIndexOf(".")).contains("dll"))
             {
                 String baseName = name.substring(21, name.lastIndexOf(".") - 21);
-                
+                for (String ff : fArray)
+                {
+                    String text = "power.of.god/Plugins/" + baseName + ".pogplan";
+                    File textObj = new File(text);
+                    if (!ff.contains(name))
+                    {
+                        throw new Exception("Failed to read plugin");
+                    }
+                    if (!textObj.exists()) throw new Exception(name + " is missing the .pogplugin file");
+                    Gson gson = new Gson();
+                    return gson.fromJson(new FileReader(textObj), Plugin.class);
+                }
             }
         }
+        throw new Exception("Not a plugin (" + name + ")");
+    }
+    
+    public static void ActivatePluginListMethod(int index)
+    {
+        PerformMethod(CurrentPlugin, "Plugin", "LboSelection", new Object[] { index });
     }
 }

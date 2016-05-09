@@ -19,3 +19,4 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\o
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.DialogBox.DialogBox.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.SettingsForm.resources
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.DialogBox.DownloadDialogBox.resources
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God Lib\obj\Release\Power of God Lib.csprojResolveAssemblyReference.cache
