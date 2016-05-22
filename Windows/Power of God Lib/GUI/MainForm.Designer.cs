@@ -43,6 +43,7 @@ namespace Power_of_God_Lib.GUI
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.btnReadBible = new System.Windows.Forms.Button();
+            this.btnCredits = new System.Windows.Forms.Button();
             this.headerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -52,7 +53,7 @@ namespace Power_of_God_Lib.GUI
             // lblName
             // 
             this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.Font = new System.Drawing.Font("Oklahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(284, 3);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(366, 37);
@@ -63,9 +64,9 @@ namespace Power_of_God_Lib.GUI
             // lboListOfItems
             // 
             this.lboListOfItems.FormattingEnabled = true;
-            this.lboListOfItems.Location = new System.Drawing.Point(622, 127);
+            this.lboListOfItems.Location = new System.Drawing.Point(622, 166);
             this.lboListOfItems.Name = "lboListOfItems";
-            this.lboListOfItems.Size = new System.Drawing.Size(121, 316);
+            this.lboListOfItems.Size = new System.Drawing.Size(121, 277);
             this.lboListOfItems.TabIndex = 12;
             this.lboListOfItems.SelectedIndexChanged += new System.EventHandler(this.lboListOfItems_SelectedIndexChanged);
             // 
@@ -88,6 +89,7 @@ namespace Power_of_God_Lib.GUI
             this.headerpanel.Name = "headerpanel";
             this.headerpanel.Size = new System.Drawing.Size(755, 43);
             this.headerpanel.TabIndex = 10;
+            this.headerpanel.Paint += new System.Windows.Forms.PaintEventHandler(this.headerpanel_Paint);
             // 
             // picMinimize
             // 
@@ -165,6 +167,18 @@ namespace Power_of_God_Lib.GUI
             this.btnReadBible.UseVisualStyleBackColor = false;
             this.btnReadBible.Click += new System.EventHandler(this.btnReadBible_Click);
             // 
+            // btnCredits
+            // 
+            this.btnCredits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCredits.Image = global::Power_of_God_Lib.Properties.Resources.button_regular;
+            this.btnCredits.Location = new System.Drawing.Point(622, 127);
+            this.btnCredits.Name = "btnCredits";
+            this.btnCredits.Size = new System.Drawing.Size(124, 33);
+            this.btnCredits.TabIndex = 20;
+            this.btnCredits.Text = "Credits";
+            this.btnCredits.UseVisualStyleBackColor = true;
+            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +187,7 @@ namespace Power_of_God_Lib.GUI
             this.BackgroundImage = global::Power_of_God_Lib.Properties.Resources.goldenraysabstract;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(755, 456);
+            this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnReadBible);
             this.Controls.Add(this.settingsBtn);
             this.Controls.Add(this.flowLayoutPanel2);
@@ -207,6 +222,7 @@ namespace Power_of_God_Lib.GUI
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button settingsBtn;
         private System.Windows.Forms.Button btnReadBible;
+        private System.Windows.Forms.Button btnCredits;
     }
 
     internal class Properties

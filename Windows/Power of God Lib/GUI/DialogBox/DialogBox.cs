@@ -18,6 +18,7 @@ namespace Power_of_God_Lib.GUI.DialogBox
             SetTitle(title);
             SetMessage(message);
             SetButtonText("Ok");
+            SetInitHandlers();
         }
         private void SetInitHandlers()
         {
@@ -92,7 +93,7 @@ namespace Power_of_God_Lib.GUI.DialogBox
         }
         private void ClickMethod(object sender, EventArgs e)
         {
-            Hide();
+            Close();
         }
     }
 }

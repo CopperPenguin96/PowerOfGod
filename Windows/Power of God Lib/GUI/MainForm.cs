@@ -5,6 +5,8 @@ using System.IO;
 using System.Windows.Forms;
 using Power_of_God_Lib.BibPlan;
 using Power_of_God_Lib.GUI.Controls;
+using Power_of_God_Lib.GUI.DialogBox;
+using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.NetBible.Books;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
@@ -32,7 +34,9 @@ namespace Power_of_God_Lib.GUI
             Settings.LoadFromJson();
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();
-            
+
+            var ver = Settings.UserSettings.scriptver;
+            var file = "power.of.god/" + ver + ".xml";        
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -41,7 +45,11 @@ namespace Power_of_God_Lib.GUI
             {
                 PluginReader.AppLoad(c);
             }
-            Content.SetTitle(Network.LatestStable());
+            Content.SetTitle(Network.LatestStable(false));
+        }
+        private bool IsRunningOnMono()
+        {
+            return Type.GetType("Mono.Runtime") != null;
         }
         private void UpdatePluginPanel()
         {
@@ -210,7 +218,15 @@ namespace Power_of_God_Lib.GUI
 
         private void btnReadBible_Click(object sender, EventArgs e)
         {
-            new BibleReaderForm().Show();
+            if (!IsRunningOnMono())
+            {
+                new BibleReaderForm().Show();
+            }
+            else
+            {
+                new DialogBox.DialogBox("Sorry",
+                    "This feature is unavailable on Linux/Mac. It is only available on Windows.").Show();
+            }
         }
 
 
@@ -222,6 +238,16 @@ namespace Power_of_God_Lib.GUI
         private void lblName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void headerpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+            new CreditsForm().ShowDialog();
         }
     }
 

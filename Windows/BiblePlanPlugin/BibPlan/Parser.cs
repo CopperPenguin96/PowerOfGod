@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
+using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.NetBible.Books;
 using Power_of_God_Lib.pSystem;
 

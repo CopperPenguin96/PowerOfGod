@@ -10,3 +10,15 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlanMaker\obj\R
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.exe
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.xml
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\BibPlanMaker.exe.config
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\BibPlanMaker.exe
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\BibPlanMaker.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\BibPlanMaker.xml
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.vbprojResolveAssemblyReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.EditorForm.resources
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.StartForm.resources
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.Resources.resources
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.vbproj.GenerateResource.Cache
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.exe
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.xml
+C:\Users\super\Documents\Power of God\Project\Windows\BibPlanMaker\obj\Release\BibPlanMaker.pdb

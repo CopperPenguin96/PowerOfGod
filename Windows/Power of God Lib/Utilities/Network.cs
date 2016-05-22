@@ -8,21 +8,70 @@ using Power_of_God_Lib.pSystem;
 
 namespace Power_of_God_Lib.Utilities
 {
+    public class PreRelease
+    {
+        private static readonly string Phase = Network.VersionLetter();
+
+        private static string VersionCode()
+        {
+            var text = Network.LatestStable(true);
+            text = text.Substring(text.IndexOf(" ") + 1);
+            for (var i = 1; i <= 26; i++)
+            {
+                var verText = i + ".0";
+                if (text == verText)
+                {
+                    return i + "";
+                }
+            }
+            return text;
+        }
+
+        private static string CurrentRelease()
+        {
+            if (Network.ReleaseNumber < 10)
+            {
+                return "00" + Network.ReleaseNumber;
+            }
+            else if (Network.ReleaseNumber < 100)
+            {
+                return "0" + Network.ReleaseNumber;
+            }
+            else
+            {
+                return "" + Network.ReleaseNumber;
+            }
+        }
+
+        public static string GetString()
+        {
+            var phase = Phase;
+            var vc = VersionCode() + "a";
+            var cr = CurrentRelease();
+            var combined = phase + vc + cr;
+            return combined;
+        }
+    }
     public class Network
     {
-        
-        private const string VersionPrefix = "Beta 1.0";
-        private const string CurrentPreRelease = "b1a003";
+        public const bool IsPreRelease = true;
+        public static string VersionPrefix = "Beta";
 
+        public static string VersionLetter()
+        {
+            var x = VersionPrefix.ToLower().Substring(0, 1);
+            return x;
+        }
+        public const int ReleaseNumber = 4;
         
 
         private static readonly string[] CurrentVersion = {
             "1", "0", null, null
         };
 
-        public static string LatestStable()
+        public static string LatestStable(bool catchingPreRelease)
         {
-            if (CurrentPrefixInt() != 5000)
+            if (!IsPreRelease || catchingPreRelease)
             {
                 var returnValue = VersionPrefix + " " + CurrentVersion[0] + "." +
                  CurrentVersion[1];
@@ -34,11 +83,7 @@ namespace Power_of_God_Lib.Utilities
                 }
                 return returnValue;
             }
-            else
-            {
-                return "Pre-Release " + CurrentPreRelease;
-            }
-            
+            return "Pre-Release " + PreRelease.GetString();
         }
 
         private static int CurrentPrefixInt()
@@ -49,8 +94,6 @@ namespace Power_of_God_Lib.Utilities
                     return 0;
                 case "Beta":
                     return 1;
-                case "Pre-Release":
-                    return 5000;
                 default:
                     return 2;
             }
@@ -72,7 +115,7 @@ namespace Power_of_God_Lib.Utilities
                     {
                         return
                             "You are using a Pre-Release. Please note that not all features will be functional.\n\n" +
-                            "(" + LatestStable() + ")";
+                            "(" + LatestStable(false) + ")";
                     }
                     else
                     {

@@ -11,3 +11,10 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugin\Daily Scripture.pdb
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Daily Scripture.dll
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\Debug\DailyScripturePlugin.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\Debug\DailyScripture.ScriptureFrame.resources
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\Debug\DailyScripturePlugin.csproj.GenerateResource.Cache
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\Debug\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\Debug\Daily Scripture.pdb

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.NetBible.Books;
 using Power_of_God_Lib.NetBible.Books.New_Testament;
 using Power_of_God_Lib.pSystem;

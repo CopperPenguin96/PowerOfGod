@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/GUI/Controls/TransparentPanel.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>36</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Plugins/Plugin.java</file>
-            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/Controls/PluginFrame.java</file>
-            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Plugins/PluginReader.java</file>
+            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/Controls/WrapLayout.java</file>
+            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/Controls/Button.java</file>
             <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/MainScreen.java</file>
-            <file>file:/C:/Users/apotter96/Docs/Programs/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Utilities/Content.java</file>
         </group>
     </open-files>
 </project-private>

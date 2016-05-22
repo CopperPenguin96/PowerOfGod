@@ -10,3 +10,15 @@ C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\R
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\Power of God\obj\Release\PowerStart.csproj.GenerateResource.Cache
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\Power of God.exe
 C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Release\Power of God.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\Power of God.exe.config
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\Interop.MediaPlayer.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\Interop.WMPLib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\PowerStart.csproj.ResolveComReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\Power of God.exe
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\Power of God.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\Power of God.exe
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Release\Power of God.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\PowerStart.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\Power_of_God.Properties.Resources.resources
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\Power_of_God.UpdaterForm.resources
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\Release\PowerStart.csproj.GenerateResource.Cache

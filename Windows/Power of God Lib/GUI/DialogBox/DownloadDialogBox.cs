@@ -24,6 +24,7 @@ namespace Power_of_God_Lib.GUI.DialogBox
             SetButtonText("Ok");
             _downloadLocation = downloadLocation;
             _localLocation = localLocation;
+            SetInitHandlers();
         }
         private void SetInitHandlers()
         {

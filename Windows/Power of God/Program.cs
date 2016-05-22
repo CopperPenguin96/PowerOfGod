@@ -21,18 +21,22 @@ namespace Power_of_God
         [STAThread]
         static void Main()
         {
+            var mainPath = "power.of.god/";
+            var bibPath = "power.of.god/Bibles/";
+            if (!Directory.Exists(mainPath)) Directory.CreateDirectory(mainPath);
+            if (!Directory.Exists(bibPath)) Directory.CreateDirectory(bibPath);
             bool safeToRun = false;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                if (Network.LatestStable().Contains("Pre-Release"))
+                if (Network.LatestStable(false).Contains("Pre-Release"))
                 {
                     AllocConsole();
                     Console.WriteLine("Power of God Debug Console");
                     Console.WriteLine("Thank you for choosing to test on of our Pre-Releases.");
                     Console.WriteLine("The program will load in just a second. You will be using Power of God " +
-                                      Network.LatestStable());
+                                      Network.LatestStable(false));
                     for (var x = 1; x <= 20001; x++)
                     {
 
@@ -49,14 +53,21 @@ namespace Power_of_God
                         MessageBox.Show(
                             "It is recommended that you get Power of God " + Network.LatestOnline() +
                             ", because you have now " +
-                            Network.LatestStable() +
+                            Network.LatestStable(false) +
                             ". \n\nWould you like us to update it for you? This is the recommended option.", "Updater",
                             MessageBoxButtons.YesNo);
                     switch (choice)
                     {
                         case DialogResult.Yes:
-                            // TODO - Download current verison
-                            new UpdaterForm().ShowDialog();
+                            if (File.Exists("Updater.exe"))
+                            {
+                                new UpdaterForm().ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "We can't update without Updater.exe. You will have to download the udpate yourself.");
+                            }
                             break;
                         default:
                             MessageBox.Show(

@@ -1,0 +1,17 @@
+-----Power of God Error Log-----
+
+Exception Message: DailyScripture
+DailyScripture.DailyScriptureException: DailyScripture ---> System.TypeLoadException: Could not load type 'Power_of_God_Lib.NetBible.Books.Book' from assembly 'Power of God Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.
+   at DailyScripture.DailyScripture.ParseJson(String json)
+   at DailyScripture.DailyScripture.<>c.<GetDailyScripture>b__6_1(String current, String files) in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\DailyScripture.cs:line 90
+   at System.Linq.Enumerable.Aggregate[TSource,TAccumulate](IEnumerable`1 source, TAccumulate seed, Func`3 func)
+   at DailyScripture.DailyScripture.GetDailyScripture() in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\DailyScripture.cs:line 90
+   --- End of inner exception stack trace ---
+   at DailyScripture.DailyScripture.GetDailyScripture() in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\DailyScripture.cs:line 98
+   at DailyScripture.ScriptureFrame.ScriptureFrame_Load(Object sender, EventArgs e) in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\ScriptureFrame.cs:line 39
+
+
+
+   at DailyScripture.DailyScripture.GetDailyScripture() in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\DailyScripture.cs:line 98
+   at DailyScripture.ScriptureFrame.ScriptureFrame_Load(Object sender, EventArgs e) in C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\DailyScripturePlugin\ScriptureFrame.cs:line 39
+Log wrote at Friday, May 20, 2016

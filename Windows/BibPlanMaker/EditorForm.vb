@@ -3,6 +3,7 @@ Imports System.Net
 Imports NetBible.Books
 Imports Newtonsoft.Json
 Imports Power_of_God_Lib.BibPlan
+Imports Power_of_God_Lib.NetBible
 Imports Power_of_God_Lib.NetBible.Books
 Imports Power_of_God_Lib.pSystem
 

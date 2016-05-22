@@ -81,8 +81,14 @@
     <Compile Include="GUI\BibleReaderForm.Designer.cs">
       <DependentUpon>BibleReaderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NetBible\Books\Bible.cs" />
-    <Compile Include="NetBible\Books\Book.cs" />
+    <Compile Include="GUI\CreditsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CreditsForm.Designer.cs">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NetBible\Bible.cs" />
+    <Compile Include="NetBible\Book.cs" />
     <Compile Include="NetBible\Books\New Testament\Acts.cs" />
     <Compile Include="NetBible\Books\New Testament\Colossians.cs" />
     <Compile Include="NetBible\Books\New Testament\Corinthians1.cs" />
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Controls\VideoPlayer.resx">
       <DependentUpon>VideoPlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CreditsForm.resx">
+      <DependentUpon>CreditsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
