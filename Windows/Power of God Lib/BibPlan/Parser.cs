@@ -4,7 +4,7 @@ using System.Linq;
 using BibPlans;
 using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.NetBible.Books;
-using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.Utilities;
 
 namespace Power_of_God_Lib.BibPlan
 {

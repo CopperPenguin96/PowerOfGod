@@ -1,0 +1,55 @@
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Power of God.exe.config
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\Interop.MediaPlayer.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\PowerStart.csproj.ResolveComReference.cache
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Power of God.exe
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Power of God.pdb
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\CefSharp.Core.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\CefSharp.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\CefSharp.WinForms.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Power of God Lib.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Power of God Lib.pdb
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\CefSharp.WinForms.xml
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\CefSharp.xml
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\CefSharp.Core.xml
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\PowerStart.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\Power_of_God.Properties.Resources.resources
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\Power_of_God.UpdaterForm.resources
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\PowerStart.csproj.GenerateResource.Cache
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\Power of God.exe
+C:\Users\super\Documents\POG\Project\Windows\Power of God\obj\x86\Debug\Power of God.pdb
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\POG\Project\Windows\Power of God\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Power of God.exe.config
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\Interop.MediaPlayer.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\PowerStart.csproj.ResolveComReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\Power of God.exe
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\Power of God.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Power of God.exe
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Power of God.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\CefSharp.Core.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\CefSharp.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\CefSharp.WinForms.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Power of God Lib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Power of God Lib.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\CefSharp.WinForms.xml
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\CefSharp.xml
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\CefSharp.Core.xml
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\PowerStart.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\Power_of_God.Properties.Resources.resources
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\Power_of_God.UpdaterForm.resources
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\obj\x86\Debug\PowerStart.csproj.GenerateResource.Cache
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God\bin\x86\Debug\Newtonsoft.Json.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\Power of God.exe.config
+C:\Users\super\Documents\Power of God\Project\bin\Debug\Power of God.exe.config
+C:\Users\super\Documents\Power of God\Project\bin\Debug\Power of God.exe
+C:\Users\super\Documents\Power of God\Project\bin\Debug\Power of God.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\Power of God.exe
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\Power of God.pdb

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Power_of_God_Lib.Plugins;
@@ -36,6 +37,7 @@ namespace Power_of_God_Lib.GUI.Controls
             PluginReader.SetFrame(PluginReader.GetDefaultFrame(Plugin));
             PluginReader.CurrentPlugin = Plugin;
             PluginReader.CurrentFrame.FrameLoad();
+            Content.SetListItems(new List<string>());
         }
 
         public void MouseHoverEvent(object sender, EventArgs e)

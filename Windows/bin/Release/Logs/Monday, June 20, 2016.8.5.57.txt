@@ -1,0 +1,15 @@
+-----Power of God Error Log-----
+
+Exception Message: power.of.god/Plugins/Power of God Lib.pdb is missing the .pogplugin file
+Power_of_God_Lib.Plugins.PluginParseException: power.of.god/Plugins/Power of God Lib.pdb is missing the .pogplugin file
+   at Power_of_God_Lib.Plugins.PluginReader.GetPlugin(String name) in C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\Plugins\PluginReader.cs:line 283
+   at Power_of_God_Lib.Plugins.PluginReader.LoadPlugins() in C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\Plugins\PluginReader.cs:line 200
+
+
+
+   at Power_of_God_Lib.Plugins.PluginReader.GetPlugin(String name) in C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\Plugins\PluginReader.cs:line 283
+   at Power_of_God_Lib.Plugins.PluginReader.LoadPlugins() in C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\Plugins\PluginReader.cs:line 200
+Log wrote at Monday, June 20, 2016
+-----User's System Information-----
+OS Version: Microsoft Windows NT 6.2.9200.0
+Bits: 64-Bit

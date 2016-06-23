@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Power_of_God_Lib.BibPlan;
-using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.NetBible;
 
 namespace BiblePlanPlugin.BibPlan
 {

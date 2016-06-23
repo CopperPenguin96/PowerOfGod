@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Power_of_God_Lib.GUI.Controls;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Utilities;
 
@@ -21,30 +20,60 @@ namespace Lesson.Frames
         public VideoScreenFrame()
         {
             InitializeComponent();
+            try
+            {
+                SetLastDate();
+            }
+            catch (Exception m)
+            {
+                ErrorLogging.Write(m);
+                
+            }
+            
             Plugin.VidOl.CollectionChanged += SavedChange;
         }
 
-        private readonly string _lastDate = "http://pogvids.x10host.com/2016/" + Plugin.GetList(false).Last().Replace("/", ".") + ".mp4";
+        private string _lastDate;
+        private void SetLastDate()
+        {
+            try
+            {
+                if (!Network.IsPreRelease)
+                    _lastDate = "http://poweerofgodonline.net/Sundays/2016/" +
+                                Plugin.GetList(false).Last().Replace("/", ".") + ".mp4";
+                else _lastDate = "http://powerofgodonline.net/prnotice.html";
+            }
+            catch (InvalidOperationException)
+            {
+                // Ignored
+            }
+        }
         private void VideoScreenFrame_Load(object sender, EventArgs e)
         {
-            //Content.SetListItems(Plugin.GetList(false).Distinct().ToList());
-            var daList = Network.GetUrlSource(GetVidTxt(_lastDate));
-            var title = daList.ElementAt(0);
-            var url = daList.ElementAt(1);
-            videoPlayer1.SetVideo(url);
-            Content.SetTitle(title);
+            try
+            {
+                var title = TitleExtractor.PageTitle(_lastDate);
+                var url = _lastDate;
+                videoPlayer1.SetVideo(url);
+                Content.SetTitle(title);
+            }
+            catch (Exception ef)
+            {
+                ErrorLogging.Write(ef);
+            }
         }
 
         private string GetVidTxt(string dtStr)
         {
-            return dtStr.Replace("mp4", "txt");
+            //return dtStr.Replace("mp4", "txt");
+            return dtStr;
         }
         private void SavedChange(object sender, NotifyCollectionChangedEventArgs e)
         {
             try
             {
                 Content.SetTitle(Plugin.VidOl.ElementAt(0));
-                videoPlayer1.SetVideo(Plugin.VidOl.ElementAt(1));
+                //videoPlayer1.SetVideo(Plugin.VidOl.ElementAt(1));
             }
             catch (Exception)
             {

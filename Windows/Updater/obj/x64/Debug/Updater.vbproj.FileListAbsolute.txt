@@ -1,0 +1,10 @@
+C:\Users\super\Documents\POG\Project\Windows\Updater\bin\x64\Debug\Updater.exe.config
+C:\Users\super\Documents\POG\Project\Windows\Updater\bin\x64\Debug\Updater.exe
+C:\Users\super\Documents\POG\Project\Windows\Updater\bin\x64\Debug\Updater.pdb
+C:\Users\super\Documents\POG\Project\Windows\Updater\bin\x64\Debug\Updater.xml
+C:\Users\super\Documents\POG\Project\Windows\Updater\obj\x64\Debug\Updater.vbprojResolveAssemblyReference.cache
+C:\Users\super\Documents\POG\Project\Windows\Updater\obj\x64\Debug\Updater.Resources.resources
+C:\Users\super\Documents\POG\Project\Windows\Updater\obj\x64\Debug\Updater.vbproj.GenerateResource.Cache
+C:\Users\super\Documents\POG\Project\Windows\Updater\obj\x64\Debug\Updater.exe
+C:\Users\super\Documents\POG\Project\Windows\Updater\obj\x64\Debug\Updater.xml
+C:\Users\super\Documents\POG\Project\Windows\Updater\obj\x64\Debug\Updater.pdb

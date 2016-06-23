@@ -21,6 +21,7 @@ namespace Power_of_God
         [STAThread]
         static void Main()
         {
+            
             var mainPath = "power.of.god/";
             var bibPath = "power.of.god/Bibles/";
             if (!Directory.Exists(mainPath)) Directory.CreateDirectory(mainPath);
@@ -28,15 +29,23 @@ namespace Power_of_God
             bool safeToRun = false;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             try
             {
-                if (Network.LatestStable(false).Contains("Pre-Release"))
+                var n = Network.LatestStable(false);
+                if (n.Contains("Pre-Release"))
                 {
                     AllocConsole();
                     Console.WriteLine("Power of God Debug Console");
                     Console.WriteLine("Thank you for choosing to test on of our Pre-Releases.");
                     Console.WriteLine("The program will load in just a second. You will be using Power of God " +
                                       Network.LatestStable(false));
+
+                    Console.WriteLine(Environment.NewLine);
+                    foreach (var line in Detection.FullSystemInfo())
+                    {
+                        Console.WriteLine(line);
+                    }
                     for (var x = 1; x <= 20001; x++)
                     {
 
@@ -46,7 +55,9 @@ namespace Power_of_God
                         }
                     }
                     safeToRun = true;
+                    
                 }
+
                 else if (Network.UpdateWord() != "Updated")
                 {
                     var choice =
@@ -83,5 +94,7 @@ namespace Power_of_God
                 // ignored
             }
         }
+
+       
     }
 }

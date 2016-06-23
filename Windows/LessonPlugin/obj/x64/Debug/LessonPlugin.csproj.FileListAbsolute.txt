@@ -1,0 +1,15 @@
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Lesson.dll
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Lesson.pdb
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Power of God Lib.dll
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\AxInterop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Power of God Lib.pdb
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Newtonsoft.Json.pdb
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\obj\x64\Debug\LessonPlugin.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\obj\x64\Debug\Lesson.Frames.VideoScreenFrame.resources
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\obj\x64\Debug\Lesson.Frames.LessonFrame.resources
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\obj\x64\Debug\LessonPlugin.csproj.GenerateResource.Cache
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\obj\x64\Debug\Lesson.dll
+C:\Users\super\Documents\POG\Project\Windows\LessonPlugin\obj\x64\Debug\Lesson.pdb

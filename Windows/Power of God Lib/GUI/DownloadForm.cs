@@ -5,7 +5,6 @@ using System.Linq;
 using System.Net;
 using System.Windows.Forms;
 using BibPlans;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Utilities;
 
 namespace Power_of_God_Lib.GUI

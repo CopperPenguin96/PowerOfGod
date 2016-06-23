@@ -30,18 +30,10 @@ namespace Lesson.Frames
         /// </summary>
         private void InitializeComponent()
         {
-            this.videoPlayer1 = new Power_of_God_Lib.GUI.Controls.VideoPlayer();
             this.btnRegularLessons = new System.Windows.Forms.Button();
             this.lblVids = new System.Windows.Forms.Label();
+            this.videoPlayer1 = new Power_of_God_Lib.GUI.Controls.VideoPlayer();
             this.SuspendLayout();
-            // 
-            // videoPlayer1
-            // 
-            this.videoPlayer1.BackColor = System.Drawing.Color.White;
-            this.videoPlayer1.Location = new System.Drawing.Point(3, 3);
-            this.videoPlayer1.Name = "videoPlayer1";
-            this.videoPlayer1.Size = new System.Drawing.Size(366, 267);
-            this.videoPlayer1.TabIndex = 0;
             // 
             // btnRegularLessons
             // 
@@ -61,13 +53,21 @@ namespace Lesson.Frames
             this.lblVids.TabIndex = 2;
             this.lblVids.Text = "To view more video lessons, visit http://godispower.us/Videos/Lessons/";
             // 
+            // videoPlayer1
+            // 
+            this.videoPlayer1.BackColor = System.Drawing.Color.White;
+            this.videoPlayer1.Location = new System.Drawing.Point(0, 0);
+            this.videoPlayer1.Name = "videoPlayer1";
+            this.videoPlayer1.Size = new System.Drawing.Size(449, 267);
+            this.videoPlayer1.TabIndex = 3;
+            // 
             // VideoScreenFrame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.videoPlayer1);
             this.Controls.Add(this.lblVids);
             this.Controls.Add(this.btnRegularLessons);
-            this.Controls.Add(this.videoPlayer1);
             this.Name = "VideoScreenFrame";
             this.Load += new System.EventHandler(this.VideoScreenFrame_Load);
             this.ResumeLayout(false);
@@ -75,9 +75,8 @@ namespace Lesson.Frames
         }
 
         #endregion
-
-        private VideoPlayer videoPlayer1;
         private System.Windows.Forms.Button btnRegularLessons;
         private System.Windows.Forms.Label lblVids;
+        private VideoPlayer videoPlayer1;
     }
 }

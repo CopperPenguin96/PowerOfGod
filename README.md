@@ -6,8 +6,7 @@ This application is a cross-platform application to help others grow in their fa
 
 (Current Available Platforms)
 - Android 3.0+
-- Windows Desktop
-- Java SE 1.8+
+- PC
 
 ##License
 The MIT License (MIT)
@@ -31,4 +30,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+
+IMPORTANT: By downloading any Pre-Releases that we offer, you agree to let us collect some information about your system to detect issues within the app. We do not collect any personal information, just system information. We do not sell it to any 3rd parties either.
 

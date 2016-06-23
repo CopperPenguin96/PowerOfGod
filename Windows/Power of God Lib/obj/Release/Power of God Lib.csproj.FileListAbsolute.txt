@@ -42,3 +42,4 @@ C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\obj\Relea
 C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\obj\Release\Power of God Lib.dll
 C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\obj\Release\Power of God Lib.pdb
 C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.CreditsForm.resources
+C:\Users\super\Documents\Power of God\Project\Windows\Power of God Lib\obj\Release\Power of God Lib.csprojResolveAssemblyReference.cache

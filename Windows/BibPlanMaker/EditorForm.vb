@@ -5,7 +5,6 @@ Imports Newtonsoft.Json
 Imports Power_of_God_Lib.BibPlan
 Imports Power_of_God_Lib.NetBible
 Imports Power_of_God_Lib.NetBible.Books
-Imports Power_of_God_Lib.pSystem
 
 Public Class EditorForm
     Private Sub chkSaveUnknown_CheckedChanged(sender As Object, e As EventArgs) Handles chkSaveUnknown.CheckedChanged

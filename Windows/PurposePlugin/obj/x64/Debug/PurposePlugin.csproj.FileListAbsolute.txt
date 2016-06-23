@@ -1,0 +1,14 @@
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Purpose.dll
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Purpose.pdb
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Power of God Lib.dll
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\AxInterop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Power of God Lib.pdb
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Newtonsoft.Json.pdb
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\bin\x64\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\obj\x64\Debug\PurposePlugin.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\obj\x64\Debug\Purpose.Frames.PurposeFrame.resources
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\obj\x64\Debug\PurposePlugin.csproj.GenerateResource.Cache
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\obj\x64\Debug\Purpose.dll
+C:\Users\super\Documents\POG\Project\Windows\PurposePlugin\obj\x64\Debug\Purpose.pdb

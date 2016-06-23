@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
 using System.IO;
@@ -8,12 +9,11 @@ using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.GUI.DialogBox;
 using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.NetBible.Books;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Properties;
 using Power_of_God_Lib.Utilities;
 using Button = Power_of_God_Lib.GUI.Controls.Button;
-using Settings = Power_of_God_Lib.pSystem.Settings;
+using Settings = Power_of_God_Lib.Utilities.Settings;
 
 namespace Power_of_God_Lib.GUI
 {
@@ -29,14 +29,24 @@ namespace Power_of_God_Lib.GUI
             }
             InitializeComponent();
             _fdefault = flowLayoutPanel2;
-            SetEventHandlers();
             Settings.LoadDefault();
             Settings.LoadFromJson();
             Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
-            UpdatePluginPanel();
+            UpdatePluginPanel();     
 
-            var ver = Settings.UserSettings.scriptver;
-            var file = "power.of.god/" + ver + ".xml";        
+            var dllList = new List<string>();
+            foreach (var p in PluginReader.PluginList)
+            {
+                dllList.Add("power.of.god/Plugins/" + p.Name + ".dll");
+                dllList.Add("power.of.god/Plugins/" + p.Name + ".pogplugin");
+            }
+            foreach (var f in Directory.GetFiles("power.of.god/Plugins/"))
+            {
+                if (!dllList.Contains(f))
+                {
+                    File.Delete(f);
+                }
+            }
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -47,10 +57,7 @@ namespace Power_of_God_Lib.GUI
             }
             Content.SetTitle(Network.LatestStable(false));
         }
-        private bool IsRunningOnMono()
-        {
-            return Type.GetType("Mono.Runtime") != null;
-        }
+        
         private void UpdatePluginPanel()
         {
             PluginReader.LoadPlugins();
@@ -204,6 +211,7 @@ namespace Power_of_God_Lib.GUI
             }
         }
 
+
         private void SettingsButtonClick(object sender, EventArgs e)
         {
             var settingsForm = new SettingsForm();
@@ -218,7 +226,7 @@ namespace Power_of_God_Lib.GUI
 
         private void btnReadBible_Click(object sender, EventArgs e)
         {
-            if (!IsRunningOnMono())
+            if (!Detection.IsRunningOnMono())
             {
                 new BibleReaderForm().Show();
             }

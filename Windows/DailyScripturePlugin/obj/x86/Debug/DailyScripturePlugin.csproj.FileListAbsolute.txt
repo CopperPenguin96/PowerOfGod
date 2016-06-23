@@ -1,0 +1,36 @@
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Daily Scripture.dll
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Daily Scripture.pdb
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Power of God Lib.dll
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Power of God Lib.pdb
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Newtonsoft.Json.pdb
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\obj\x86\Debug\DailyScripturePlugin.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\obj\x86\Debug\DailyScripture.ScriptureFrame.resources
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\obj\x86\Debug\DailyScripturePlugin.csproj.GenerateResource.Cache
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\obj\x86\Debug\Daily Scripture.dll
+C:\Users\super\Documents\POG\Project\Windows\DailyScripturePlugin\obj\x86\Debug\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Power of God Lib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\AxInterop.WMPLib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Interop.WMPLib.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Power of God Lib.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Newtonsoft.Json.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\bin\x86\Debug\Newtonsoft.Json.xml
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\x86\Debug\DailyScripturePlugin.csprojResolveAssemblyReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\x86\Debug\DailyScripture.ScriptureFrame.resources
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\x86\Debug\DailyScripturePlugin.csproj.GenerateResource.Cache
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\x86\Debug\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\DailyScripturePlugin\obj\x86\Debug\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\bin\Debug\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\bin\Debug\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Plugins\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Plugins\Daily Scripture.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Daily Scripture.dll
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\power.of.god\Plugins\Daily Scripture.pdb

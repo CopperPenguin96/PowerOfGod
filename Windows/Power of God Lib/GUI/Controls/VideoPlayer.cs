@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using CefSharp.WinForms;
 
 namespace Power_of_God_Lib.GUI.Controls
 {
@@ -11,7 +12,8 @@ namespace Power_of_God_Lib.GUI.Controls
 
         public void SetVideo(string path)
         {
-            axWindowsMediaPlayer1.URL = @path;
+            var newBrowser = new ChromiumWebBrowser("https://www.youtube.com/embed/jsNuIrO9bjU");
+            Controls.Add(newBrowser);
         }
         
     }

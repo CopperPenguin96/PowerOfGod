@@ -8,7 +8,6 @@ using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Windows.Forms.VisualStyles;
 using Power_of_God_Lib.GUI.Controls;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Utilities;
 
 namespace Power_of_God_Lib.Plugins
@@ -193,7 +192,8 @@ namespace Power_of_God_Lib.Plugins
             var strName = "";
             var strFileName = "";
             var tempList = new List<Plugin>();
-            foreach (var files in Files())
+            var fileList = Files();
+            foreach (var files in fileList)
             {
                 try
                 {

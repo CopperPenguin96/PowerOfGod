@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Windows.Forms;
-using Power_of_God_Lib.pSystem;
 
 namespace Power_of_God_Lib.Utilities
 {
@@ -62,7 +61,7 @@ namespace Power_of_God_Lib.Utilities
             var x = VersionPrefix.ToLower().Substring(0, 1);
             return x;
         }
-        public const int ReleaseNumber = 4;
+        public const int ReleaseNumber = 5;
         
 
         private static readonly string[] CurrentVersion = {

@@ -5,7 +5,6 @@ using System.Linq;
 using System.Security.Cryptography;
 using Lesson.Frames;
 using Power_of_God_Lib.GUI.Controls;
-using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Utilities;
 
