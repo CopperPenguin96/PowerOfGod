@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Power_of_God_Lib.Plugins;
+using Power_of_God_Lib.Utilities;
 
 namespace BiblePlanPlugin.BibPlan
 {
@@ -82,6 +85,9 @@ namespace BiblePlanPlugin.BibPlan
             {
                 Parser.PlanDays.Add("Day #" + x);
             }
+            Parser.PlanDays.Add("");
+            Content.SetListItems(new List<string>());
+            Content.SetListItems(Parser.PlanDays.ToList());
             PlanFileName = "power.of.god/BibPlans/" + lboPlanList.SelectedItem;
         }
 

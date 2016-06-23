@@ -57,6 +57,7 @@ namespace Power_of_God_Lib.GUI
                     File.Delete(f);
                 }
             }
+            SetEventHandlers(); // Do not remove ---> needed
         }
         private void MainForm_Load(object sender, EventArgs e)
         {

@@ -73,6 +73,8 @@ namespace BiblePlanPlugin.BibPlan
 
         private void btnDownload_Click(object sender, EventArgs e)
         {
+            var dirNameBase = "power.of.god/BibPlans/" + lboContent.SelectedItem;
+            var dirName = dirNameBase.Substring(0, dirNameBase.LastIndexOf(".bibplan"));
             var desPath = "power.of.god/BibPlans/" + lboContent.SelectedItem;
             if (File.Exists(desPath))
             {
@@ -80,13 +82,13 @@ namespace BiblePlanPlugin.BibPlan
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     File.Delete(desPath);
-                    if (Directory.Exists("power.of.god/BibPlans/" + lboContent.SelectedItem + "Dir/"))
+                    if (Directory.Exists(dirName))
                     {
-                        Directory.Delete("power.of.god/BibPlans/" + lboContent.SelectedItem + "Dir/");
+                        Directory.Delete(dirName);
                     }
                 }
             }
-            Directory.CreateDirectory("power.of.god/BibPlans/" + lboContent.SelectedItem + "Dir/");
+            Directory.CreateDirectory(dirName);
             var texta = GetUrlSource("http://godispower.us/BiblePlans/" +
                 txtAuthorName.Text +
                 "/" + lboContent.SelectedItem).Aggregate("", (current, x) => current +

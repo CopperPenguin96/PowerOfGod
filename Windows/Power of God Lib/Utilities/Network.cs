@@ -28,7 +28,7 @@ namespace Power_of_God_Lib.Utilities
             var x = VersionPrefix.ToLower().Substring(0, 1);
             return x;
         }
-        public const int ReleaseNumber = 6;
+        public const int ReleaseNumber = 7;
         
 
         private static readonly string[] CurrentVersion = {
