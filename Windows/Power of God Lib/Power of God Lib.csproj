@@ -259,6 +259,7 @@
     <Compile Include="Utilities\FileSystem.cs" />
     <Compile Include="Utilities\ErrorLogging.cs" />
     <Compile Include="Utilities\GetallFilesFromHttp.cs" />
+    <Compile Include="Utilities\PreRelease.cs" />
     <Compile Include="Utilities\SwearReplace.cs" />
     <Compile Include="Utilities\TitleExtractor.cs" />
     <Compile Include="Utilities\Network.cs" />

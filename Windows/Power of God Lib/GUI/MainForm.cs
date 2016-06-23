@@ -9,6 +9,7 @@ using Power_of_God_Lib.GUI.Controls;
 using Power_of_God_Lib.GUI.DialogBox;
 using Power_of_God_Lib.NetBible;
 using Power_of_God_Lib.NetBible.Books;
+using Power_of_God_Lib.NetBible.Books.Old_Testament;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Properties;
 using Power_of_God_Lib.Utilities;
@@ -27,11 +28,20 @@ namespace Power_of_God_Lib.GUI
             {
                 Directory.CreateDirectory("power.of.god");
             }
+            if (!File.Exists("power.of.god/Bibles/KJV.xml"))
+            {
+                if (!Directory.Exists("power.of.god/Bibles"))
+                {
+                    Directory.CreateDirectory("power.of.god/Bibles");
+                }
+                Network.DownloadScripture();
+            }
+            MessageBox.Show(new Genesis().ReadPlainVerse(1, 1));
             InitializeComponent();
             _fdefault = flowLayoutPanel2;
             Settings.LoadDefault();
             Settings.LoadFromJson();
-            Bible.SetLocation("power.of.god/" + Settings.UserSettings.scriptver + ".xml");
+            Bible.SetLocation("power.of.god/Bibles/" + Settings.UserSettings.scriptver + ".xml");
             UpdatePluginPanel();     
 
             var dllList = new List<string>();

@@ -35,7 +35,7 @@ namespace DailyScripture
             Content.SetListItems(listStr);
             try
             {
-                var html = DailyScripture.GetDailyScripture();
+                var html = !Network.DailyScriptureAlreadyPulled ? DailyScripture.GetDailyScripture() : DailyScripture.GetDailyScripture(Directory.GetFiles("power.of.god/Verses/").Length);
                 htmlRichTextBox1.SetHtmlText(html);
             }
             catch (Exception ex)
@@ -43,6 +43,7 @@ namespace DailyScripture
                 ErrorLogging.Write(ex);
                 new DialogBox("None today", "Sorry, there were no verse(s) for today. Check back tomorrow!").Show();
             }
+
         }
     }
 }
