@@ -8,12 +8,23 @@ namespace Power_of_God_Lib.NetBible
     //Never use unless extending
     public class Book
     {
+        /// <summary>
+        /// The Name of the Book
+        /// </summary>
         public virtual string Name { get; set; } = "Do Not Use";
-
+        /// <summary>
+        /// The Index of the Book
+        /// </summary>
         public virtual int BookNum { get; set; } = 0;
-
+        /// <summary>
+        /// The amount of chapters in the book
+        /// </summary>
         public virtual int ChapterCount { get; set; } = 0;
-
+        /// <summary>
+        /// The amount of verses per chapter entered
+        /// </summary>
+        /// <param name="chapter">The chapter</param>
+        /// <returns>Gets the amount of verses per the chapter</returns>
         public int VerseCount(int chapter)
         {
             var listofBooks = from item in LoadBibleXml(Bible.FileLocation).Descendants("book")
@@ -43,13 +54,22 @@ namespace Power_of_God_Lib.NetBible
             }
             return -1;
         }
-
+        /// <summary>
+        /// Gets formatted string of verse
+        /// </summary>
+        /// <param name="chapter">Chapter</param>
+        /// <param name="verse">Verse</param>
+        /// <returns>Returns verse</returns>
         public virtual string ReadFormattedVerse(int chapter, int verse)
         {
             return Name + " " + chapter + ":" + verse + " (KJV) - \"" + ReadPlainVerse(chapter, verse) + "\"";
         }
-
-        
+        /// <summary>
+        /// Gets plain string of verse
+        /// </summary>
+        /// <param name="chapter">Chapter</param>
+        /// <param name="verse">Verse</param>
+        /// <returns>Returns verse</returns>
         public string ReadPlainVerse(int chapter, int verse)
         {
             string foundVerse = null;

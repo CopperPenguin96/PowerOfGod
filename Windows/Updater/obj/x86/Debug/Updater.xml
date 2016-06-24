@@ -6,6 +6,12 @@ Updater
 </name>
 </assembly>
 <members>
+<member name="M:Updater.ErrorLogging.Write(System.Exception)">
+ <summary>
+ Writes Error Log based on exception
+ </summary>
+ <param name="ex">The exception being thrown</param>
+</member>
 <member name="T:Updater.My.Resources.Resources">
 <summary>
   A strongly-typed resource class, for looking up localized strings, etc.

@@ -7,16 +7,26 @@ namespace Power_of_God_Lib.Utilities
 {
     public class Detection
     {
+        /// <summary>
+        /// Detects if user is using the Mono Framework
+        /// </summary>
+        /// <returns>true if on mono</returns>
         public static bool IsRunningOnMono()
         {
             return Type.GetType("Mono.Runtime") != null;
         }
-
+        /// <summary>
+        /// Gets if 32 bit or 64
+        /// </summary>
+        /// <returns>Amount of bits</returns>
         public static string GetBits()
         {
             return System.Environment.Is64BitOperatingSystem == false ? "32-Bit" : "64-Bit";
         }
-
+        /// <summary>
+        /// Gets the name of the OS
+        /// </summary>
+        /// <returns></returns>
         public static string GetOperatingSystemName()
         {
             var p = (int)Environment.OSVersion.Platform;
@@ -53,7 +63,10 @@ namespace Power_of_God_Lib.Utilities
             }
             return "";
         }
-
+        /// <summary>
+        /// Full System info
+        /// </summary>
+        /// <returns></returns>
         public static List<string> FullSystemInfo()
         {
             var list = new List<string>();

@@ -181,7 +181,9 @@ namespace Power_of_God_Lib.Plugins
         /// <returns>Devloper Priority. 1 being the most priority. Cannot clash with other plugins.</returns>
         public int Priority = -1;
     }
-
+    /// <summary>
+    /// Plugin Category
+    /// </summary>
     public enum Category
     {
         Basic, Entertainment, Scripture, Study, Lessons, Other

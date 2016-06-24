@@ -5,6 +5,10 @@ Imports System.IO
 Public Class ErrorLogging
     Private Shared _now As DateTime = DateTime.Now
     Private Shared ReadOnly Nl As String = Environment.NewLine
+    ''' <summary>
+    ''' Writes Error Log based on exception
+    ''' </summary>
+    ''' <param name="ex">The exception being thrown</param>
     Public Shared Sub Write(ex As Exception)
         If Not Directory.Exists("Logs/") Then
             Directory.CreateDirectory("Logs/")
@@ -32,10 +36,3 @@ Public Class ErrorLogging
         fWriter.Close()
     End Sub
 End Class
-
-'=======================================================
-'Service provided by Telerik (www.telerik.com)
-'Conversion powered by NRefactory.
-'Twitter: @telerik
-'Facebook: facebook.com/telerik
-'=======================================================

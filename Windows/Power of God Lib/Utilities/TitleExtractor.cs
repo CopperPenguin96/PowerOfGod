@@ -7,6 +7,11 @@ namespace Power_of_God_Lib.Utilities
 {
     public class TitleExtractor
     {
+        /// <summary>
+        /// Gets the title of a webpage
+        /// </summary>
+        /// <param name="url">the webpage</param>
+        /// <returns>title of webpage</returns>
         public static string PageTitle(string url)
         {
             var title = "";

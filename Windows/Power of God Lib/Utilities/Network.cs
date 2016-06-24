@@ -15,7 +15,7 @@ namespace Power_of_God_Lib.Utilities
         public static bool DailyScriptureAlreadyPulled = false;
         public const bool IsPreRelease = true;
         public static string VersionPrefix = "Beta";
-
+        ///
         public static void DownloadScripture()
         {
             var dlForm = new DownloadDialogBox("Downloading Scripture",
@@ -34,7 +34,11 @@ namespace Power_of_God_Lib.Utilities
         private static readonly string[] CurrentVersion = {
             "1", "0", null, null
         };
-
+        /// <summary>
+        /// Gets current installed version
+        /// </summary>
+        /// <param name="catchingPreRelease">True if Pre-Release</param>
+        /// <returns></returns>
         public static string LatestStable(bool catchingPreRelease)
         {
             if (!IsPreRelease || catchingPreRelease)
@@ -188,7 +192,10 @@ namespace Power_of_God_Lib.Utilities
         }
 
         private const string Url = "http://godispower.us/Application/Updates.txt";
-
+        /// <summary>
+        /// Gets latest version
+        /// </summary>
+        /// <returns></returns>
         public static string LatestOnline()
         {
             var x = GetUrlSource(Url).ElementAt(0) + " ";
@@ -212,7 +219,11 @@ namespace Power_of_God_Lib.Utilities
             }
             return x;
         }
-
+        /// <summary>
+        /// Obtain source of webpage
+        /// </summary>
+        /// <param name="urlF">The url needed</param>
+        /// <returns>source of page</returns>
         public static List<string> GetUrlSource(string urlF)
         {
             if (urlF.Contains("0201"))
@@ -248,7 +259,11 @@ namespace Power_of_God_Lib.Utilities
         {
             XBrowser.Navigate(url);
         }
-
+        /// <summary>
+        /// Gets mediafire download of mediafire link
+        /// </summary>
+        /// <param name="download"></param>
+        /// <returns></returns>
         public static string Mediafire(string download)
         {
             var req = (HttpWebRequest)WebRequest.Create(download);

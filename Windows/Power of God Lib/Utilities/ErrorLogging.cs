@@ -8,6 +8,10 @@ namespace Power_of_God_Lib.Utilities
     {
         private static DateTime _now = DateTime.Now;
         private static readonly string Nl = Environment.NewLine;
+        /// <summary>
+        /// Generates Error Logs
+        /// </summary>
+        /// <param name="ex"></param>
         public static void Write(Exception ex)
         {
             if (!Directory.Exists("Logs/")) Directory.CreateDirectory("Logs/");

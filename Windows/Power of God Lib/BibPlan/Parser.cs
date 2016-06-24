@@ -10,6 +10,9 @@ namespace Power_of_God_Lib.BibPlan
 {
     public class Parser
     {
+        /// <summary>
+        /// The Bible Plan Collection used for counting current day.
+        /// </summary>
         public static ObservableCollection<string> PlanDays = new ObservableCollection<string>();
         /// <summary>
         /// Returns the html of the Bible Plan 
@@ -32,6 +35,11 @@ namespace Power_of_God_Lib.BibPlan
             return html;
         }
 
+        /// <summary>
+        /// Converts between objects
+        /// </summary>
+        /// <param name="v"></param>
+        /// <returns></returns>
         private static VerseObj ToVerseObj(VerseObj v)
         {
             return new VerseObj
@@ -41,6 +49,12 @@ namespace Power_of_God_Lib.BibPlan
                 Verse = v.Verse
             };
         }
+
+        /// <summary>
+        /// Get index of Bible book
+        /// </summary>
+        /// <param name="nameStr">The name of the bible book</param>
+        /// <returns>The index</returns>
         private static int GetBookIndex(string nameStr)
         {
             var loopCount = 0;
@@ -54,12 +68,21 @@ namespace Power_of_God_Lib.BibPlan
             }
             return -1;
         }
-
+        /// <summary>
+        /// Retrieve Bible Book for use with verse loading
+        /// </summary>
+        /// <param name="n">The name of the bible book</param>
+        /// <returns>Bible Book</returns>
         private static Book GetBook(string n)
         {
             return Bible.AllBooks().FirstOrDefault(b => b.Name == n);
         }
-
+        /// <summary>
+        /// Gets the content between two verses
+        /// </summary>
+        /// <param name="v1">The starting verse</param>
+        /// <param name="v2">The ending verse</param>
+        /// <returns>The content between the two verses</returns>
         private static string Body(VerseObj v1, VerseObj v2)
         {
             

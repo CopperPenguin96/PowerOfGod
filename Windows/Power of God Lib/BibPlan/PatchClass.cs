@@ -12,7 +12,6 @@ namespace Power_of_God_Lib.BibPlan
     {
         private static Book _selectedBookStart;
         private static Book _selectedBookEnd;
-
         private void cboBook_SelectedIndexChanged(object sender, EventArgs e)
         {
             NumChapterStart.Value = 1;

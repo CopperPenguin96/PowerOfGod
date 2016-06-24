@@ -11,6 +11,10 @@ namespace Power_of_God_Lib.Utilities
         public static string OldTitle;
         public static string CurrentTitle;
         public static bool ButtonPressed;
+        /// <summary>
+        /// Sets the title
+        /// </summary>
+        /// <param name="text">the desired title</param>
         public static void SetTitle(string text)
         {
             if (OldTitle != null)
@@ -22,7 +26,11 @@ namespace Power_of_God_Lib.Utilities
         }
 
         public static string CurrentListId = "";
-
+        /// <summary>
+        /// Generates an MD5 Hash
+        /// </summary>
+        /// <param name="original">the text used</param>
+        /// <returns></returns>
         public static string GenerateMd5(string original)
         {
             var md5 = MD5.Create();
@@ -36,6 +44,10 @@ namespace Power_of_God_Lib.Utilities
             return sb.ToString().ToLower();
         }
         public static ObservableCollection<string> ObservedList = new ObservableCollection<string>();
+        /// <summary>
+        /// Sets the content of the ListBox to the Right of the MainScreen Form
+        /// </summary>
+        /// <param name="items">The Collection</param>
         public static void SetListItems(List<string> items)
         {
             ObservedList.Clear();

@@ -20,6 +20,9 @@ namespace Power_of_God_Lib.NetBible
         {
             FileLocation = location;
         }
+        /// <summary>
+        /// All the Old Testament Books
+        /// </summary>
         public static List<Book> OldTestament = new List<Book>()
         {
             new Genesis(), new Exodus(), new Leviticus(), new Numbers(), new Deuteronomy(),
@@ -31,7 +34,9 @@ namespace Power_of_God_Lib.NetBible
             new Obadiah(), new Jonah(), new Micah(), new Nahum(), new Habakkuk(),
             new Zephaniah(), new Haggai(), new Zechariah(), new Malachi()
         };
-
+        /// <summary>
+        /// All the New Testament Books
+        /// </summary>
         public static List<Book> NewTestament = new List<Book>()
         {
             new Matthew(), new Mark(), new Luke(), new John(), new Acts(), new Romans(),
@@ -39,18 +44,30 @@ namespace Power_of_God_Lib.NetBible
             new Colossians(), new Thessalonians1(), new Thessalonians2(), new Timothy1(),
             new Timothy2(), new Titus(), new Philemon(), new Hebrews(), new James(), new Peter1(), new Peter2(),
             new John1(), new John2(), new John3(), new Jude(), new Revelation()
-        };
+        }; 
 
+        /// <summary>
+        /// All the books
+        /// </summary>
+        /// <returns>List of All Bible Books</returns>
         public static List<Book> AllBooks()
         {   
             return OldTestament.Concat(NewTestament).ToList();
         }
-
+        /// <summary>
+        /// Checks if selected version of Bible is downloaded
+        /// </summary>
+        /// <param name="ver">Bible Version</param>
+        /// <returns>true/false -> Bible Downloaded</returns>
         public static bool CheckIfDownloaded(string ver)
         {
             return File.Exists("power.of.god/Bibles/" + ver + ".xml");
         }
 
+        /// <summary>
+        /// The download dialog for the Scripture
+        /// </summary>
+        /// <returns></returns>
         public static DownloadDialogBox DownloadBox()
         {
             

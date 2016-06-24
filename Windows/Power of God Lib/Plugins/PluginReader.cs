@@ -14,7 +14,9 @@ namespace Power_of_God_Lib.Plugins
 {
     public class PluginReader
     {
-
+        /// <summary>
+        /// Not working function. Will be restored later
+        /// </summary>
         #region ActionStarted System
         
         private static List<bool> _actionStartedList = new List<bool>();
@@ -76,7 +78,17 @@ namespace Power_of_God_Lib.Plugins
 
         #endregion
 
+        /// <summary>
+        /// The current plugin being used
+        /// </summary>
         public static Plugin CurrentPlugin;
+        /// <summary>
+        /// Gets object foun din Plugin
+        /// </summary>
+        /// <typeparam name="T">The Type needed</typeparam>
+        /// <param name="pl">The Plugin</param>
+        /// <param name="constructArgs">The arguments passed through the type's constructor</param>
+        /// <returns>object based on type and its constructors</returns>
         public static T GetObject<T>(Plugin pl, object[] constructArgs)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
@@ -91,9 +103,18 @@ namespace Power_of_God_Lib.Plugins
             }
             throw new Exception("Could not get requested object type " + typeof(T).Name + " from plugin " + pl.Name);
         }
-
+        /// <summary>
+        /// The Current PluginFrame
+        /// </summary>
         public static PluginFrame CurrentFrame;
+        /// <summary>
+        /// The old frame
+        /// </summary>
         public static PluginFrame OldFrame;
+        /// <summary>
+        /// Sets the current PluginFrame
+        /// </summary>
+        /// <param name="plFrame"></param>
         public static void SetFrame(PluginFrame plFrame)
         {
             try
@@ -128,7 +149,11 @@ namespace Power_of_God_Lib.Plugins
             var m = (Plugin)m2;
             return m.GetFrame(frameid);
         }
-
+        /// <summary>
+        /// Gets the default frame of a plugin
+        /// </summary>
+        /// <param name="pl">The plugin</param>
+        /// <returns></returns>
         public static PluginFrame GetDefaultFrame(Plugin pl)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
@@ -148,17 +173,32 @@ namespace Power_of_God_Lib.Plugins
             var frameId = m.FrameIdList()[0];
             return frameId;
         }
+        /// <summary>
+        /// The Start Up Action of a Plugin
+        /// </summary>
+        /// <param name="pl"></param>
         public static void StartUp(Plugin pl)
         {
             PluginLoaded(pl); // Tells the system the plugin is loaded
             PerformMethod(pl, "Plugin", "PerformStartAction", new object[] { });
         }
 
-        
+        /// <summary> 
+        /// The plugin operation to load at application load
+        /// </summary>
+        /// <param name="pl"></param>
         public static void AppLoad(Plugin pl)
         {
             PerformMethod(pl, "Plugin", "AppLoad", new object[] {});
         }
+
+        /// <summary>
+        /// Peforms a method in a plugin
+        /// </summary>
+        /// <param name="pl">The plugin</param>
+        /// <param name="classStr">The class</param>
+        /// <param name="methodStr">The method</param>
+        /// <param name="parems">The args</param>
         public static void PerformMethod(Plugin pl, string classStr, string methodStr, object[] parems)
         {
             var xlocal = System.IO.Directory.GetCurrentDirectory();
@@ -179,11 +219,16 @@ namespace Power_of_God_Lib.Plugins
             var theMethod = thisType.GetMethod(methodStr);
             theMethod.Invoke(m, parems);
         }
-
+        /// <summary>
+        /// List of installed plugins
+        /// </summary>
         public static List<Plugin> PluginList;
 
         public static string X = " ";
         public const string Directory = "power.of.god/Plugins/";
+        /// <summary>
+        /// Loads all installed plugins
+        /// </summary>
         public static void LoadPlugins()
         {
             PluginList = new List<Plugin>();
