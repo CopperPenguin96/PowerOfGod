@@ -34,6 +34,7 @@ import java.net.URLClassLoader;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import pSystem.ErrorLogging;
 
 /**
  *
@@ -44,9 +45,10 @@ public class Start {
     public static void main(String[] args)
     {
         try {
-        //MainScreen.main(args);
+            //MainScreen.main(args);
             MainScreen mS = new MainScreen();
-            File f = new File("lessons.jar");
+            mS.show();
+            /*File f = new File("lessons.jar");
             URL[] f2 = new URL[] {f.toURL()};
             URLClassLoader child = new URLClassLoader (f2, mS.getClass().getClassLoader());
             Class classToLoad = Class.forName ("Lessons.Plugin", true, child);
@@ -54,14 +56,12 @@ public class Start {
             Object instance = classToLoad.newInstance ();
             //Object result = method.invoke (instance);
             Plugin p = (Plugin) instance;
-            System.out.println("Found this plugin: " + p.GetName());
-        }
-        catch (ClassNotFoundException | SecurityException | InstantiationException | IllegalAccessException | IllegalArgumentException e)
-        {
+            System.out.println("Found this plugin: " + p.GetName());*/
             
-            System.out.println(e);
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        catch (Exception e)
+        {
+            ErrorLogging.Write(e);
         }
     }
     
