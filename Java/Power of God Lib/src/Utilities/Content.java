@@ -25,6 +25,7 @@ package Utilities;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.security.MessageDigest;
 import java.util.*;
 import java.util.logging.Level;
@@ -40,6 +41,7 @@ import pSystem.ErrorLogging;
  */
 public class Content
 {
+    public static ByteArrayOutputStream bos = new ByteArrayOutputStream();
     private static void replaceColor(BufferedImage image, Color oldColor, Color newColor)
     {
         for (int y=0; y<image.getHeight(); y++)

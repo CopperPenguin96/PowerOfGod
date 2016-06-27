@@ -42,7 +42,7 @@ public class ErrorLogging {
     {
         PowerException ex = (PowerException) e5;
         File dirObj = new File("power.of.god/Logs/");
-        if (dirObj.exists()) dirObj.mkdirs();
+        if (!dirObj.exists()) dirObj.mkdirs();
         ArrayList<String> fileLines = new ArrayList<>();
         fileLines.add("-----Power of God Error Log-----" + Nl);
         try

@@ -56,6 +56,7 @@ public class MainScreen extends javax.swing.JFrame {
      */
     
     public MainScreen() {
+        
         ImageIcon ic = new ImageIcon(getClass().getResource("/Images/background.jpg"));
         Image i = ic.getImage().getScaledInstance(800, 456, java.awt.Image.SCALE_SMOOTH);
         
@@ -224,7 +225,6 @@ public class MainScreen extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(800, 456));
         setMinimumSize(new java.awt.Dimension(600, 456));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(800, 456));
         setResizable(false);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/main_zoom.png"))); // NOI18N

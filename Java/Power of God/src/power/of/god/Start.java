@@ -48,6 +48,11 @@ public class Start {
             //MainScreen.main(args);
             MainScreen mS = new MainScreen();
             mS.show();
+            ConsoleFrame cf = new ConsoleFrame();
+            cf.show();
+            System.out.println(">>> Power of God Debug Console <<<");
+            System.out.println("-------------------------------------------------------");
+            System.out.println("http://powerofgodonline.net/");
             /*File f = new File("lessons.jar");
             URL[] f2 = new URL[] {f.toURL()};
             URLClassLoader child = new URLClassLoader (f2, mS.getClass().getClassLoader());
