@@ -17,7 +17,7 @@ E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\Interop.WMPLib.dll
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\AxInterop.WMPLib.dll
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\LessonPlugin.csproj.ResolveComReference.cache
-E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\LessonPlugin.LessonPage.resources
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\LessonPlugin.csproj.GenerateResource.Cache
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\LessonPlugin.dll
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\LessonPlugin.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\x86\Debug\LessonPlugin.LessonPage.resources
