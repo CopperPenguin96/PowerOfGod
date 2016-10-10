@@ -26,6 +26,7 @@ package GUI;
 //import Books.NewTestament.*;
 //import Books.OldTestament.*;
 import GUI.Controls.*;
+import GUI.DialogBox.ChoiceDialogBox;
 import java.awt.Color;
 import java.io.*;
 import java.net.*;
@@ -40,8 +41,11 @@ import static GUI.MainScreen.MsgBox;
 import Plugins.*;
 import Utilities.Content;
 import Utilities.Network;
+import Utilities.PreRelease;
 import Utilities.TitleExtractor;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import pSystem.*;
 
 /*
@@ -64,12 +68,15 @@ public class MainScreen extends javax.swing.JFrame {
         setContentPane(background);
         initComponents();
         SetDefaultContentScreen();
-        this.setTitle("Power of God " + Network.LatestStable());
+        String stable = "";
+        if (Network.IsPreRelease) stable = PreRelease.GetString();
+        else stable = Network.LatestStable(false);
+        this.setTitle("Power of God " + stable);
         try {
             Network.UpdateNotice();
             if (!Network.UpdateNotice().equals("Updated"))
             {
-                MsgBox("Local Version: " + Network.ServerResponse.toLowerCase(), Network.UpdateNotice());
+             //   MsgBox("Local Version: " + Network.ServerResponse.toLowerCase(), Network.UpdateNotice());
             }
         } catch (Exception ex) {
             Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
@@ -107,9 +114,34 @@ public class MainScreen extends javax.swing.JFrame {
         x.stream().forEach((c) -> {
             PluginReader.AppLoad(c);
         });*/
-        Content.SetTitle(Network.LatestStable());
+        Content.SetTitle(Network.LatestStable(true));
+        setMovable();
+        
     }
     
+    private void setMovable()
+    {
+        MouseAdapter ma = new MouseAdapter() {
+            int lastX, lastY;
+            @Override
+            public void mousePressed(MouseEvent e) {
+                lastX = e.getXOnScreen();
+                lastY = e.getYOnScreen();
+            }
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                int x = e.getXOnScreen();
+                int y = e.getYOnScreen();
+                // Move frame by the mouse delta
+                setLocation(getLocationOnScreen().x + x - lastX,
+                    getLocationOnScreen().y + y - lastY);
+                lastX = x;
+                lastY = y;
+            }
+        };
+        addMouseListener(ma);
+        addMouseMotionListener(ma);
+    }
     private void UpdatePluginPanel()
     {
         PluginReader.LoadPlugins();

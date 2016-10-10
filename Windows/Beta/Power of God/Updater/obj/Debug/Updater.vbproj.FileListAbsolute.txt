@@ -1,0 +1,23 @@
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\bin\Debug\Updater.exe.config
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\bin\Debug\Updater.exe
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\bin\Debug\Updater.pdb
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\bin\Debug\Updater.xml
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.Resources.resources
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.vbproj.GenerateResource.Cache
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.exe
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.xml
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.pdb
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.exe.config
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.exe
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.pdb
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.xml
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.exe.config
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.exe
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.xml
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.Resources.resources
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.vbproj.GenerateResource.Cache
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.exe
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.xml
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.vbprojResolveAssemblyReference.cache

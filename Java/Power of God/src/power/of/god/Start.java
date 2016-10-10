@@ -24,14 +24,13 @@
 package power.of.god;
 
 import GUI.*;
+import GUI.DialogBox.ChoiceDialogBox;
+import GUI.DialogBox.DialogBox;
+import GUI.DialogBox.DownloadDialogBox;
 import Plugins.Plugin;
+import Utilities.FileSystem;
+import Utilities.Network;
 import java.io.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import pSystem.ErrorLogging;
@@ -42,17 +41,80 @@ import pSystem.ErrorLogging;
  */
 public class Start {
     
+    
     public static void main(String[] args)
     {
+        String mLink = "http://www.mediafire.com/download/9psfe1gevh8q863/Alpha_0.0.zip";
         try {
-            //MainScreen.main(args);
-            MainScreen mS = new MainScreen();
-            mS.show();
+            System.out.println(Network.MediaFire(mLink));
+            /*
+            try {
+            
+            String mainPath = "power.of.god/";
+            String bibPath = "power.of.god/Bibles/";
+            File mainPathObj = FileSystem.GetFileObj(mainPath);
+            File bibPathObj = FileSystem.GetFileObj(bibPath);
+            if (!mainPathObj.exists()) mainPathObj.mkdirs();
+            if (!bibPathObj.exists()) bibPathObj.mkdirs();
+            boolean safeToRun = false;
+            try
+            {
+            String n = Network.LatestStable(false);
+            if (n.contains("Pre-Release"))
+            {
             ConsoleFrame cf = new ConsoleFrame();
             cf.show();
             System.out.println(">>> Power of God Debug Console <<<");
             System.out.println("-------------------------------------------------------");
             System.out.println("http://powerofgodonline.net/");
+            
+            System.out.println("You will be using Power of God " + Network.LatestStable(false));
+            }
+            
+            else if (!Network.UpdateWord().equals("Updated"))
+            {
+            ChoiceDialogBox cBox = new ChoiceDialogBox("Updater",
+            "It is recommended that you get Power of God " + Network.LatestOnline() +
+            ", because you have now " +
+            Network.LatestStable(false) +
+            ".\n\nWould you like us to update it for you? This is the " +
+            "recommended option.",
+            "Yes", "No");
+            cBox.setVisible(true);
+            switch (cBox.GetResult())
+            {
+            case Choice1:
+            File updater = new File("Updater.exe");
+            if (!updater.exists())
+            {
+            System.out.println("Starting the Updater Form...");
+            new UpdaterForm().setVisible(true);
+            }
+            else
+            {
+            new DialogBox("Failed to Update", "We can't update without Updater.exe. " +
+            "You will hve to download the update yourself.").setVisible(true);
+            }
+            break;
+            case Choice2:
+            new DialogBox("Not a Good Idea!",
+            "You have chosen not to update. Some features might not work or you " +
+            "will not get access to new things.").setVisible(true);
+            safeToRun = true;
+            break;
+            }
+            }
+            if (safeToRun)
+            {
+            new MainScreen().setVisible(true);
+            }
+            }
+            catch (Exception ex)
+            {
+            ErrorLogging.Write(ex);
+            }
+            //MainScreen.main(args);
+            
             /*File f = new File("lessons.jar");
             URL[] f2 = new URL[] {f.toURL()};
             URLClassLoader child = new URLClassLoader (f2, mS.getClass().getClassLoader());
@@ -62,11 +124,13 @@ public class Start {
             //Object result = method.invoke (instance);
             Plugin p = (Plugin) instance;
             System.out.println("Found this plugin: " + p.GetName());*/
-            
-        }
-        catch (Exception e)
-        {
+            /*}
+            catch (Exception e)
+            {
             ErrorLogging.Write(e);
+            }*/
+        } catch (Exception ex) {
+            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

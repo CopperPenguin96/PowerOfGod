@@ -1,0 +1,21 @@
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\bin\Debug\NetBible.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\bin\Debug\NetBible.pdb
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.dll
+C:\Users\apotter96\OneDrive\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\bin\Debug\NetBible.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\bin\Debug\NetBible.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\NetBible\obj\Debug\NetBible.pdb
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\NetBible.dll
+C:\Users\apotter96\Docs\Programs\Power of God\Project\Windows\bin\Debug\NetBible.pdb
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBible.dll
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBible.pdb
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.dll
+E:\Google Drive\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBible.dll
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBible.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.dll
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache

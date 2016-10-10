@@ -12,11 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/pSystem/ErrorLogging.java</file>
-            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Images/main_zoom.png</file>
-            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Utilities/Content.java</file>
+            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/DialogBox/DialogBox.java</file>
             <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/MainScreen.java</file>
-            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Images/scroll_image.png</file>
+            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/GUI/DialogBox/DownloadDialogBox.java</file>
+            <file>file:/C:/Users/super/Documents/Power%20of%20God/Project/Java/Power%20of%20God%20Lib/src/Utilities/Network.java</file>
         </group>
     </open-files>
 </project-private>

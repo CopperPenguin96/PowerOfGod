@@ -125,4 +125,9 @@ public class FileSystem {
         }  
         return fullText;
     }
+    
+    public static File GetFileObj(String path)
+    {
+        return new File(path);
+    }
 }

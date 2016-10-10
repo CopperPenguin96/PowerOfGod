@@ -29,14 +29,30 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.zip.*;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  *
  * @author apotter96
  */
 public class Network {
-    private static final String VersionPrefix = "Pre-Release";
-    private static final String CurrentPreRelease = "b1b001";
+    public static boolean DailyScriptureAlreadyPulled = false;
+    public static final boolean IsPreRelease = false;
+    private static final String VersionPrefix = "Beta";
+    
+    public static void DownloadScripture()
+    {
+        // TODO: Create Download GUI
+        throw new NotImplementedException();
+    }
+    
+    public static String VersionLetter()
+    {
+        String x = VersionPrefix.toLowerCase().substring(0, 1);
+        return x;
+    }
+    
+    public final static int ReleaseNumber = 3;
     private static final String[] CurrentVersion = new String[]
     {
         "1", "0", null, null
@@ -44,11 +60,11 @@ public class Network {
     private static String TogetherNumbers()
     {
         int VersionPrefixCount = VersionPrefix.length();
-        return LatestStable().substring(VersionPrefixCount + 1);
+        return LatestStable(false).substring(VersionPrefixCount + 1);
     }
-    public static String LatestStable()
+    public static String LatestStable(boolean catchingPreRelease)
     {
-        if (CurrentPrefixInt() != 5000)
+        if (!IsPreRelease || catchingPreRelease)
         {
             String returnValue = VersionPrefix + " " + CurrentVersion[0] + "." + 
                 CurrentVersion[1];
@@ -64,7 +80,7 @@ public class Network {
         }
         else
         {
-            return "Pre-Release " + CurrentPreRelease;
+            return "Pre-Release " + PreRelease.GetString();
         }
     }
     private static int CurrentPrefixInt()
@@ -75,8 +91,6 @@ public class Network {
                 return 0;
             case "Beta":
                 return 1;
-            case "Pre-Release":
-                return 5000;
             default:
                 return 2;
         }
@@ -97,7 +111,7 @@ public class Network {
                 return
                     "You are using a Pre-Release. Please note that not all features " +
                     "will be functional.\n\n" +
-                    "(" + LatestStable() + ")";
+                    "(" + LatestStable(true) + ")";
             default:
                 return "You are using an unsupported version of Power of God. \nPlease consider " + 
                       "using the current version, " + LatestOnline() + 
@@ -105,7 +119,7 @@ public class Network {
 
         }
     }
-    private static String UpdateWord() throws IOException
+    public static String UpdateWord() throws IOException
     {
         if (CurrentPrefixInt() == 5000)
         {
@@ -220,5 +234,40 @@ public class Network {
             fileLines.add(s.nextLine());
         }
         return fileLines;
+    }
+    
+    public static String MediaFire(String download) throws Exception
+    {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new URL(download).openStream()));
+            String line = "";
+            while((line = reader.readLine()) != null) {
+		if(line.contains("<div class=\"download_link\""))
+                {
+                    return reader.readLine().split("href=\"")[1].split("\" onclick")[0];
+		}
+            }
+	} catch (MalformedURLException e) {
+            e.printStackTrace();
+	} catch (IOException e) {
+            e.printStackTrace();
+	}
+	return null;
+    }
+    
+    private static int GetNextIndexOf(char chr, String source, int start) throws Exception
+    {
+        if (start < 0 || start > source.length() - 1)
+        {
+            throw new Exception("Argument Out of Range");
+        }
+        for (int i = start; i < source.length(); i++)
+        {
+            if (source.charAt(i) == chr)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }

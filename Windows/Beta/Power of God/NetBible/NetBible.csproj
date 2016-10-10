@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetBible</RootNamespace>
+    <AssemblyName>NetBible</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Books\Bible.cs" />
+    <Compile Include="Books\Book.cs" />
+    <Compile Include="Books\New Testament\Acts.cs" />
+    <Compile Include="Books\New Testament\Colossians.cs" />
+    <Compile Include="Books\New Testament\Corinthians1.cs" />
+    <Compile Include="Books\New Testament\Corinthians2.cs" />
+    <Compile Include="Books\New Testament\Ephesians.cs" />
+    <Compile Include="Books\New Testament\Galatians.cs" />
+    <Compile Include="Books\New Testament\Hebrews.cs" />
+    <Compile Include="Books\New Testament\James.cs" />
+    <Compile Include="Books\New Testament\John.cs" />
+    <Compile Include="Books\New Testament\John1.cs" />
+    <Compile Include="Books\New Testament\John2.cs" />
+    <Compile Include="Books\New Testament\John3.cs" />
+    <Compile Include="Books\New Testament\Jude.cs" />
+    <Compile Include="Books\New Testament\Luke.cs" />
+    <Compile Include="Books\New Testament\Mark.cs" />
+    <Compile Include="Books\New Testament\Matthew.cs" />
+    <Compile Include="Books\New Testament\Peter1.cs" />
+    <Compile Include="Books\New Testament\Peter2.cs" />
+    <Compile Include="Books\New Testament\Philemon.cs" />
+    <Compile Include="Books\New Testament\Philippians.cs" />
+    <Compile Include="Books\New Testament\Revelation.cs" />
+    <Compile Include="Books\New Testament\Romans.cs" />
+    <Compile Include="Books\New Testament\Thessalonians1.cs" />
+    <Compile Include="Books\New Testament\Thessalonians2.cs" />
+    <Compile Include="Books\New Testament\Timothy1.cs" />
+    <Compile Include="Books\New Testament\Timothy2.cs" />
+    <Compile Include="Books\New Testament\Titus.cs" />
+    <Compile Include="Books\Old Testament\Amos.cs" />
+    <Compile Include="Books\Old Testament\Chronicles1.cs" />
+    <Compile Include="Books\Old Testament\Chronicles2.cs" />
+    <Compile Include="Books\Old Testament\Daniel.cs" />
+    <Compile Include="Books\Old Testament\Deuteronomy.cs" />
+    <Compile Include="Books\Old Testament\Ecclesiastes.cs" />
+    <Compile Include="Books\Old Testament\Esther.cs" />
+    <Compile Include="Books\Old Testament\Exodus.cs" />
+    <Compile Include="Books\Old Testament\Ezekiel.cs" />
+    <Compile Include="Books\Old Testament\Ezra.cs" />
+    <Compile Include="Books\Old Testament\Genesis.cs" />
+    <Compile Include="Books\Old Testament\Habakkuk.cs" />
+    <Compile Include="Books\Old Testament\Haggai.cs" />
+    <Compile Include="Books\Old Testament\Hosea.cs" />
+    <Compile Include="Books\Old Testament\Isaiah.cs" />
+    <Compile Include="Books\Old Testament\Jeremiah.cs" />
+    <Compile Include="Books\Old Testament\Job.cs" />
+    <Compile Include="Books\Old Testament\Joel.cs" />
+    <Compile Include="Books\Old Testament\Jonah.cs" />
+    <Compile Include="Books\Old Testament\Joshua.cs" />
+    <Compile Include="Books\Old Testament\Judges.cs" />
+    <Compile Include="Books\Old Testament\Kings1.cs" />
+    <Compile Include="Books\Old Testament\Kings2.cs" />
+    <Compile Include="Books\Old Testament\Lamentations.cs" />
+    <Compile Include="Books\Old Testament\Leviticus.cs" />
+    <Compile Include="Books\Old Testament\Malachi.cs" />
+    <Compile Include="Books\Old Testament\Micah.cs" />
+    <Compile Include="Books\Old Testament\Nahum.cs" />
+    <Compile Include="Books\Old Testament\Nehemiah.cs" />
+    <Compile Include="Books\Old Testament\Numbers.cs" />
+    <Compile Include="Books\Old Testament\Obadiah.cs" />
+    <Compile Include="Books\Old Testament\Proverbs.cs" />
+    <Compile Include="Books\Old Testament\Psalms.cs" />
+    <Compile Include="Books\Old Testament\Ruth.cs" />
+    <Compile Include="Books\Old Testament\Samuel1.cs" />
+    <Compile Include="Books\Old Testament\Samuel2.cs" />
+    <Compile Include="Books\Old Testament\SongOfSolomon.cs" />
+    <Compile Include="Books\Old Testament\Zechariah.cs" />
+    <Compile Include="Books\Old Testament\Zephaniah.cs" />
+    <Compile Include="Books\PurposeVerses.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

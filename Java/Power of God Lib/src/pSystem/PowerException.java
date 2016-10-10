@@ -30,7 +30,22 @@ import java.io.StringWriter;
  *
  * @author apotter96
  */
-public class PowerException extends Exception{
+public class PowerException extends Throwable {
+    public PowerException()
+    {
+        super();
+    }
+    
+    public PowerException(String message)
+    {
+        super(message);
+    }
+    
+    public PowerException(String message, Throwable e)
+    {
+        super(message, e);
+        
+    }
     public String getStackTrace(final Throwable throwable) {
      final StringWriter sw = new StringWriter();
      final PrintWriter pw = new PrintWriter(sw, true);

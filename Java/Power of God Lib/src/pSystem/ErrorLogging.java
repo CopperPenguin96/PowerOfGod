@@ -38,9 +38,10 @@ import java.util.logging.Logger;
 public class ErrorLogging {
     private static final Date _now = new Date();
     private final static String Nl = System.lineSeparator();
-    public static void Write(Exception e5)
+    public static void Write(Throwable e5)
     {
-        PowerException ex = (PowerException) e5;
+        System.out.println("Exception was caught. Writing logs.....");
+        PowerException ex = new PowerException(e5.getMessage(), e5.getCause());
         File dirObj = new File("power.of.god/Logs/");
         if (!dirObj.exists()) dirObj.mkdirs();
         ArrayList<String> fileLines = new ArrayList<>();
@@ -58,8 +59,9 @@ public class ErrorLogging {
         fileLines.add(Nl + Nl);
         fileLines.add(ex.getStackTrace(ex));
         fileLines.add("Log wrote at " + _now.toString());
-        String writingPath = "power.of.god/Logs/" + _now.toString() + _now.getTime() + ".txt";
+        String writingPath = "power.of.god/Logs/" + _now.getTime() + _now.getDay() + _now.getYear() + ".txt";
         File newFileObj = new File(writingPath);
+        System.out.println(writingPath);
         try {
             newFileObj.createNewFile();
             String[] f = new String[fileLines.size()];

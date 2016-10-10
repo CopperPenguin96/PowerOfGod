@@ -1,0 +1,10 @@
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\PluginFileGenerator.exe.config
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\PluginFileGenerator.exe
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\PluginFileGenerator.pdb
+C:\Users\super\Documents\Power of God\Project\Windows\bin\Debug\PluginFileGenerator.xml
+C:\Users\super\Documents\Power of God\Project\Windows\PluginFileGenerator\obj\Debug\PluginFileGenerator.vbprojResolveAssemblyReference.cache
+C:\Users\super\Documents\Power of God\Project\Windows\PluginFileGenerator\obj\Debug\PluginFileGenerator.Resources.resources
+C:\Users\super\Documents\Power of God\Project\Windows\PluginFileGenerator\obj\Debug\PluginFileGenerator.vbproj.GenerateResource.Cache
+C:\Users\super\Documents\Power of God\Project\Windows\PluginFileGenerator\obj\Debug\PluginFileGenerator.exe
+C:\Users\super\Documents\Power of God\Project\Windows\PluginFileGenerator\obj\Debug\PluginFileGenerator.xml
+C:\Users\super\Documents\Power of God\Project\Windows\PluginFileGenerator\obj\Debug\PluginFileGenerator.pdb

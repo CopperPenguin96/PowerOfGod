@@ -1,0 +1,6 @@
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\bin\x86\Debug\NetBible.dll
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\bin\x86\Debug\NetBible.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\x86\Debug\NetBible.dll
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\x86\Debug\NetBible.pdb
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\x86\Debug\NetBible.dll
+E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\x86\Debug\NetBible.pdb
