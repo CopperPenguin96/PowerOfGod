@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 
 namespace Power_of_God_Lib.Utilities
 {
@@ -13,6 +12,9 @@ namespace Power_of_God_Lib.Utilities
             MainDirectory + "Plugins/dll/",
             MainDirectory + "Plugins/Files/",
             MainDirectory + "UserInfo/",
+            MainDirectory + "Logs/",
+            MainDirectory + "Logs/Main/",
+            MainDirectory + "Logs/Errors/"
         };
 
         public static readonly string[] Files =
@@ -36,8 +38,11 @@ namespace Power_of_God_Lib.Utilities
                     if (y == x) skipIt = true;
                 }
                 if (skipIt) continue;
-                Directory.CreateDirectory(Directories[x]);
-                Console.WriteLine("Created directory: " + Directories[x]);
+                if (!Directory.Exists(Directories[x]))
+                {
+                    Directory.CreateDirectory(Directories[x]);
+                    Logging.Log("Created directory: " + Directories[x]);
+                }
             }
         }
     }

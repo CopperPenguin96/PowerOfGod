@@ -67,6 +67,7 @@ namespace LessonPlugin
             this.metroListView1.TabIndex = 2;
             this.metroListView1.UseCompatibleStateImageBehavior = false;
             this.metroListView1.UseSelectable = true;
+            this.metroListView1.SelectedIndexChanged += new System.EventHandler(this.metroListView1_SelectedIndexChanged);
             // 
             // metroButton1
             // 

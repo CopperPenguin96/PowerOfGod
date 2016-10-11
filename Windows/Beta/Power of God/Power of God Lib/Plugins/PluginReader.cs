@@ -80,8 +80,9 @@ namespace Power_of_God_Lib.Plugins
                         var appPath = Application.ExecutablePath;
                         var x = appPath.Substring(0, appPath.Length - 17) + "\\" + f.Replace("/", "\\");
                         PluginList.Add(LoadPlugin(x));
+                        Logging.Log(LoadPlugin(x).Name + " (Plugin) was registered.");
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         // Ignored
                     }

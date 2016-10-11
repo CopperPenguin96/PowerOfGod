@@ -10,7 +10,7 @@ namespace Power_of_God_Lib.Utilities
     {
         public static string[] VersionCode = {"Beta", "1", "0", null, null};
         public static bool PreRelease = true;
-        public static int PreReleaseNumber = 8;
+        public static int PreReleaseNumber = 9;
         public static string GetVersionCode()
         {
             if (!PreRelease)

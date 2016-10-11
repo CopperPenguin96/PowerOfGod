@@ -99,7 +99,9 @@
     <Compile Include="Plugins\PluginException.cs" />
     <Compile Include="Plugins\PluginReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Detection.cs" />
     <Compile Include="Utilities\FileSystem.cs" />
+    <Compile Include="Utilities\Logging.cs" />
     <Compile Include="Utilities\Network.cs" />
     <Compile Include="Utilities\AppVersion.cs" />
   </ItemGroup>

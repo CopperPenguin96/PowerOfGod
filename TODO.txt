@@ -1,8 +1,7 @@
 Power of God TODO list
-- Switch to video lessons (Beta 1.0) (In Progress)
 - Recreate User SignUp/Login
 - Plugins (In Progress)
-- Test Bugs out on Wine (Abandoned)
 - Start "The Rock" Youth Ministry (Not sure when. Need volunteers to run it)
 - Create settings tab
+- Setup Pre-Release Mode/Logging (DONE! - PreRelease b1a009)
 
