@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Power_of_God_Lib.Utilities;
 
@@ -19,10 +14,11 @@ namespace Power_of_God
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             if (AppVersion.PreRelease)
             {
-                // Open Pre-Release mode
-                AllocConsole();
+                Logging.Log("Starting...");
+
             }
             LogTimer.Interval = 300000; // 5 minutes for each log
             LogTimer.Tick += LogTick;
@@ -58,10 +54,6 @@ namespace Power_of_God
             Logging.Log("Saving available logs", LogType.SystemEvent);
             Logging.SaveLogs();
         }
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool AllocConsole();
 
         private static readonly Timer LogTimer = new Timer();
 

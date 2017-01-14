@@ -1,6 +1,6 @@
-﻿namespace Power_of_God_Lib.GUI.BaseTabs
+﻿namespace Power_of_God_Lib.GUI
 {
-    partial class SettingsTab
+    partial class SettingsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -37,18 +37,18 @@
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(591, 402);
             this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Settings aren\'t available yet. Sorry :(";
+            this.metroLabel1.Text = "Settings aren\'t available yet. Sorry :(\r\nComing in Beta 1.1";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel1.WrapToLine = true;
             // 
-            // SettingsTab
+            // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(616, 422);
             this.Controls.Add(this.metroLabel1);
-            this.Name = "SettingsTab";
+            this.Name = "SettingsForm";
             this.Text = "SettingsTab";
             this.ResumeLayout(false);
 

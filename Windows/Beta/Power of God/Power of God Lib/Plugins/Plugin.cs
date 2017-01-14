@@ -19,6 +19,7 @@ namespace Power_of_God_Lib.Plugins
 
         public PluginReader.PowerOfGodLoad AppLoad;
         public PluginReader.PluginLoad PluginLoad;
+        public PluginReader.PluginUninstall PluginUninstall;
         public string ManifestLocation;
         public PowerTabPage[] TabPages =
         {
@@ -32,8 +33,8 @@ namespace Power_of_God_Lib.Plugins
 
         public virtual void PreparePlugin()
         {
-            AppLoad = AppLoaded;
-            PluginLoad = PluginLoaded;
+            /*AppLoad = AppLoaded;
+            PluginLoad = PluginLoaded;*/
             ManifestLocation = FileSystem.Directories[3] + Name + "/" + "manifest.xml";
             //LoadManifest(); // Loads Manifest
         }
@@ -110,7 +111,7 @@ namespace Power_of_God_Lib.Plugins
 
         public void AppLoaded()
         {
-            MessageBox.Show("On Power of God Load");
+            //MessageBox.Show("On Power of God Load");
         }
     }
 }

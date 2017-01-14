@@ -21,3 +21,12 @@ E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.xml
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.pdb
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.vbprojResolveAssemblyReference.cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.exe.config
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.exe
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.pdb
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Updater.xml
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.Resources.resources
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.vbproj.GenerateResource.Cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.exe
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.xml
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.pdb

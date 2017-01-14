@@ -1,0 +1,10 @@
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Release\Power of God Lib.dll
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Release\Power of God Lib.pdb
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power of God Lib.csprojResolveAssemblyReference.cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.BaseTabs.PluginManagerTab.resources
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.BaseTabs.PurposeTab.resources
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.SettingsForm.resources
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power_of_God_Lib.GUI.PowerTabPage.resources
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power of God Lib.csproj.GenerateResource.Cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power of God Lib.dll
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Power of God Lib\obj\Release\Power of God Lib.pdb

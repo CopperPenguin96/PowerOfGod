@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
@@ -76,17 +76,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\BaseTabs\PluginManagerTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\BaseTabs\PluginManagerTab.Designer.cs">
+      <DependentUpon>PluginManagerTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\BaseTabs\PurposeTab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\BaseTabs\PurposeTab.Designer.cs">
       <DependentUpon>PurposeTab.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\BaseTabs\SettingsTab.cs">
+    <Compile Include="GUI\SettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\BaseTabs\SettingsTab.Designer.cs">
-      <DependentUpon>SettingsTab.cs</DependentUpon>
+    <Compile Include="GUI\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\PowerTabPage.cs">
       <SubType>Form</SubType>
@@ -115,11 +121,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="GUI\BaseTabs\PluginManagerTab.resx">
+      <DependentUpon>PluginManagerTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\BaseTabs\PurposeTab.resx">
       <DependentUpon>PurposeTab.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\BaseTabs\SettingsTab.resx">
-      <DependentUpon>SettingsTab.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PowerTabPage.resx">
       <DependentUpon>PowerTabPage.cs</DependentUpon>

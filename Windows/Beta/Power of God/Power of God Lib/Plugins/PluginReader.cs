@@ -16,6 +16,7 @@ namespace Power_of_God_Lib.Plugins
 
         public delegate void PluginLoad();
 
+        public delegate void PluginUninstall();
         /// <summary>
         /// Gets object value from non-static function
         /// </summary>
@@ -69,25 +70,30 @@ namespace Power_of_God_Lib.Plugins
         public static void PluginInit()
         {
             var x2 = Directory.GetFiles(FileSystem.Directories[2]);
+            var ignoredPlugins = new List<string>();
             foreach (var f in x2)
             {
-
-                if (Path.HasExtension(f) && Path.GetExtension(f) == ".dll")
+                if (!Path.HasExtension(f) || Path.GetExtension(f) != ".dll") continue;
+                // Ignores all other file types
+                try
                 {
-                    // Ignores all other file types
-                    try
-                    {
-                        var appPath = Application.ExecutablePath;
-                        var x = appPath.Substring(0, appPath.Length - 17) + "\\" + f.Replace("/", "\\");
-                        PluginList.Add(LoadPlugin(x));
-                        Logging.Log(LoadPlugin(x).Name + " (Plugin) was registered.");
-                    }
-                    catch (Exception)
-                    {
-                        // Ignored
-                    }
+                    var appPath = Application.ExecutablePath;
+                    var x = appPath.Substring(0, appPath.Length - 17) + "\\" + f.Replace("/", "\\");
+                    PluginList.Add(LoadPlugin(x));
+                    Logging.Log(LoadPlugin(x).Name + " (Plugin) was registered.", LogType.SystemEvent);
+                }
+                catch (Exception ex)
+                {
+                    // Ignored
+                    ignoredPlugins.Add(f);
                 }
             }
+            if (ignoredPlugins.Count != 0)
+            {
+                var message = ignoredPlugins.Aggregate("These files were ignored by the Plugin Registration: ", (current, item) => current + ("\n>->-> " + item));
+                Logging.Log(message, LogType.Warning);
+            }
+            
         }
 
         public static Plugin LoadPlugin(string filename)
@@ -108,6 +114,7 @@ namespace Power_of_God_Lib.Plugins
             plugin.PreparePlugin();
             return plugin;
         }
+        
 
     }
     public enum PluginCategory

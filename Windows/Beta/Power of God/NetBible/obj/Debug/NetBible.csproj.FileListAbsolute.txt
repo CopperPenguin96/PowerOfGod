@@ -19,3 +19,8 @@ E:\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBibl
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.dll
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.pdb
 E:\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBible.dll
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\NetBible.pdb
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.dll
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\NetBible\obj\Debug\NetBible.pdb

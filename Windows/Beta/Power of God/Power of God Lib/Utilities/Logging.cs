@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Power_of_God_Lib.Utilities
 {
@@ -27,23 +25,25 @@ namespace Power_of_God_Lib.Utilities
                 case LogType.SystemEvent:
                     Console.ForegroundColor = ConsoleColor.Cyan;
                     break;
+                case LogType.PluginEvent:
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(logType), logType, null);
             }
         }
-   
-        /// <summary>
-        /// Log a normal log
-        /// </summary>
-        /// <param name="content">The content to log</param>
+        
         public static void Log(string content)
         {
             Log(content, LogType.Normal);
         }
-
         public static void Log(string content, LogType lType)
         {
+            
             Logs.Add(content);
             SetColor(lType);
             Console.WriteLine(content);
+            SetColor(LogType.Normal);
         }
 
         public static void SaveLogs()
@@ -126,6 +126,6 @@ namespace Power_of_God_Lib.Utilities
 
     public enum LogType
     {
-        Normal, Warning, Error, SystemEvent
+        Normal, Warning, Error, SystemEvent, PluginEvent
     }
 }

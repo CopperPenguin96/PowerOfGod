@@ -56,7 +56,7 @@ namespace LessonPlugin
             switch (result)
             {
                 case DialogResult.Yes:
-                    System.Diagnostics.Process.Start("https://www.youtube.com/channel/UCVayQj2y7NeL7t83wzWNSAA");
+                    System.Diagnostics.Process.Start("http://www.dailymotion.com/video/x51u279_power-of-god-live-stream_lifestyle");
                     break;
             }
         }
