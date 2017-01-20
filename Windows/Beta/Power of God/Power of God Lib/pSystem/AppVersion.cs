@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Power_of_God_Lib.Utilities
+﻿namespace Power_of_God_Lib.pSystem
 {
     public class AppVersion
     {
         public static string[] VersionCode = {"Beta", "1", "0", null, null};
         public static bool PreRelease = true;
-        public static int PreReleaseNumber = 10;
+        public static int PreReleaseNumber = 11;
         public static string GetVersionCode()
         {
             if (!PreRelease)

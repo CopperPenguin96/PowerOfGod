@@ -1,6 +1,7 @@
 ﻿using System.IO;
+using Power_of_God_Lib.Utilities;
 
-namespace Power_of_God_Lib.Utilities
+namespace Power_of_God_Lib.pSystem
 {
     public class FileSystem
     {

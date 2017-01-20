@@ -28,34 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.chkEnablePlugins = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // metroLabel1
+            // chkEnablePlugins
             // 
-            this.metroLabel1.Location = new System.Drawing.Point(13, 11);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(591, 402);
-            this.metroLabel1.TabIndex = 1;
-            this.metroLabel1.Text = "Settings aren\'t available yet. Sorry :(\r\nComing in Beta 1.1";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel1.WrapToLine = true;
+            this.chkEnablePlugins.AutoSize = true;
+            this.chkEnablePlugins.Location = new System.Drawing.Point(23, 63);
+            this.chkEnablePlugins.Name = "chkEnablePlugins";
+            this.chkEnablePlugins.Size = new System.Drawing.Size(96, 17);
+            this.chkEnablePlugins.TabIndex = 0;
+            this.chkEnablePlugins.Text = "Enable Plugins";
+            this.chkEnablePlugins.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(616, 422);
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.chkEnablePlugins);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SettingsForm";
-            this.Text = "SettingsTab";
+            this.ShowIcon = false;
+            this.Text = "Settings";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.CheckBox chkEnablePlugins;
     }
 }

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using MetroFramework.Forms;
 using Power_of_God_Lib.GUI;
 using Power_of_God_Lib.GUI.BaseTabs;
+using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Utilities;
 

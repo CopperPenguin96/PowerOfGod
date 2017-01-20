@@ -106,10 +106,10 @@
     <Compile Include="Plugins\PluginReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Detection.cs" />
-    <Compile Include="Utilities\FileSystem.cs" />
+    <Compile Include="pSystem\FileSystem.cs" />
     <Compile Include="Utilities\Logging.cs" />
     <Compile Include="Utilities\Network.cs" />
-    <Compile Include="Utilities\AppVersion.cs" />
+    <Compile Include="pSystem\AppVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
