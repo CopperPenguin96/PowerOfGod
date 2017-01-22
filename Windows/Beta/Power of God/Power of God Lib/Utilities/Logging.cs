@@ -40,7 +40,7 @@ namespace Power_of_God_Lib.Utilities
         }
         public static void Log(string content, LogType lType)
         {
-            
+            if (!Settings.UserSettings.EnableLogs) return;
             Logs.Add(content);
             SetColor(lType);
             Console.WriteLine(content);
@@ -90,6 +90,7 @@ namespace Power_of_God_Lib.Utilities
         /// <param name="ex"></param>
         public static void LogError(Exception ex)
         {
+            if (!Settings.UserSettings.EnableCrashReports) return;
             Console.ForegroundColor = ConsoleColor.Red;
             Log("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
             Log("Exception Caught! :(\n" +

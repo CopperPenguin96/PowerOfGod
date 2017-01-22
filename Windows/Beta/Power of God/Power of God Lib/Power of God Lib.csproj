@@ -108,7 +108,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pSystem\Settings.cs" />
     <Compile Include="pSystem\UserInfo.cs" />
-    <Compile Include="Utilities\Database.cs" />
     <Compile Include="Utilities\Detection.cs" />
     <Compile Include="pSystem\FileSystem.cs" />
     <Compile Include="Utilities\Logging.cs" />

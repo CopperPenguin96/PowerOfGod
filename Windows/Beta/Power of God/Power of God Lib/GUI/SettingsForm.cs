@@ -28,7 +28,7 @@ namespace Power_of_God_Lib.GUI
             {
                 chkSendLogs.Enabled = true;
                 chkEnableCrashReports.Enabled = true;
-                chkSendCrashReports.Enabled = true;
+                if (chkEnableCrashReports.Checked) chkSendCrashReports.Enabled = true;
             }
             else
             {
@@ -43,18 +43,9 @@ namespace Power_of_God_Lib.GUI
 
         private void chkSendLogs_CheckedChanged(object sender, System.EventArgs e)
         {
-            if (chkSendLogs.Checked)
-            {
-                chkEnableCrashReports.Enabled = true;
-                chkSendCrashReports.Enabled = true;
-            }
-            else
-            {
-                chkEnableCrashReports.Checked = false;
-                chkEnableCrashReports.Enabled = false;
-                chkSendCrashReports.Checked = false;
-                chkSendCrashReports.Enabled = false;
-            }
+            if (chkSendLogs.Checked) return;
+            chkSendCrashReports.Checked = false;
+            chkSendCrashReports.Enabled = false;
         }
 
         private void chkEnableCrashReports_CheckedChanged(object sender, System.EventArgs e)
@@ -94,12 +85,9 @@ namespace Power_of_God_Lib.GUI
             chkSendLogs.Checked = us.SendLogs;
             chkEnableCrashReports.Checked = us.EnableCrashReports;
             chkSendCrashReports.Checked = us.SendCrashReports;
-            SetDynamicValues();
-        }
-
-        private void SetDynamicValues()
-        {
-            
+            chkEnableLogs_CheckedChanged(sender, e);
+            chkSendLogs_CheckedChanged(sender, e);
+            chkEnableCrashReports_CheckedChanged(sender, e);
         }
     }
 }

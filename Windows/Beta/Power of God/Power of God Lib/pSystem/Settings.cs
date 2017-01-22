@@ -16,7 +16,7 @@ namespace Power_of_God_Lib.pSystem
         /// <summary>
         /// On crash, will save to crash log if enabled
         /// </summary>
-        public bool EnableCrashReports;
+        public bool EnableCrashReports = true;
         /// <summary>
         /// On crash, the CrashReport will be sent, if EnableCrashReports is set to true
         /// </summary>
@@ -24,7 +24,7 @@ namespace Power_of_God_Lib.pSystem
         /// <summary>
         /// At the close of the program logs are sent if enabled
         /// </summary>
-        public bool EnableLogs;
+        public bool EnableLogs = true;
         /// <summary>
         /// On the close of the program, sends the logs if EnableLogs is set to true
         /// </summary>

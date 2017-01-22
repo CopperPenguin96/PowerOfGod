@@ -2,9 +2,9 @@
 {
     public class AppVersion
     {
-        public static string[] VersionCode = {"Beta", "1", "1", null, null};
+        public static string[] VersionCode = {"Beta", "1", "0", null, null};
         public static bool PreRelease = true;
-        public static int PreReleaseNumber = 10;
+        public static int PreReleaseNumber = 12;
         public static string GetVersionCode()
         {
             if (!PreRelease)

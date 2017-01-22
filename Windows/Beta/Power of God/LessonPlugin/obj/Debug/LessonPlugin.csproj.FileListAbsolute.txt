@@ -15,3 +15,13 @@ D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonP
 D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.csproj.GenerateResource.Cache
 D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.dll
 D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.pdb
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Debug\power.of.god\Plugins\dll\LessonPlugin.dll
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Debug\power.of.god\Plugins\dll\LessonPlugin.pdb
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.csprojResolveAssemblyReference.cache
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\Interop.WMPLib.dll
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\AxInterop.WMPLib.dll
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.csproj.ResolveComReference.cache
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.LessonPage.resources
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.csproj.GenerateResource.Cache
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.dll
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\LessonPlugin\obj\Debug\LessonPlugin.pdb

@@ -1,4 +1,0 @@
-Power of God Finished Taks
-- Firm Plugin System (Finished with b1a008, Beta 1.0)
-- Video Lessons (Finished with b1a009, Beta 1.0)
-- Pre-Release Mode/Logging (Finished with b1a009, Beta 1.0)
