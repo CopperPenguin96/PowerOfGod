@@ -1,0 +1,8 @@
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Main.exe.config
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Main.exe
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\bin\Debug\Main.pdb
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Main\obj\Debug\Main.csprojResolveAssemblyReference.cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Main\obj\Debug\Main.Properties.Resources.resources
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Main\obj\Debug\Main.csproj.GenerateResource.Cache
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Main\obj\Debug\Main.exe
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Main\obj\Debug\Main.pdb

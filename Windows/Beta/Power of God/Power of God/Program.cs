@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using Power_of_God_Lib.pSystem;
+using Power_of_God_Lib.Plugins;
 using Power_of_God_Lib.Utilities;
 
 namespace Power_of_God
@@ -19,7 +21,6 @@ namespace Power_of_God
             if (AppVersion.PreRelease)
             {
                 Logging.Log("Starting...");
-
             }
             LogTimer.Interval = 300000; // 5 minutes for each log
             LogTimer.Tick += LogTick;
@@ -28,7 +29,28 @@ namespace Power_of_God
             Logging.Log("Log started on " + DateTime.Now.ToShortDateString() + " at " +
                         DateTime.Now.ToLongTimeString(), LogType.SystemEvent);
             Logging.Log(":.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.");
-
+            if (FileSystem.FileExists(1))
+            {
+                if (new FileInfo(FileSystem.Files[1]).Length == 0)
+                {
+                    File.Delete(FileSystem.Files[1]);
+                    Logging.Log("Settings file is empty! Deleting it, so we can start over", LogType.Warning);
+                }
+            }
+            
+            var ts = Settings.Load();
+            Settings.UserSettings = ts;
+            if (Settings.UserSettings.EnablePlugins)
+            {
+                Logging.Log(">>> Registering plugins Phase 1/2 <<<", LogType.PluginEvent);
+                PluginReader.PluginInit();
+            }
+            else
+            {
+                Logging.Log("!!! Plugins are not enabled !!!", LogType.Error);
+            }
+            if (!Settings.UserSettings.EnableLogs)
+                Console.WriteLine("Logs are not enabled... Logs will not be written");
             #region Preparing PreRelease mode
             if (AppVersion.PreRelease)
             {

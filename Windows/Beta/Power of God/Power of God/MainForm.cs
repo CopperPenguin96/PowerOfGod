@@ -30,7 +30,11 @@ namespace Power_of_God
             Text += " " + AppVersion.GetVersionCode();
             metroTabControl1.SelectTab(0);
             tabPage1.Controls.Add(new PurposeTab());
-            metroTabPage1.Controls.Add(new PluginManagerTab());
+            if (Settings.UserSettings.EnablePlugins)
+            {
+                metroTabPage1.Controls.Add(new PluginManagerTab());
+                label1.Hide();
+            }
             //PluginReader.PerformMethod(new Plugin {Name = "LessonPlugin"}, "Plugin", "ExecutePluginMethod", new object[] {PluginMethods.PluginLoad});
             PluginInit();
             foreach (var pl in PluginReader.PluginList)
@@ -48,8 +52,7 @@ namespace Power_of_God
 
         private void PluginInit()
         {
-            Logging.Log("Registering plugins...");
-            PluginReader.PluginInit();
+            Logging.Log(">>> Registering plugins Phase 2/2 <<<", LogType.PluginEvent);
             foreach (var p in PluginReader.PluginList)
             {
                 var loopCount = 2;

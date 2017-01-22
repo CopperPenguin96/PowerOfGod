@@ -10,6 +10,5 @@ namespace Power_of_God_Lib.pSystem
     {
         public string Username;
         public string Email;
-        public 
     }
 }

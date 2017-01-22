@@ -30,3 +30,4 @@ D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater
 D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.exe
 D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.xml
 D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.pdb
+D:\Documents\Power of God\Power of God\Project\Windows\Beta\Power of God\Updater\obj\Debug\Updater.vbprojResolveAssemblyReference.cache

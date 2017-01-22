@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Microsoft.VisualBasic.Devices;
 
 namespace Power_of_God_Lib.Utilities
 {
@@ -50,8 +51,9 @@ namespace Power_of_God_Lib.Utilities
                     }
                     return returnText;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Logging.LogError(ex);
                     return "Unknown";
                 }
 
@@ -64,11 +66,27 @@ namespace Power_of_God_Lib.Utilities
         /// <returns></returns>
         public static List<string> FullSystemInfo()
         {
-            var list = new List<string>();
-            list.Add("-----User's System Information-----");
-            list.Add("OS Version: " + GetOperatingSystemName());
-            list.Add("Bits: " + GetBits());
+            var list = new List<string>
+            {
+                "-----User's System Information-----",
+                "OS Version: " + GetOperatingSystemName(),
+                "Bits: " + GetBits(),
+                "RAM (Available): " + GetAvailableRAM(),
+                "RAM (Total): " + GetTotalRAM()
+            };
             return list;
+        }
+
+        public static ulong GetAvailableRAM()
+        {
+            var ci = new ComputerInfo();
+            return ci.AvailablePhysicalMemory;
+        }
+
+        public static ulong GetTotalRAM()
+        {
+            var ci = new ComputerInfo();
+            return ci.TotalPhysicalMemory;
         }
     }
 }

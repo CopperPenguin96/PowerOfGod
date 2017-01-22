@@ -5,7 +5,6 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 using Power_of_God_Lib.Utilities;
-using System.Xml;
 using Power_of_God_Lib.pSystem;
 
 namespace Power_of_God_Lib.Plugins
@@ -70,31 +69,35 @@ namespace Power_of_God_Lib.Plugins
         
         public static void PluginInit()
         {
-            var x2 = Directory.GetFiles(FileSystem.Directories[2]);
-            var ignoredPlugins = new List<string>();
-            foreach (var f in x2)
+            if (Settings.UserSettings.EnablePlugins)
             {
-                if (!Path.HasExtension(f) || Path.GetExtension(f) != ".dll") continue;
-                // Ignores all other file types
-                try
+                PluginList.Clear();
+                var x2 = Directory.GetFiles(FileSystem.Directories[2]);
+                var ignoredPlugins = new List<string>();
+                foreach (var f in x2)
                 {
-                    var appPath = Application.ExecutablePath;
-                    var x = appPath.Substring(0, appPath.Length - 17) + "\\" + f.Replace("/", "\\");
-                    PluginList.Add(LoadPlugin(x));
-                    Logging.Log(LoadPlugin(x).Name + " (Plugin) was registered.", LogType.SystemEvent);
+                    if (!Path.HasExtension(f) || Path.GetExtension(f) != ".dll") continue;
+                    // Ignores all other file types
+                    try
+                    {
+                        var appPath = Application.ExecutablePath;
+                        var x = appPath.Substring(0, appPath.Length - 17) + "\\" + f.Replace("/", "\\");
+                        PluginList.Add(LoadPlugin(x));
+                        Logging.Log(LoadPlugin(x).Name + " (Plugin) was registered.", LogType.SystemEvent);
+                    }
+                    catch (Exception)
+                    {
+                        // Ignored
+                        ignoredPlugins.Add(f);
+                    }
                 }
-                catch (Exception ex)
+                if (ignoredPlugins.Count != 0)
                 {
-                    // Ignored
-                    ignoredPlugins.Add(f);
+                    var message = ignoredPlugins.Aggregate("These files were ignored by the Plugin Registration: ",
+                        (current, item) => current + ("\n>->-> " + item));
+                    Logging.Log(message, LogType.Warning);
                 }
             }
-            if (ignoredPlugins.Count != 0)
-            {
-                var message = ignoredPlugins.Aggregate("These files were ignored by the Plugin Registration: ", (current, item) => current + ("\n>->-> " + item));
-                Logging.Log(message, LogType.Warning);
-            }
-            
         }
 
         public static Plugin LoadPlugin(string filename)
