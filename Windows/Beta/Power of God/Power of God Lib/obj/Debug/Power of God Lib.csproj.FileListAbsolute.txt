@@ -41,3 +41,9 @@ D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Powe
 D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\Power of God Lib.pdb
 D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Debug\Power of God Lib.dll
 D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Debug\Power of God Lib.pdb
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\LessonPlugin.LessonPage.resources
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\Interop.MediaPlayer.dll
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\Power of God Lib.csproj.ResolveComReference.cache
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\Interop.WMPLib.dll
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.DialogBox.DialogBox.resources
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God Lib\obj\Debug\Power_of_God_Lib.GUI.DialogBox.DownloadDialogBox.resources

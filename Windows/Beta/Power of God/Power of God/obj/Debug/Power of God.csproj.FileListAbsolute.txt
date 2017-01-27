@@ -42,3 +42,4 @@ D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Powe
 D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God\obj\Debug\Power of God.csproj.GenerateResource.Cache
 D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God\obj\Debug\Power of God.exe
 D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God\obj\Debug\Power of God.pdb
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Power of God\obj\Debug\Power_of_God.UpdaterForm.resources

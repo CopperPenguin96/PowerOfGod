@@ -1,0 +1,9 @@
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Release\Updater.exe.config
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Release\Updater.exe
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Release\Updater.pdb
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\bin\Release\Updater.xml
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Updater\obj\Release\Updater.Resources.resources
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Updater\obj\Release\Updater.vbproj.GenerateResource.Cache
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Updater\obj\Release\Updater.exe
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Updater\obj\Release\Updater.xml
+D:\Documents\Power of God\Power of God\ProjectFix\Windows\Beta\Power of God\Updater\obj\Release\Updater.pdb

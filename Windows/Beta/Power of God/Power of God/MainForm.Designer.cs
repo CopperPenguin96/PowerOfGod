@@ -30,17 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.settingsButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.settingsToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroTabControl1.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
+            this.purposeTab = new System.Windows.Forms.TabPage();
+            this.MainSystem = new MetroFramework.Controls.MetroTabControl();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.MainSystem.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -52,41 +49,6 @@
             this.metroLabel1.Text = "Copyright © {year} by apotter96 and the Power of God Team. All rights reserved.";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLabel1.WrapToLine = true;
-            // 
-            // metroTabControl1
-            // 
-            this.metroTabControl1.Controls.Add(this.tabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
-            this.metroTabControl1.Size = new System.Drawing.Size(624, 460);
-            this.metroTabControl1.TabIndex = 2;
-            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabControl1.UseSelectable = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(616, 418);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Purpose";
-            // 
-            // metroTabPage1
-            // 
-            this.metroTabPage1.Controls.Add(this.label1);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(616, 418);
-            this.metroTabPage1.TabIndex = 2;
-            this.metroTabPage1.Text = "Plugin Manager";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
             // 
             // settingsButton
             // 
@@ -110,16 +72,24 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // purposeTab
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(467, 87);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Sorry :( But you have Plugins disabled.\r\nGo into the \"Settings\" by clicking the b" +
-    "utton\r\non the bottom right of the window.";
+            this.purposeTab.Location = new System.Drawing.Point(4, 38);
+            this.purposeTab.Name = "purposeTab";
+            this.purposeTab.Size = new System.Drawing.Size(616, 418);
+            this.purposeTab.TabIndex = 0;
+            this.purposeTab.Text = "Purpose";
+            // 
+            // MainSystem
+            // 
+            this.MainSystem.Controls.Add(this.purposeTab);
+            this.MainSystem.Location = new System.Drawing.Point(15, 63);
+            this.MainSystem.Name = "MainSystem";
+            this.MainSystem.SelectedIndex = 0;
+            this.MainSystem.Size = new System.Drawing.Size(624, 460);
+            this.MainSystem.TabIndex = 2;
+            this.MainSystem.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.MainSystem.UseSelectable = true;
             // 
             // MainForm
             // 
@@ -127,7 +97,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 597);
             this.Controls.Add(this.settingsButton);
-            this.Controls.Add(this.metroTabControl1);
+            this.Controls.Add(this.MainSystem);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
             this.Name = "MainForm";
@@ -135,11 +105,9 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.settingsToolTip.SetToolTip(this, "Open the settings window");
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.metroTabControl1.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.settingsButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MainSystem.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -148,12 +116,10 @@
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private System.Windows.Forms.PictureBox settingsButton;
         private System.Windows.Forms.ToolTip settingsToolTip;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabPage purposeTab;
+        private MetroFramework.Controls.MetroTabControl MainSystem;
     }
 }
 

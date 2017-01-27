@@ -1,61 +1,242 @@
-﻿namespace Power_of_God_Lib.pSystem
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Power_of_God_Lib.Utilities;
+
+namespace Power_of_God_Lib.pSystem
 {
     public class AppVersion
     {
-        public static string[] VersionCode = {"Beta", "1", "0", null, null};
-        public static bool PreRelease = true;
-        public static int PreReleaseNumber = 12;
-        public static string GetVersionCode()
+        public const bool IsPreRelease = false;
+        public static string VersionPrefix = "Beta";
+        
+        public static string VersionLetter()
         {
-            if (!PreRelease)
+            var x = VersionPrefix.ToLower().Substring(0, 1);
+            return x;
+        }
+        public const int ReleaseNumber = 7;
+
+
+        private static readonly string[] CurrentVersion = {
+            "1", "0", "1", null
+        };
+        /// <summary>
+        /// Gets current installed version
+        /// </summary>
+        /// <param name="catchingPreRelease">True if Pre-Release</param>
+        /// <returns></returns>
+        public static string GetCurrentVersion()
+        {
+            if (!IsPreRelease)
             {
-                var finalStr = "";
-                if (VersionCode[0] == "Beta")
+                var returnValue = VersionPrefix + " " + CurrentVersion[0] + "." +
+                 CurrentVersion[1];
+                if (CurrentVersion[2] == null) return returnValue;
+                returnValue += "." + CurrentVersion[2];
+                if (CurrentVersion[3] != null)
                 {
-                    finalStr += "Beta ";
+                    returnValue += "." + CurrentVersion[3];
                 }
-                finalStr += VersionCode[1] + "." + VersionCode[2];
+                return returnValue;
+            }
+            var VersionCode = CurrentVersion;
+            var PreReleaseNumber = ReleaseNumber;
+            var firstStep = "Pre-Release " + VersionCode[0].ToCharArray()[0].ToString().ToLower();
+            var code = VersionCode[1];
+            if (VersionCode[2] != "0")
+            {
+                code += "." + VersionCode[2];
                 if (VersionCode[3] != null)
                 {
-                    finalStr += "." + VersionCode[3];
+                    code += "." + VersionCode[3];
                 }
                 if (VersionCode[4] != null)
                 {
-                    finalStr += "." + VersionCode[4];
+                    code += "." + VersionCode[4];
                 }
-                return finalStr;
+            }
+            var finalBit = "";
+            if (PreReleaseNumber < 10)
+            {
+                finalBit = "a00" + PreReleaseNumber;
+            }
+            else if (PreReleaseNumber < 100)
+            {
+                finalBit = "a0" + PreReleaseNumber;
             }
             else
             {
-                var firstStep = "Pre-Release " + VersionCode[0].ToCharArray()[0].ToString().ToLower();
-                var code = VersionCode[1];
-                if (VersionCode[2] != "0")
-                {
-                    code += "." + VersionCode[2];
-                    if (VersionCode[3] != null)
+                finalBit = "a" + PreReleaseNumber;
+
+            }
+            return firstStep + code + finalBit;
+
+        }
+    
+
+        private static int CurrentPrefixInt()
+        {
+            switch (VersionPrefix)
+            {
+                case "Alpha":
+                    return 0;
+                case "Beta":
+                    return 1;
+                default:
+                    return 2;
+            }
+        }
+
+        public static string ServerResponse = "Nothing Yet";
+
+        public static string UpdateNotice()
+        {
+            switch (UpdateWord())
+            {
+                case "Updated":
+                    return "You are currently updated to the most recent version.";
+                case "Outdated":
+                    return "You do not have the most recent version. Consider updating to " +
+                           LatestOnline();
+                default:
+                    if (IsPreRelease)
                     {
-                        code += "." + VersionCode[3];
+                        return
+                            "You are using a Pre-Release. Please note that not all features will be functional.\n\n" +
+                            "(" + GetCurrentVersion() + ")";
                     }
-                    if (VersionCode[4] != null)
+                    else
                     {
-                        code += "." + VersionCode[4];
+                        return "You are using an unsupported version of Power of God. \nPlease consider " +
+                            "using the current version, " + LatestOnline() +
+                            ", \nbecause your version could possibly be unstable.";
+                    }
+            }
+        }
+
+        public static string UpdateWord()
+        {
+            try
+
+            {
+
+                int onlinePrefix;
+                switch (Network.GetUrlSourceAsList(Url).ElementAt(0).Substring(1))
+                {
+                    case "Alpha":
+                        onlinePrefix = 0;
+                        break;
+                    case "Beta":
+                        onlinePrefix = 1;
+                        break;
+                    default:
+                        onlinePrefix = 2;
+                        break;
+                }
+                Network.GetUrlSourceAsList(Url);
+                var itemcontext = Network.GetUrlSourceAsList(Url).ElementAt(1);
+                var item1 = int.Parse(itemcontext);
+                var item2 = int.Parse(Network.GetUrlSourceAsList(Url).ElementAt(2));
+                int item3; // If these values stay as -1 then the app will know to not read them
+                var item4 = -1;
+                try
+                {
+                    item3 = int.Parse(Network.GetUrlSourceAsList(Url).ElementAt(3));
+                    try
+                    {
+                        item4 = int.Parse(Network.GetUrlSourceAsList(Url).ElementAt(4));
+                    }
+                    catch (Exception)
+                    {
+                        item4 = -1;
                     }
                 }
-                var finalBit = "";
-                if (PreReleaseNumber < 10)
+                catch (Exception)
                 {
-                    finalBit = "a00" + PreReleaseNumber;
+                    item3 = -1;
                 }
-                else if (PreReleaseNumber < 100)
+                if (onlinePrefix > CurrentPrefixInt()) return "Outdated";
+                if (onlinePrefix < CurrentPrefixInt()) return "Unsupported";
+                if (item1 > CurrentVersionInt().ElementAt(0)) return "Outdated";
+                if (item1 < CurrentVersionInt().ElementAt(0)) return "Unsupported";
+                if (item2 > CurrentVersionInt().ElementAt(1)) return "Outdated";
+                if (item2 < CurrentVersionInt().ElementAt(1)) return "Unsupported";
+                if (item3 > -1)
                 {
-                    finalBit = "a0" + PreReleaseNumber;
+                    var local3 = CurrentVersionInt().ElementAt(2);
+                    if (item3 > local3) return "Outdated";
+                    if (item3 < local3) return "Unsupported";
+                    if (item4 > -1)
+                    {
+                        var local4 = CurrentVersionInt().ElementAt(3);
+                        if (item4 > local4) return "Outdated";
+                        if (item4 < local4) return "Unsupported";
+                    }
+                    else
+                    {
+                        var localHere = CurrentVersion[3];
+                        if (localHere != null) return "Unsupported";
+                    }
                 }
                 else
                 {
-                    finalBit = "a" + PreReleaseNumber;
+                    var localHere = CurrentVersion[2];
+                    if (localHere != null) return "Unsupported";
                 }
-                return firstStep + code + finalBit;
+                return "Updated"; // If it gets to this point - the user has passed all checks. They are updated!
             }
+            catch (Exception ex)
+            {
+                Logging.LogError(ex);
+                return "Updated"; // Exception caught. Let the user continue.
+            }
+        }
+
+        private static IEnumerable<int> CurrentVersionInt()
+        {
+            var xList = new List<int>();
+            foreach (var x in CurrentVersion)
+            {
+                try
+                {
+                    xList.Add(int.Parse(x));
+                }
+                catch (Exception)
+                {
+                    xList.Add(-1);
+                }
+            }
+            return xList;
+        }
+
+        private const string Url = "http://godispower.us/Application/Updates.txt";
+        /// <summary>
+        /// Gets latest version
+        /// </summary>
+        /// <returns></returns>
+        public static string LatestOnline()
+        {
+            var x = Network.GetUrlSourceAsList(Url).ElementAt(0) + " ";
+            var versionStoppedAt = 0;
+            for (var x2 = 1; x2 <= 4; x2++)
+            {
+                if (x2 >= 5) continue;
+                if (!Network.GetUrlSourceAsList(Url).ElementAt(x2).Equals("NR"))
+                {
+                    if (x2 < 4) x += "" + Network.GetUrlSourceAsList(Url).ElementAt(x2) + ".";
+                    else if (x2 == 4) x += "" + Network.GetUrlSourceAsList(Url).ElementAt(x2);
+                }
+                else
+                {
+                    versionStoppedAt = x2;
+                }
+            }
+            if (versionStoppedAt == 3 || versionStoppedAt == 4)
+            {
+                return x.Substring(0, x.Length - 1);
+            }
+            return x;
         }
     }
 }

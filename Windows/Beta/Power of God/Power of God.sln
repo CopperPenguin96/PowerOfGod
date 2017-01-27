@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetBible", "NetBible\NetBib
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Developer Plugins", "Developer Plugins", "{7827A96A-C087-48C3-9624-D63A41E85726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LessonPlugin", "LessonPlugin\LessonPlugin.csproj", "{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,19 +53,8 @@ Global
 		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Release|x86.ActiveCfg = Release|Any CPU
 		{9C6D5D4E-3FAF-4A0F-905B-03D95788A3F7}.Release|x86.Build.0 = Release|Any CPU
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Debug|x86.ActiveCfg = Debug|x86
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Debug|x86.Build.0 = Debug|x86
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Release|x86.ActiveCfg = Release|x86
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C8315D40-9C56-416D-BA5A-E5FEC93C1B4F} = {7827A96A-C087-48C3-9624-D63A41E85726}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Power_of_God_Lib.pSystem;
 using Power_of_God_Lib.Plugins;
@@ -9,6 +11,13 @@ namespace Power_of_God
 {
     static class Program
     {
+        [DllImport("user32.dll")]
+
+        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll")]
+
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,10 +26,14 @@ namespace Power_of_God
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            if (AppVersion.PreRelease)
+
+            if (AppVersion.IsPreRelease)
             {
                 Logging.Log("Starting...");
+            }
+            else
+            {
+                ShowWindow(FindWindow(null, Console.Title), 0);
             }
             LogTimer.Interval = 300000; // 5 minutes for each log
             LogTimer.Tick += LogTick;
@@ -52,7 +65,7 @@ namespace Power_of_God
             if (!Settings.UserSettings.EnableLogs)
                 Console.WriteLine("Logs are not enabled... Logs will not be written");
             #region Preparing PreRelease mode
-            if (AppVersion.PreRelease)
+            if (AppVersion.IsPreRelease)
             {
                 Logging.Log("Preparing Pre-Release Mode");
                 foreach (var s in Detection.FullSystemInfo())
@@ -63,7 +76,7 @@ namespace Power_of_God
                     "WARNING: THIS IS AN UNSUPPORTED VERSION. Back up your installation before continuing.");
             }
             #endregion
-            Logging.Log("You are running Power of God " + AppVersion.GetVersionCode());
+            Logging.Log("You are running Power of God " + AppVersion.GetCurrentVersion());
             Logging.Log("Loading Scripture (KJV.xml)");
             NetBible.Books.Bible.SetLocation("KJV.xml");
             Logging.Log("Preparing the File System");

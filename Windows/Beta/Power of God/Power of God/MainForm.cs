@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using LessonPlugin;
 using MetroFramework.Forms;
 using Power_of_God_Lib.GUI;
 using Power_of_God_Lib.GUI.BaseTabs;
@@ -27,14 +28,15 @@ namespace Power_of_God
         private void Form1_Load(object sender, EventArgs e)
         {
             metroLabel1.Text = metroLabel1.Text.Replace("{year}", "2015-" + (DateTime.Now.Year + "").Substring(2));
-            Text += " " + AppVersion.GetVersionCode();
-            metroTabControl1.SelectTab(0);
-            tabPage1.Controls.Add(new PurposeTab());
+            Text += " " + AppVersion.GetCurrentVersion();
+            MainSystem.SelectTab(0);
+            purposeTab.Controls.Add(new PurposeTab());
             if (Settings.UserSettings.EnablePlugins)
             {
-                metroTabPage1.Controls.Add(new PluginManagerTab());
-                label1.Hide();
+                MainSystem.TabPages.Add("Plugin Manager");
+                MainSystem.TabPages[1].Controls.Add(new PluginManagerTab());
             }
+            //LessonsTab.Controls.Add(new LessonPage());
             //PluginReader.PerformMethod(new Plugin {Name = "LessonPlugin"}, "Plugin", "ExecutePluginMethod", new object[] {PluginMethods.PluginLoad});
             PluginInit();
             foreach (var pl in PluginReader.PluginList)
@@ -58,8 +60,8 @@ namespace Power_of_God
                 var loopCount = 2;
                 if (!p.HasTab) continue;
                 Logging.Log(p.Name + " (Plugin) was given a MainForm tab", LogType.PluginEvent);
-                metroTabControl1.TabPages.Add(p.Name);
-                metroTabControl1.TabPages[loopCount].Controls.Add(p.TabPages[p.MainFrame]);
+                MainSystem.TabPages.Add(p.Name);
+                MainSystem.TabPages[loopCount].Controls.Add(p.TabPages[p.MainFrame]);
                 loopCount++;
             }
         }

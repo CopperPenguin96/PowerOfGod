@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using Power_of_God_Lib.GUI;
@@ -15,25 +16,36 @@ namespace LessonPlugin
     {
         private readonly string aboutText = "";
         readonly List<LessonObj> MessageList = new List<LessonObj>();
+        private string defaultLabelText;
         public LessonPage()
         {
             InitializeComponent();
+            defaultLabelText = metroLabel1.Text;
             webBrowser1.Navigated += webBrowser1_Navigated;
             aboutText = metroLabel1.Text;
-
+            messageSelection.SelectedIndexChanged += ChangeMessage;
             foreach (var message in RetrieveMessages())
             {
-                var url = "http://powerofgodonline.net/Sundays/2016/" +
+                //         0123456789012345678901234567890123456789 28 and 33
+                var url = "http://godispower.us/Sundays/" + message[2] + "/" +
                           message[0] + "." + message[1] + "." + message[2] + ".plesson";
                 var lessonObj = JsonConvert.DeserializeObject<LessonObj>(Network.GetUrlSource(url));
                 MessageList.Add(lessonObj);
             }
             var x = MessageList.ElementAt(MessageList.Count - 1);
             webBrowser1.Navigate(x.Link);
+            SetLabelText(x.Name, x.AirDate);
             foreach (var v in MessageList)
             {
-                metroListView1.Items.Add(v.AirDate);
+                messageSelection.Items.Add(v.AirDate);
             }
+        }
+
+        private void ChangeMessage(object sender, EventArgs e)
+        {
+            var selected = messageSelection.SelectedItem.ToString();
+            var dt = DateTime.Parse(selected);
+            OpenMessage("" + dt.Month, "" + dt.Day, "" + dt.Year);
         }
 
         private void SetLabelData(string name, string date)
@@ -43,10 +55,10 @@ namespace LessonPlugin
         }
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            var documentTitle = webBrowser1.DocumentTitle.Substring(0, webBrowser1.DocumentTitle.LastIndexOf("-") - 2);
+            /*var documentTitle = webBrowser1.DocumentTitle.Substring(0, webBrowser1.DocumentTitle.LastIndexOf("-") - 2);
             SetLabelData(documentTitle.Substring(documentTitle.IndexOf("\"") + 1), 
                 documentTitle.Substring(documentTitle.IndexOf("-") + 1, 
-                documentTitle.LastIndexOf("-") - 14));
+                documentTitle.LastIndexOf("-") - 14));*/
         }
 
         private void metroButton1_Click(object sender, System.EventArgs e)
@@ -60,39 +72,33 @@ namespace LessonPlugin
                     break;
             }
         }
-
         private List<string[]> RetrieveMessages()
         {
             var receivedMessages = new List<string[]>();
             // ReSharper disable once LoopCanBeConvertedToQuery
-            foreach (var m in Network.GetWebDirectory("http://powerofgodonline.net/Sundays/2016/"))
+            for (var z = 2016; z <= DateTime.Now.Year; z++)
             {
-                if (!m.Contains("plesson")) continue;
-                var dtStr = m.Replace("\"", "");
-                dtStr = dtStr.Replace(".plesson", "");
-                var dt = DateTime.Parse(dtStr.Replace(".", "/"));
-                var strArr = new List<string>();
-                if (dt.Month < 10) strArr.Add("0" + dt.Month);
-                else strArr.Add("" + dt.Month);
+                foreach (var m in Network.GetWebDirectory("http://godispower.us/Sundays/" + z + "/"))
+                {
+                    if (!m.Contains("plesson")) continue;
+                    var dtStr = m.Replace("\"", "");
+                    dtStr = dtStr.Replace(".plesson", "");
+                    var dt = DateTime.Parse(dtStr.Replace(".", "/"));
+                    var strArr = new List<string>();
+                    if (dt.Month < 10) strArr.Add("0" + dt.Month);
+                    else strArr.Add("" + dt.Month);
 
-                if (dt.Day < 10) strArr.Add("0" + dt.Day);
-                else strArr.Add("" + dt.Day);
+                    if (dt.Day < 10) strArr.Add("0" + dt.Day);
+                    else strArr.Add("" + dt.Day);
 
-                strArr.Add("" + dt.Year);
-                receivedMessages.Add(strArr.ToArray());
+                    strArr.Add("" + dt.Year);
+                    receivedMessages.Add(strArr.ToArray());
+                }
             }
+            
             return receivedMessages;
         }
-
-        private void metroListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // m m / d d / y y y y
-            // 0 1 2 3 4 5 6 7 8 9
-            var selected = metroListView1.SelectedItems[0].Text;
-            var dt = DateTime.Parse(selected);
-            OpenMessage("" + dt.Month, "" + dt.Day, "" + dt.Year);
-
-        }
+        
 
         public void OpenMessage(string month, string day, string year)
         {
@@ -107,9 +113,18 @@ namespace LessonPlugin
             else strArr.Add("" + dt.Day);
 
             strArr.Add("" + dt.Year);
-            var json = "http://powerofgodonline.net/Sundays/2016/" +
+            var json = "http://godispower.us/Sundays/" + year + "/" +
                 strArr[0] + "." + strArr[1] + "." + strArr[2] + ".plesson";
-            webBrowser1.Navigate(JsonConvert.DeserializeObject<LessonObj>(Network.GetUrlSource(json)).Link);
+            var jsonDes = JsonConvert.DeserializeObject<LessonObj>(Network.GetUrlSource(json));
+            SetLabelText(jsonDes.Name, jsonDes.AirDate);
+            webBrowser1.Navigate(jsonDes.Link);
+            
+        }
+        private void SetLabelText(string name, string date)
+        {
+            metroLabel1.Text = defaultLabelText;
+            metroLabel1.Text = metroLabel1.Text.Replace("{Name}", name);
+            metroLabel1.Text = metroLabel1.Text.Replace("{Date}", date);
         }
     }
     public class LessonObj

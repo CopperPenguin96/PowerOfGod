@@ -100,7 +100,7 @@ namespace Power_of_God_Lib.Utilities
             Log("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
             Console.ResetColor();
             if (!Directory.Exists(FileSystem.Directories[7])) Directory.CreateDirectory(FileSystem.Directories[7]);
-            var fileLines = new List<string> { "-----Power of God (" + AppVersion.GetVersionCode() + ") Error Log-----" + Nl };
+            var fileLines = new List<string> { "-----Power of God (" + AppVersion.GetCurrentVersion() + ") Error Log-----" + Nl };
             try
             {
                 fileLines.Add("Exception Message: " + ex.Message);
