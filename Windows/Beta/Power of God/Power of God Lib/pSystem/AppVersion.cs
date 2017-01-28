@@ -7,7 +7,7 @@ namespace Power_of_God_Lib.pSystem
 {
     public class AppVersion
     {
-        public const bool IsPreRelease = false;
+        public const bool IsPreRelease = true;
         public static string VersionPrefix = "Beta";
         
         public static string VersionLetter()
@@ -15,11 +15,11 @@ namespace Power_of_God_Lib.pSystem
             var x = VersionPrefix.ToLower().Substring(0, 1);
             return x;
         }
-        public const int ReleaseNumber = 7;
+        public const int ReleaseNumber = 1;
 
 
         private static readonly string[] CurrentVersion = {
-            "1", "0", "1", null
+            "1", "0", "2", null
         };
         /// <summary>
         /// Gets current installed version
@@ -40,41 +40,50 @@ namespace Power_of_God_Lib.pSystem
                 }
                 return returnValue;
             }
-            var VersionCode = CurrentVersion;
-            var PreReleaseNumber = ReleaseNumber;
-            var firstStep = "Pre-Release " + VersionCode[0].ToCharArray()[0].ToString().ToLower();
-            var code = VersionCode[1];
-            if (VersionCode[2] != "0")
+            var start = "Pre-Release " + VersionLetter() + CurrentVersion[0];
+            var mid = "";
+            var lastAvailable = -1;
+            var lastLoop = false;
+            foreach (var v in CurrentVersion)
             {
-                code += "." + VersionCode[2];
-                if (VersionCode[3] != null)
+                if (lastLoop) continue;
+                if (v != null) lastAvailable++;
+                else lastLoop = true;
+            }
+            if (lastAvailable == 1)
+            {
+                if (CurrentVersion[1] != "0")
                 {
-                    code += "." + VersionCode[3];
-                }
-                if (VersionCode[4] != null)
-                {
-                    code += "." + VersionCode[4];
+                    mid += "." + CurrentVersion[1];
                 }
             }
-            var finalBit = "";
-            if (PreReleaseNumber < 10)
+            else if (lastAvailable == 2)
             {
-                finalBit = "a00" + PreReleaseNumber;
+                mid += "." + CurrentVersion[1]
+                    + "." + CurrentVersion[2];
             }
-            else if (PreReleaseNumber < 100)
+            else if (lastAvailable == 3)
             {
-                finalBit = "a0" + PreReleaseNumber;
+                mid += "." + CurrentVersion[1]
+                    + "." + CurrentVersion[2]
+                    + "." + CurrentVersion[3];
             }
-            else
-            {
-                finalBit = "a" + PreReleaseNumber;
-
-            }
-            return firstStep + code + finalBit;
-
+            var finalString = "a";
+            if (ReleaseNumber < 10) finalString += AddZeroes(2, ReleaseNumber);
+            else if (ReleaseNumber < 100) finalString += AddZeroes(1, ReleaseNumber);
+            else finalString += AddZeroes(0, ReleaseNumber);
+            return start + mid + finalString;
         }
-    
 
+        private static string AddZeroes(int amount, int value)
+        {
+            var returnValue = "";
+            for (var loopCount = 1; loopCount <= amount; loopCount++)
+            {
+                returnValue += "0";
+            }
+            return returnValue + value;
+        }
         private static int CurrentPrefixInt()
         {
             switch (VersionPrefix)

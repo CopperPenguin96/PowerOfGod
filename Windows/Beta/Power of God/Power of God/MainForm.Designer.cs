@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.settingsButton = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -100,6 +101,7 @@
             this.Controls.Add(this.MainSystem);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Power of God";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

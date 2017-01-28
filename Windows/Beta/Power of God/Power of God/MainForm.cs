@@ -36,7 +36,8 @@ namespace Power_of_God
                 MainSystem.TabPages.Add("Plugin Manager");
                 MainSystem.TabPages[1].Controls.Add(new PluginManagerTab());
             }
-            //LessonsTab.Controls.Add(new LessonPage());
+            MainSystem.TabPages.Add("Lessons");
+            MainSystem.TabPages[2].Controls.Add(new LessonPage());
             //PluginReader.PerformMethod(new Plugin {Name = "LessonPlugin"}, "Plugin", "ExecutePluginMethod", new object[] {PluginMethods.PluginLoad});
             PluginInit();
             foreach (var pl in PluginReader.PluginList)
@@ -57,7 +58,7 @@ namespace Power_of_God
             Logging.Log(">>> Registering plugins Phase 2/2 <<<", LogType.PluginEvent);
             foreach (var p in PluginReader.PluginList)
             {
-                var loopCount = 2;
+                var loopCount = 3;
                 if (!p.HasTab) continue;
                 Logging.Log(p.Name + " (Plugin) was given a MainForm tab", LogType.PluginEvent);
                 MainSystem.TabPages.Add(p.Name);

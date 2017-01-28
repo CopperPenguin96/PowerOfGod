@@ -34,6 +34,36 @@ namespace Power_of_God
             else
             {
                 ShowWindow(FindWindow(null, Console.Title), 0);
+                if (AppVersion.UpdateWord() != "Outdated")
+                {
+                    var choice =
+                            MessageBox.Show(
+                                "It is recommended that you get Power of God " + AppVersion.LatestOnline() +
+                                ", because you have now " +
+                                AppVersion.GetCurrentVersion() +
+                                ". \n\nWould you like us to update it for you? This is the recommended option.",
+                                "Updater",
+                                MessageBoxButtons.YesNo);
+                    switch (choice)
+                    {
+                        case DialogResult.Yes:
+                            if (File.Exists("Updater.exe"))
+                            {
+                                new UpdaterForm().ShowDialog();
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show(
+                                    "We can't update without Updater.exe. You will have to download the udpate yourself.");
+                            }
+                            break;
+                        default:
+                            MessageBox.Show(
+                                "You have chosen not to update. Some features might not work or you will not get access to new things.");
+                            break;
+                    }
+                }
             }
             LogTimer.Interval = 300000; // 5 minutes for each log
             LogTimer.Tick += LogTick;
