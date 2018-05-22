@@ -1,0 +1,12 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\bin\Debug\pogLib.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\bin\Debug\pogLib.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Debug\pogLib.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Debug\pogLib.GUI.SplashScreen.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Debug\pogLib.Properties.Resources.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Debug\pogLib.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Debug\pogLib.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Debug\pogLib.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\bin\Debug\Newtonsoft.Json.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\bin\Debug\Newtonsoft.Json.xml
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\pogLib.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\pogLib.pdb

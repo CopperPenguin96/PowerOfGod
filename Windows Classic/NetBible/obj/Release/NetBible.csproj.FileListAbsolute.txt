@@ -1,0 +1,4 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\NetBible.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\NetBible.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\obj\Release\NetBible.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\obj\Release\NetBible.pdb

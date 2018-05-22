@@ -1,0 +1,7 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\bin\Debug\NetBible.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\bin\Debug\NetBible.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\obj\Debug\NetBible.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\obj\Debug\NetBible.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\NetBible\obj\Debug\NetBible.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\NetBible.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\NetBible.pdb

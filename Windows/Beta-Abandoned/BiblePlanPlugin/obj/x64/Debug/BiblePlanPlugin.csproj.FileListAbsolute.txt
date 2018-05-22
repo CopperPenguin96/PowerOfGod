@@ -1,5 +1,0 @@
-C:\Users\super\Documents\POG\Project\Windows\BiblePlanPlugin\obj\x64\Debug\BiblePlanPlugin.csprojResolveAssemblyReference.cache
-C:\Users\super\Documents\POG\Project\Windows\BiblePlanPlugin\obj\x64\Debug\BiblePlanPlugin.BibPlan.BibPlanDialog.resources
-C:\Users\super\Documents\POG\Project\Windows\BiblePlanPlugin\obj\x64\Debug\BiblePlanPlugin.BibPlan.DownloadForm.resources
-C:\Users\super\Documents\POG\Project\Windows\BiblePlanPlugin\obj\x64\Debug\BiblePlanPlugin.PlanFrame.resources
-C:\Users\super\Documents\POG\Project\Windows\BiblePlanPlugin\obj\x64\Debug\BiblePlanPlugin.csproj.GenerateResource.Cache

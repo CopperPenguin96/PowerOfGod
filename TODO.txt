@@ -1,6 +1,6 @@
 Power of God TODO list
 - Recreate User SignUp/Login
-- Plugins (DONE!)
+- Plugins (Removed, pushed back)
 - Start "The Rock" Youth Ministry (Not sure when. Need volunteers to run it)
-- Setup separate form form Wine/Mono users. Metro Design Form doesn't work very well with those frameworks
+- Setup separate form for Wine/Mono users. Metro Design Form doesn't work very well with those frameworks
 

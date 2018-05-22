@@ -1,0 +1,8 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Release\Updater.Properties.Resources.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Release\Updater.UpdaterForm.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Release\Updater.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\Updater.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\Updater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\Updater.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Release\Updater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Release\Updater.pdb

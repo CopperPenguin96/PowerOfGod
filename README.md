@@ -1,17 +1,21 @@
-![alt text](http://godispower.us/images/main.png "http://godispower.us/")
+![alt text](http://godispower.us/images/web.png "http://godispower.com/")
 ==========
-Website: [http://godispower.us/](http://godispower.us/)
+Website: [http://godispower.com/](http://godispower.com/)
 
-This application is a cross-platform application to help others grow in their faith. You can find the current version on the website.
+Power of God is a cross-platform application desgined to be an online church for those who can't find one.
 
 (Current Available Platforms)
-- Android 3.0+
-- PC
+- Windows Desktop
+
+(Platforms Coming Soon)
+- Android 4.0+
+- Apple iOS
+- Java (For Mac/Linux)
 
 ##License
 The MIT License (MIT)
 
-Copyright (c) 2015-16 apotter96
+Copyright (c) 2015-18 apotter96
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

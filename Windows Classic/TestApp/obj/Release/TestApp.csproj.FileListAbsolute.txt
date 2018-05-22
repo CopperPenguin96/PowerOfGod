@@ -1,0 +1,13 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\TestApp.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\TestApp.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\TestApp.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\NetBible.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\Newtonsoft.Json.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\NetBible.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\bin\Release\Newtonsoft.Json.xml
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\obj\Release\TestApp.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\obj\Release\TestApp.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\obj\Release\TestApp.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\TestApp.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\TestApp.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\TestApp.pdb

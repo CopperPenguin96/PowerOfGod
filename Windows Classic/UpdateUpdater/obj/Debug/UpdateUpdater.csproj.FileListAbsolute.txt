@@ -1,0 +1,6 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\UpdateUpdater.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\UpdateUpdater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\UpdateUpdater.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\UpdateUpdater\obj\Debug\UpdateUpdater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\UpdateUpdater\obj\Debug\UpdateUpdater.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\UpdateUpdater\obj\Debug\UpdateUpdater.csprojResolveAssemblyReference.cache

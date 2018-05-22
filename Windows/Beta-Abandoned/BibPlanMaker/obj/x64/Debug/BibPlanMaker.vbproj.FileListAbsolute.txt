@@ -1,6 +1,0 @@
-C:\Users\super\Documents\POG\Project\Windows\BibPlanMaker\obj\x64\Debug\BibPlanMaker.vbprojResolveAssemblyReference.cache
-C:\Users\super\Documents\POG\Project\Windows\BibPlanMaker\obj\x64\Debug\BibPlanMaker.EditorForm.resources
-C:\Users\super\Documents\POG\Project\Windows\BibPlanMaker\obj\x64\Debug\BibPlanMaker.StartForm.resources
-C:\Users\super\Documents\POG\Project\Windows\BibPlanMaker\obj\x64\Debug\BibPlanMaker.Resources.resources
-C:\Users\super\Documents\POG\Project\Windows\BibPlanMaker\obj\x64\Debug\BibPlanMaker.vbproj.GenerateResource.Cache
-C:\Users\super\Documents\POG\Project\Windows\BibPlanMaker\obj\x64\Debug\BibPlanMaker.xml

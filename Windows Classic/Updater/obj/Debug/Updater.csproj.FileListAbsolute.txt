@@ -1,0 +1,14 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\bin\Debug\Updater.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\bin\Debug\Updater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\bin\Debug\Updater.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Debug\Updater.Properties.Resources.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Debug\Updater.UpdaterForm.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Debug\Updater.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Debug\Updater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Debug\Updater.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\obj\Debug\Updater.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\bin\Debug\Newtonsoft.Json.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\bin\Debug\Newtonsoft.Json.xml
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\Updater.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\Updater.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\Updater.pdb

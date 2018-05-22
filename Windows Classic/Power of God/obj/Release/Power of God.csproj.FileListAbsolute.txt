@@ -1,0 +1,13 @@
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\bin\Release\Power of God.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\bin\Release\Power of God.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\bin\Release\Power of God.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\bin\Release\pogLib.dll
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\bin\Release\pogLib.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\obj\Release\Power of God.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\obj\Release\Power_of_God.Properties.Resources.resources
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\obj\Release\Power of God.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\obj\Release\Power of God.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\Power of God\obj\Release\Power of God.pdb
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\Power of God.exe.config
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\Power of God.exe
+F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\Power of God.pdb
