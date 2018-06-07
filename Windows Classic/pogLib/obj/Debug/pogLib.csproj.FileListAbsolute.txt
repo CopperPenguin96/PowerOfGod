@@ -10,3 +10,17 @@ F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\bin\Debug\Newt
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\bin\Debug\Newtonsoft.Json.xml
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\pogLib.dll
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\pogLib.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Debug\pogLib.dll
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Debug\pogLib.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.Controls.Button.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.MainForm.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.Panels.DefaultPanel.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.Panels.ServicePanel.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.Panels.PurposePanel.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.SettingsForm.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.GUI.SplashScreen.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.Properties.Resources.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.dll
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Debug\pogLib.pdb

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -61,6 +62,12 @@ namespace pogLib.Utils
                 }
             }
             return finalVersion;
+        }
+
+        public static Version CurrentRelease()
+        {
+            Network.ExecuteUrl("http://godispower.us/Application/Update/current.json", out string x);
+            return JsonConvert.DeserializeObject<Version>(x);
         }
     }
 }

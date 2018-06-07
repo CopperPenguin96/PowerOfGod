@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Timers;
 using System.IO.Compression;
+using System.Diagnostics;
 
 namespace Updater
 {
@@ -236,10 +237,12 @@ namespace Updater
             Directory.Delete("Update/");
             File.Delete("update.zip");
             lblResults.ForeColor = Color.Green;
-            lblResults.Text = "Update Successful!";
+            lblResults.Text = "Update Successful! Starting Power of God shortly...";
             t.Stop();
             t.Enabled = false;
-            
+            System.Threading.Thread.Sleep(5000);
+            Process.Start("Power of God.exe");
+            Application.Exit();
         }
         
     }

@@ -12,3 +12,12 @@ F:\Power of God\Code\Projects\Windows Desktop\Power of God\Updater\bin\Debug\New
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\Updater.exe.config
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\Updater.exe
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Debug\Updater.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Debug\Updater.exe.config
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Debug\Updater.exe
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Debug\Updater.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\Updater\obj\Debug\Updater.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Current\Windows Classic\Updater\obj\Debug\Updater.Properties.Resources.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\Updater\obj\Debug\Updater.UpdaterForm.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\Updater\obj\Debug\Updater.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Current\Windows Classic\Updater\obj\Debug\Updater.exe
+F:\Power of God\Code\Projects\Current\Windows Classic\Updater\obj\Debug\Updater.pdb

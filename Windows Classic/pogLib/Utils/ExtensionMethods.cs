@@ -6,8 +6,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Updater
+namespace pogLib.Utils
 {
+    public static class IntUtil
+    {
+        public static bool IsEven(this int num)
+        {
+            return num % 2 == 0;
+        }
+
+        public static bool IsOdd(this int num)
+        {
+            return !IsEven(num);
+        }
+    }
     public static class ControlUtil
     {
         public static void Disable(this Control control)

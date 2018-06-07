@@ -26,7 +26,7 @@ namespace UpdateUpdater
             {
                 client.DownloadFile("http://godispower.us/Application/Update/UpdaterVersion.txt", "updaterVersion.txt");
             }
-            Process.Start("Power of God.exe");
+            Process.Start("Updater.exe");
             
         }
     }
