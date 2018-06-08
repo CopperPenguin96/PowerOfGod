@@ -1,0 +1,6 @@
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\UpdateUpdater.exe.config
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\UpdateUpdater.exe
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\UpdateUpdater.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\UpdateUpdater\obj\Release\UpdateUpdater.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Current\Windows Classic\UpdateUpdater\obj\Release\UpdateUpdater.exe
+F:\Power of God\Code\Projects\Current\Windows Classic\UpdateUpdater\obj\Release\UpdateUpdater.pdb

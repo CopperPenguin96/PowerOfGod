@@ -11,3 +11,9 @@ F:\Power of God\Code\Projects\Windows Desktop\Power of God\TestApp\obj\Release\T
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\TestApp.exe.config
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\TestApp.exe
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\TestApp.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\TestApp.exe.config
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\TestApp.exe
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\TestApp.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\TestApp\obj\Release\TestApp.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Current\Windows Classic\TestApp\obj\Release\TestApp.exe
+F:\Power of God\Code\Projects\Current\Windows Classic\TestApp\obj\Release\TestApp.pdb

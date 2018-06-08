@@ -1,11 +1,11 @@
 ﻿using NetBible.Bible;
 using pogLib.Utils;
 using System;
-using Gecko.Events;
 using System.Collections.Generic;
 using pogLib.Sermons;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace pogLib.GUI.Panels
 {
@@ -16,28 +16,19 @@ namespace pogLib.GUI.Panels
         private System.Windows.Forms.Button btnLive;
         private System.Windows.Forms.Timer timer1;
         private System.ComponentModel.IContainer components;
-        private Gecko.GeckoWebBrowser geckoWebBrowser1;
+        private YoutubePlayer.Player player1;
         private System.Windows.Forms.Panel panel1;
 
         public ServicePanel()
         {
             InitializeComponent();
-            Console.WriteLine("Initializing Xulrunner...");
-            Gecko.Xpcom.Initialize("firefox/");
-            Gecko.CertOverrideService.GetService().ValidityOverride += geckoWebBrowser1_ValidityOverride;
             ServicePanel_Load(this, new EventArgs());
-        }
-
-        private void geckoWebBrowser1_ValidityOverride(object sender, CertOverrideEventArgs e)
-        {
-            e.OverrideResult = Gecko.CertOverride.Mismatch | Gecko.CertOverride.Time | Gecko.CertOverride.Untrusted;
-            e.Temporary = true;
-            e.Handled = true;
         }
 
         private void LoadVideo(string id)
         {
-            geckoWebBrowser1.Navigate($"https://godispower.us/Sermons/VideoPlayer.php?id={id}");
+            //geckoWebBrowser1.Navigate($"https://godispower.us/Sermons/VideoPlayer.php?id={id}");
+            player1.VideoID = id;
         }
 
 
@@ -45,30 +36,21 @@ namespace pogLib.GUI.Panels
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.geckoWebBrowser1 = new Gecko.GeckoWebBrowser();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLive = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.player1 = new YoutubePlayer.Player();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.geckoWebBrowser1);
+            this.panel1.Controls.Add(this.player1);
             this.panel1.Location = new System.Drawing.Point(254, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 487);
             this.panel1.TabIndex = 0;
-            // 
-            // geckoWebBrowser1
-            // 
-            this.geckoWebBrowser1.FrameEventsPropagateToMainWindow = false;
-            this.geckoWebBrowser1.Location = new System.Drawing.Point(3, 3);
-            this.geckoWebBrowser1.Name = "geckoWebBrowser1";
-            this.geckoWebBrowser1.Size = new System.Drawing.Size(614, 481);
-            this.geckoWebBrowser1.TabIndex = 0;
-            this.geckoWebBrowser1.UseHttpActivityObserver = false;
             // 
             // listView1
             // 
@@ -105,6 +87,14 @@ namespace pogLib.GUI.Panels
             this.timer1.Enabled = true;
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // player1
+            // 
+            this.player1.Location = new System.Drawing.Point(22, 34);
+            this.player1.Name = "player1";
+            this.player1.Size = new System.Drawing.Size(577, 419);
+            this.player1.TabIndex = 0;
+            this.player1.VideoID = "NpEaa2P7qZI";
             // 
             // ServicePanel
             // 
@@ -158,7 +148,7 @@ namespace pogLib.GUI.Panels
         {
             string json = Network.GetUrlSource("http://godispower.us/Application/live_status.json");
             LiveStatus ls = JsonConvert.DeserializeObject<LiveStatus>(json);
-            LoadVideo(ls.video_id);
+            Process.Start($"https://www.youtube.com/watch?v={ls.video_id}");
         }
     }
 }

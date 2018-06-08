@@ -9,3 +9,17 @@ F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Release\po
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\pogLib\obj\Release\pogLib.pdb
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\pogLib.dll
 F:\Power of God\Code\Projects\Windows Desktop\Power of God\bin\Release\pogLib.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\pogLib.dll
+F:\Power of God\Code\Projects\Current\Windows Classic\bin\Release\pogLib.pdb
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.csprojResolveAssemblyReference.cache
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.Controls.Button.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.MainForm.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.Panels.DefaultPanel.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.Panels.ServicePanel.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.Panels.PurposePanel.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.SettingsForm.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.GUI.SplashScreen.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.Properties.Resources.resources
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.csproj.GenerateResource.Cache
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.dll
+F:\Power of God\Code\Projects\Current\Windows Classic\pogLib\obj\Release\pogLib.pdb
