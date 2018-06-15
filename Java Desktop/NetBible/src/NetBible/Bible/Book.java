@@ -39,7 +39,7 @@ public class Book {
 		return Testament.fromInteger(-1);
 	}
 	
-	public static ArrayList<Chapter> Chapters = new ArrayList<>();
+	public ArrayList<Chapter> Chapters = new ArrayList<>();
 	
 	public String ReadChapter(int chapter, boolean includeVerseNumbers)
 	{
@@ -97,70 +97,10 @@ public class Book {
 		}
 		else
 		{
-			return String.format("%1$s %2$s:%3$s (%4$s) - \"%4$s\"",
+			return String.format("%1$s %2$s:%3$s (%4$s) - \"%5$s\"",
 					GetName(), chapter, verse, BibleReader.Version, ReadVerse(chapter, verse));
 		}
 	}
 	
-	public String ReadMultipleVerses(int chapter1, int verse1, int chapter2, int verse2, boolean includeVerseNumbers) throws ArgumentException
-	{
-		if (chapter1 > chapter2) throw new ArgumentException("chapter1 > chapter2");
-		if (chapter1 == chapter2)
-		{
-			if (verse1 > verse2) throw new ArgumentException("chapter 1 == chapter2; verse1 > verse2");
-		}
-		
-		ArrayList<Chapter> chapterList = new ArrayList<>();
-		for (int x = chapter1; x <= chapter2; x++)
-		{
-			chapterList.add(Chapters.get(x - 1));
-		}
-		String fullSet = "";
-		int loopChap = chapter1 - 1;
-		for (Chapter chap : chapterList)
-		{
-			loopChap++;
-			ArrayList<String> verses = new ArrayList<>();
-			int loopCount = 0;
-			if (loopChap == chapter1)
-			{
-				loopCount = verse1;
-			}
-			for (String verse : chap.Verses)
-			{
-				if (loopCount > 0)
-				{
-					if (loopChap == chapter2)
-					{
-						if (loopCount > verse2) continue;
-					}
-					if (loopCount > Chapters.get(loopCount).Verses.size() - 1) continue;
-					String partial = ReadVerse(loopChap, loopCount);
-					String chapz = "";
-					if (loopCount == 1)
-					{
-						chapz = "Chapter " + loopChap + " ";
-					}
-					else
-					{
-						if (includeVerseNumbers) chapz = loopCount + " ";
-					}
-					if (includeVerseNumbers)
-					{
-						verses.add(chapz + partial + " ");
-					}
-					else
-					{
-						verses.add(partial + " ");
-					}
-				}
-				loopCount++;
-			}
-			for (String x : verses)
-			{
-				fullSet += x;
-			}
-		}
-		return fullSet;
-	}
+	
 }

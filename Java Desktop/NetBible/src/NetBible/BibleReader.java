@@ -25,7 +25,12 @@ public class BibleReader {
 	    	System.out.println("FAIL");
 	    }
 	    
-	    System.out.println(NewTestament.Timothy2.ReadVerse(2,  15));
+	    /*
+	     * System.out.println(NewTestament.Timothy2.ReadVerse(2,  15)); // Prints a single plain verse, just the verse
+	     * System.out.println(OldTestament.Genesis.ReadChapter(1, true)); // Prints the whole specified chapter, true/false to display verse numbers
+	     * System.out.println(NewTestament.John.ReadFormattedVerse(3, 16)); // Prints a single verse, with Book Name and Bible version if applicable
+	    */
+	    
 	}
 	public static String LoadXmlErrorLog;
 	public static boolean LoadXml(String path) {
@@ -48,7 +53,7 @@ public class BibleReader {
 				{
 					String bookName = node.getAttributes().item(0).getNodeValue().toLowerCase();
 					LoadOldTestament(bookName, loopCount, node);
-					// LoadNewTestament(bookName, loopCount, node);
+					LoadNewTestament(bookName, loopCount, node);
 					loopCount++;
 				}
 			}
@@ -283,7 +288,6 @@ public class BibleReader {
 		if (name.equals(null)) throw new ArgumentException("name");
 		Book lam = new Book(loopCount);
 		lam.SetName(name);
-		
 		for (Node chapters : asList(node.getChildNodes())) {
 			if (!chapters.getNodeName().equalsIgnoreCase("chapter")) continue;
 			Chapter chapter = new Chapter();
@@ -293,7 +297,7 @@ public class BibleReader {
 			for (Node verses : asList(chapters.getChildNodes()))
 			{
 				if (!verses.getNodeName().equalsIgnoreCase("verse")) continue;
-				String content = verses.getNodeValue();
+				String content = verses.getFirstChild().getNodeValue();
 				chapter.Verses.add(content);
 			}
 			lam.Chapters.add(chapter);
@@ -301,6 +305,7 @@ public class BibleReader {
 		
 		String bookName = name;
 		char[] chars = bookName.toCharArray();
+		
 		if (bookName.equalsIgnoreCase("song of solomon"))
 		{
 			bookName = "Song of Solomon";
@@ -317,13 +322,13 @@ public class BibleReader {
 				char x = chars[2];
 				char y = Character.toUpperCase(chars[2]);
 				bookName = new String(chars);
-				System.out.println(bookName);
 			}
 			chars[2] = Character.toUpperCase(chars[2]);
 			bookName = new String(chars);
+
+			
 		}
-		
-		System.out.println(bookName = " loaded...");
+		System.out.println(bookName + " loaded...");
 		lam.SetName(bookName);
 		return lam;
 	}
