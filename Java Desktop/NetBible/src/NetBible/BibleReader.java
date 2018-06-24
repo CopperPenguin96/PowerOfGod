@@ -24,7 +24,7 @@ public class BibleReader {
 	    else {
 	    	System.out.println("FAIL");
 	    }
-	    
+	    //
 	    /*
 	     * System.out.println(NewTestament.Timothy2.ReadVerse(2,  15)); // Prints a single plain verse, just the verse
 	     * System.out.println(OldTestament.Genesis.ReadChapter(1, true)); // Prints the whole specified chapter, true/false to display verse numbers

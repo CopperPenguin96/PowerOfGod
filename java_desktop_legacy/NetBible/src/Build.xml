@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<project name="AutoExport" default="CreateJar">
+		
+	<!-- Variables needed by Builder. Assign each one to comply with project needs -->
+  	<property name="dir" location="F:/Power of God/Code/Builds/Debug/Java/java builds/"  />
+	<property name="file_name" value="netbible.jar"/>
+	<property name="default_package" value="NetBible"/>
+	<property name="main_class" value="NetBible.BibleReader"/>
+		
+	<!-- Target deleteFile deletes previous build -->
+  	<target name="deleteFile">
+    	<delete file="${dir}/${file_name}"/>
+  	</target>
+
+	<!-- Begins compile of project -->
+	<target name="compile">
+		<javac srcdir="." />
+	</target>
+
+	<!-- Creates the jar -->
+	<target name="CreateJar" description="Create Jar file" depends="compile">
+    	<jar jarfile="${dir}/${file_name}" basedir="" includes="${default_package}/**">
+       	<manifest>
+       	    <attribute name="Main-Class" value="${main_class}"/>
+       	</manifest>
+       	</jar>
+	</target>
+</project>

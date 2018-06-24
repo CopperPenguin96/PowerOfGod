@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<project name="AutoExport" default="CreateJar">
+		
+	<!-- Variables needed by Builder. Assign each one to comply with project needs -->
+  	<property name="dir" location="F:/Power of God/Code/Builds/Debug/Java/java builds/"  />
+	<property name="file_name" value="libs/pogLib.jar"/>
+	<property name="default_package" value="pogLib"/>
+
+	<!-- Begins compile of project -->
+	<target name="compile">
+		<javac srcdir="." />
+	</target>
+
+	<!-- Creates the jar -->
+	<target name="CreateJar" description="Create Jar file" depends="compile">
+    	<jar jarfile="${dir}/${file_name}" basedir="" includes="${default_package}/**">
+    		<manifest>
+    			<attribute name="Built-By" value="AP Development" />
+    			<attribute name="Implementation-Vender" value="AP Development" />
+    			<attribute name="Implementation-Vendor-Id" value="NetBible" />
+    			<attribute name="Implementation-Title" value="Implementation" />
+    			<attribute name="Class-Path"
+    				value="libs\NetBible.jar" />
+    		</manifest></jar>
+	</target>
+</project>
